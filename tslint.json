@@ -1,0 +1,25 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-eslint-rules"
+  ],
+  "jsRules": {},
+  "rules": {
+    "interface-name": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "jsx-space-before-trailing-slash": true,
+    "max-line-length": false,
+    "no-submodule-imports": [true, "react-icons", "react-bootstrap"],
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "array-bracket-spacing": [true, "always"],
+    "ter-computed-property-spacing": [true, "never"],
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-console": false,
+    "object-curly-spacing": [true, "always"]
+  },
+  "rulesDirectory": []
+}
