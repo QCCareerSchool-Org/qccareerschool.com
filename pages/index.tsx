@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { Background } from '../components/background';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
@@ -21,11 +20,13 @@ import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
 import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
 
+import HeroHome from '../images/backgrounds/hero-home.jpg';
+
 const IndexPage = () => (
   <DefaultLayout>
     <SEO title="Home" />
 
-    <Background image="home" overlay={['linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45))']}>
+    <div id="top">
       <section id="first-section" className="text-light">
         <Container>
           <Col xs="12" md="10" lg="7" className="offset-md-1">
@@ -35,7 +36,7 @@ const IndexPage = () => (
           </Col>
         </Container>
       </section>
-    </Background>
+    </div>
 
     <section>
       <Container className="text-center">
@@ -162,6 +163,12 @@ const IndexPage = () => (
         </Row>
       </Container>
     </section>
+
+    <style jsx={true}>{`
+      #top {
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome});
+      }
+    `}</style>
 
   </DefaultLayout>
 );

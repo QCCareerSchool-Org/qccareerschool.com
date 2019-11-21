@@ -1,10 +1,10 @@
+import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Link from 'next/link';
 
 import logoLight from '../images/q-light.svg';
 import logoDark from '../images/q.svg';
@@ -44,15 +44,15 @@ export const Header: React.FC<Props> = ({ className }) => {
           <Navbar.Collapse id="main-navbar">
             <Nav className="ml-auto mr-3">
               <NavDropdown title="Programs" id="programs-dropdown">
-                <Link href="/programs/"><a className="dropdown-item">Overview</a></Link>
+                <Link href="/programs"><a className="dropdown-item">Overview</a></Link>
                 <NavDropdown.Divider />
                 <Link href="/programs/#makeup-artistry"><a className="dropdown-item">Makeup Artistry</a></Link>
                 <Link href="/programs/#interior-decorating"><a className="dropdown-item">Interior Decorating</a></Link>
                 <Link href="/programs/#event-planning"><a className="dropdown-item">Event Planning</a></Link>
                 <Link href="/programs/#dog-grooming"><a className="dropdown-item">Dog Grooming</a></Link>
               </NavDropdown>
-              <Link href="/admissions/"><a className="nav-link">Admissions</a></Link>
-              <Link href="/contact/"><a className="nav-link">Contact</a></Link>
+              <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
+              <Link href="/contact"><a className="nav-link">Contact</a></Link>
             </Nav>
             <a href="https://enroll.qcmakeupacademy.com">
               {mobile

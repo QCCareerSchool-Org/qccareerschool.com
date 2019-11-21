@@ -8,11 +8,12 @@
   "jsRules": {},
   "rules": {
     "interface-name": false,
+    "jsx-boolean-value": false,
     "jsx-no-multiline-js": false,
     "jsx-no-lambda": false,
     "jsx-space-before-trailing-slash": true,
     "max-line-length": false,
-    "no-submodule-imports": [true, "react-icons", "react-bootstrap"],
+    "no-submodule-imports": [true, "react-icons", "react-bootstrap", "next"],
     "object-literal-sort-keys": false,
     "quotemark": [true, "single", "jsx-double"],
     "array-bracket-spacing": [true, "always"],
