@@ -13,11 +13,13 @@ import { ScrollPositionProvider } from '../providers/scroll-position';
 import { LocationProvider } from '../providers/location';
 
 import './default-layout.scss';
+import Helmet from 'react-helmet';
 
 export const DefaultLayout: React.FC = ({ children }) => (
   <LocationProvider>
     <ScreenWidthProvider>
       <ScrollPositionProvider>
+        <Helmet link={[ { rel: 'manifest', href: 'manifest.json' } ]}/>
         <div className="d-flex flex-column vh-100">
           <Header className="flex-shrink-0 fixed-top" />
           <main className="flex-shrink-0">

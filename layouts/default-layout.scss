@@ -41,7 +41,7 @@ $font-weight-bolder: 600;
  $border-radius:    .25rem;
  $border-radius-lg: .75rem;
  $border-radius-sm: .2rem;
- 
+
 
 /**
  * Buttons
@@ -74,6 +74,13 @@ $navbar-toggler-border-radius:      $border-radius;
 
 @import '~bootstrap/scss/bootstrap.scss';
 
+@media (max-width: 575px) {
+  h1, .h1 { font-size: 2.25rem }
+  h2, .h2 { font-size: 2rem }
+  h3, .h3 { font-size: 1.75rem }
+  h4, .h4 { font-size: 1.5rem }
+}
+
 .card.rounded-lg .card-img-top {
   border-top-left-radius: $border-radius-lg;
   border-top-right-radius: $border-radius-lg;
@@ -99,10 +106,36 @@ h3.thin .h3.thin { font-weight: 500; }
 
 #main-nav .nav-link { font-weight: 600 }
 
-section { padding: 3rem 0 }
-section#first-section { padding-top: 8rem }
-@media (max-width: 767px) {
-  section#first-section { padding-top: 5rem }
+section { padding: 2rem 0 }
+section#first-section { padding-top: 7rem }
+@media (min-width: 768px) {
+  section { padding: 5rem 0 }
+  section#first-section { padding-top: 12rem }
+}
+
+// // remove bottom margin from paragraphs that come at the end of columns or containers
+// .container,
+// .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1,
+// .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1,
+// .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1,
+// .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1,
+// .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1 {
+//     > p:last-child { margin-bottom: 0 }
+// }
+
+// gutter-sized margins
+.mb-g { margin-bottom: 30px }
+@media (min-width: 576px) {
+  .mb-sm-g { margin-bottom: 30px }
+}
+@media (min-width: 768px) {
+  .mb-md-g { margin-bottom: 30px }
+}
+@media (min-width: 992px) {
+  .mb-ld-g { margin-bottom: 30px }
+}
+@media (min-width: 1200px) {
+  .mb-xl-g { margin-bottom: 30px }
 }
 
 .text-shadow { text-shadow: 0px 7px 15px rgba(0,0,0,.40); }
@@ -200,7 +233,7 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 //     max-width: 540px;
 //     margin-left: auto;
 //     margin-right: auto;
-//   }  
+//   }
 //   .inner-container-left, .inner-container-left-sm {
 //     max-width: 255px;
 //     margin-left: auto;
@@ -218,7 +251,7 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 //     max-width: 720px;
 //     margin-left: auto;
 //     margin-right: auto;
-//   }  
+//   }
 //   .inner-container-left, .inner-container-left-sm, .inner-container-left-md {
 //     max-width: 345px;
 //     margin-left: auto;
@@ -254,7 +287,7 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 //     max-width: 1140px;
 //     margin-left: auto;
 //     margin-right: auto;
-//   }  
+//   }
 //   .inner-container-left, .inner-container-left-sm, .inner-container-left-md, .inner-container-left-lg, .inner-container-left-xl {
 //     max-width: 555px;
 //     margin-left: auto;

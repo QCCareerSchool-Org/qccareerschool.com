@@ -1,3 +1,4 @@
 const withSass = require('@zeit/next-sass')
 const optimizedImages = require('next-optimized-images')
-module.exports = withSass(optimizedImages());
+const withOffline = require('next-offline');
+module.exports = withSass(optimizedImages(withOffline()));

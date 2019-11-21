@@ -8,15 +8,15 @@ import { Background } from '../components/background';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import Emblem from '../public/images/35-year-emblem.png';
-import DesignFaculties from '../public/images/design-faculties-modern-living-room.jpg';
-import EventFaculties from '../public/images/event-faculties-table.jpg';
-import MakeupFaculties from '../public/images/makeup-faculties-applying-eyeliner.jpg';
-import PetFaculties from '../public/images/pet-faculties-washing-dog.jpg';
-import StyleFaculties from '../public/images/style-faculties-shopping-clothes.jpg';
-import TravelFaculties from '../public/images/travel-faculties-woman-hiking.jpg';
-import WritingFaculties from '../public/images/writing-faculties-woman.jpg';
-import WellnessFaculties from '../public/images/writing-wellness-woman-baby.jpg';
+import Emblem from '../images/35-year-emblem.png';
+import DesignFaculties from '../images/design-faculties-modern-living-room.jpg';
+import EventFaculties from '../images/event-faculties-table.jpg';
+import MakeupFaculties from '../images/makeup-faculties-applying-eyeliner.jpg';
+import PetFaculties from '../images/pet-faculties-washing-dog.jpg';
+import StyleFaculties from '../images/style-faculties-shopping-clothes.jpg';
+import TravelFaculties from '../images/travel-faculties-woman-hiking.jpg';
+import WritingFaculties from '../images/writing-faculties-woman.jpg';
+import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
 
 import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
@@ -25,23 +25,21 @@ const IndexPage = () => (
   <DefaultLayout>
     <SEO title="Home" />
 
-    <Background image="home" overlay={[ 'linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45))' ]}>
+    <Background image="home" overlay={['linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45))']}>
       <section id="first-section" className="text-light">
-        <div className="my-5">
-          <Container>
-            <Col xs="12" md="10" lg="7" className="offset-md-1 mb-lg-0">
-              <p className="hat">QC Career School</p>
-              <h1 className="text-shadow">Providing Quality Distance Education for 35 Years and Counting</h1>
-              <Bar className="text-secondary" />
-            </Col>
-          </Container>
-        </div>
+        <Container>
+          <Col xs="12" md="10" lg="7" className="offset-md-1">
+            <p className="hat">QC Career School</p>
+            <h1 className="text-shadow">Providing Quality Distance Education for 35 Years and Counting</h1>
+            <Bar className="text-secondary" />
+          </Col>
+        </Container>
       </section>
     </Background>
 
     <section>
       <Container className="text-center">
-        <Col xs="12" md="8" lg="8" className="offset-md-2 offset-lg-2 mb-2 mb-lg-2 mt-4">
+        <Col xs="12" md="8" className="offset-md-2">
           <img src={Emblem} alt="emblem" className="mb-4" />
           <h2 className="text-center">Welcome to QC Career School!</h2>
           <p className="lead">Lorem ipsum dolor sit amet</p>
@@ -50,7 +48,7 @@ const IndexPage = () => (
       </Container>
     </section>
 
-    <section className="text-dark bg-light mt-5">
+    <section className="text-dark bg-light">
       <Container>
         <h2>QC Career School Faculties</h2>
         <p className="lead">Lorem ipsum dolor sit amet</p>
@@ -58,7 +56,7 @@ const IndexPage = () => (
 
         <Row>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={MakeupFaculties}
               title="QC Makeup Academy"
@@ -68,7 +66,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={EventFaculties}
               title="QC Event School"
@@ -78,7 +76,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={DesignFaculties}
               title="QC Design School"
@@ -88,7 +86,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={PetFaculties}
               title="QC Pet Studies"
@@ -98,7 +96,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={WellnessFaculties}
               title="QC Wellness Studies"
@@ -108,7 +106,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={StyleFaculties}
               title="QC Style Academy"
@@ -118,7 +116,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
               img={TravelFaculties}
               title="QC Travel School"
@@ -128,7 +126,7 @@ const IndexPage = () => (
             />
           </Col>
 
-          <Col xs="12" md="6" className="mb-4 d-flex">
+          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
               img={WritingFaculties}
               title="Winghill Writing School"
@@ -144,19 +142,19 @@ const IndexPage = () => (
     </section>
 
     <section className="text-light bg-dark">
-      <Container className="my-5">
+      <Container>
         <Row>
-          <Col xs="12" md="4" className="mb-5">
+          <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
             <Button size="sm" className="caps">Normal Button</Button>
           </Col>
-          <Col xs="12" md="4" className="mb-5">
+          <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Admission<br />Requirements</h3>
             <p>Interested in enrolling with QC Career School? Find out the admissions requirements and enroll here!</p>
             <Button size="sm" className="caps">Normal Button</Button>
           </Col>
-          <Col xs="12" md="4" className="mb-5">
+          <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Find<br />Professionals</h3>
             <p>Hire a QC graduate here! Search by profession and location</p>
             <Button size="sm" className="caps">Normal Button</Button>

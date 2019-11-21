@@ -6,8 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Link from 'next/link';
 
-import logoLight from '../public/images/q-light.svg';
-import logoDark from '../public/images/q.svg';
+import logoLight from '../images/q-light.svg';
+import logoDark from '../images/q.svg';
 
 import { ScreenWidthContext } from '../providers/screen-width';
 import { ScrollPositionContext } from '../providers/scroll-position';
@@ -40,10 +40,10 @@ export const Header: React.FC<Props> = ({ className }) => {
           <Navbar.Brand>
             <Link href="/"><a><img src={logo} alt="QC Career School" style={{ display: 'block', height: 40 }} /></a></Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => { setMobileMenu(m => !m); }} />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="main-navbar" onClick={() => { setMobileMenu(m => !m); }} />
+          <Navbar.Collapse id="main-navbar">
             <Nav className="ml-auto mr-3">
-              <NavDropdown title="Programs" id="basic-nav-dropdown">
+              <NavDropdown title="Programs" id="programs-dropdown">
                 <Link href="/programs/"><a className="dropdown-item">Overview</a></Link>
                 <NavDropdown.Divider />
                 <Link href="/programs/#makeup-artistry"><a className="dropdown-item">Makeup Artistry</a></Link>
@@ -51,8 +51,8 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/#event-planning"><a className="dropdown-item">Event Planning</a></Link>
                 <Link href="/programs/#dog-grooming"><a className="dropdown-item">Dog Grooming</a></Link>
               </NavDropdown>
-              <Link href="/admissions/" data-rb-event-key="/admissions/"><a  className="nav-link">Admissions</a></Link>
-              <Link href="/contact/" data-rb-event-key="/contact/"><a  className="nav-link">Contact</a></Link>
+              <Link href="/admissions/"><a className="nav-link">Admissions</a></Link>
+              <Link href="/contact/"><a className="nav-link">Contact</a></Link>
             </Nav>
             <a href="https://enroll.qcmakeupacademy.com">
               {mobile
