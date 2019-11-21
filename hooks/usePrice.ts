@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import { useEffect, useState } from 'react';
 
+import { getQueryString } from '../functions';
 import { Price } from '../models/price';
 
 export const usePrice = (courses: Array<string | string[]>, countryCode: string, provinceCode: string | null) => {
@@ -25,12 +26,3 @@ export const usePrice = (courses: Array<string | string[]>, countryCode: string,
 
   return price;
 };
-
-function getQueryString(params: any) {
-  return Object.keys(params).map(k => {
-    if (Array.isArray(params[k])) {
-      return params[k].map((val: any) => `${encodeURIComponent(k)}[]=${encodeURIComponent(val)}`).join('&');
-    }
-    return `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`;
-  }).join('&');
-}

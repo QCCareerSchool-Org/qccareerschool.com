@@ -13,6 +13,8 @@
   "author": "QC Career School",
   "license": "UNLICENSED",
   "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@qccareerschool/http-status": "^1.0.0",
     "@types/big.js": "^4.0.5",
     "@types/node": "^12.12.11",
     "@types/react": "^16.9.11",
@@ -23,6 +25,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.1.0",
     "isomorphic-unfetch": "^3.0.0",
+    "js-bbcode-parser": "^3.0.2",
     "next": "^9.1.4",
     "next-offline": "^4.0.6",
     "next-optimized-images": "^2.5.4",
@@ -37,6 +40,7 @@
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.1.0",
     "typescript": "^3.7.2",
-    "webp-loader": "^0.5.0"
+    "webp-loader": "^0.5.0",
+    "xbbcode-parser": "^0.1.2"
   }
 }

@@ -21,22 +21,21 @@ import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
+import Link from 'next/link';
 
 const IndexPage = () => (
   <DefaultLayout>
     <SEO title="Home" />
 
-    <div id="top">
-      <section id="first-section" className="text-light">
-        <Container>
-          <Col xs="12" md="10" lg="7" className="offset-md-1">
-            <p className="hat">QC Career School</p>
-            <h1 className="text-shadow">Providing Quality Distance Education for 35 Years and Counting</h1>
-            <Bar className="text-secondary" />
-          </Col>
-        </Container>
-      </section>
-    </div>
+    <section id="first-section" className="text-light">
+      <Container>
+        <Col xs="12" md="10" lg="7" className="offset-md-1">
+          <p className="hat">QC Career School</p>
+          <h1 className="text-shadow">Providing Quality Distance Education for 35 Years and Counting</h1>
+          <Bar className="text-secondary" />
+        </Col>
+      </Container>
+    </section>
 
     <section>
       <Container className="text-center">
@@ -165,7 +164,7 @@ const IndexPage = () => (
     </section>
 
     <style jsx={true}>{`
-      #top {
+      #first-section {
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome});
       }
     `}</style>

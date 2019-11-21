@@ -52,6 +52,7 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/#dog-grooming"><a className="dropdown-item">Dog Grooming</a></Link>
               </NavDropdown>
               <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
+              <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
               <Link href="/contact"><a className="nav-link">Contact</a></Link>
             </Nav>
             <a href="https://enroll.qcmakeupacademy.com">
