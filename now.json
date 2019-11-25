@@ -1,4 +1,8 @@
 {
   "name": "qccareerschool-com",
-  "NPM_TOKEN": "ebcf3526-76fa-4c73-88bb-dab5436a1450"
+  "build": {
+    "env": {
+      "NPM_TOKEN": "@npm_token"
+    }
+  }
 }
