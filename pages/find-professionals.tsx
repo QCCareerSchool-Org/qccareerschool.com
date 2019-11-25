@@ -209,7 +209,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
 FindProfessionalsPage.getInitialProps = async context => {
   try {
-    const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countrises');
+    const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countries');
     if (countryResponse.status !== 200) {
       throw new HttpStatus.InternalServerError(countryResponse.statusText);
     }
