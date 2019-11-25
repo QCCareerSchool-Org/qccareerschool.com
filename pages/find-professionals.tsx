@@ -20,6 +20,7 @@ import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 interface Props {
   errorCode?: number;
+  errorMessage?: any;
   countries?: Country[];
 }
 
@@ -76,7 +77,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   const [ error, setError ] = useState(false);
 
   useEffect(() => {
-    if (location) {
+    if (location?.countryCode) {
       changeCountry(location.countryCode);
     }
   }, [ location?.countryCode ]);
@@ -115,7 +116,6 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   }
 
   async function handleSubmit(event: React.FormEvent) {
-    console.log('here');
     event.preventDefault();
     const payload = {
       firstName: state.firstName,
@@ -133,6 +133,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   }
 
   if (props.errorCode) {
+    console.log('error', props.errorMessage);
     return <ErrorPage statusCode={props.errorCode} />;
   }
 
@@ -208,19 +209,18 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
 FindProfessionalsPage.getInitialProps = async context => {
   try {
-    const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countries');
+    const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countrises');
     if (countryResponse.status !== 200) {
-      throw new HttpStatus.InternalServerError();
+      throw new HttpStatus.InternalServerError(countryResponse.statusText);
     }
     const countries = await countryResponse.json();
     return { countries };
   } catch (err) {
-    console.error(err);
     const errorCode = err instanceof HttpStatus.HttpResponse ? err.getStatusCode() : 500;
     if (context.res) {
       context.res.statusCode = errorCode;
     }
-    return { errorCode };
+    return { errorCode, errorMessage: err.message };
   }
 };
 
