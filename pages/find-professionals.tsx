@@ -76,8 +76,10 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   const [ error, setError ] = useState(false);
 
   useEffect(() => {
-    changeCountry(location.countryCode);
-  }, [ location.countryCode ]);
+    if (location) {
+      changeCountry(location.countryCode);
+    }
+  }, [ location?.countryCode ]);
 
   useEffect(() => {
     setProvinceLabel(state.countryCode === 'CA' ? 'Province' : 'State');
