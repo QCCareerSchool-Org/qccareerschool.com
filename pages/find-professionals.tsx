@@ -72,15 +72,21 @@ const FindProfessionalsPage: NextPage<Props> = props => {
     area: '',
   });
   const [ results, setResults ] = useState<Profile[]>();
+  const [ provinceLabel, setProvinceLabel ] = useState<string>();
   const [ error, setError ] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      const countryCode = location.countryCode;
-      const provinces = await getProvinces(countryCode);
-      dispatch({ type: 'setCountryCode', payload: { countryCode, provinces } });
-    })();
+    changeCountry(location.countryCode);
   }, [ location.countryCode ]);
+
+  useEffect(() => {
+    setProvinceLabel(state.countryCode === 'CA' ? 'Province' : 'State');
+  }, [ state.countryCode ]);
+
+  async function changeCountry(countryCode: string) {
+    const provinces = await getProvinces(countryCode);
+    dispatch({ type: 'setCountryCode', payload: { countryCode, provinces } });
+  }
 
   async function getProvinces(countryCode: string): Promise<Province[]> {
     let provinces: Province[] = [];
@@ -97,8 +103,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   async function handleCountryCodeChange(event: React.ChangeEvent) {
     const target = event.target as HTMLSelectElement;
     const countryCode = target.value;
-    const provinces = await getProvinces(countryCode);
-    dispatch({ type: 'setCountryCode', payload: { countryCode, provinces } });
+    await changeCountry(countryCode);
   }
 
   function handleProvinceCodeChange(event: React.ChangeEvent) {
@@ -157,7 +162,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                 {state.provinces.length
                   ? (
                     <div className="form-group">
-                      <label htmlFor="countryCode">Province</label>
+                      <label htmlFor="countryCode">{provinceLabel}</label>
                       <select className="form-control" id="provinceCode" value={state.provinceCode || ''} onChange={handleProvinceCodeChange}>
                         {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                       </select>
