@@ -1,7 +1,10 @@
 {
-  "manifest_version": 2,
   "name": "QC Career School",
-  "version": "2",
-  "default_locale": "en",
-  "description": "QC Carer School is a leader in online distance education"
+  "short_name": "QC Career",
+  "description": "QC Carer School is a leader in online distance education",
+  "start_url": "/",
+  "theme_color": "#e3165a",
+  "background_color": "#ffffff",
+  "orientation": "any",
+  "display": "fullscreen"
 }
