@@ -27,7 +27,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "js-bbcode-parser": "^3.0.2",
     "next": "^9.1.4",
-    "next-offline": "^4.0.6",
+    "next-offline": "^5.0.0-beta.10",
     "next-optimized-images": "^2.5.4",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
