@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "My Extension",
-  "version": "versionString",
+  "name": "QC Career School",
+  "version": "2",
   "default_locale": "en",
-  "description": "A plain text description"
+  "description": "QC Carer School is a leader in online distance education"
 }
