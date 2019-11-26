@@ -1,15 +1,17 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
 import { Background } from '../components/background';
-import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 const ContactPage: NextPage = () => (
   <DefaultLayout>
-    <SEO title="Contact" />
+    <Head>
+      <title>Contact Us - QC Career School</title>
+    </Head>
 
     <Background image="home">
       <section id="first-section" className="text-light">

@@ -1,10 +1,11 @@
 import App, { AppContext, AppInitialProps } from 'next/app';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 
 import { LocationProvider } from '../providers/location';
 import { ScreenWidthProvider } from '../providers/screen-width';
 import { ScrollPositionProvider } from '../providers/scroll-position';
+
+import '../style.scss';
 
 export default class QCApp extends App {
   // public static async getInitialProps({ Component, ctx }: AppContext): Promise<AppInitialProps> {
@@ -21,7 +22,10 @@ export default class QCApp extends App {
       <LocationProvider>
         <ScreenWidthProvider>
           <ScrollPositionProvider>
-            <Helmet link={[ { rel: 'manifest', href: 'manifest.json' } ]} />
+            <Head>
+              <link rel="manifest" href="/manifest.json" />
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600|Open+Sans:300,400&display=swap" />
+            </Head>
             <Component {...pageProps} />
           </ScrollPositionProvider>
         </ScreenWidthProvider>

@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -20,12 +21,11 @@ import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
 import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
 
-import HeroHome from '../images/backgrounds/hero-home.jpg';
 import Link from 'next/link';
+import HeroHome from '../images/backgrounds/hero-home.jpg';
 
-const IndexPage = () => (
+const IndexPage: NextPage = () => (
   <DefaultLayout>
-    <SEO title="Home" />
 
     <section id="first-section" className="text-light">
       <Container>

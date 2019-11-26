@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -9,7 +10,9 @@ import { DefaultLayout } from '../layouts/default-layout';
 
 const CoursesPage: NextPage = () => (
   <DefaultLayout>
-    <SEO title="Courses" />
+    <Head>
+      <title>Courses - QC Career School</title>
+    </Head>
 
     <Container>
       <Row>

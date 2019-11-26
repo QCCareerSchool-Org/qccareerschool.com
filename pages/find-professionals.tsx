@@ -16,6 +16,7 @@ import { Profile } from '../models/profile';
 import { Province } from '../models/province';
 import { LocationStateContext } from '../providers/location';
 
+import Card from 'react-bootstrap/Card';
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 interface Props {
@@ -151,43 +152,49 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         </Container>
       </section>
 
-      <section>
+      <section className="bg-light">
         <Container>
           <Row>
             <Col xs={12} md={6} lg={5} className="mb-5 mb-md-0">
-              <form method="post" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="countryCode">Country</label>
-                  <select className="form-control" id="countryCode" value={state.countryCode} onChange={handleCountryCodeChange}>
-                    {props.countries?.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
-                  </select>
-                </div>
-                {state.provinces.length
-                  ? (
+              <Card className="shadow">
+                <Card.Body>
+                  <form method="post" onSubmit={handleSubmit}>
+                    <div className="row">
+                      <div className="form-group col-12 col-md-6">
+                        <label htmlFor="firstName">First Name</label>
+                        <input type="text" className="form-control" id="firstName" value={state.firstName} onChange={e => dispatch({ type: 'setFirstName', payload: { firstName: e.target.value } })} />
+                      </div>
+                      <div className="form-group col-12 col-md-6">
+                        <label htmlFor="lastName">Last Name</label>
+                        <input type="text" className="form-control" id="lastName" value={state.lastName} onChange={e => dispatch({ type: 'setLastName', payload: { lastName: e.target.value } })} />
+                      </div>
+                    </div>
                     <div className="form-group">
-                      <label htmlFor="countryCode">{provinceLabel}</label>
-                      <select className="form-control" id="provinceCode" value={state.provinceCode || ''} onChange={handleProvinceCodeChange}>
-                        {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
+                      <label htmlFor="countryCode">Country</label>
+                      <select className="form-control" id="countryCode" value={state.countryCode} onChange={handleCountryCodeChange}>
+                        {props.countries?.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
                       </select>
                     </div>
-                  )
-                  : null
-                }
-                <div className="form-group">
-                  <label htmlFor="firstName">First Name</label>
-                  <input type="text" className="form-control" id="firstName" value={state.firstName} onChange={e => dispatch({ type: 'setFirstName', payload: { firstName: e.target.value } })} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="lastName">Last Name</label>
-                  <input type="text" className="form-control" id="lastName" value={state.lastName} onChange={e => dispatch({ type: 'setLastName', payload: { lastName: e.target.value } })} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="area">Area</label>
-                  <input type="text" className="form-control" id="area" value={state.area} onChange={e => dispatch({ type: 'setArea', payload: { area: e.target.value } })} />
-                </div>
+                    {state.provinces.length
+                      ? (
+                        <div className="form-group">
+                          <label htmlFor="provinceCode">{provinceLabel}</label>
+                          <select className="form-control" id="provinceCode" value={state.provinceCode || ''} onChange={handleProvinceCodeChange}>
+                            {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
+                          </select>
+                        </div>
+                      )
+                      : null
+                    }
+                    <div className="form-group">
+                      <label htmlFor="area">Area</label>
+                      <input type="text" className="form-control" id="area" value={state.area} onChange={e => dispatch({ type: 'setArea', payload: { area: e.target.value } })} />
+                    </div>
 
-                <Button type="submit">Search</Button>
-              </form>
+                    <Button type="submit">Search</Button>
+                  </form>
+                </Card.Body>
+              </Card>
             </Col>
             <Col xs={12} md={6} lg={7}>
               {results ? <SearchResults profiles={results} /> : null}
@@ -197,10 +204,10 @@ const FindProfessionalsPage: NextPage<Props> = props => {
       </section>
 
       <style jsx>{`
-      #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome});
-        background-position: 50% 20%;
-      }
+#first-section {
+  background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome});
+  background-position: 50% 20%;
+}
       `}</style>
 
     </DefaultLayout>
