@@ -1,31 +1,97 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
-import Button from 'react-bootstrap/Button';
+import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 
-import { Background } from '../components/background';
 import { DefaultLayout } from '../layouts/default-layout';
+import { LocationStateContext } from '../providers/location';
 
-const ContactPage: NextPage = () => (
-  <DefaultLayout>
-    <Head>
-      <title>Contact Us - QC Career School</title>
-    </Head>
+import HeroHome from '../images/backgrounds/hero-home.jpg';
 
-    <Background image="home">
+const ContactPage: NextPage = () => {
+  const location = useContext(LocationStateContext);
+
+  function address(): JSX.Element {
+    switch (location?.countryCode) {
+      case 'GB': return (
+        <>
+          186 St. Albans Road<br />
+          Suite 18<br />
+          Watford WD24 4AS<br />
+          0800 066 4734
+        </>
+      );
+      case 'AU': return (
+        <>
+          78 Williams Street<br />
+          Suite 23<br />
+          Sydney, NSW 2011<br />
+          1800 531 923
+        </>
+      );
+      case 'NZ': return (
+        <>
+          78 Williams Street<br />
+          Suite 23<br />
+          Sydney, NSW 2011<br />
+          Australia
+          0800-451-979
+        </>
+      );
+      case 'CA': return (
+        <>
+          38 McArthur Avenue<br />
+          Ottawa, ON K1L 6R2<br />
+          1-833-600-3751
+        </>
+      );
+      case 'US': return (
+        <>
+          7201 Wisconsin Avenue<br />
+          Suite 440<br />
+          Bethesda, MD 20814<br />
+          1-833-600-3751
+        </>
+      );
+      default: return (
+        <>
+          38 McArthur Avenue<br />
+          Ottawa, ON K1L 6R2<br />
+          Canada<br />
+          +1-613-749-8248
+        </>
+      );
+    }
+  }
+
+  return (
+    <DefaultLayout>
+      <Head>
+        <title>Contact Us - QC Career School</title>
+      </Head>
+
       <section id="first-section" className="text-light">
         <Container>
           <h1>Contact</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum eros, lacinia sed dapibus sed, accumsan ut diam. In commodo, nisi eu ullamcorper pretium, eros felis fringilla nunc, quis laoreet urna lectus ut elit. Duis non fringilla justo. Sed quis mauris vitae massa ornare rhoncus sed eu risus. In hac habitasse platea dictumst. In nisl enim, maximus vel felis vitae, dictum efficitur ipsum. In malesuada, lacus malesuada mattis semper, tellus erat ultrices purus, gravida egestas mauris mi eget turpis. Mauris sem orci, porttitor ac nisi sit amet, varius consectetur purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean nec justo ut eros convallis ornare. Ut tincidunt arcu et congue mattis. Quisque vitae consectetur libero. Sed ac sem gravida, condimentum orci eget, efficitur turpis.</p>
-          <p>Suspendisse potenti. Praesent bibendum pretium neque, quis imperdiet erat hendrerit vitae. Donec maximus ipsum et urna fermentum, nec vulputate odio gravida. Nunc commodo pulvinar ex. Ut non egestas odio. Suspendisse eget elit sollicitudin, pharetra sapien id, mattis velit. In pharetra convallis nibh a mattis. In egestas nunc non libero luctus, in porta erat gravida. Donec ut sodales dui, ut ornare ipsum. Phasellus pretium, urna ac fermentum rhoncus, ante nulla semper orci, eu pulvinar turpis metus rhoncus enim.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi ut dignissim ligula, a rutrum orci. Suspendisse maximus faucibus luctus. Duis commodo condimentum viverra. Duis et odio mollis, eleifend odio at, lacinia massa. Nam ultrices malesuada lacus ut porttitor. Nam mattis pharetra cursus. Vestibulum imperdiet efficitur dolor sed eleifend. Quisque sodales purus nunc. Donec dignissim pretium interdum. Proin a porta quam, vitae dignissim justo. Morbi et hendrerit erat, luctus elementum erat. Aenean dignissim est eu lorem accumsan, vel commodo justo lobortis. Ut risus quam, finibus quis nibh eu, maximus sodales sapien. Aliquam semper leo ut turpis tristique sodales.</p>
-          <p><Link href="/example"><a>Example</a></Link></p>
-          <Button size="sm">Sdsds</Button>
         </Container>
       </section>
-    </Background>
-  </DefaultLayout>
-);
+
+      <section>
+        <Container>
+          {address()}
+        </Container>
+      </section>
+
+      <style jsx={true}>{`
+        #first-section {
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 50% 0;
+          background-size: cover;
+        }
+      `}</style>
+
+    </DefaultLayout>
+  );
+};
 
 export default ContactPage;

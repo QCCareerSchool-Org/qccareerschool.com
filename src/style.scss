@@ -3,6 +3,7 @@
  */
 $theme-colors: (
   "primary": #e3165a,
+  "primary-dark": #a31041,
   "secondary": #554dff,
   "gray": #9095a5,
   "light": #f6f7fb,
@@ -76,6 +77,10 @@ $navbar-toggler-border-radius:      $border-radius;
 $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-btn-padding-x)
 
 @import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  overflow-y: scroll;
+}
 
 @media (max-width: 575px) {
   h1, .h1 { font-size: 2.25rem }
@@ -205,6 +210,8 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 .btn.btn-lg.caps { letter-spacing: 1.5px }
 
 .nav-tabs { border-bottom: 1px solid #e9ecef }
+
+pre { color: inherit }
 
 // @media (min-width: 979px) {
 //   .nav .dropdown:hover > .dropdown-menu {

@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import { useContext, useEffect, useReducer, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -15,8 +16,8 @@ import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { Province } from '../models/province';
 import { LocationStateContext } from '../providers/location';
+import { ScreenWidthContext } from '../providers/screen-width';
 
-import Card from 'react-bootstrap/Card';
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 interface Props {
@@ -66,6 +67,7 @@ function reducer(state: State, action: Action) {
 
 const FindProfessionalsPage: NextPage<Props> = props => {
   const location = useContext(LocationStateContext);
+  const screenWidth = useContext(ScreenWidthContext);
   const [ state, dispatch ] = useReducer(reducer, {
     provinces: [],
     provinceCode: null,
@@ -76,6 +78,10 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   const [ results, setResults ] = useState<Profile[]>();
   const [ provinceLabel, setProvinceLabel ] = useState<string>();
   const [ error, setError ] = useState(false);
+
+  const lg = screenWidth >= 992;
+  const md = screenWidth >= 768;
+  const sm = screenWidth >= 576;
 
   useEffect(() => {
     if (location?.countryCode) {
@@ -155,20 +161,10 @@ const FindProfessionalsPage: NextPage<Props> = props => {
       <section className="bg-light">
         <Container>
           <Row>
-            <Col xs={12} md={6} lg={5} className="mb-5 mb-md-0">
+            <Col xs={12} sm={10} md={8} lg={5} className="offset-sm-1 offset-md-2 offset-lg-0 mb-5 mb-lg-0">
               <Card className="shadow">
                 <Card.Body>
                   <form method="post" onSubmit={handleSubmit}>
-                    <div className="row">
-                      <div className="form-group col-12 col-md-6">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="text" className="form-control" id="firstName" value={state.firstName} onChange={e => dispatch({ type: 'setFirstName', payload: { firstName: e.target.value } })} />
-                      </div>
-                      <div className="form-group col-12 col-md-6">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input type="text" className="form-control" id="lastName" value={state.lastName} onChange={e => dispatch({ type: 'setLastName', payload: { lastName: e.target.value } })} />
-                      </div>
-                    </div>
                     <div className="form-group">
                       <label htmlFor="countryCode">Country</label>
                       <select className="form-control" id="countryCode" value={state.countryCode} onChange={handleCountryCodeChange}>
@@ -190,24 +186,33 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                       <label htmlFor="area">Area</label>
                       <input type="text" className="form-control" id="area" value={state.area} onChange={e => dispatch({ type: 'setArea', payload: { area: e.target.value } })} />
                     </div>
-
-                    <Button type="submit">Search</Button>
+                    <div className="row">
+                      <div className="form-group col-12 col-md-6">
+                        <label htmlFor="firstName">First Name</label>
+                        <input type="text" className="form-control" id="firstName" value={state.firstName} onChange={e => dispatch({ type: 'setFirstName', payload: { firstName: e.target.value } })} />
+                      </div>
+                      <div className="form-group col-12 col-md-6">
+                        <label htmlFor="lastName">Last Name</label>
+                        <input type="text" className="form-control" id="lastName" value={state.lastName} onChange={e => dispatch({ type: 'setLastName', payload: { lastName: e.target.value } })} />
+                      </div>
+                    </div>
+                    <Button type="submit" className="mt-2">Search</Button>
                   </form>
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} md={6} lg={7}>
-              {results ? <SearchResults profiles={results} /> : null}
+            <Col xs={12} lg={7} className={sm ? 'text-left' : 'text-center'}>
+              {results ? <SearchResults profiles={results} maxPages={sm ? 9 : 3} /> : null}
             </Col>
           </Row>
         </Container>
       </section>
 
       <style jsx>{`
-#first-section {
-  background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome});
-  background-position: 50% 20%;
-}
+        #first-section {
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 50% 0;
+          background-size: cover;
+        }
       `}</style>
 
     </DefaultLayout>

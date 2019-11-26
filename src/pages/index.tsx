@@ -5,10 +5,12 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { SEO } from '../components/seo';
+import { Bar } from '../components/bar';
+import { CourseCard } from '../components/course-card';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Emblem from '../images/35-year-emblem.png';
+import HeroHome from '../images/backgrounds/hero-home.jpg';
 import DesignFaculties from '../images/design-faculties-modern-living-room.jpg';
 import EventFaculties from '../images/event-faculties-table.jpg';
 import MakeupFaculties from '../images/makeup-faculties-applying-eyeliner.jpg';
@@ -17,12 +19,6 @@ import StyleFaculties from '../images/style-faculties-shopping-clothes.jpg';
 import TravelFaculties from '../images/travel-faculties-woman-hiking.jpg';
 import WritingFaculties from '../images/writing-faculties-woman.jpg';
 import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
-
-import { Bar } from '../components/bar';
-import { CourseCard } from '../components/course-card';
-
-import Link from 'next/link';
-import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 const IndexPage: NextPage = () => (
   <DefaultLayout>
@@ -165,7 +161,8 @@ const IndexPage: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome});
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
+        background-size: cover;
       }
     `}</style>
 

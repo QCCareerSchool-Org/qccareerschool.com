@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
-export const usePage = (pc: number, initialPage: number = 0): [ number, number[], () => void, () => void, (p: number) => void, Dispatch<SetStateAction<number>> ] => {
-  const maxPages = 6;
+export const usePage = (pc: number, maxPages: number, initialPage: number = 0): [ number, number[], () => void, () => void, (p: number) => void, Dispatch<SetStateAction<number>> ] => {
   const midPoint = Math.ceil(maxPages / 2);
 
   const [ pageCount, setPageCount ] = useState<number>(pc);
@@ -51,7 +50,7 @@ export const usePage = (pc: number, initialPage: number = 0): [ number, number[]
       newPages.push(i);
     }
     setPages(newPages);
-  }, [ page, pageCount ]);
+  }, [ page, pageCount, maxPages ]);
 
   return [ page, pages, incrementPage, decrementPage, setPage, setPageCount ];
 };
