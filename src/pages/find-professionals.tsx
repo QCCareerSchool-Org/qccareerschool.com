@@ -28,6 +28,7 @@ interface Props {
 
 interface State {
   provinces: Province[];
+  profession: string;
   countryCode?: string;
   provinceCode: string | null;
   firstName: string;
@@ -36,6 +37,7 @@ interface State {
 }
 
 type Action =
+  | { type: 'setProfession', payload: { profession: string } }
   | { type: 'setCountryCode', payload: { countryCode: string; provinces: Province[] } }
   | { type: 'setProvinceCode', payload: { provinceCode: string } }
   | { type: 'setFirstName', payload: { firstName: string } }
@@ -45,6 +47,8 @@ type Action =
 function reducer(state: State, action: Action) {
   console.log('dispatch!', action);
   switch (action.type) {
+    case 'setProfession':
+      return { ...state, profession: action.payload.profession };
     case 'setCountryCode':
       return {
         ...state,
@@ -69,6 +73,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   const location = useContext(LocationStateContext);
   const screenWidth = useContext(ScreenWidthContext);
   const [ state, dispatch ] = useReducer(reducer, {
+    profession: 'makeup artist',
     provinces: [],
     provinceCode: null,
     firstName: '',
@@ -110,6 +115,12 @@ const FindProfessionalsPage: NextPage<Props> = props => {
     return provinces;
   }
 
+  function handleProfessionChange(event: React.ChangeEvent) {
+    const target = event.target as HTMLSelectElement;
+    const profession = target.value;
+    dispatch({ type: 'setProfession', payload: { profession } });
+  }
+
   async function handleCountryCodeChange(event: React.ChangeEvent) {
     const target = event.target as HTMLSelectElement;
     const countryCode = target.value;
@@ -125,11 +136,12 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     const payload = {
+      profession: state.profession,
+      countryCode: state.countryCode,
+      provinceCode: state.provinceCode,
+      area: state.area,
       firstName: state.firstName,
       lastName: state.lastName,
-      area: state.area,
-      provinceCode: state.provinceCode,
-      countryCode: state.countryCode,
     };
     const searchResponse = await fetch(`https://www.qccareerschool.com/profiles/?${getQueryString(payload)}`);
     if (searchResponse.ok) {
@@ -164,8 +176,52 @@ const FindProfessionalsPage: NextPage<Props> = props => {
             <Col xs={12} sm={10} md={8} lg={5} className="offset-sm-1 offset-md-2 offset-lg-0 mb-5 mb-lg-0">
               <Card className="shadow-lg rounded-lg text-dark">
                 <Card.Body>
-                <Card.Title className="mb-4">Find a Professional</Card.Title>
+                  <Card.Title className="mb-4">Find a Professional</Card.Title>
                   <form method="post" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="profession">Profession</label>
+                      <select className="form-control" id="profession" value={state.profession} onChange={handleProfessionChange}>
+                        <optgroup label="QC Makeup Academy">
+                          <option>makeup artist</option>
+                          <option>airbrush makeup artist</option>
+                          <option>special fx makeup artist</option>
+                          <option>hair stylist</option>
+                        </optgroup>
+                        <optgroup label="QC Event School">
+                          <option>event planner</option>
+                          <option>wedding planner</option>
+                          <option>event decorator</option>
+                          <option>corporate event planner</option>
+                          <option>destination wedding planner</option>
+                          <option>luxury event and wedding planner</option>
+                        </optgroup>
+                        <optgroup label="QC Design School">
+                          <option>interior decorator</option>
+                          <option>home stager</option>
+                          <option>interior redesigner</option>
+                          <option>green designer</option>
+                          <option>landscape designer</option>
+                          <option>feng shui consultant</option>
+                          <option>color consultant</option>
+                          <option>professional organizer</option>
+                        </optgroup>
+                        <optgroup label="QC Travel School">
+                          <option>travel consultant</option>
+                        </optgroup>
+                        <optgroup label="QC Style Academy">
+                          <option>personal stylist</option>
+                          <option>fashion merchandiser</option>
+                          <option>editorial stylist</option>
+                        </optgroup>
+                        <optgroup label="Winghill Writing School">
+                          <option>screenwriter</option>
+                        </optgroup>
+                        <optgroup label="QC Wellness Studies">
+                          <option>sleep consultant</option>
+                        </optgroup>
+                      </select>
+                    </div>
+
                     <div className="form-group">
                       <label htmlFor="countryCode">Country</label>
                       <select className="form-control" id="countryCode" value={state.countryCode} onChange={handleCountryCodeChange}>
