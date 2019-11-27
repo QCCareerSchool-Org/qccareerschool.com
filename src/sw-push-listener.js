@@ -8,7 +8,7 @@ self.addEventListener('push', event => {
   if (event.data) {
     try {
       const data = event.data.json();
-      if (typeof data.title !== 'unknown') {
+      if (typeof data.title !== 'undefined') {
         const promiseChain = self.registration.showNotification(data.title, { body: data.body });
         event.waitUntil(promiseChain);
       } else {

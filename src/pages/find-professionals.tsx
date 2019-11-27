@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { SearchResults } from '../components/search-results';
-import { getQueryString } from '../functions';
+import { askPermission, getQueryString } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
@@ -162,7 +162,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         <Container>
           <Row>
             <Col xs={12} md={10} lg={8} xl={6}>
-              <h1>Find Professionals</h1>
+              <h1 onClick={() => askPermission()}>Find Professionals</h1>
               <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
             </Col>
           </Row>
