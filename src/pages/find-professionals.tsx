@@ -152,7 +152,6 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   }
 
   if (props.errorCode) {
-    console.log('error', props.errorMessage);
     return <ErrorPage statusCode={props.errorCode} />;
   }
 
