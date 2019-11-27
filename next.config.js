@@ -13,12 +13,14 @@ const nextConfig = {
   webpack: (config) => {
     // this will output your push listener file to .next folder
     // check CopyWebpackPlugin docs if you want to change the destination (e.g. /static or /.next/static)
-    config.plugins.push(new CopyPlugin(['./src/sw-push-listener.js']));
+    config.plugins.push(new CopyPlugin([
+      { from: './src/sw-push-listener.js', to: './static' },
+    ]));
     return config;
   },
   generateInDevMode: true,
   workboxOpts: {
-    importScripts: [ './src/sw-push-listener.js' ],
+    importScripts: [ './sw-push-listener.js' ],
     swDest: 'static/service-worker.js',
     runtimeCaching: [
       {
