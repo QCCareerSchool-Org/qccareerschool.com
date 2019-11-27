@@ -1,12 +1,21 @@
-'use static';
+'use strict';
+
+self.addEventListener('install', () => {
+  console.log('[serviceWorker] installed');
+});
 
 self.addEventListener('push', event => {
   if (event.data) {
-    console.log('This push event has data: ', event.data.text());
-  } else {
-    console.log('This push event has no data.');
+    try {
+      const data = event.data.json();
+      if (typeof data.title !== 'unknown') {
+        const promiseChain = self.registration.showNotification(data.title, { body: data.body });
+        event.waitUntil(promiseChain);
+      } else {
+        throw Error('invalid data');
+      }
+    } catch (err) {
+      console.log('[serviceWorker] Error: ', err);
+    }
   }
-  const promiseChain = self.registration.showNotification('Hello, World.');
-
-  event.waitUntil(promiseChain);
 });
