@@ -20,7 +20,7 @@ const nextConfig = {
   },
   generateInDevMode: true,
   workboxOpts: {
-    importScripts: [ './sw-push-listener.js' ],
+    importScripts: [ '/sw-push-listener.js' ],
     swDest: 'static/service-worker.js',
     runtimeCaching: [
       {
