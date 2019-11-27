@@ -33,7 +33,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       bg={scrollPosition > maxPosition ? 'light' : undefined}
       variant={scrollPosition > maxPosition ? undefined : 'dark'}
       expand="md"
-      className={`${scrollPosition > maxPosition ? 'shadow' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
+      className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
     >
       <Container>
         <div id="nav-wrapper">

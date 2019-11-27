@@ -162,8 +162,9 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         <Container>
           <Row>
             <Col xs={12} sm={10} md={8} lg={5} className="offset-sm-1 offset-md-2 offset-lg-0 mb-5 mb-lg-0">
-              <Card className="shadow">
+              <Card className="shadow-lg rounded-lg text-dark">
                 <Card.Body>
+                <Card.Title className="mb-4">Find a Professional</Card.Title>
                   <form method="post" onSubmit={handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="countryCode">Country</label>
