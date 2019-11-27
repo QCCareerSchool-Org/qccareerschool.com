@@ -22,13 +22,21 @@ export function nl2br(str?: string | null, xhtml?: boolean) {
   return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
 }
 
-export const askPermission = () => {
+/**
+ * Wraps the Notification.requestPermission function so that we know we're always dealing
+ * with a Promise and not the deprecated callback version
+ */
+const requestPermission = async () => {
   return new Promise((resolve, reject) => {
     const permissionResult = Notification.requestPermission(resolve);
     if (permissionResult) {
       permissionResult.then(resolve, reject);
     }
-  }).then(permissionResult => {
+  });
+};
+
+export const subscribe = () => {
+  requestPermission().then(permissionResult => {
     if (permissionResult !== 'granted') {
       throw Error(`We weren't granted permission. User selected "${permissionResult}".`);
     }
@@ -43,13 +51,19 @@ export const askPermission = () => {
       applicationServerKey: 'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U',
     });
   }).then(subscription => {
-    console.log(subscription);
+    console.log(subscription.toJSON());
+    const body = {
+      endpoint: subscription.endpoint,
+      expirationTime: subscription.expirationTime,
+      p256dh: subscription.getKey('p256dh'),
+      auth: subscription.getKey('auth'),
+    };
     return fetch('https://api.qccareerschool.com/subscriptions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(subscription),
+      body: JSON.stringify(body),
     });
   }).then(response => {
     if (!response.ok) {
