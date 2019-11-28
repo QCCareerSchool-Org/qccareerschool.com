@@ -1,4 +1,7 @@
 /* eslint no-extend-native: 0 */
+
+// https://github.com/zeit/next.js/tree/canary/examples/with-polyfills
+
 // core-js comes with Next.js. So, you can import it like below
 import arrayIncludes from 'core-js/features/array/virtual/includes';
 import stringIncludes from 'core-js/features/string/virtual/includes';

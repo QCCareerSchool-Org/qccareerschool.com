@@ -30,7 +30,10 @@ export function nl2br(str?: string | null, xhtml?: boolean) {
  */
 const requestPermission = async () => {
   return new Promise((resolve, reject) => {
-    const permissionResult = Notification.requestPermission(resolve);
+    if (!('Notification' in window)) {
+      reject(Error('Notification object is not supported'));
+    }
+    const permissionResult = window.Notification.requestPermission(resolve);
     if (permissionResult) {
       permissionResult.then(resolve, reject);
     }

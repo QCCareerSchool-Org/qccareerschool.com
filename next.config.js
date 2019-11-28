@@ -6,11 +6,12 @@ const withOffline = require('next-offline');
 
 const nextConfig = {
   // target: 'serverless',
-  // transformManifest: manifest => ['/'].concat(manifest), // add the homepage to the cache
+  transformManifest: manifest => ['/'].concat(manifest), // add the homepage to the cache
   // // Trying to set NODE_ENV=production when running yarn dev causes a build-time error so we
   // // turn on the SW in dev mode so that we can actually test it
   
   webpack: (config) => {
+    // https://github.com/zeit/next.js/tree/canary/examples/with-polyfills
     const originalEntry = config.entry
     config.entry = async () => {
       const entries = await originalEntry();
@@ -20,11 +21,11 @@ const nextConfig = {
       return entries;
     }
 
-    // this will output your push listener file to .next folder
-    // check CopyWebpackPlugin docs if you want to change the destination (e.g. /static or /.next/static)
+    // this will output the push listener file to .next/static folder
     config.plugins.push(new CopyPlugin([
       { from: './src/sw-push-listener.js', to: './static' },
     ]));
+
     return config;
   },
   generateInDevMode: true,
