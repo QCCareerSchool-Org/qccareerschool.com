@@ -58,6 +58,7 @@ export const subscribe = async (): Promise<number | null> => {
     const response = await fetch('https://api.qccareerschool.com/qccareerschool/subscriptions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify(subscription.toJSON()),
     });
     if (!response.ok) {
