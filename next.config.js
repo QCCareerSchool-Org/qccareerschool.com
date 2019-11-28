@@ -11,6 +11,15 @@ const nextConfig = {
   // // turn on the SW in dev mode so that we can actually test it
   
   webpack: (config) => {
+    const originalEntry = config.entry
+    config.entry = async () => {
+      const entries = await originalEntry();
+      if (entries['main.js'] && !entries['main.js'].includes('./client/polyfills.js')) {
+        entries['main.js'].unshift('./polyfills.js')
+      }
+      return entries;
+    }
+
     // this will output your push listener file to .next folder
     // check CopyWebpackPlugin docs if you want to change the destination (e.g. /static or /.next/static)
     config.plugins.push(new CopyPlugin([

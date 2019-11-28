@@ -7,8 +7,8 @@ export const ScrollPositionProvider: React.FC = ({ children }) => {
   const [ scrollPosition, setScrollPosition ] = useState(0);
 
   useEffect(() => {
-    setScrollPosition(window.scrollY);
-    const handleScroll = () => setScrollPosition(window.scrollY);
+    setScrollPosition(window.pageYOffset);
+    const handleScroll = () => setScrollPosition(window.pageYOffset);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -17,7 +17,7 @@ export const ScrollPositionProvider: React.FC = ({ children }) => {
 
   return (
     <ScrollPositionContext.Provider value={scrollPosition}>
-        {children}
+      {children}
     </ScrollPositionContext.Provider>
   );
 };
