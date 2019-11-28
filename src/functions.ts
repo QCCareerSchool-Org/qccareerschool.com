@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-unfetch';
+
 export const getTelephoneNumber = (countryCode: string) => {
   if (countryCode === 'CA') {
     return '1-833-000-000';
@@ -35,45 +37,39 @@ const requestPermission = async () => {
   });
 };
 
-export const subscribe = () => {
-  requestPermission().then(permissionResult => {
+/**
+ * Asks a user for notification permission, subscribes the user and sends the subscription
+ * data to the backend for storage. Returns the id of the subscription in the database.
+ */
+export const subscribe = async (): Promise<number | null> => {
+  try {
+    const permissionResult = await requestPermission();
     if (permissionResult !== 'granted') {
       throw Error(`We weren't granted permission. User selected "${permissionResult}".`);
     }
-  }).then(() => {
-    return navigator.serviceWorker.getRegistration();
-  }).then(registration => {
+    const registration = await navigator.serviceWorker.getRegistration();
     if (!registration) {
       throw Error('Service worker is not registered');
     }
-    return registration.pushManager.subscribe({
+    const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: 'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U',
     });
-  }).then(subscription => {
-    console.log(subscription.toJSON());
-    const body = {
-      endpoint: subscription.endpoint,
-      expirationTime: subscription.expirationTime,
-      p256dh: subscription.getKey('p256dh'),
-      auth: subscription.getKey('auth'),
-    };
-    return fetch('https://api.qccareerschool.com/subscriptions', {
+    const response = await fetch('https://api.qccareerschool.com/qccareerschool/subscriptions', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(subscription.toJSON()),
     });
-  }).then(response => {
     if (!response.ok) {
       throw Error('Bad status code from server');
     }
-    return response.json();
-  }).then(responseData => {
+    const responseData = await response.json();
     if (!responseData.success) {
       throw Error('Bad response from server');
     }
-    console.log(responseData);
-  }).catch(console.error);
+    return responseData.id as number;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
 };

@@ -162,7 +162,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         <Container>
           <Row>
             <Col xs={12} md={10} lg={8} xl={6}>
-              <h1 onClick={() => subscribe()}>Find Professionals</h1>
+              <h1>Find Professionals</h1>
               <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
             </Col>
           </Row>
