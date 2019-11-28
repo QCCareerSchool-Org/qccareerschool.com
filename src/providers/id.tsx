@@ -1,6 +1,6 @@
-import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { login } from '../functions';
 
 // better to keep these separate, rather than combining in an array or object
 export const IdStateContext = React.createContext<number | undefined>(undefined);
@@ -14,25 +14,12 @@ export const IdProvider: React.FC = ({ children }) => {
     if (storedId) {
       setId(parseInt(storedId, 10));
     } else {
-      login();
-    }
-
-    async function login() {
-      try {
-        const response = await fetch('https://api.qccareerschool.com/qccareerschool/login', {
-          method: 'POST',
-          credentials: 'include',
-        });
-        if (!response.ok) {
-          throw Error('Bad status code from server');
+      login().then(userId => {
+        if (userId) {
+          setId(userId);
+          window.localStorage?.setItem('id', userId.toString());
         }
-        const data = await response.json();
-        console.log(data);
-        if (data.id) {
-          setId(data.id);
-          window.localStorage?.setItem('id', data.id);
-        }
-      } catch (err) { /* */ }
+      });
     }
   }, []);
 

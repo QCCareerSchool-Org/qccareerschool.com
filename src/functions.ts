@@ -74,3 +74,24 @@ export const subscribe = async (): Promise<number | null> => {
     return null;
   }
 };
+
+export async function login(): Promise<number | null> {
+  try {
+    const response = await fetch('https://api.qccareerschool.com/qccareerschool/login', {
+      method: 'POST',
+      credentials: 'include',
+    });
+    if (!response.ok) {
+      throw Error('Bad status code from server');
+    }
+    const data = await response.json();
+    console.log(data);
+    if (typeof data.id !== 'number') {
+      throw Error('Unexpected response');
+    }
+    return data.id as number;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+}
