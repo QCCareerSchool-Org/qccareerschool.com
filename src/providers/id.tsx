@@ -19,7 +19,7 @@ export const IdProvider: React.FC = ({ children }) => {
 
     async function login() {
       try {
-        const response = await fetch('https://api.qccareerschool.com/qccareerschool/id', {
+        const response = await fetch('https://api.qccareerschool.com/qccareerschool/login', {
           method: 'POST',
           credentials: 'include',
         });
@@ -27,6 +27,7 @@ export const IdProvider: React.FC = ({ children }) => {
           throw Error('Bad status code from server');
         }
         const data = await response.json();
+        console.log(data);
         if (data.id) {
           setId(data.id);
           window.localStorage?.setItem('id', data.id);
