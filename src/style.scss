@@ -81,6 +81,7 @@ $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-
 
 body {
   overflow-y: scroll;
+  overscroll-behavior-y: none;
 }
 
 @media (max-width: 575px) {
