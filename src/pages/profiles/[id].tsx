@@ -174,9 +174,9 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
 
 ProfilePage.getInitialProps = async context => {
   const { id } = context.query;
-  const url = `https://www.qccareerschool.com/profiles/?id=${id}`;
-  const response = await fetch(url);
+  const url = `https://api.qccareerschool.com/qccareerschool/profiles/${id}`;
   try {
+    const response = await fetch(url);
     if (response.status !== 200) {
       throw new HttpStatus.HttpResponse(response.status, response.statusText);
     }
@@ -186,7 +186,7 @@ ProfilePage.getInitialProps = async context => {
     }
     return { profile };
   } catch (err) {
-    const errorCode = err instanceof HttpStatus.HttpResponse ? err.getStatusCode() : 500;
+    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (context.res) {
       context.res.statusCode = errorCode;
     }

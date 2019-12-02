@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import { Auth } from './providers/auth';
 
 export const getTelephoneNumber = (countryCode: string) => {
   if (countryCode === 'CA') {
@@ -44,7 +45,7 @@ const requestPermission = async () => {
  * Asks a user for notification permission, subscribes the user and sends the subscription
  * data to the backend for storage. Returns the id of the subscription in the database.
  */
-export const subscribe = async (): Promise<number | null> => {
+export const subscribe = async (): Promise<number | undefined> => {
   try {
     const permissionResult = await requestPermission();
     if (permissionResult !== 'granted') {
@@ -74,27 +75,70 @@ export const subscribe = async (): Promise<number | null> => {
     return responseData.id as number;
   } catch (err) {
     console.error(err);
-    return null;
+    return undefined;
   }
 };
 
-export async function login(): Promise<number | null> {
+export async function login(emailAddress: string, password: string): Promise<Auth | number> {
   try {
     const response = await fetch('https://api.qccareerschool.com/qccareerschool/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ emailAddress, password }),
+      credentials: 'include',
+    });
+    if (!response.ok) {
+      return response.status;
+    }
+    const data = await response.json() as Auth;
+    if (!(typeof data.id === 'number' && typeof data.emailAddress === 'string')) {
+      return 500;
+    }
+    return data;
+  } catch (err) {
+    console.error(err);
+    return 500;
+  }
+}
+
+export async function cookieLogin(): Promise<Auth | undefined> {
+  try {
+    const response = await fetch('https://api.qccareerschool.com/qccareerschool/cookieLogin', {
       method: 'POST',
       credentials: 'include',
     });
     if (!response.ok) {
       throw Error('Bad status code from server');
     }
-    const data = await response.json();
-    console.log(data);
-    if (typeof data.id !== 'number') {
+    const data = await response.json() as Auth;
+    if (!(typeof data.id === 'number' && typeof data.emailAddress === 'string')) {
       throw Error('Unexpected response');
     }
-    return data.id as number;
+    return data;
   } catch (err) {
     console.error(err);
-    return null;
+    return undefined;
+  }
+}
+
+export async function register(emailAddress: string, password: string): Promise<Auth | number> {
+  try {
+    const response = await fetch('https://api.qccareerschool.com/qccareerschool/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ emailAddress, password }),
+      credentials: 'include',
+    });
+    if (!response.ok) {
+      return response.status;
+    }
+    const data = await response.json() as Auth;
+    if (!(typeof data.id === 'number' && typeof data.emailAddress === 'string')) {
+      return 500;
+    }
+    return data;
+  } catch (err) {
+    console.error(err);
+    return 500;
   }
 }

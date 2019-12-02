@@ -99,10 +99,19 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   }, [ state.countryCode ]);
 
   async function changeCountry(countryCode: string) {
-    const provinces = await getProvinces(countryCode);
-    dispatch({ type: 'setCountryCode', payload: { countryCode, provinces } });
+    try {
+      const provinces = await getProvinces(countryCode);
+      dispatch({ type: 'setCountryCode', payload: { countryCode, provinces } });
+    } catch (err) {
+      setError(true);
+    }
   }
 
+  /**
+   * Returns an array of Provinces for a particular country
+   * @param countryCode The two-letter country code
+   * @throws Error
+   */
   async function getProvinces(countryCode: string): Promise<Province[]> {
     let provinces: Province[] = [];
     if (needsProvince(countryCode)) {
@@ -110,8 +119,11 @@ const FindProfessionalsPage: NextPage<Props> = props => {
       const provinceResponse = await fetch(url);
       if (provinceResponse.ok) {
         provinces = await provinceResponse.json();
+      } else {
+        throw Error('Unable to fetch provinces');
       }
     }
+    throw Error('Unable to fetch provinces');
     return provinces;
   }
 
@@ -143,10 +155,14 @@ const FindProfessionalsPage: NextPage<Props> = props => {
       firstName: state.firstName,
       lastName: state.lastName,
     };
-    const searchResponse = await fetch(`https://www.qccareerschool.com/profiles/?${getQueryString(payload)}`);
-    if (searchResponse.ok) {
-      setResults(await searchResponse.json());
-    } else {
+    try {
+      const searchResponse = await fetch(`https://api.qccareerschool.com/qccareerschool/profiles/?${getQueryString(payload)}`);
+      if (searchResponse.ok) {
+        setResults(await searchResponse.json());
+      } else {
+        throw Error('Unable to fetch profiles');
+      }
+    } catch (err) {
       setError(true);
     }
   }
@@ -284,7 +300,7 @@ FindProfessionalsPage.getInitialProps = async context => {
     const countries = await countryResponse.json();
     return { countries };
   } catch (err) {
-    const errorCode = err instanceof HttpStatus.HttpResponse ? err.getStatusCode() : 500;
+    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (context.res) {
       context.res.statusCode = errorCode;
     }
