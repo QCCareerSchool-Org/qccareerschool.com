@@ -3,7 +3,6 @@ import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import { useContext, useEffect, useRef, useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -88,7 +87,6 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         throw Error('Unable to fetch provinces');
       }
     }
-    throw Error('Unable to fetch provinces');
     return provinces;
   }
 
