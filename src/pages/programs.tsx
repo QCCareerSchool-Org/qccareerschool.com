@@ -1,6 +1,4 @@
 import { NextPage } from 'next';
-import { Image } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,7 +7,6 @@ import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import { Background } from '../components/background';
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 import DesignHomeStaging from '../images/course-design-homestaging.jpg';
 import DesignInterior from '../images/course-design-interior.jpg';
@@ -39,16 +36,13 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="text-dark bg-light right">
+    <section className="text-dark bg-light text-right">
       <Container>
-        <Row>
-          <Col xs={12} md={6} />
-          <Col xs={12} md={6}>
+        <Row className="mb-4">
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
             <h2>QC Makeup Academy</h2>
             <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned l, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
-            <div style={{ float: 'right' }}>
-              <Bar className="text-primary mb-5 right-bar" />
-            </div>
           </Col>
         </Row>
 
@@ -362,10 +356,6 @@ const ProgramsPage: NextPage = () => (
         #first-section {
           background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
           background-size: cover;
-        }
-
-        .right {
-          text-align: right;
         }
       `}</style>
 
