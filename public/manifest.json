@@ -3,10 +3,10 @@
   "short_name": "QC Career",
   "description": "QC Carer School is a leader in online distance education",
   "start_url": "/",
-  "theme_color": "#e3165a",
+  "theme_color": "#02003a",
   "background_color": "#ffffff",
   "orientation": "any",
-  "display": "fullscreen",
+  "display": "minimal_ui",
   "icons": [
     {
       "src": "/icons/android-icon-36x36.png",
