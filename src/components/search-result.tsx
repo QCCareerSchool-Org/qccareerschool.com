@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { MdLocationOn, MdPhone } from 'react-icons/md';
 
-import { relative } from 'path';
 import { Profile } from '../models/profile';
 
 interface Props {
@@ -24,7 +23,7 @@ export const SearchResult: React.FC<Props> = ({ profile }) => {
   return (
     <div className="result">
       <Link href="/profiles/[id]" as={`/profiles/${profile.id}`}>
-        <a target="_blank"><div className="portrait" /></a>
+        <a><div className="portrait" /></a>
       </Link>
       <div className="content">
         <h3>{profile.firstName} {profile.lastName}</h3>
