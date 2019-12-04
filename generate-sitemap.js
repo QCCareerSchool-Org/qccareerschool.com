@@ -10,9 +10,9 @@ function walk(dir, fileList) {
     if (stat.isDirectory()) {
       fileList = walk(path.join(dir, file), fileList);
     } else if (file.startsWith('index.')) {
-      fileList.push(dir);
+      fileList.push({ file: dir, modified: stat.mtime.toISOString() });
     } else {
-      fileList.push(path.join(dir, file));
+      fileList.push({ file: path.join(dir, file), modified: stat.mtime.toISOString() });
     }
   });
   return fileList;
@@ -21,21 +21,22 @@ function walk(dir, fileList) {
 function getFiles() {
   const basePath = path.join(__dirname, 'src', 'pages');
   const pages = walk(basePath)
+  // changes local file to server file
   return pages.map(p => {
-    let returnValue = p;
-    if (returnValue.startsWith(basePath)) {
-      returnValue = returnValue.substring(basePath.length)
+    let serverFile = p.file;
+    if (serverFile.startsWith(basePath)) {
+      serverFile = serverFile.substring(basePath.length)
     }
     [ '.tsx', '.jsx', '.ts', '.js' ].forEach(ext => {
-      if (returnValue.endsWith(ext)) {
-        returnValue = returnValue.substring(0, returnValue.indexOf(ext));
+      if (serverFile.endsWith(ext)) {
+        serverFile = serverFile.substring(0, serverFile.indexOf(ext));
       }
     });
-    returnValue = returnValue.replace(/\\/g, '/');
-    if (returnValue === '') {
-      returnValue = '/';
+    serverFile = serverFile.replace(/\\/g, '/');
+    if (serverFile === '') {
+      serverFile = '/';
     }
-    return returnValue;
+    return { ...p, file: serverFile };
   });
 }
 
@@ -44,8 +45,9 @@ function createSitemap(basepath, filenames) {
     { _attr: { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' } },
     ...filenames.map(f => ({
       url: [
-        { loc: basepath + f },
-        { priority: 0.5 },
+        { loc: basepath + f.file },
+        { lastmod: f.modified },
+        { priority: 0.7 },
       ],
     })),
   ]};
