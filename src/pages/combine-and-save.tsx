@@ -17,6 +17,7 @@ import WriteMakeup from '../images/combine-screenwriting-makeup.jpg';
 
 const CombinePage: NextPage = () => (
   <DefaultLayout>
+
     <section id="first-section" className="text-light">
       <Container>
         <h1>Combine Your Training and Save</h1>
@@ -66,7 +67,7 @@ const CombinePage: NextPage = () => (
             <h3>Interior Decorating + Event Décor</h3>
             <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
             <div className="text-left">
-            <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
             </div>
           </Col>
         </Row>
@@ -80,7 +81,7 @@ const CombinePage: NextPage = () => (
             <h3>Destination Wedding Planning + Travel &amp; Tourism</h3>
             <p className="mb-4">A destination wedding planner’s job is to plan &amp; coordinate the big day. At some point, the planner will work with a travel agent to organize the wedding party’s travel arrangements and itinerary for the full trip. Why not skip the middle man and have the skills to offer the full service yourself? Again, clients will be thrilled to rely on a single professional who offers a no-hassle service like this.</p>
             <div className="text-left">
-            <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
             </div>
           </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
@@ -100,7 +101,7 @@ const CombinePage: NextPage = () => (
             <h3>Screenwriting + Master Makeup Artistry</h3>
             <p className="mb-4">Being a trained makeup artist can help you develop and sell your screenplays. Having the skills and expertise in makeup (or special FX makeup) can help you better envision the final product as you’re developing your script. Furthermore, when selling your script, you can take the time to actually get a few models and develop a portfolio of concepts to give stakeholders a visual to go along with your written work.</p>
             <div className="text-left">
-            <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
             </div>
           </Col>
         </Row>
@@ -114,7 +115,7 @@ const CombinePage: NextPage = () => (
             <h3>Event Décor + Color Consulting</h3>
             <p className="mb-4">Event Decorators often need inspiration to create an event’s theme. Being able to draw that inspiration from your clients’ life can make the event even more magical. The color consultant course shows you how to bring the color wheel to life and help your clients choose a color palette that speaks to them. As an event decorator, you can use these same skills to develop an event theme that will wow any client.</p>
             <div className="text-left">
-            <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
             </div>
           </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
@@ -134,7 +135,7 @@ const CombinePage: NextPage = () => (
             <h3>Any QC Course + Business Communications</h3>
             <p className="mb-4">Being able to communicate effectively as a business owner is a key to success. Though most of QC’s courses will come with complete business training, this training mainly focuses on how to start and manage your business (business plan, marketing, etc.). Some QC students could greatly benefit from a basic business communications course where the focus is on how to effectively connect with clients, colleagues, and stakeholders alike.</p>
             <div className="text-left">
-            <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
             </div>
           </Col>
         </Row>
@@ -154,16 +155,13 @@ const CombinePage: NextPage = () => (
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
         background-size: cover;
       }
-
       #second-section {
         background: linear-gradient(35deg, #011037, #130820);
       }
-
       .sideImage {
         width: 100%;
       }
-    `}
-    </style>
+    `}</style>
   </DefaultLayout>
 );
 
