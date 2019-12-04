@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Link from 'next/link';
 
 interface Props {
   img: any;
@@ -16,7 +16,18 @@ export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, butt
   <Card.Body>
     <Card.Title>{title}</Card.Title>
     <Card.Text>{body}</Card.Text>
-    <Link href={buttonLink}><a className="btn btn-sm btn-secondary">{buttonText}</a></Link>
+    <div className="buttonSpacer" />
+    <Link href={buttonLink}><a className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a></Link>
   </Card.Body>
+
+  <style jsx>{`
+    .buttonSpacer {
+      height: 31px;
+    }
+    .absoluteButton {
+      position: absolute;
+      bottom: 20px;
+    }
+  `}</style>
 </Card>
 );
