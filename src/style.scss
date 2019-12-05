@@ -125,6 +125,13 @@ section#first-section { padding-top: 7rem }
   section#first-section { padding-top: 12rem }
 }
 
+.overlay-section { padding-bottom: 4rem; }
+.negative-section { margin-top: -4rem; }
+@media screen and (min-width: 768px) {
+  .overlay-section { padding-bottom: 8rem; }
+  .negative-section { margin-top: -10rem; }
+}
+
 // // remove bottom margin from paragraphs that come at the end of columns or containers
 // .container,
 // .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1,
