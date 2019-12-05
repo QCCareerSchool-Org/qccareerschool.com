@@ -37,18 +37,12 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section id="makeup-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Makeup Academy</h2>
-            <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned l, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-
+    <OverlaySection backgroundImage={MakeupMaster}>
+      <>
+        <h2>QC Makeup Academy</h2>
+        <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
+      </>
+    </OverlaySection>
     <section className="negative-section">
       <Container>
         <Row>
@@ -108,17 +102,12 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section id="event-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Event School</h2>
-            <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning!  QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+    <OverlaySection backgroundImage={EventWedding}>
+      <>
+        <h2>QC Event School</h2>
+        <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning!  QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
+      </>
+    </OverlaySection>
 
     <section className="negative-section">
       <Container>
@@ -172,18 +161,12 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section id="design-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Design School</h2>
-            <p className="lead">Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-
+    <OverlaySection backgroundImage={DesignInterior}>
+      <>
+        <h2>QC Design School</h2>
+        <p className="lead">Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
+      </>
+    </OverlaySection>
     <section className="negative-section">
       <Container>
         <Row>
@@ -224,17 +207,12 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section id="pet-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Pet Studies</h2>
-            <p className="lead">Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+    <OverlaySection backgroundImage={PetGrooming}>
+      <>
+        <h2>QC Pet Studies</h2>
+        <p className="lead">Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
+      </>
+    </OverlaySection>
 
     <section className="negative-section">
       <Container>
@@ -265,66 +243,10 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section id="wellness-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Wellness Studies</h2>
-            <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-
-    <section className="negative-section">
-      <Container>
-        <Row>
-          <CardColumn>
-            <CourseCard
-              img={WellnessSleep}
-              title="Pediatric Sleep Consultant Course"
-              body="Sleep consulting is a growing industry as more busy parents seek professional help to ensure their child gets a good night’s rest. As a highly trained professional sleep consultant, you’ll have the tools and skills you need to work with families in desperate need of your help. After all, if baby doesn’t sleep, the parents don’t either!"
-              buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
-            />
-          </CardColumn>
-        </Row>
-      </Container>
-    </section>
-
-    <section id="writing-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>Winghill School of Writing</h2>
-            <p className="lead">Let your creativity soar with a number of writing courses that will help you become a published author.  Winghill’s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor.  Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-
-    <section className="negative-section">
-      <Container>
-        <Row>
-          <CardColumn>
-            <CourseCard
-              img={WellnessSleep}
-              title="Pediatric Sleep Consultant Course"
-              body="Sleep consulting is a growing industry as more busy parents seek professional help to ensure their child gets a good night’s rest. As a highly trained professional sleep consultant, you’ll have the tools and skills you need to work with families in desperate need of your help. After all, if baby doesn’t sleep, the parents don’t either!"
-              buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
-            />
-          </CardColumn>
-        </Row>
-      </Container>
-    </section>
-
-    <OverlaySection id="travel-section">
+    <OverlaySection backgroundImage={WellnessSleep}>
       <>
-        <h2>QC Travel School</h2>
-        <p className="lead">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
+        <h2>QC Wellness Studies</h2>
+        <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
       </>
     </OverlaySection>
 
@@ -344,13 +266,71 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="bg-dark text-light text-right">
+    <OverlaySection backgroundImage={MakeupMaster}>
+      <>
+        <h2>Winghill School of Writing</h2>
+        <p className="lead">Let your creativity soar with a number of writing courses that will help you become a published author.  Winghill’s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor.  Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others</p>
+      </>
+    </OverlaySection>
+
+    <section className="negative-section">
       <Container>
         <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <h2>QC Style Academy</h2>
-            <p className="lead">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
-          </Col>
+          <CardColumn>
+            <CourseCard
+              img={MakeupMaster}
+              title="Lorem Ipsum"
+              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend eget eros at vulputate. Nam sit amet feugiat lectus. Donec diam erat, ullamcorper quis tincidunt non, aliquam ut nisi. Praesent quis fringilla massa, nec eleifend mi. Donec finibus vulputate venenatis. Nam id sapien eget mi bibendum aliquam non ac turpis. Proin congue sagittis tellus id porta."
+              buttonText="Full Course Overview"
+              buttonLink="http://gooogle.com"
+            />
+          </CardColumn>
+        </Row>
+      </Container>
+    </section>
+
+    <OverlaySection backgroundImage={MakeupMaster}>
+      <>
+        <h2>QC Travel School</h2>
+        <p className="lead">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
+      </>
+    </OverlaySection>
+
+    <section className="negative-section">
+      <Container>
+        <Row>
+          <CardColumn>
+            <CourseCard
+              img={MakeupMaster}
+              title="Lorem Ipsum"
+              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend eget eros at vulputate. Nam sit amet feugiat lectus. Donec diam erat, ullamcorper quis tincidunt non, aliquam ut nisi. Praesent quis fringilla massa, nec eleifend mi. Donec finibus vulputate venenatis. Nam id sapien eget mi bibendum aliquam non ac turpis. Proin congue sagittis tellus id porta."
+              buttonText="Full Course Overview"
+              buttonLink="http://gooogle.com"
+            />
+          </CardColumn>
+        </Row>
+      </Container>
+    </section>
+
+    <OverlaySection backgroundImage={MakeupMaster}>
+      <>
+        <h2>QC Style Academy</h2>
+        <p className="lead">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
+      </>
+    </OverlaySection>
+
+    <section className="negative-section">
+      <Container>
+        <Row>
+          <CardColumn>
+            <CourseCard
+              img={MakeupMaster}
+              title="Lorem Ipsum"
+              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend eget eros at vulputate. Nam sit amet feugiat lectus. Donec diam erat, ullamcorper quis tincidunt non, aliquam ut nisi. Praesent quis fringilla massa, nec eleifend mi. Donec finibus vulputate venenatis. Nam id sapien eget mi bibendum aliquam non ac turpis. Proin congue sagittis tellus id porta."
+              buttonText="Full Course Overview"
+              buttonLink="http://gooogle.com"
+            />
+          </CardColumn>
         </Row>
       </Container>
     </section>
@@ -360,36 +340,15 @@ const ProgramsPage: NextPage = () => (
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
         background-size: cover;
       }
-      #makeup-section {
-        background: url(${MakeupMaster}) 0 0;
-        background-size: cover;
-      }
-      #event-section {
-        background-size: cover;
-      }
-      #design-section {
-        background-size: cover;
-      }
-      #pet-section {
-        background-size: cover;
-      }
-      #wellness-section {
-        background-size: cover;
-      }
-      #writing-section {
-        background-size: cover;
-      }
-      #travel-section {
-        background-size: cover;
-      }
     `}</style>
 
   </DefaultLayout >
 );
 
 const CardColumn: React.FC = ({ children }) => <div className="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-0 mb-g d-flex">{children}</div>;
-const OverlaySection: React.FC<{ id: string; }> = ({ children, id }) => (
-  <section id={id} className="overlay-section bg-dark text-light text-shadow text-right">
+
+const OverlaySection: React.FC<{ backgroundImage: string; }> = ({ children, backgroundImage }) => (
+  <section className="overlay-section bg-dark text-light text-shadow text-right">
     <Container>
       <Row>
         <Col xs={12} md={8} className="offset-md-4">
@@ -398,6 +357,13 @@ const OverlaySection: React.FC<{ id: string; }> = ({ children, id }) => (
         </Col>
       </Row>
     </Container>
+
+    <style jsx>{`
+      section {
+        background: url(${backgroundImage}) 0 0;
+        background-size: cover;
+      }
+    `}</style>
   </section>
 );
 
