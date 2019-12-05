@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { useMemo } from 'react';
 import { pageSize } from '../reducers/find-professionals';
-import { boundFindProfessionals, State } from '../store';
+import { boundActionCreators, State } from '../store';
 import { SearchResult } from './search-result';
 
 interface Props {
@@ -53,12 +53,12 @@ export const SearchResults: React.FC<Props> = ({ maxPages = 5 }) => {
           <>
             <p>Showing results {page * pageSize + 1} to {Math.min((page + 1) * pageSize, total)}</p>
             <div className="mb-4">
-              <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.decrementPage()}><IoIosArrowBack /></button>
+              <button className="btn btn-primary-dark btn-sm" onClick={() => boundActionCreators.findProfessionals.decrementPage()}><IoIosArrowBack /></button>
               {pages.map(i => (
                 // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
-                <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => boundFindProfessionals.setPage(i)}>{i + 1}</button>
+                <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => boundActionCreators.findProfessionals.setPage(i)}>{i + 1}</button>
               ))}
-              <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.incrementPage()}><IoIosArrowForward /></button>
+              <button className="btn btn-primary-dark btn-sm" onClick={() => boundActionCreators.findProfessionals.incrementPage()}><IoIosArrowForward /></button>
             </div>
           </>
         )
@@ -69,12 +69,12 @@ export const SearchResults: React.FC<Props> = ({ maxPages = 5 }) => {
       {pageCount > 1
         ? (
           <>
-            <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.decrementPage()}><IoIosArrowBack /></button>
+            <button className="btn btn-primary-dark btn-sm" onClick={() => boundActionCreators.findProfessionals.decrementPage()}><IoIosArrowBack /></button>
             {pages.map(i => (
               // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
-              <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => boundFindProfessionals.setPage(i)}>{i + 1}</button>
+              <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => boundActionCreators.findProfessionals.setPage(i)}>{i + 1}</button>
             ))}
-            <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.incrementPage()}><IoIosArrowForward /></button>
+            <button className="btn btn-primary-dark btn-sm" onClick={() => boundActionCreators.findProfessionals.incrementPage()}><IoIosArrowForward /></button>
           </>
         )
         : null

@@ -142,3 +142,7 @@ export async function register(emailAddress: string, password: string): Promise<
     return 500;
   }
 }
+
+export function needsProvince(countryCode: string): boolean {
+  return [ 'CA', 'US', 'AU' ].includes(countryCode);
+}

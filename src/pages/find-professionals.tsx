@@ -12,14 +12,12 @@ import { useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
 import { getQueryString } from '../functions';
-import { useFindProfessionals } from '../hooks/useFindProfessionals';
 import { DefaultLayout } from '../layouts/default-layout';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
-import { Province } from '../models/province';
 import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
-import { boundFindProfessionals, State } from '../store';
+import { boundActionCreators, State } from '../store';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
@@ -32,22 +30,31 @@ interface SubmitPayload {
   lastName: string;
 }
 
+interface ProfessionGroup {
+  name: string;
+  professions: string[];
+}
+
 interface Props {
   errorCode?: number;
   errorMessage?: any;
   countries?: Country[];
+  professionGroups?: ProfessionGroup[];
 }
 
 const FindProfessionalsPage: NextPage<Props> = props => {
+  const form = useSelector((p: State) => p.findProfessionals.form);
+  const provinces = useSelector((p: State) => p.findProfessionals.provinces);
   const profiles = useSelector((p: State) => p.findProfessionals.profiles);
   const scrollPosition = useSelector((p: State) => p.findProfessionals.scrollPosition);
 
   const location = useContext(LocationStateContext);
   const screenWidth = useContext(ScreenWidthContext);
-  const [ state, dispatch ] = useFindProfessionals();
+
   const [ provinceLabel, setProvinceLabel ] = useState<string>();
   const [ error, setError ] = useState(false);
   const [ refreshing, setRefreshing ] = useState(false);
+
   const scrollStart = useRef(0);
   const scrolledEnough = useRef(false);
   const submitPayload = useRef<SubmitPayload>();
@@ -58,7 +65,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
   useEffect(() => {
     window.scrollTo(0, scrollPosition);
-    const handleScroll = () => boundFindProfessionals.scroll(window.pageYOffset);
+    const handleScroll = () => boundActionCreators.findProfessionals.scroll(window.pageYOffset);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -67,82 +74,37 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
   useEffect(() => {
     if (location?.countryCode) {
-      changeCountry(location.countryCode);
-    }
-  }, [ location?.countryCode ]);
-
-  useEffect(() => {
-    setProvinceLabel(state.countryCode === 'CA' ? 'Province' : 'State');
-  }, [ state.countryCode ]);
-
-  async function changeCountry(countryCode: string) {
-    try {
-      const provinces = await getProvinces(countryCode);
-      dispatch({ type: 'setCountryCode', payload: { countryCode, provinces } });
-    } catch (err) {
-      setError(true);
-    }
-  }
-
-  /**
-   * Returns an array of Provinces for a particular country
-   * @param countryCode The two-letter country code
-   * @throws Error
-   */
-  async function getProvinces(countryCode: string): Promise<Province[]> {
-    let provinces: Province[] = [];
-    if (needsProvince(countryCode)) {
-      const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${countryCode}`;
-      const provinceResponse = await fetch(url);
-      if (provinceResponse.ok) {
-        provinces = await provinceResponse.json();
-      } else {
-        throw Error('Unable to fetch provinces');
+      if (form.countryCode === '') {
+        boundActionCreators.findProfessionals.updateCountry(location.countryCode);
       }
     }
-    return provinces;
-  }
+  }, [ form.countryCode, location?.countryCode ]);
 
-  function handleProfessionChange(event: React.ChangeEvent) {
-    const target = event.target as HTMLSelectElement;
-    const profession = target.value;
-    dispatch({ type: 'setProfession', payload: { profession } });
-  }
+  useEffect(() => {
+    if (props.professionGroups?.length) {
+      boundActionCreators.findProfessionals.updateProfession(props.professionGroups[0].professions[0]);
+    }
+  }, [ props.professionGroups ]);
 
-  async function handleCountryCodeChange(event: React.ChangeEvent) {
-    const target = event.target as HTMLSelectElement;
-    const countryCode = target.value;
-    await changeCountry(countryCode);
-  }
-
-  function handleProvinceCodeChange(event: React.ChangeEvent) {
-    const target = event.target as HTMLSelectElement;
-    const provinceCode = target.value;
-    dispatch({ type: 'setProvinceCode', payload: { provinceCode } });
-  }
+  useEffect(() => {
+    setProvinceLabel(form.countryCode === 'CA' ? 'Province' : 'State');
+  }, [ form.countryCode ]);
 
   function handleFormSubmit(event: React.FormEvent) {
     event.preventDefault();
-    submitPayload.current = {
-      profession: state.profession,
-      countryCode: state.countryCode,
-      provinceCode: state.provinceCode,
-      area: state.area,
-      firstName: state.firstName,
-      lastName: state.lastName,
-    };
+    submitPayload.current = { ...form };
     submit();
   }
 
   async function submit() {
-    setError(false);
     try {
       const searchResponse = await fetch(`https://api.qccareerschool.com/qccareerschool/profiles/?${getQueryString(submitPayload.current)}`);
       if (!searchResponse.ok) {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
       const data: Profile[] = await searchResponse.json();
-      boundFindProfessionals.set(data);
+      boundActionCreators.findProfessionals.set(data);
+      setError(false);
     } catch (err) {
       setError(true);
     }
@@ -199,60 +161,29 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                     <form method="post" onSubmit={handleFormSubmit}>
                       <div className="form-group">
                         <label htmlFor="profession">Profession</label>
-                        <select className="form-control" id="profession" value={state.profession} onChange={handleProfessionChange}>
-                          <optgroup label="QC Makeup Academy">
-                            <option>makeup artist</option>
-                            <option>airbrush makeup artist</option>
-                            <option>special fx makeup artist</option>
-                            <option>hair stylist</option>
-                          </optgroup>
-                          <optgroup label="QC Event School">
-                            <option>event planner</option>
-                            <option>wedding planner</option>
-                            <option>event decorator</option>
-                            <option>corporate event planner</option>
-                            <option>destination wedding planner</option>
-                            <option>luxury event and wedding planner</option>
-                          </optgroup>
-                          <optgroup label="QC Design School">
-                            <option>interior decorator</option>
-                            <option>home stager</option>
-                            <option>interior redesigner</option>
-                            <option>green designer</option>
-                            <option>landscape designer</option>
-                            <option>feng shui consultant</option>
-                            <option>color consultant</option>
-                            <option>professional organizer</option>
-                          </optgroup>
-                          <optgroup label="QC Travel School">
-                            <option>travel consultant</option>
-                          </optgroup>
-                          <optgroup label="QC Style Academy">
-                            <option>personal stylist</option>
-                            <option>fashion merchandiser</option>
-                            <option>editorial stylist</option>
-                          </optgroup>
-                          <optgroup label="Winghill Writing School">
-                            <option>screenwriter</option>
-                          </optgroup>
-                          <optgroup label="QC Wellness Studies">
-                            <option>sleep consultant</option>
-                          </optgroup>
+                        <select className="form-control" id="profession" value={form.profession} onChange={e => boundActionCreators.findProfessionals.updateProfession(e.target.value)}>
+                          {props.professionGroups?.map(group => (
+                            <optgroup key={group.name} label={group.name}>
+                              {group.professions.map(p => (
+                                <option key={p}>{p}</option>
+                              ))}
+                            </optgroup>
+                          ))}
                         </select>
                       </div>
 
                       <div className="form-group">
                         <label htmlFor="countryCode">Country</label>
-                        <select className="form-control" id="countryCode" value={state.countryCode} onChange={handleCountryCodeChange}>
+                        <select className="form-control" id="countryCode" value={form.countryCode} onChange={e => boundActionCreators.findProfessionals.updateCountry(e.target.value)}>
                           {props.countries?.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
                         </select>
                       </div>
-                      {state.provinces.length
+                      {provinces.length
                         ? (
                           <div className="form-group">
                             <label htmlFor="provinceCode">{provinceLabel}</label>
-                            <select className="form-control" id="provinceCode" value={state.provinceCode || ''} onChange={handleProvinceCodeChange}>
-                              {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
+                            <select className="form-control" id="provinceCode" value={form.provinceCode || ''} onChange={e => boundActionCreators.findProfessionals.updateProvince(e.target.value)}>
+                              {provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                             </select>
                           </div>
                         )
@@ -260,16 +191,16 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                       }
                       <div className="form-group">
                         <label htmlFor="area">Area</label>
-                        <input type="text" className="form-control" id="area" value={state.area} onChange={e => dispatch({ type: 'setArea', payload: { area: e.target.value } })} />
+                        <input type="text" className="form-control" id="area" value={form.area} onChange={e => boundActionCreators.findProfessionals.updateArea(e.target.value)} />
                       </div>
                       <div className="row">
                         <div className="form-group col-12 col-md-6">
                           <label htmlFor="firstName">First Name</label>
-                          <input type="text" className="form-control" id="firstName" value={state.firstName} onChange={e => dispatch({ type: 'setFirstName', payload: { firstName: e.target.value } })} />
+                          <input type="text" className="form-control" id="firstName" value={form.firstName} onChange={e => boundActionCreators.findProfessionals.updateFirstName(e.target.value)} />
                         </div>
                         <div className="form-group col-12 col-md-6">
                           <label htmlFor="lastName">Last Name</label>
-                          <input type="text" className="form-control" id="lastName" value={state.lastName} onChange={e => dispatch({ type: 'setLastName', payload: { lastName: e.target.value } })} />
+                          <input type="text" className="form-control" id="lastName" value={form.lastName} onChange={e => boundActionCreators.findProfessionals.updateLastName(e.target.value)} />
                         </div>
                       </div>
                       <Button type="submit" className="mt-2">Search</Button>
@@ -304,13 +235,52 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 };
 
 FindProfessionalsPage.getInitialProps = async context => {
+  const professionGroups: ProfessionGroup[] = [
+    {
+      name: 'QC Makeup Academy',
+      professions: [
+        'makeup artist',
+        'airbrush makeup artist',
+        'special fx makeup artist',
+        'hair stylist',
+      ],
+    },
+    {
+      name: 'QC Event School',
+      professions: [
+        'event planner',
+        'wedding planner',
+        'event decorator',
+        'corporate event planner',
+        'destination wedding planner',
+        'luxury event and wedding planner',
+      ],
+    },
+    {
+      name: 'QC Design School',
+      professions: [
+        'interior decorator',
+        'home stager',
+        'interior redesigner',
+        'green designer',
+        'landscape designer',
+        'feng shui consultant',
+        'color consultant',
+        'professional organizer',
+      ],
+    },
+    { name: 'QC Travel School', professions: [ 'travel consultant' ] },
+    { name: 'QC Style Academy', professions: [ 'personal stylist', 'fashion merchandiser', 'editorial stylist' ] },
+    { name: 'Winghill Writing School', professions: [ 'screenwriter' ] },
+    { name: 'QC Wellness Studies', professions: [ 'sleep consultant' ] },
+  ];
   try {
     const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countries');
     if (countryResponse.status !== 200) {
       throw new HttpStatus.InternalServerError(countryResponse.statusText);
     }
     const countries = await countryResponse.json();
-    return { countries };
+    return { countries, professionGroups };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (context.res) {
@@ -319,9 +289,5 @@ FindProfessionalsPage.getInitialProps = async context => {
     return { errorCode, errorMessage: err.message };
   }
 };
-
-function needsProvince(countryCode: string): boolean {
-  return [ 'CA', 'US', 'AU' ].includes(countryCode);
-}
 
 export default FindProfessionalsPage;
