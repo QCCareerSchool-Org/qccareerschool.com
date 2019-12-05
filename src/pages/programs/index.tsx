@@ -52,7 +52,7 @@ const ProgramsPage: NextPage = () => (
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={MakeupMaster}
               title="Master Makeup Artistry Course"
@@ -60,8 +60,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={MakeupPro}
               title="Pro Makeup Workshop with Nathan Johnson"
@@ -69,8 +69,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={MakeupSkin}
               title="Skincare Course"
@@ -78,8 +78,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={MakeupSFX}
               title="Special FX Makeup Course"
@@ -87,8 +87,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={MakeupGlobalBeauty}
               title="Global Beauty Makeup Workshop"
@@ -96,7 +96,7 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
         <h3>Additional Courses for Makeup Artists</h3>
         <ul>
@@ -123,7 +123,7 @@ const ProgramsPage: NextPage = () => (
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={EventWedding}
               title="Event &amp; Wedding Planning Course"
@@ -131,8 +131,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={EventCorporate}
               title="Corporate Event Planning Course"
@@ -140,8 +140,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={EventDecor}
               title="Event Décor Course"
@@ -149,8 +149,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={EventAccelerate}
               title="Accelerate Your Business Workshop"
@@ -158,7 +158,7 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
         <h3>Additional Event Planning Courses:</h3>
         <ul>
@@ -187,7 +187,7 @@ const ProgramsPage: NextPage = () => (
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={DesignInterior}
               title="Interior Decorating Course"
@@ -195,8 +195,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={DesignHomeStaging}
               title="Home Staging Course"
@@ -204,8 +204,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={DesignOrganizing}
               title="Professional Organizing Course"
@@ -213,7 +213,7 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
         <h3>Additional Design Courses:</h3>
         <ul>
@@ -239,7 +239,7 @@ const ProgramsPage: NextPage = () => (
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={PetGrooming}
               title="Dog Grooming Course"
@@ -247,8 +247,8 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </CardColumn>
+          <CardColumn>
             <CourseCard
               img={PetFirstAid}
               title="First Aid for Groomers"
@@ -256,7 +256,7 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
         <h3>Additional Design Courses:</h3>
         <ul>
@@ -280,7 +280,7 @@ const ProgramsPage: NextPage = () => (
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={WellnessSleep}
               title="Pediatric Sleep Consultant Course"
@@ -288,7 +288,7 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
       </Container>
     </section>
@@ -308,7 +308,7 @@ const ProgramsPage: NextPage = () => (
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={WellnessSleep}
               title="Pediatric Sleep Consultant Course"
@@ -316,27 +316,22 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
       </Container>
     </section>
 
-    <section id="travel-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Travel School</h2>
-            <p className="lead">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+    <OverlaySection id="travel-section">
+      <>
+        <h2>QC Travel School</h2>
+        <p className="lead">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
+      </>
+    </OverlaySection>
 
     <section className="negative-section">
       <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <CardColumn>
             <CourseCard
               img={WellnessSleep}
               title="Pediatric Sleep Consultant Course"
@@ -344,7 +339,7 @@ const ProgramsPage: NextPage = () => (
               buttonText="Full Course Overview"
               buttonLink="http://gooogle.com"
             />
-          </Col>
+          </CardColumn>
         </Row>
       </Container>
     </section>
@@ -353,7 +348,6 @@ const ProgramsPage: NextPage = () => (
       <Container>
         <Row>
           <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
             <h2>QC Style Academy</h2>
             <p className="lead">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
           </Col>
@@ -391,6 +385,20 @@ const ProgramsPage: NextPage = () => (
     `}</style>
 
   </DefaultLayout >
+);
+
+const CardColumn: React.FC = ({ children }) => <div className="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-0 mb-g d-flex">{children}</div>;
+const OverlaySection: React.FC<{ id: string; }> = ({ children, id }) => (
+  <section id={id} className="overlay-section bg-dark text-light text-shadow text-right">
+    <Container>
+      <Row>
+        <Col xs={12} md={8} className="offset-md-4">
+          <Bar className="text-primary ml-auto" />
+          {children}
+        </Col>
+      </Row>
+    </Container>
+  </section>
 );
 
 export default ProgramsPage;
