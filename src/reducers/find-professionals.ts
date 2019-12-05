@@ -1,9 +1,11 @@
+import { ThunkAction } from 'redux-thunk';
+
 import { needsProvince } from '../functions';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { Province } from '../models/province';
 
-export const pageSize = 5;
+export const pageSize = 15;
 
 export interface State {
   professions: string[];
@@ -36,6 +38,8 @@ export type Action =
   | { type: 'INCREMENT_PAGE'; }
   | { type: 'DECREMENT_PAGE'; }
   | { type: 'PAGE_SCROLLED'; payload: number; };
+
+type ThunkResult<T> = ThunkAction<T, { findProfessionals: State }, undefined, Action>;
 
 const initialState: State = {
   professions: [],
@@ -77,9 +81,8 @@ export const reducer = ((state: State = initialState, action: Action): State => 
         return { ...state, form: { ...state.form, provinceCode: null } };
       } else if (state.provinces.some(p => p.code === action.payload)) {
         return { ...state, form: { ...state.form, provinceCode: action.payload } };
-      } else {
-        return state;
       }
+      return state;
     case 'FIRST_NAME_SET':
       return { ...state, form: { ...state.form, firstName: action.payload } };
     case 'LAST_NAME_SET':
@@ -112,9 +115,9 @@ export const reducer = ((state: State = initialState, action: Action): State => 
   }
 });
 
-const updateCountry = (countryCode: string) => (dispatch: (action: Action) => void) => {
+const updateCountry = (countryCode: string): ThunkResult<void> => dispatch => {
   if (needsProvince(countryCode)) {
-    const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${countryCode}`;
+    const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${encodeURIComponent(countryCode)}`;
     fetch(url).then(response => {
       if (!response.ok) {
         throw Error('Unable to retreive provinces');
