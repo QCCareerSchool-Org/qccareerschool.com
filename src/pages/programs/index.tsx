@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
+import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
 import OverlaySection from '../../components/overlay-section';
 import { DefaultLayout } from '../../layouts/default-layout';
@@ -344,7 +345,5 @@ const ProgramsPage: NextPage = () => (
     `}</style>
   </DefaultLayout>
 );
-
-const CardColumn: React.FC = ({ children }) => <div className="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-0 mb-g d-flex">{children}</div>;
 
 export default ProgramsPage;
