@@ -27,35 +27,32 @@ import WellnessSleep from '../images/course-welness-sleep.jpg';
 
 const ProgramsPage: NextPage = () => (
   <DefaultLayout>
-    <section id="first-section" className="text-light text-shadow">
+
+    <section id="first-section" className="bg-dark text-light text-shadow">
       <Container>
         <Bar className="text-primary mb-5" />
-        <p>QC Career School </p>
+        <p className="hat">QC Career School</p>
         <h1>Courses &amp; Professional Training Programs</h1>
         <p>Learning online doesn’t have to mean learning on your own. QC’s expert course developers and tutors have spent years developing a unique and comprehensive approach to online learning that will offer the flexibility you need while giving you the high quality training and personalized feedback you deserve!</p>
       </Container>
     </section>
 
-    <section className="bg-light a">
+    <section id="makeup-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
-        <Row className="mb-4 text-right"
-          style={{
-            backgroundImage: `url(${MakeupMaster})`,
-            height: 400,
-          }}
-        >
-          <Col xs={12} md={8} className="offset-md-4 text-light">
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Makeup Academy</h2>
             <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned l, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
           </Col>
         </Row>
+      </Container>
+    </section>
 
+    <section className="negative-section">
+      <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex mobile-layout"
-            style={{
-              marginTop: -100,
-            }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={MakeupMaster}
               title="Master Makeup Artistry Course"
@@ -64,10 +61,7 @@ const ProgramsPage: NextPage = () => (
               buttonLink="http://gooogle.com"
             />
           </Col>
-          <Col xs="12" md="6" className="mb-g d-flex"
-            style={{
-              marginTop: -100,
-            }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={MakeupPro}
               title="Pro Makeup Workshop with Nathan Johnson"
@@ -104,12 +98,7 @@ const ProgramsPage: NextPage = () => (
             />
           </Col>
         </Row>
-      </Container>
-    </section>
-
-    <section className="a">
-      <Container>
-        <h2>Additional Courses for Makeup Artists</h2>
+        <h3>Additional Courses for Makeup Artists</h3>
         <ul>
           <li>Airbrush Makeup Workshop</li>
           <li>Portfolio Development Workshop</li>
@@ -119,44 +108,31 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="bg-light">
+    <section id="event-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
-        <Row className="mb-4 text-right"
-          style={{
-            backgroundImage: `url(${MakeupMaster})`,
-            height: 400,
-          }}
-        >
-          <Col xs={12} md={8} className="offset-md-4 text-light">
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Event School</h2>
             <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning!  QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
           </Col>
         </Row>
-        <Row >
+      </Container>
+    </section>
 
-            <Col xs="12" md="6" className="mb-g d-flex"
-             style={{
-              marginTop: -100,
-              position: 'relative',
-            }}
-
-            >
-              <CourseCard
-                img={EventWedding}
-                title="Event &amp; Wedding Planning Course"
-                body="This dual-certification course will prepare you to plan and coordinate any number of private events from weddings to birthday parties to religious celebrations. You’ll learn how to negotiate with vendors, establish long-lasting client relationships, and budget for any event or client. With QC’s unparalleled business training, you’ll graduate from this course with the knowledge and skills to be a successful planning professional."
-                buttonText="Full Course Overview"
-                buttonLink="http://gooogle.com"
-              />
-            </Col>
-
-          <Col xs="12" md="6" className="mb-g d-flex"
-            style={{
-             marginTop: -100,
-             position: 'relative',
-           }}>
-          >
+    <section className="negative-section">
+      <Container>
+        <Row>
+          <Col xs="12" md="6" className="mb-g d-flex">
+            <CourseCard
+              img={EventWedding}
+              title="Event &amp; Wedding Planning Course"
+              body="This dual-certification course will prepare you to plan and coordinate any number of private events from weddings to birthday parties to religious celebrations. You’ll learn how to negotiate with vendors, establish long-lasting client relationships, and budget for any event or client. With QC’s unparalleled business training, you’ll graduate from this course with the knowledge and skills to be a successful planning professional."
+              buttonText="Full Course Overview"
+              buttonLink="http://gooogle.com"
+            />
+          </Col>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={EventCorporate}
               title="Corporate Event Planning Course"
@@ -165,7 +141,7 @@ const ProgramsPage: NextPage = () => (
               buttonLink="http://gooogle.com"
             />
           </Col>
-          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={EventDecor}
               title="Event Décor Course"
@@ -174,7 +150,7 @@ const ProgramsPage: NextPage = () => (
               buttonLink="http://gooogle.com"
             />
           </Col>
-          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={EventAccelerate}
               title="Accelerate Your Business Workshop"
@@ -184,12 +160,7 @@ const ProgramsPage: NextPage = () => (
             />
           </Col>
         </Row>
-      </Container>
-    </section>
-
-    <section>
-      <Container>
-        <h2>Additional Event Planning Courses:</h2>
+        <h3>Additional Event Planning Courses:</h3>
         <ul>
           <li>Private Event Planning Course</li>
           <li>Wedding Planning Course</li>
@@ -200,27 +171,23 @@ const ProgramsPage: NextPage = () => (
         </ul>
       </Container>
     </section>
-    <section className="bg-light">
+
+    <section id="design-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
-      <Row className="mb-4 text-right text-light"
-          style={{
-            backgroundImage: `url(${MakeupMaster})`,
-            height: 400,
-          }}
-        >
+        <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Design School</h2>
-            <p className="lead">
-              Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
+            <p className="lead">Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
           </Col>
         </Row>
+      </Container>
+    </section>
+
+    <section className="negative-section">
+      <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex"
-           style={{
-            marginTop: -100,
-            position: 'relative',
-          }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={DesignInterior}
               title="Interior Decorating Course"
@@ -229,11 +196,7 @@ const ProgramsPage: NextPage = () => (
               buttonLink="http://gooogle.com"
             />
           </Col>
-          <Col xs="12" md="6" className="mb-g d-flex"
-          style={{
-            marginTop: -100,
-            position: 'relative',
-          }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={DesignHomeStaging}
               title="Home Staging Course"
@@ -252,12 +215,7 @@ const ProgramsPage: NextPage = () => (
             />
           </Col>
         </Row>
-      </Container>
-    </section>
-
-    <section>
-      <Container>
-        <h2>Additional Design Courses:</h2>
+        <h3>Additional Design Courses:</h3>
         <ul>
           <li>Color Consultant Course</li>
           <li>Feng Shui Design Course</li>
@@ -266,26 +224,22 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="bg-light">
+    <section id="pet-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
-        <Row className="mb-4 text-right text-light"
-         style={{
-          backgroundImage: `url(${MakeupMaster})`,
-          height: 400,
-        }}>
+        <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Pet Studies</h2>
-            <p className="lead">
-              Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
+            <p className="lead">Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
           </Col>
         </Row>
+      </Container>
+    </section>
+
+    <section className="negative-section">
+      <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex"
-          style={{
-            marginTop: -100,
-            position: 'relative',
-          }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={PetGrooming}
               title="Dog Grooming Course"
@@ -294,11 +248,7 @@ const ProgramsPage: NextPage = () => (
               buttonLink="http://gooogle.com"
             />
           </Col>
-          <Col xs="12" md="6" className="mb-g d-flex"
-          style={{
-            marginTop: -100,
-            position: 'relative',
-          }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={PetFirstAid}
               title="First Aid for Groomers"
@@ -308,38 +258,29 @@ const ProgramsPage: NextPage = () => (
             />
           </Col>
         </Row>
-      </Container>
-    </section>
-
-    <section>
-      <Container>
-        <h2>Additional Design Courses:</h2>
+        <h3>Additional Design Courses:</h3>
         <ul>
           <li>Breed Styling Workshop</li>
         </ul>
       </Container>
     </section>
 
-    <section className="bg-light">
+    <section id="wellness-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
-      <Row className="mb-4 text-right text-light"
-         style={{
-          backgroundImage: `url(${MakeupMaster})`,
-          height: 400,
-        }}>
+        <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Wellness Studies</h2>
-            <p className="lead">
-              If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
+            <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
           </Col>
         </Row>
+      </Container>
+    </section>
+
+    <section className="negative-section">
+      <Container>
         <Row>
-          <Col xs="12" md="6" className="mb-g d-flex"
-           style={{
-            marginTop: -100,
-            position: 'relative',
-          }}>
+          <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={WellnessSleep}
               title="Pediatric Sleep Consultant Course"
@@ -352,9 +293,9 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="text-dark">
+    <section id="writing-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
-        <Row className="mb-4 text-right">
+        <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>Winghill School of Writing</h2>
@@ -364,9 +305,25 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="text-dark bg-light">
+    <section className="negative-section">
       <Container>
-        <Row className="mb-4 text-right">
+        <Row>
+          <Col xs="12" md="6" className="mb-g d-flex">
+            <CourseCard
+              img={WellnessSleep}
+              title="Pediatric Sleep Consultant Course"
+              body="Sleep consulting is a growing industry as more busy parents seek professional help to ensure their child gets a good night’s rest. As a highly trained professional sleep consultant, you’ll have the tools and skills you need to work with families in desperate need of your help. After all, if baby doesn’t sleep, the parents don’t either!"
+              buttonText="Full Course Overview"
+              buttonLink="http://gooogle.com"
+            />
+          </Col>
+        </Row>
+      </Container>
+    </section>
+
+    <section id="travel-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Container>
+        <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Travel School</h2>
@@ -376,33 +333,70 @@ const ProgramsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="text-dark">
+    <section className="negative-section">
       <Container>
-        <Row className="mb-4 text-right">
-          <Col xs={12} md={8} className="offset-md-4">
-            <Bar className="text-primary ml-auto" />
-            <h2>QC Style Academy</h2>
-            <p className="lead">
-              Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!
-        </p>
+        <Row>
+          <Col xs="12" md="6" className="mb-g d-flex">
+            <CourseCard
+              img={WellnessSleep}
+              title="Pediatric Sleep Consultant Course"
+              body="Sleep consulting is a growing industry as more busy parents seek professional help to ensure their child gets a good night’s rest. As a highly trained professional sleep consultant, you’ll have the tools and skills you need to work with families in desperate need of your help. After all, if baby doesn’t sleep, the parents don’t either!"
+              buttonText="Full Course Overview"
+              buttonLink="http://gooogle.com"
+            />
           </Col>
         </Row>
       </Container>
     </section>
 
-    <style jsx={true}>{`
-        #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
-          background-size: cover;
-        }
+    <section className="bg-dark text-light text-right">
+      <Container>
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
+            <h2>QC Style Academy</h2>
+            <p className="lead">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
-          @media screen and (max-width: 540px) {
+    <style jsx>{`
+      #first-section {
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
+        background-size: cover;
+      }
+      #makeup-section {
+        background: url(${MakeupMaster}) 0 0;
+        background-size: cover;
+      }
+      #event-section {
+        background-size: cover;
+      }
+      #design-section {
+        background-size: cover;
+      }
+      #pet-section {
+        background-size: cover;
+      }
+      #wellness-section {
+        background-size: cover;
+      }
+      #writing-section {
+        background-size: cover;
+      }
+      #travel-section {
+        background-size: cover;
+      }
+      .overlay-section { padding-bottom: 4rem; }
+      .negative-section { margin-top: -4rem; }
+      @media screen and (min-width: 768px) {
+        .overlay-section { padding-bottom: 8rem; }
+        .negative-section { margin-top: -10rem; }
+      }
+    `}</style>
 
-            }
-          }
-      `}</style>
-
-  </DefaultLayout>
+  </DefaultLayout >
 );
 
 export default ProgramsPage;
