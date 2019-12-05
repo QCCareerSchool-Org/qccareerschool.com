@@ -37,6 +37,7 @@
     "next": "^9.1.4",
     "next-offline": "^5.0.0-beta.10",
     "next-optimized-images": "^2.5.4",
+    "next-redux-wrapper": "^4.0.1",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

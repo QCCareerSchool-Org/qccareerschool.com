@@ -8,7 +8,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+import { Store } from 'redux';
 
 import { SearchResults } from '../components/search-results';
 import { getQueryString } from '../functions';
@@ -17,7 +18,8 @@ import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
-import { boundActionCreators, State } from '../store';
+import * as FindProfessionals from '../reducers/find-professionals';
+import { makeBoundActions, State } from '../store';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
@@ -36,13 +38,14 @@ interface ProfessionGroup {
 }
 
 interface Props {
+  store: Store;
+  boundActions: ReturnType<typeof makeBoundActions>;
   errorCode?: number;
-  errorMessage?: any;
   countries?: Country[];
   professionGroups?: ProfessionGroup[];
 }
 
-const FindProfessionalsPage: NextPage<Props> = props => {
+const FindProfessionalsPage: NextPage<Props> = ({ store, boundActions, errorCode, countries, professionGroups }) => {
   const form = useSelector((p: State) => p.findProfessionals.form);
   const provinces = useSelector((p: State) => p.findProfessionals.provinces);
   const profiles = useSelector((p: State) => p.findProfessionals.profiles);
@@ -65,7 +68,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
   useEffect(() => {
     window.scrollTo(0, scrollPosition);
-    const handleScroll = () => boundActionCreators.findProfessionals.scroll(window.pageYOffset);
+    const handleScroll = () => boundActions.findProfessionals.scroll(window.pageYOffset);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -75,16 +78,17 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   useEffect(() => {
     if (location?.countryCode) {
       if (form.countryCode === '') {
-        boundActionCreators.findProfessionals.updateCountry(location.countryCode);
+        boundActions.findProfessionals.updateCountry(location.countryCode);
       }
     }
   }, [ form.countryCode, location?.countryCode ]);
 
   useEffect(() => {
-    if (props.professionGroups?.length) {
-      boundActionCreators.findProfessionals.updateProfession(props.professionGroups[0].professions[0]);
+    if (professionGroups?.length) {
+      // boundActions.findProfessionals.updateProfession(professionGroups[0].professions[0]);
+      store.dispatch(FindProfessionals.actionCreators.updateProfession(professionGroups[0].professions[0]));
     }
-  }, [ props.professionGroups ]);
+  }, [ professionGroups ]);
 
   useEffect(() => {
     setProvinceLabel(form.countryCode === 'CA' ? 'Province' : 'State');
@@ -103,7 +107,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
       const data: Profile[] = await searchResponse.json();
-      boundActionCreators.findProfessionals.set(data);
+      boundActions.findProfessionals.set(data);
       setError(false);
     } catch (err) {
       setError(true);
@@ -131,8 +135,8 @@ const FindProfessionalsPage: NextPage<Props> = props => {
     }
   }
 
-  if (props.errorCode) {
-    return <ErrorPage statusCode={props.errorCode} />;
+  if (errorCode) {
+    return <ErrorPage statusCode={errorCode} />;
   }
 
   return (
@@ -161,8 +165,8 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                     <form method="post" onSubmit={handleFormSubmit}>
                       <div className="form-group">
                         <label htmlFor="profession">Profession</label>
-                        <select className="form-control" id="profession" value={form.profession} onChange={e => boundActionCreators.findProfessionals.updateProfession(e.target.value)}>
-                          {props.professionGroups?.map(group => (
+                        <select className="form-control" id="profession" value={form.profession} onChange={e => boundActions.findProfessionals.updateProfession(e.target.value)}>
+                          {professionGroups?.map(group => (
                             <optgroup key={group.name} label={group.name}>
                               {group.professions.map(p => (
                                 <option key={p}>{p}</option>
@@ -174,15 +178,15 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
                       <div className="form-group">
                         <label htmlFor="countryCode">Country</label>
-                        <select className="form-control" id="countryCode" value={form.countryCode} onChange={e => boundActionCreators.findProfessionals.updateCountry(e.target.value)}>
-                          {props.countries?.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
+                        <select className="form-control" id="countryCode" value={form.countryCode} onChange={e => boundActions.findProfessionals.updateCountry(e.target.value)}>
+                          {countries?.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
                         </select>
                       </div>
                       {provinces.length
                         ? (
                           <div className="form-group">
                             <label htmlFor="provinceCode">{provinceLabel}</label>
-                            <select className="form-control" id="provinceCode" value={form.provinceCode || ''} onChange={e => boundActionCreators.findProfessionals.updateProvince(e.target.value)}>
+                            <select className="form-control" id="provinceCode" value={form.provinceCode || ''} onChange={e => boundActions.findProfessionals.updateProvince(e.target.value)}>
                               {provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                             </select>
                           </div>
@@ -191,16 +195,16 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                       }
                       <div className="form-group">
                         <label htmlFor="area">Area</label>
-                        <input type="text" className="form-control" id="area" value={form.area} onChange={e => boundActionCreators.findProfessionals.updateArea(e.target.value)} />
+                        <input type="text" className="form-control" id="area" value={form.area} onChange={e => boundActions.findProfessionals.updateArea(e.target.value)} />
                       </div>
                       <div className="row">
                         <div className="form-group col-12 col-md-6">
                           <label htmlFor="firstName">First Name</label>
-                          <input type="text" className="form-control" id="firstName" value={form.firstName} onChange={e => boundActionCreators.findProfessionals.updateFirstName(e.target.value)} />
+                          <input type="text" className="form-control" id="firstName" value={form.firstName} onChange={e => boundActions.findProfessionals.updateFirstName(e.target.value)} />
                         </div>
                         <div className="form-group col-12 col-md-6">
                           <label htmlFor="lastName">Last Name</label>
-                          <input type="text" className="form-control" id="lastName" value={form.lastName} onChange={e => boundActionCreators.findProfessionals.updateLastName(e.target.value)} />
+                          <input type="text" className="form-control" id="lastName" value={form.lastName} onChange={e => boundActions.findProfessionals.updateLastName(e.target.value)} />
                         </div>
                       </div>
                       <Button type="submit" className="mt-2">Search</Button>
@@ -215,7 +219,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                     <p>Try again.</p>
                   </>
                 ) : null}
-                {profiles && !error ? <SearchResults maxPages={sm ? 9 : 3} /> : null}
+                {profiles && !error ? <SearchResults boundActions={boundActions} maxPages={sm ? 9 : 3} /> : null}
               </Col>
             </Row>
           </Container>
@@ -235,6 +239,9 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 };
 
 FindProfessionalsPage.getInitialProps = async context => {
+  console.log((context as any).store);
+
+  const boundActions = makeBoundActions((context as any).store);
   const professionGroups: ProfessionGroup[] = [
     {
       name: 'QC Makeup Academy',
@@ -280,14 +287,14 @@ FindProfessionalsPage.getInitialProps = async context => {
       throw new HttpStatus.InternalServerError(countryResponse.statusText);
     }
     const countries = await countryResponse.json();
-    return { countries, professionGroups };
+    return { store: (context as any).store, boundActions, countries, professionGroups };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (context.res) {
       context.res.statusCode = errorCode;
     }
-    return { errorCode, errorMessage: err.message };
+    return { store: (context as any).store, boundActions, errorCode };
   }
 };
 
-export default FindProfessionalsPage;
+export default connect(state => state)(FindProfessionalsPage);

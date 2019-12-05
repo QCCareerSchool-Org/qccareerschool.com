@@ -1,18 +1,23 @@
+import withRedux from 'next-redux-wrapper';
 import App from 'next/app';
 import { Provider } from 'react-redux';
-
-import { store } from '../store';
+import { Store } from 'redux';
 
 import { AuthProvider } from '../providers/auth';
 import { LocationProvider } from '../providers/location';
 import { ScreenWidthProvider } from '../providers/screen-width';
 import { ScrollPositionProvider } from '../providers/scroll-position';
+import { makeStore } from '../store';
 
 import '../style.scss';
 
-export default class QCApp extends App {
+interface Props {
+  store: Store;
+}
+
+class QCApp extends App<Props> {
   public render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
     return (
       <Provider store={store}>
         <AuthProvider>
@@ -28,3 +33,5 @@ export default class QCApp extends App {
     );
   }
 }
+
+export default withRedux(makeStore)(QCApp);
