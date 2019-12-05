@@ -17,7 +17,6 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ className }) => {
-
   const screenWidth = useContext(ScreenWidthContext);
   const scrollPosition = useContext(ScrollPositionContext);
   const [ mobileMenu, setMobileMenu ] = useState(false);

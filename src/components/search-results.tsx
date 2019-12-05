@@ -1,8 +1,9 @@
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useSelector } from 'react-redux';
 
-import { useEffect, useMemo } from 'react';
-import { pageSize, State, store } from '../store';
+import { useMemo } from 'react';
+import { pageSize } from '../reducers/find-professionals';
+import { boundFindProfessionals, State } from '../store';
 import { SearchResult } from './search-result';
 
 interface Props {
@@ -10,9 +11,9 @@ interface Props {
 }
 
 export const SearchResults: React.FC<Props> = ({ maxPages = 5 }) => {
-  const profiles = useSelector((state: State) => state.profiles);
-  const pageCount = useSelector((state: State) => state.pageCount);
-  const page = useSelector((state: State) => state.page);
+  const profiles = useSelector((state: State) => state.findProfessionals.profiles);
+  const pageCount = useSelector((state: State) => state.findProfessionals.pageCount);
+  const page = useSelector((state: State) => state.findProfessionals.page);
 
   const pages = useMemo<number[]>(() => {
     const newPages = [];
@@ -52,12 +53,12 @@ export const SearchResults: React.FC<Props> = ({ maxPages = 5 }) => {
           <>
             <p>Showing results {page * pageSize + 1} to {Math.min((page + 1) * pageSize, total)}</p>
             <div className="mb-4">
-              <button className="btn btn-primary-dark btn-sm" onClick={() => store.dispatch({ type: 'DECREMENT_PAGE' })}><IoIosArrowBack /></button>
+              <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.decrementPage()}><IoIosArrowBack /></button>
               {pages.map(i => (
                 // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
-                <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => store.dispatch({ type: 'SET_PAGE', payload: i })}>{i + 1}</button>
+                <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => boundFindProfessionals.setPage(i)}>{i + 1}</button>
               ))}
-              <button className="btn btn-primary-dark btn-sm" onClick={() => store.dispatch({ type: 'INCREMENT_PAGE' })}><IoIosArrowForward /></button>
+              <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.incrementPage()}><IoIosArrowForward /></button>
             </div>
           </>
         )
@@ -68,12 +69,12 @@ export const SearchResults: React.FC<Props> = ({ maxPages = 5 }) => {
       {pageCount > 1
         ? (
           <>
-            <button className="btn btn-primary-dark btn-sm" onClick={() => store.dispatch({ type: 'DECREMENT_PAGE' })}><IoIosArrowBack /></button>
+            <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.decrementPage()}><IoIosArrowBack /></button>
             {pages.map(i => (
               // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
-              <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => store.dispatch({ type: 'SET_PAGE', payload: i })}>{i + 1}</button>
+              <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => boundFindProfessionals.setPage(i)}>{i + 1}</button>
             ))}
-            <button className="btn btn-primary-dark btn-sm" onClick={() => store.dispatch({ type: 'INCREMENT_PAGE' })}><IoIosArrowForward /></button>
+            <button className="btn btn-primary-dark btn-sm" onClick={() => boundFindProfessionals.incrementPage()}><IoIosArrowForward /></button>
           </>
         )
         : null

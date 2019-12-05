@@ -19,7 +19,7 @@ import { Profile } from '../models/profile';
 import { Province } from '../models/province';
 import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
-import { State, store } from '../store';
+import { boundFindProfessionals, State } from '../store';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
@@ -39,7 +39,8 @@ interface Props {
 }
 
 const FindProfessionalsPage: NextPage<Props> = props => {
-  const profiles = useSelector((p: State) => p.profiles);
+  const profiles = useSelector((p: State) => p.findProfessionals.profiles);
+  const scrollPosition = useSelector((p: State) => p.findProfessionals.scrollPosition);
 
   const location = useContext(LocationStateContext);
   const screenWidth = useContext(ScreenWidthContext);
@@ -54,6 +55,15 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   const lg = screenWidth >= 992;
   const md = screenWidth >= 768;
   const sm = screenWidth >= 576;
+
+  useEffect(() => {
+    window.scrollTo(0, scrollPosition);
+    const handleScroll = () => boundFindProfessionals.scroll(window.pageYOffset);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (location?.countryCode) {
@@ -131,8 +141,8 @@ const FindProfessionalsPage: NextPage<Props> = props => {
       if (!searchResponse.ok) {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
-      const payload: Profile[] = await searchResponse.json();
-      store.dispatch({ type: 'SET_PROFILES', payload });
+      const data: Profile[] = await searchResponse.json();
+      boundFindProfessionals.set(data);
     } catch (err) {
       setError(true);
     }
