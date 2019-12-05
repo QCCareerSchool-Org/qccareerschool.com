@@ -66,7 +66,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
 
       <Row>
 
-        <Col xs={12} md={4} className="text-center text-md-left mb-4">
+        <Col xs={12} md={4} className="text-center text-md-left mb-4 overflow-hidden">
           <img className="img-fluid my-2" src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}`} alt="Elena Martinez MIMP" />
           <br />
           {profile.city ? <>{profile.city}{profile.provinceCode ? `, ${profile.provinceCode}` : ''}<br /></> : null}
@@ -74,7 +74,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
           {profile.emailAddress ? <><a href={`mailto:${profile.emailAddress}`}>{profile.emailAddress}</a><br /></> : null}
         </Col>
 
-        <Col xs={12} md={8}>
+        <Col xs={12} md={8} className="overflow-hidden">
           {profile.slogan
             ? <p className="lead" dangerouslySetInnerHTML={{ __html: nl2br(parseBBCode(profile.slogan)) }} />
             : null
