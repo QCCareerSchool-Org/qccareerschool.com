@@ -8,16 +8,19 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
 import { getQueryString } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
+import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
+import { ProfessionGroup, professionGroups } from '../profession-groups';
 import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
-import { boundActionCreators, State } from '../store';
+import * as FindProfessionals from '../reducers/find-professionals';
+import { State } from '../store';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
@@ -30,31 +33,25 @@ interface SubmitPayload {
   lastName: string;
 }
 
-interface ProfessionGroup {
-  name: string;
-  professions: string[];
-}
-
 interface Props {
   errorCode?: number;
-  errorMessage?: any;
-  countries?: Country[];
-  professionGroups?: ProfessionGroup[];
 }
 
-const FindProfessionalsPage: NextPage<Props> = props => {
-  const form = useSelector((p: State) => p.findProfessionals.form);
-  const provinces = useSelector((p: State) => p.findProfessionals.provinces);
-  const profiles = useSelector((p: State) => p.findProfessionals.profiles);
-  const scrollPosition = useSelector((p: State) => p.findProfessionals.scrollPosition);
+const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
+  // redux
+  const dispatch = useDispatch();
+  const state = useSelector((p: State) => p.findProfessionals);
 
+  // context
   const location = useContext(LocationStateContext);
   const screenWidth = useContext(ScreenWidthContext);
 
+  // local state
   const [ provinceLabel, setProvinceLabel ] = useState<string>();
   const [ error, setError ] = useState(false);
   const [ refreshing, setRefreshing ] = useState(false);
 
+  // refs
   const scrollStart = useRef(0);
   const scrolledEnough = useRef(false);
   const submitPayload = useRef<SubmitPayload>();
@@ -64,8 +61,8 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   const sm = screenWidth >= 576;
 
   useEffect(() => {
-    window.scrollTo(0, scrollPosition);
-    const handleScroll = () => boundActionCreators.findProfessionals.scroll(window.pageYOffset);
+    window.scrollTo(0, state.scrollPosition);
+    const handleScroll = () => dispatch(FindProfessionals.actionCreators.scroll(window.pageYOffset));
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -74,25 +71,19 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
   useEffect(() => {
     if (location?.countryCode) {
-      if (form.countryCode === '') {
-        boundActionCreators.findProfessionals.updateCountry(location.countryCode);
+      if (state.form.countryCode === '') {
+        dispatch(FindProfessionals.actionCreators.updateCountry(location.countryCode));
       }
     }
-  }, [ form.countryCode, location?.countryCode ]);
+  }, [ state.form.countryCode, location?.countryCode ]);
 
   useEffect(() => {
-    if (props.professionGroups?.length) {
-      boundActionCreators.findProfessionals.updateProfession(props.professionGroups[0].professions[0]);
-    }
-  }, [ props.professionGroups ]);
-
-  useEffect(() => {
-    setProvinceLabel(form.countryCode === 'CA' ? 'Province' : 'State');
-  }, [ form.countryCode ]);
+    setProvinceLabel(state.form.countryCode === 'CA' ? 'Province' : 'State');
+  }, [ state.form.countryCode ]);
 
   function handleFormSubmit(event: React.FormEvent) {
     event.preventDefault();
-    submitPayload.current = { ...form };
+    submitPayload.current = { ...state.form };
     submit();
   }
 
@@ -103,7 +94,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
       const data: Profile[] = await searchResponse.json();
-      boundActionCreators.findProfessionals.set(data);
+      dispatch(FindProfessionals.actionCreators.set(data));
       setError(false);
     } catch (err) {
       setError(true);
@@ -131,8 +122,8 @@ const FindProfessionalsPage: NextPage<Props> = props => {
     }
   }
 
-  if (props.errorCode) {
-    return <ErrorPage statusCode={props.errorCode} />;
+  if (errorCode) {
+    return <ErrorPage statusCode={errorCode} />;
   }
 
   return (
@@ -145,7 +136,7 @@ const FindProfessionalsPage: NextPage<Props> = props => {
             <Row>
               <Col xs={12} md={10} lg={8} xl={6}>
                 <h1>Find Professionals</h1>
-                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
+                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the state.form below to find a professional near you.</p>
               </Col>
             </Row>
           </Container>
@@ -161,8 +152,8 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                     <form method="post" onSubmit={handleFormSubmit}>
                       <div className="form-group">
                         <label htmlFor="profession">Profession</label>
-                        <select className="form-control" id="profession" value={form.profession} onChange={e => boundActionCreators.findProfessionals.updateProfession(e.target.value)}>
-                          {props.professionGroups?.map(group => (
+                        <select className="form-control" id="profession" value={state.form.profession} onChange={e => dispatch(FindProfessionals.actionCreators.updateProfession(e.target.value))}>
+                          {state.professions.map(group => (
                             <optgroup key={group.name} label={group.name}>
                               {group.professions.map(p => (
                                 <option key={p}>{p}</option>
@@ -174,16 +165,16 @@ const FindProfessionalsPage: NextPage<Props> = props => {
 
                       <div className="form-group">
                         <label htmlFor="countryCode">Country</label>
-                        <select className="form-control" id="countryCode" value={form.countryCode} onChange={e => boundActionCreators.findProfessionals.updateCountry(e.target.value)}>
-                          {props.countries?.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
+                        <select className="form-control" id="countryCode" value={state.form.countryCode} onChange={e => dispatch(FindProfessionals.actionCreators.updateCountry(e.target.value))}>
+                          {state.countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
                         </select>
                       </div>
-                      {provinces.length
+                      {state.provinces.length
                         ? (
                           <div className="form-group">
                             <label htmlFor="provinceCode">{provinceLabel}</label>
-                            <select className="form-control" id="provinceCode" value={form.provinceCode || ''} onChange={e => boundActionCreators.findProfessionals.updateProvince(e.target.value)}>
-                              {provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
+                            <select className="form-control" id="provinceCode" value={state.form.provinceCode || ''} onChange={e => dispatch(FindProfessionals.actionCreators.updateProvince(e.target.value))}>
+                              {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                             </select>
                           </div>
                         )
@@ -191,16 +182,16 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                       }
                       <div className="form-group">
                         <label htmlFor="area">Area</label>
-                        <input type="text" className="form-control" id="area" value={form.area} onChange={e => boundActionCreators.findProfessionals.updateArea(e.target.value)} />
+                        <input type="text" className="form-control" id="area" value={state.form.area} onChange={e => dispatch(FindProfessionals.actionCreators.updateArea(e.target.value))} />
                       </div>
                       <div className="row">
                         <div className="form-group col-12 col-md-6">
                           <label htmlFor="firstName">First Name</label>
-                          <input type="text" className="form-control" id="firstName" value={form.firstName} onChange={e => boundActionCreators.findProfessionals.updateFirstName(e.target.value)} />
+                          <input type="text" className="form-control" id="firstName" value={state.form.firstName} onChange={e => dispatch(FindProfessionals.actionCreators.updateFirstName(e.target.value))} />
                         </div>
                         <div className="form-group col-12 col-md-6">
                           <label htmlFor="lastName">Last Name</label>
-                          <input type="text" className="form-control" id="lastName" value={form.lastName} onChange={e => boundActionCreators.findProfessionals.updateLastName(e.target.value)} />
+                          <input type="text" className="form-control" id="lastName" value={state.form.lastName} onChange={e => dispatch(FindProfessionals.actionCreators.updateLastName(e.target.value))} />
                         </div>
                       </div>
                       <Button type="submit" className="mt-2">Search</Button>
@@ -215,7 +206,19 @@ const FindProfessionalsPage: NextPage<Props> = props => {
                     <p>Try again.</p>
                   </>
                 ) : null}
-                {profiles && !error ? <SearchResults maxPages={sm ? 9 : 3} /> : null}
+                {state.profiles && !error
+                  ? (
+                    <SearchResults
+                      profiles={state.profiles}
+                      page={state.page}
+                      pageCount={state.pageCount}
+                      increment={() => dispatch(FindProfessionals.actionCreators.incrementPage())}
+                      decrement={() => dispatch(FindProfessionals.actionCreators.decrementPage())}
+                      setPage={i => dispatch(FindProfessionals.actionCreators.setPage(i))}
+                      maxPages={sm ? 9 : 3}
+                    />
+                  )
+                  : null}
               </Col>
             </Row>
           </Container>
@@ -234,60 +237,28 @@ const FindProfessionalsPage: NextPage<Props> = props => {
   );
 };
 
-FindProfessionalsPage.getInitialProps = async context => {
-  const professionGroups: ProfessionGroup[] = [
-    {
-      name: 'QC Makeup Academy',
-      professions: [
-        'makeup artist',
-        'airbrush makeup artist',
-        'special fx makeup artist',
-        'hair stylist',
-      ],
-    },
-    {
-      name: 'QC Event School',
-      professions: [
-        'event planner',
-        'wedding planner',
-        'event decorator',
-        'corporate event planner',
-        'destination wedding planner',
-        'luxury event and wedding planner',
-      ],
-    },
-    {
-      name: 'QC Design School',
-      professions: [
-        'interior decorator',
-        'home stager',
-        'interior redesigner',
-        'green designer',
-        'landscape designer',
-        'feng shui consultant',
-        'color consultant',
-        'professional organizer',
-      ],
-    },
-    { name: 'QC Travel School', professions: [ 'travel consultant' ] },
-    { name: 'QC Style Academy', professions: [ 'personal stylist', 'fashion merchandiser', 'editorial stylist' ] },
-    { name: 'Winghill Writing School', professions: [ 'screenwriter' ] },
-    { name: 'QC Wellness Studies', professions: [ 'sleep consultant' ] },
-  ];
+FindProfessionalsPage.getInitialProps = async ({ foo, reduxStore, res }: NextPageContextWithRedux | any) => {
+  const state: State = reduxStore.getState();
   try {
-    const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countries');
-    if (countryResponse.status !== 200) {
-      throw new HttpStatus.InternalServerError(countryResponse.statusText);
+    if (state.findProfessionals.countries.length === 0) {
+      const countryResponse = await fetch('https://api.qccareerschool.com/geoLocation/countries');
+      if (countryResponse.status !== 200) {
+        throw new HttpStatus.InternalServerError(countryResponse.statusText);
+      }
+      const data: Country[] = await countryResponse.json();
+      reduxStore.dispatch(FindProfessionals.actionCreators.setCountries(data));
     }
-    const countries = await countryResponse.json();
-    return { countries, professionGroups };
+    if (state.findProfessionals.professions.length === 0) {
+      reduxStore.dispatch(FindProfessionals.actionCreators.setProfessions(professionGroups));
+    }
+    return { };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
-    if (context.res) {
-      context.res.statusCode = errorCode;
+    if (res) {
+      res.statusCode = errorCode;
     }
-    return { errorCode, errorMessage: err.message };
+    return { errorCode };
   }
 };
 
-export default FindProfessionalsPage;
+export default withRedux(FindProfessionalsPage);

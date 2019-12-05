@@ -1,7 +1,5 @@
-import App from 'next/app';
-import { Provider } from 'react-redux';
 
-import { store } from '../store';
+import App from 'next/app';
 
 import { AuthProvider } from '../providers/auth';
 import { LocationProvider } from '../providers/location';
@@ -14,17 +12,15 @@ export default class QCApp extends App {
   public render() {
     const { Component, pageProps } = this.props;
     return (
-      <Provider store={store}>
-        <AuthProvider>
-          <LocationProvider>
-            <ScreenWidthProvider>
-              <ScrollPositionProvider>
-                <Component {...pageProps} />
-              </ScrollPositionProvider>
-            </ScreenWidthProvider>
-          </LocationProvider>
-        </AuthProvider>
-      </Provider>
+      <AuthProvider>
+        <LocationProvider>
+          <ScreenWidthProvider>
+            <ScrollPositionProvider>
+              <Component {...pageProps} />
+            </ScrollPositionProvider>
+          </ScreenWidthProvider>
+        </LocationProvider>
+      </AuthProvider>
     );
   }
 }

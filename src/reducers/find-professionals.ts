@@ -1,14 +1,15 @@
-import { ThunkAction } from 'redux-thunk';
+import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import { needsProvince } from '../functions';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { Province } from '../models/province';
+import { ProfessionGroup } from '../profession-groups';
 
 export const pageSize = 15;
 
 export interface State {
-  professions: string[];
+  professions: ProfessionGroup[];
   countries: Country[];
   provinces: Province[];
   form: {
@@ -26,6 +27,8 @@ export interface State {
 }
 
 export type Action =
+  | { type: 'COUNTRIES_SET'; payload: Country[]; }
+  | { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[]; }
   | { type: 'PROFESSION_SET'; payload: string; }
   | { type: 'COUNTRY_SET'; payload: { countryCode: string; provinces: Province[]; }; }
   | { type: 'PROVINCE_SET'; payload: string | null; }
@@ -60,6 +63,16 @@ const initialState: State = {
 
 export const reducer = ((state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case 'COUNTRIES_SET':
+      return { ...state, countries: action.payload };
+    case 'PROFESSIONS_SET':
+      if (action.payload.length === 0) {
+        return { ...state, professions: [], form: { ...state.form, profession: '' } };
+      } else if (action.payload.some(group => group.professions.includes(state.form.profession))) {
+        return { ...state, professions: action.payload };
+      } else {
+        return { ...state, professions: action.payload, form: { ...state.form, profession: action.payload[0].professions[0] } };
+      }
     case 'PROFESSION_SET':
       return { ...state, form: { ...state.form, profession: action.payload } };
     case 'COUNTRY_SET':
@@ -132,6 +145,8 @@ const updateCountry = (countryCode: string): ThunkResult<void> => dispatch => {
 };
 
 export const actionCreators = {
+  setCountries: (countries: Country[]) => ({ type: 'COUNTRIES_SET', payload: countries }),
+  setProfessions: (professions: ProfessionGroup[]) => ({ type: 'PROFESSIONS_SET', payload: professions }),
   updateProfession: (profession: string) => ({ type: 'PROFESSION_SET', payload: profession }),
   updateCountry,
   updateProvince: (provinceCode: string | null) => ({ type: 'PROVINCE_SET', payload: provinceCode }),
