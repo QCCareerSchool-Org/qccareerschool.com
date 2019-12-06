@@ -21,7 +21,7 @@ const MakeupAcademy: NextPage = () => (
       <Row>
         <Col xs={12} md={8} className="offset-md-4">
         <Bar className="text-primary ml-auto" />
-        <h2>QC Makeup Academy</h2>
+        <h1>QC Makeup Academy</h1>
         <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
     </Col>
     </Row>
@@ -96,5 +96,4 @@ const MakeupAcademy: NextPage = () => (
     `}</style>
    </DefaultLayout>
 );
-
 export default MakeupAcademy;
