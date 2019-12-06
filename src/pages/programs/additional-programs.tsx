@@ -5,14 +5,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
-import { DefaultLayout } from '../../layouts/default-layout';
-
-import PrivateGroup from '../../images/admissions-private-group.jpg';
 import StyleFaculties from '../../images/style-faculties-shopping-clothes.jpg';
 import TravelFaculties from '../../images/travel-faculties-woman-hiking.jpg';
 import WritingFaculties from '../../images/writing-faculties-woman.jpg';
+import { DefaultLayout } from '../../layouts/default-layout';
 
-const WritingPage: NextPage = () => (
+import OtherPrograms from '../../images/hero-additional-programs.jpg';
+
+const AdditionalPrograms: NextPage = () => (
   <DefaultLayout>
     <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
       <Container>
@@ -79,7 +79,7 @@ const WritingPage: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${PrivateGroup}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${OtherPrograms}) 50% 0;
         background-size: cover;
 
       }
@@ -91,4 +91,4 @@ const WritingPage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default WritingPage;
+export default AdditionalPrograms;
