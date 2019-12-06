@@ -38,7 +38,7 @@ const MakeupAcademy: NextPage = () => (
               title="Master Makeup Artistry Course"
               body="QC’s most popular foundational makeup course trains you to be a professional makeup artist from the ground up. This comprehensive training course will teach you everything from basic makeup applications to bridal and editorial makeup, and more!"
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/master-makeup-artistry/"
             />
           </CardColumn>
           <CardColumn>
@@ -47,7 +47,7 @@ const MakeupAcademy: NextPage = () => (
               title="Pro Makeup Workshop with Nathan Johnson"
               body="Work with celebrity executive makeup artist Nathan Johnson to challenge your professional skills in this intense cutting-edge course. You’ll work with Nathan to enhance your creativity and use your advanced skills to become a trendsetter in the industry."
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/pro-makeup-workshop/"
             />
           </CardColumn>
           <CardColumn>
@@ -56,7 +56,7 @@ const MakeupAcademy: NextPage = () => (
               title="Skincare Course"
               body="It’s hard to make a work of art if you don’t start with a healthy canvas. That’s why QC tutors recommend that every student takes the skincare course! This course will teach makeup artists how to help clients achieve healthy, glowing skin which will make your makeup skills shine!"
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/skincare-course/"
             />
           </CardColumn>
           <CardColumn>
@@ -65,7 +65,7 @@ const MakeupAcademy: NextPage = () => (
               title="Special FX Makeup Course"
               body="This popular specialty makeup course will teach makeup artists the art of creating special effects through their makeup artistry. Whether you want to age a character, create a gunshot wound, or transform your subject into a mythical creature, this course will teach you the skills to get there."
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/special-fx-makeup/"
             />
           </CardColumn>
           <CardColumn>
@@ -74,7 +74,7 @@ const MakeupAcademy: NextPage = () => (
               title="Global Beauty Makeup Workshop"
               body="Makeup is a lifelong learning process. Once you’re done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world. "
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/global-beauty-workshop/"
             />
           </CardColumn>
         </Row>

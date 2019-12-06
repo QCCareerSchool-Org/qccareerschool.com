@@ -43,7 +43,7 @@ const DogGroominPage: NextPage = () => (
               title="First Aid for Groomers"
               body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.doggroomingcourse.com/online-courses/dog-grooming/course-outline/"
             />
           </CardColumn>
         </Row>

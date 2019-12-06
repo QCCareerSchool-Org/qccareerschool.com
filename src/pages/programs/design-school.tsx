@@ -35,7 +35,7 @@ const InteriorDecoratingPage: NextPage = () => (
               title="Interior Decorating Course"
               body="Interior Decorating is a home designer’s bread &amp; butter. In this course you’ll learn how to create beautiful spaces customized to your clients’ tastes and for their specific needs. The course comes with full business training, so you’ll graduate with all the tools and skills you need to start a successful decorating business."
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcdesignschool.com/online-courses/interior-decorating/"
             />
           </CardColumn>
           <CardColumn>
@@ -44,7 +44,7 @@ const InteriorDecoratingPage: NextPage = () => (
               title="Home Staging Course"
               body="Working with sellers and real estate agents to stage a home can be incredibly rewarding for any designer. A well-staged home sells more quickly and fetches a higher market price, so more and more sellers are opting to hire professional home stagers when putting a house on the market. Partner with a few real estate agents and you’ll have a successful business in no time!"
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcdesignschool.com/online-courses/home-staging/"
             />
           </CardColumn>
           <CardColumn>
@@ -53,7 +53,7 @@ const InteriorDecoratingPage: NextPage = () => (
               title="Professional Organizing Course"
               body="The art of getting organized has become increasingly popular in recent years thanks to shows that highlight the joys of living in a sparse and organized space. Often times, individuals will attempt to get themselves organized only to revert to old habits very quickly. As a professional organizer, you’ll give clients custom solutions to keep them organized for years to come."
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              buttonLink="https://www.qcdesignschool.com/online-courses/professional-organizing/"
             />
           </CardColumn>
         </Row>
