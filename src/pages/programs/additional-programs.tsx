@@ -9,7 +9,6 @@ import StyleFaculties from '../../images/style-faculties-shopping-clothes.jpg';
 import TravelFaculties from '../../images/travel-faculties-woman-hiking.jpg';
 import WritingFaculties from '../../images/writing-faculties-woman.jpg';
 import { DefaultLayout } from '../../layouts/default-layout';
-
 import OtherPrograms from '../../images/hero-additional-programs.jpg';
 
 const AdditionalPrograms: NextPage = () => (
@@ -19,7 +18,7 @@ const AdditionalPrograms: NextPage = () => (
         <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
-            <h1>Lorem Ipsum</h1>
+            <h1>Additional Programs</h1>
             <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac dolor eget lorem condimentum eleifend a sit amet ante. Vivamus id mattis mi. Morbi ut arcu et ante gravida tempor. Aenean nisl ex, scelerisque sed rhoncus ut, venenatis vitae arcu. Maecenas tristique felis id eros molestie, vitae sagittis odio rutrum. Suspendisse pellentesque pretium orci, eget hendrerit magna bibendum vitae. Nam imperdiet quam suscipit lacinia tincidunt.</p>
           </Col>
         </Row>

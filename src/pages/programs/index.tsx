@@ -14,6 +14,7 @@ import EventWedding from '../../images/course-event-wedding.jpg';
 import MakeupMaster from '../../images/course-makeup-master.jpg';
 import PetGrooming from '../../images/course-pet-grooming.jpg';
 import WellnessSleep from '../../images/course-welness-sleep.jpg';
+import OtherPrograms from '../../images/hero-additional-programs.jpg';
 
 const ProgramsPage: NextPage = () => (
   <DefaultLayout>
@@ -89,31 +90,14 @@ const ProgramsPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupMaster}
-              title="Winghill School of Writing"
-              body="Let your creativity soar with a number of writing courses that will help you become a published author.  Winghill’s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor.  Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others"
+              img={OtherPrograms}
+              title="Additional Programs"
+              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac dolor eget lorem condimentum eleifend a sit amet ante. Vivamus id mattis mi. Morbi ut arcu et ante gravida tempor. Aenean nisl ex, scelerisque sed rhoncus ut, venenatis vitae arcu. Maecenas tristique felis id eros molestie, vitae sagittis odio rutrum. Suspendisse pellentesque pretium orci, eget hendrerit magna bibendum vitae. Nam imperdiet quam suscipit lacinia tincidunt."
               buttonText="Learn More"
-              buttonLink="/programs/"
+              buttonLink="/programs/additional-programs"
             />
           </CardColumn>
-          <CardColumn>
-            <CourseCard
-              img={MakeupMaster}
-              title="QC Travel School"
-              body="Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!"
-              buttonText="Learn More"
-              buttonLink="/programs/"
-            />
-          </CardColumn>
-          <CardColumn>
-            <CourseCard
-              img={MakeupMaster}
-              title="QC Style Academy"
-              body="Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!"
-              buttonText="Learn More"
-              buttonLink="/programs/"
-            />
-          </CardColumn>
+
         </Row>
       </Container>
     </section>
