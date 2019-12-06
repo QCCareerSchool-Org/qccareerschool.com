@@ -12,8 +12,6 @@ import DesignHomeStaging from '../../images/course-design-homestaging.jpg';
 import DesignInterior from '../../images/course-design-interior.jpg';
 import DesignOrganizing from '../../images/course-design-organizing.jpg';
 
-import HeroHome from '../../images/backgrounds/hero-home.jpg';
-
 const InteriorDecoratingPage: NextPage = () => (
   <DefaultLayout>
   <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
