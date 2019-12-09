@@ -49,7 +49,7 @@ const ProgramsPage: NextPage = () => (
               title="QC Makeup Academy"
               body="QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!"
               buttonText="Learn More"
-              buttonLink="/programs/makeup-academy"
+              buttonLink="/programs/qc-makeup-academy"
             />
           </CardColumn>
           <CardColumn>
@@ -58,7 +58,7 @@ const ProgramsPage: NextPage = () => (
               title="QC Event School"
               body="The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels."
               buttonText="Learn More"
-              buttonLink="/programs/event-school"
+              buttonLink="/programs/qc-event-school"
             />
           </CardColumn>
           <CardColumn>
@@ -67,7 +67,7 @@ const ProgramsPage: NextPage = () => (
               title="QC Design School"
               body="It’s hard to make a work of art if you don’t start with a healthy canvas. That’s why QC tutors recommend that eveHome design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.ry student takes the skincare course! This course will teach makeup artists how to help clients achieve healthy, glowing skin which will make your makeup skills shine!"
               buttonText="Learn More"
-              buttonLink="/programs/design-school"
+              buttonLink="/programs/qc-design-school"
             />
           </CardColumn>
           <CardColumn>
@@ -76,7 +76,7 @@ const ProgramsPage: NextPage = () => (
               title="QC Pet Studies"
               body="Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field."
               buttonText="Learn More"
-              buttonLink="/programs/dog-grooming"
+              buttonLink="/programs/qc-pet-studies"
             />
           </CardColumn>
           <CardColumn>
@@ -85,7 +85,7 @@ const ProgramsPage: NextPage = () => (
               title="QC Wellness Studies"
               body="If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training."
               buttonText="Learn More"
-              buttonLink="/programs/wellness"
+              buttonLink="/programs/qc-wellness-studies"
             />
           </CardColumn>
           <CardColumn>
