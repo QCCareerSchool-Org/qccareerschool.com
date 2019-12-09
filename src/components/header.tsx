@@ -43,12 +43,11 @@ export const Header: React.FC<Props> = ({ className }) => {
           <Navbar.Collapse id="main-navbar">
             <Nav className="ml-auto mr-3">
               <NavDropdown title="Programs" id="programs-dropdown">
-                <Link href="/programs"><a className="dropdown-item">Overview</a></Link>
-                <NavDropdown.Divider />
-                <Link href="/programs/makeup-artistry"><a className="dropdown-item">Makeup Artistry</a></Link>
-                <Link href="/programs/interior-decorating"><a className="dropdown-item">Interior Decorating</a></Link>
-                <Link href="/programs/event-planning"><a className="dropdown-item">Event Planning</a></Link>
-                <Link href="/programs/dog-grooming"><a className="dropdown-item">Dog Grooming</a></Link>
+                <Link href="/programs/qc-makeup-academy"><a className="dropdown-item">QC Makeup Academy</a></Link>
+                <Link href="/programs/qc-design-school"><a className="dropdown-item">QC Design School</a></Link>
+                <Link href="/programs/qc-event-school"><a className="dropdown-item">QC Event School</a></Link>
+                <Link href="/programs/qc-pet-studies"><a className="dropdown-item">QC Pet Studies</a></Link>
+                <Link href="/programs/additional-programs"><a className="dropdown-item">Additional Programs</a></Link>
               </NavDropdown>
               <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
