@@ -15,16 +15,17 @@ import EventWedding from '../../images/course-event-wedding.jpg';
 
 const EventPlanningPage: NextPage = () => (
   <DefaultLayout>
-  <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
-  <Container>
-    <Row>
-      <Col xs={12} md={8} className="offset-md-4">
-      <Bar className="text-primary ml-auto" />
-      <h1>QC Event School</h1>
-      <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
-        </Col>
-    </Row>
-    </Container>
+
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Container>
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
+            <h1>QC Event School</h1>
+            <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
+          </Col>
+        </Row>
+      </Container>
     </section>
 
     <section className="negative-section">

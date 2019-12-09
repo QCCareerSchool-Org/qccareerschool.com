@@ -15,7 +15,7 @@ import WritingFaculties from '../../images/writing-faculties-woman.jpg';
 const AdditionalPrograms: NextPage = () => (
   <DefaultLayout>
 
-    <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
         <Row>
           <Col xs={12} md={8} className="offset-md-4">

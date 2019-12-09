@@ -13,16 +13,17 @@ import PetGrooming from '../../images/course-pet-grooming.jpg';
 
 const DogGroominPage: NextPage = () => (
   <DefaultLayout>
-  <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
-  <Container>
-    <Row>
-      <Col xs={12} md={8} className="offset-md-4">
-      <Bar className="text-primary ml-auto" />
-      <h2>QC Pet Studies</h2>
-        <p className="lead">Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
-        </Col>
-    </Row>
-    </Container>
+
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Container>
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
+            <h2>QC Pet Studies</h2>
+            <p className="lead">Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
+          </Col>
+        </Row>
+      </Container>
     </section>
 
     <section className="negative-section">

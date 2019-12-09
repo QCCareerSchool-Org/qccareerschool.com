@@ -29,18 +29,18 @@ const ProgramsPage: NextPage = () => (
     </section>
 
     <section>
-        <Container>
-      <Row>
-        <Col xs={12} md={8}>
-        <h2>QC Career School Faculties</h2>
-        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <Bar className="text-primary" />
-    </Col>
-    </Row>
-    </Container>
+      <Container>
+        <Row>
+          <Col xs={12} md={8}>
+            <h2>QC Career School Faculties</h2>
+            <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <Bar className="text-primary" />
+          </Col>
+        </Row>
+      </Container>
     </section>
 
-    <section className="negative-section" >
+    <section className="negative-section">
       <Container>
         <Row>
           <CardColumn>

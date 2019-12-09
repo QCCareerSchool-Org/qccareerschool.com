@@ -14,16 +14,17 @@ import DesignOrganizing from '../../images/course-design-organizing.jpg';
 
 const InteriorDecoratingPage: NextPage = () => (
   <DefaultLayout>
-  <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
-  <Container>
-    <Row>
-      <Col xs={12} md={8} className="offset-md-4">
-      <Bar className="text-primary ml-auto" />
-      <h1>QC Design School</h1>
-        <p className="lead">Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
-        </Col>
-    </Row>
-    </Container>
+
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Container>
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
+            <h1>QC Design School</h1>
+            <p className="lead">Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
+          </Col>
+        </Row>
+      </Container>
     </section>
 
     <section className="negative-section">

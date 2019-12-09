@@ -16,16 +16,17 @@ import MakeupSkin from '../../images/course-makeup-skincare.jpg';
 
 const MakeupAcademy: NextPage = () => (
   <DefaultLayout>
-    <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
-    <Container>
-      <Row>
-        <Col xs={12} md={8} className="offset-md-4">
-        <Bar className="text-primary ml-auto" />
-        <h1>QC Makeup Academy</h1>
-        <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
-    </Col>
-    </Row>
-    </Container>
+
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Container>
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
+            <h1>QC Makeup Academy</h1>
+            <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
+          </Col>
+        </Row>
+      </Container>
     </section>
 
     <section className="negative-section">
@@ -94,6 +95,6 @@ const MakeupAcademy: NextPage = () => (
         background-size: cover;
       }
     `}</style>
-   </DefaultLayout>
+  </DefaultLayout>
 );
 export default MakeupAcademy;

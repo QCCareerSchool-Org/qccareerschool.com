@@ -13,16 +13,17 @@ import WellnessSleep from '../../images/course-welness-sleep.jpg';
 
 const WelnessPage: NextPage = () => (
   <DefaultLayout>
-  <section id="first-section" className="text-light overlay-section bg-dark text-light text-shadow text-right">
-  <Container>
-    <Row>
-      <Col xs={12} md={8} className="offset-md-4">
-      <Bar className="text-primary ml-auto" />
-      <h2>QC Wellness Studies</h2>
-        <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
-        </Col>
-    </Row>
-    </Container>
+
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Container>
+        <Row>
+          <Col xs={12} md={8} className="offset-md-4">
+            <Bar className="text-primary ml-auto" />
+            <h2>QC Wellness Studies</h2>
+            <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
+          </Col>
+        </Row>
+      </Container>
     </section>
 
     <section className="negative-section">
