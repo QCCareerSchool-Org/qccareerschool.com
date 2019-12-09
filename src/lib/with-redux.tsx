@@ -1,13 +1,9 @@
 import { NextPage, NextPageContext } from 'next';
-import App from 'next/app';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { bindActionCreators, Store } from 'redux';
+import { Store } from 'redux';
 
-import * as Auth from '../reducers/auth';
-import * as FindProfessionals from '../reducers/find-professionals';
-
-import { initializeBoundActions, initializeStore, State } from '../store';
+import { initializeStore, State } from '../store';
 
 export const withRedux = (PageComponent: NextPage<any>, { ssr = true } = {}) => {
 
