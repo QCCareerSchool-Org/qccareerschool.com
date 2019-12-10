@@ -1,8 +1,8 @@
-import Button from 'react-bootstrap/Button';
+import { NextPage } from 'next';
+import Link from 'next/link';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { NextPage } from 'next';
 
 import { DefaultLayout } from '../layouts/default-layout';
 
@@ -40,7 +40,7 @@ const AdmissionsPage: NextPage = () => (
             <h3>Private Group Admissions &amp; Discounts</h3>
             <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments.  Note that this discount cannot be combined with other offers or promotions.</p>
             <div className="text-center">
-              <Button href="/contact" size="lg" variant="secondary">Contact QC</Button>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact QC</a></Link>
             </div>
           </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
@@ -57,7 +57,7 @@ const AdmissionsPage: NextPage = () => (
             <h3>Corporate Admissions</h3>
             <p className="mb-4">Over the years QC has worked with corporations to adapt course content, assignments and tuition/billing practices to corporate groups with specific goals for their employees. If you are a member of a corporation looking to train your employees via a QC course, please contact us to speak with a business development representative who will be happy to prepare a proposal that will suit your needs.           </p>
             <div className="text-center">
-              <Button href="/contact" size="lg" variant="secondary">Contact QC</Button>
+              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact QC</a></Link>
             </div>
           </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
@@ -73,7 +73,7 @@ const AdmissionsPage: NextPage = () => (
           <Col md={10} lg={8} className="offset-md-1 offset-lg-2">
             <h3>Have Questions? We are here to help!</h3>
             <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum sagittis augue. Praesent interdum odio a justo tincidunt, at scelerisque urna molestie. Ut euismod venenatis faucibus. Vestibulum auctor sollicitudin faucibus. In hac habitasse platea dictumst. Duis efficitur lectus a nisi tristique, id sollicitudin ex porta. In quis cursus urna. Sed fringilla ipsum vitae massa fermentum accumsan. Morbi a tincidunt justo. Phasellus aliquet at sem non cursus. Fusce risus arcu, imperdiet et iaculis in, vehicula in nulla. Aenean mauris urna, venenatis a egestas in, interdum vel ante. Morbi placerat malesuada malesuada. Duis vel nibh id urna pulvinar dignissim vel et lorem.</p>
-            <Button href="/contact" size="lg" variant="secondary">Contact Us</Button>
+            <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact Us</a></Link>
           </Col>
         </Row>
       </Container>
