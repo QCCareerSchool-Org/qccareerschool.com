@@ -42,9 +42,9 @@ const AdmissionsPage: NextPage = () => (
         <Row>
           <Col xs={12} md={6} className="order-2 order-md-1">
             <h3>Private Group Admissions &amp; Discounts</h3>
-            <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments.  Note that this discount cannot be combined with other offers or promotions.</p>
+            <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
             <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact QC</a></Link>
-            </Col>
+          </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
             <img src={PrivateGroup} alt="Private Group Discounts" className="sideImage" />
           </Col>
