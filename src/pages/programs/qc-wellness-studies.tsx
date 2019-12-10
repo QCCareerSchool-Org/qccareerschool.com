@@ -35,7 +35,8 @@ const WelnessPage: NextPage = () => (
               title="Pediatric Sleep Consultant Course"
               body="Sleep consulting is a growing industry as more busy parents seek professional help to ensure their child gets a good night’s rest. As a highly trained professional sleep consultant, you’ll have the tools and skills you need to work with families in desperate need of your help. After all, if baby doesn’t sleep, the parents don’t either!"
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcwellnessstudies.com/courses-and-tuition/sleep-consultant/"
+              link="https://www.qcwellnessstudies.com/courses-and-tuition/sleep-consultant/"
+              externalLink={true}
             />
           </CardColumn>
         </Row>

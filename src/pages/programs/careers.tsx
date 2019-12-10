@@ -14,7 +14,7 @@ import HeroCareers from '../../images/hero-careers.jpg';
 const CareersPage: NextPage = () => (
   <DefaultLayout>
 
- <section id="first-section" className="text-light">
+    <section id="first-section" className="bg-dark text-light">
       <Container>
         <h1>Careers</h1>
         <p className="lead mb-5 bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -24,14 +24,14 @@ const CareersPage: NextPage = () => (
     <section>
       <Container>
         <Row>
-          <Col xs={12} md={6} className="order-2 order-md-1">
+          <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
+            <img src={CareerStudents} alt="QC Student" className="sideImage" />
+          </Col>
+          <Col xs={12} md={6} className="order-md-1">
             <h3>Careers for Students and Graduates</h3>
             <p className="mb-4">QC Career School is an international distance-learning institution, and thus providing individual employment assistance to students and graduates is not available. However, all students and graduates have access to full business training as well as career resources to help you look for and secure work.</p>
             <p className="mb-4">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here’s where you can <Link href="/find-professionals"><a>find Professional Profiles of QC-trained professionals.</a></Link>
             </p>
-          </Col>
-          <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
-            <img src={CareerStudents} alt="QC Student" className="sideImage" />
           </Col>
         </Row>
       </Container>
@@ -40,7 +40,7 @@ const CareersPage: NextPage = () => (
     <section className="bg-light">
       <Container>
         <Row>
-          <Col xs={12} md={6} className="mb-4 md-md-0">
+          <Col xs={12} md={6} className="mb-4 mb-md-0">
             <img src={CareerTutors} alt="QC Tutor" className="sideImage" />
           </Col>
           <Col xs={12} md={6}>
@@ -50,7 +50,7 @@ const CareersPage: NextPage = () => (
             <p className="mb-4">
               <ul>
                 <li>3+ years experience in your industry</li>
-                <li>Owner or senior employee in a successful business</li>
+                <li>Owner or senior-level employee in a successful business</li>
                 <li>Strong communication skills</li>
                 <li>A strong digital portfolio of recent works</li>
               </ul>
@@ -67,12 +67,12 @@ const CareersPage: NextPage = () => (
     <section>
       <Container>
         <Row>
-          <Col xs={12} md={6} className="order-2 order-md-1">
+          <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
+            <img src={CareersHeadquarters} alt="Ottawa Landscape" className="sideImage" />
+          </Col>
+          <Col xs={12} md={6} className="order-md-1">
             <h3>Careers at QC Headquarters</h3>
             <p className="mb-4">QC’s head office is located in Ottawa, Ontario Canada. Typically jobs at QC will be listed on Indeed.ca and LinkedIn. QC is a growing company and we’re always looking for qualified course developers, IT professionals, Student Support Specialists, graphic designers, social media experts, and more. Be on the lookout for exciting professional opportunities!</p>
-          </Col>
-          <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
-            <img src={CareersHeadquarters} alt="Ottawa Landscape" className="sideImage" />
           </Col>
         </Row>
       </Container>
@@ -85,7 +85,7 @@ const CareersPage: NextPage = () => (
       }
       .sideImage {
         width: 100%;
-      }      
+      }
     `}</style>
   </DefaultLayout>
 );

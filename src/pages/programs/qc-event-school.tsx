@@ -37,7 +37,8 @@ const EventPlanningPage: NextPage = () => (
               title="Event &amp; Wedding Planning Course"
               body="This dual-certification course will prepare you to plan and coordinate any number of private events from weddings to birthday parties to religious celebrations. You’ll learn how to negotiate with vendors, establish long-lasting client relationships, and budget for any event or client. With QC’s unparalleled business training, you’ll graduate from this course with the knowledge and skills to be a successful planning professional."
               buttonText="Full Course Overview"
-              buttonLink="https://www.qceventplanning.com/online-event-courses/event-and-wedding-planning/"
+              link="https://www.qceventplanning.com/online-event-courses/event-and-wedding-planning/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
@@ -46,7 +47,8 @@ const EventPlanningPage: NextPage = () => (
               title="Corporate Event Planning Course"
               body="Catering to corporate clients is a very different experience from working for private clients. This course focuses on the project management aspects you’ll be expected to master in order to work with a number of corporate stakeholders. You’ll also learn how to work around the unique challenges of planning conferences, trade shows, and other types of corporate events."
               buttonText="Full Course Overview"
-              buttonLink="https://www.qceventplanning.com/online-event-courses/corporate-event-planning/"
+              link="https://www.qceventplanning.com/online-event-courses/corporate-event-planning/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
@@ -55,7 +57,8 @@ const EventPlanningPage: NextPage = () => (
               title="Event Décor Course"
               body="The perfect course to complement your fundamental event planner training. The Event Décor Course teaches you to create a cohesive décor to suit any theme, and how to plan for and incorporate all decorative elements that brings an event together. Being an event decorator can be a full-time job, or it can be a perfect addition to your booming event planning business!"
               buttonText="Full Course Overview"
-              buttonLink="https://www.qceventplanning.com/online-event-courses/event-decor/"
+              link="https://www.qceventplanning.com/online-event-courses/event-decor/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
@@ -64,7 +67,8 @@ const EventPlanningPage: NextPage = () => (
               title="Accelerate Your Business Workshop"
               body="For the established event planning business owner who wants to take their business to the next level.  In this advanced course, you’ll work one-on-one with your tutor to enhance a specific area of your business where you can use some help. This is a very flexible course where you set the tone with your tutor. You’ll work on a specific goal for your business."
               buttonText="Full Course Overview"
-              buttonLink="https://www.qceventplanning.com/online-event-courses/accelerate-your-business/"
+              link="https://www.qceventplanning.com/online-event-courses/accelerate-your-business/"
+              externalLink={true}
             />
           </CardColumn>
         </Row>

@@ -55,7 +55,8 @@ const IndexPage: NextPage = () => (
               title="QC Makeup Academy"
               body="Basic and advanced professional makeup artistry courses for all skill levels."
               buttonText="LEARN MORE"
-              buttonLink="https://www.qcmakeupacademy.com/"
+              link="https://www.qcmakeupacademy.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
@@ -64,7 +65,8 @@ const IndexPage: NextPage = () => (
               title="QC Event School"
               body="Training event planning professionals to launch their own business. Courses include party planning, wedding planning, corporate event planning and more."
               buttonText="LEARN MORE"
-              buttonLink="https://www.qceventplanning.com/"
+              link="https://www.qceventplanning.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
@@ -73,7 +75,8 @@ const IndexPage: NextPage = () => (
               title="QC Design School"
               body=" Offering courses in all areas of home design from interior decorating to professional organizing."
               buttonText="LEARN MORE"
-              buttonLink="https://www.qcdesignschool.com/"
+              link="https://www.qcdesignschool.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
@@ -82,7 +85,8 @@ const IndexPage: NextPage = () => (
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
               buttonText="LEARN MORE"
-              buttonLink="https://www.doggroomingcourse.com/"
+              link="https://www.doggroomingcourse.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
@@ -91,7 +95,8 @@ const IndexPage: NextPage = () => (
               title="QC Wellness Studies"
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
               buttonText="LEARN MORE"
-              buttonLink="https://www.qcwellnessstudies.com/"
+              link="https://www.qcwellnessstudies.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
@@ -100,7 +105,8 @@ const IndexPage: NextPage = () => (
               title="QC Style Academy"
               body="Partnered with QC Makeup Academy to offer courses to beauty professionals expanding into personal styling."
               buttonText="LEARN MORE"
-              buttonLink="https://www.qcstyleacademy.com/"
+              link="https://www.qcstyleacademy.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
@@ -109,7 +115,8 @@ const IndexPage: NextPage = () => (
               title="QC Travel School"
               body="Training professional travel agents in an ever competing marketplace."
               buttonText="LEARN MORE"
-              buttonLink="https://www.qctravelschool.com/"
+              link="https://www.qctravelschool.com/"
+              externalLink={true}
             />
           </Col>
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
@@ -118,7 +125,8 @@ const IndexPage: NextPage = () => (
               title="Winghill Writing School"
               body="The school that started it all! Winghill offers a myriad of writing courses from novel writing to family history writing and much more."
               buttonText="LEARN MORE"
-              buttonLink="https://www.winghill.com/"
+              link="https://www.winghill.com/"
+              externalLink={true}
             />
           </Col>
         </Row>
