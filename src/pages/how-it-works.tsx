@@ -9,7 +9,7 @@ import { DefaultLayout } from '../layouts/default-layout';
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 const HowItWorksPage: NextPage = () => {
-  const iconSize = 160;
+  const iconSize = 100;
   return (
     <DefaultLayout>
 
@@ -28,7 +28,7 @@ const HowItWorksPage: NextPage = () => {
             <Col xs={12} md={6}>
               <IoMdTimer size={iconSize} />
               <h3>No Deadlines or Mandatory Classes</h3>
-              <p>You’ll never be on the clock to finish your assignments.  You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way! (as a reference point, the average program completion time is 3-6 months)</p>
+              <p>You’ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way! (as a reference point, the average program completion time is 3-6 months)</p>
             </Col>
             <Col xs={12} md={6}>
               <IoMdHand size={iconSize} />
@@ -38,7 +38,7 @@ const HowItWorksPage: NextPage = () => {
             <Col xs={12} md={6}>
               <IoMdChatbubbles size={iconSize} />
               <h3>100% Personalized Tutor Feedback</h3>
-              <p>All your assignments will be graded by a live tutor, who is a working professional in the industry you’re studying.  Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve.  This unique approach to providing constructive feedback is how QC students graduate way ahead of the curve in all programs.</p>
+              <p>All your assignments will be graded by a live tutor, who is a working professional in the industry you’re studying.  Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is how QC students graduate way ahead of the curve in all programs.</p>
             </Col>
             <Col xs={12} md={6}>
               <IoMdPeople size={iconSize} />
