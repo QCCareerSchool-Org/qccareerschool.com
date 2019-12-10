@@ -1,8 +1,8 @@
+import { NextPage } from 'next';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { NextPage } from 'next';
 
 import { DefaultLayout } from '../layouts/default-layout';
 
@@ -39,10 +39,7 @@ const AdmissionsPage: NextPage = () => (
           <Col xs={12} md={6} className="order-2 order-md-1">
             <h3>Private Group Admissions &amp; Discounts</h3>
             <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments.  Note that this discount cannot be combined with other offers or promotions.</p>
-            <div className="text-center">
-              <Button href="/contact" size="lg" variant="secondary">Contact QC</Button>
-            </div>
-          </Col>
+            <Button href="/contact" size="lg" variant="secondary">Contact QC</Button>          </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
             <img src={PrivateGroup} alt="Private Group Discounts" className="sideImage" />
           </Col>
@@ -56,9 +53,7 @@ const AdmissionsPage: NextPage = () => (
           <Col xs={12} md={6} className="order-2 order-md-1">
             <h3>Corporate Admissions</h3>
             <p className="mb-4">Over the years QC has worked with corporations to adapt course content, assignments and tuition/billing practices to corporate groups with specific goals for their employees. If you are a member of a corporation looking to train your employees via a QC course, please contact us to speak with a business development representative who will be happy to prepare a proposal that will suit your needs.           </p>
-            <div className="text-center">
-              <Button href="/contact" size="lg" variant="secondary">Contact QC</Button>
-            </div>
+            <Button href="/contact" size="lg" variant="secondary">Contact QC</Button>
           </Col>
           <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
             <img src={Corporate} alt="Corporate Admissions" className="sideImage" />
