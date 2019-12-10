@@ -17,7 +17,11 @@ const AdmissionsPage: NextPage = () => (
       <Container>
         <h1>Admissions</h1>
         <p className="lead mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur</p>
+      </Container>
+    </section>
 
+    <section className="bg-light">
+      <Container>
         <h2>Admissions For Individuals</h2>
         <p>If you would like to enroll in one of QC’s courses, you can do so at the faculties’ online enrollment pages:</p>
         <ul>
@@ -84,11 +88,6 @@ const AdmissionsPage: NextPage = () => (
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
         background-size: cover;
       }
-      #first-section a:link { color: white }
-      #first-section a:visited { color: white }
-      #first-section a:hover { color: white }
-      #first-section a:active { color: white }
-
       .sideImage {
         width: 100%;
       }
