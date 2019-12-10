@@ -13,7 +13,7 @@ const HowItWorksPage: NextPage = () => {
   return (
     <DefaultLayout>
 
-      <section id="first-section" className="text-light text-shadow">
+      <section id="first-section" className="bg-dark text-light text-shadow">
         <div className="my-5">
           <Container>
             <h1>How It Works</h1>
@@ -33,17 +33,17 @@ const HowItWorksPage: NextPage = () => {
             <Col xs={12} md={6}>
               <IoMdHand size={iconSize} />
               <h3>A hands-on approach</h3>
-              <p>Some people have trouble understanding how you can learn a practical skill online.  The answer is, your online training has to follow the same kind of hands-on methods as you’ll get in the classroom.  Your training assignments will be a mix of theoretical and practical. Depending on the program you take, “practical” can mean anything from completing thorough case studies or real-world scenarios to actually completing a full makeup application or grooming a live dog!</p>
+              <p>Some people have trouble understanding how you can learn a practical skill online. The answer is, your online training has to follow the same kind of hands-on methods as you’ll get in the classroom. Your training assignments will be a mix of theoretical and practical. Depending on the program you take, “practical” can mean anything from completing thorough case studies or real-world scenarios to actually completing a full makeup application or grooming a live dog!</p>
             </Col>
             <Col xs={12} md={6}>
               <IoMdChatbubbles size={iconSize} />
               <h3>100% Personalized Tutor Feedback</h3>
-              <p>All your assignments will be graded by a live tutor, who is a working professional in the industry you’re studying.  Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is how QC students graduate way ahead of the curve in all programs.</p>
+              <p>All your assignments will be graded by a live tutor, who is a working professional in the industry you’re studying. Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is how QC students graduate way ahead of the curve in all programs.</p>
             </Col>
             <Col xs={12} md={6}>
               <IoMdPeople size={iconSize} />
               <h3>Unmatched Student Support</h3>
-              <p>QC’s student advisors are available on extended hours to help you in any way they can.  Whether you have a question about enrolling in a course, are having trouble with an assignment, or are looking for job seeking advice, your student support team will be available to help answer your questions or point you in the right direction!</p>
+              <p>QC’s student advisors are available on extended hours to help you in any way they can. Whether you have a question about enrolling in a course, are having trouble with an assignment, or are looking for job seeking advice, your student support team will be available to help answer your questions or point you in the right direction!</p>
             </Col>
             <Col xs={12} md={6}>
               <IoMdShuffle size={iconSize} />
