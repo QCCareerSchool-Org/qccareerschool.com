@@ -136,7 +136,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
             <Row>
               <Col xs={12} md={10} lg={8} xl={6}>
                 <h1>Find Professionals</h1>
-                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the state.form below to find a professional near you.</p>
+                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
               </Col>
             </Row>
           </Container>
