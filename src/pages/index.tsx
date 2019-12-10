@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
+import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Emblem from '../images/35-year-emblem.png';
@@ -21,6 +22,8 @@ import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
 
 const IndexPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO title="QC Career School" description="Lorem ipsum dolor" />
 
     <section id="first-section" className="text-light">
       <Container>
