@@ -1,3 +1,5 @@
+import { Picture } from './picture';
+
 export interface Profile {
   id: number;
   sex: string;
@@ -27,4 +29,5 @@ export interface Profile {
   backgroundName: string | null;
   backgroundUrl: string | null;
   professions: string[];
+  images: Picture[];
 }

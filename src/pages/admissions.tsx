@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import { NextPage } from 'next';
 
 import { DefaultLayout } from '../layouts/default-layout';
 
@@ -9,7 +10,7 @@ import Corporate from '../images/admissions-corporate.jpg';
 import PrivateGroup from '../images/admissions-private-group.jpg';
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
-const AdmissionsPage: React.FC = () => (
+const AdmissionsPage: NextPage = () => (
   <DefaultLayout>
 
     <section id="first-section" className="text-light">

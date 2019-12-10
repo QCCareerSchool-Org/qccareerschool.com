@@ -11,7 +11,8 @@ $theme-colors: (
 );
 
 // $body-color: #9095a5;
-$body-color: #212226;
+// $body-color: #212226;
+$body-color: #595c66;
 
 /*
  * Fonts
@@ -80,6 +81,7 @@ $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-
 
 body {
   overflow-y: scroll;
+  overscroll-behavior-y: none;
 }
 
 @media (max-width: 575px) {
@@ -113,15 +115,28 @@ h3.thin .h3.thin { font-weight: 500; }
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { color: map-get($theme-colors, 'dark') }
 }
 
-.hat { margin-bottom: 0; text-transform: uppercase; font-weight: 200; font-style: italic; letter-spacing: 0.5rem; margin-bottom: 1rem; }
+.hat {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: 0.5rem;
+  margin: 0 0 1rem 0;
+}
 
 #main-nav .nav-link { font-weight: 400 }
 
 section { padding: 2rem 0 }
-section#first-section { padding-top: 7rem }
+section#first-section { padding-top: 6rem }
 @media (min-width: 768px) {
   section { padding: 5rem 0 }
-  section#first-section { padding-top: 12rem }
+  section#first-section { padding-top: 11.5rem }
+}
+
+.overlay-section { padding-bottom: 4rem; }
+.negative-section { margin-top: -4rem; }
+@media screen and (min-width: 768px) {
+  .overlay-section { padding-bottom: 8rem; }
+  .negative-section { margin-top: -10rem; }
 }
 
 // // remove bottom margin from paragraphs that come at the end of columns or containers

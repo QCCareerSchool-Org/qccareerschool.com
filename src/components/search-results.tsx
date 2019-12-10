@@ -1,27 +1,50 @@
+import { useMemo } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import { useEffect, useState } from 'react';
 import { Profile } from '../models/profile';
+import { pageSize } from '../reducers/find-professionals';
 import { SearchResult } from './search-result';
-
-import { usePage } from '../hooks/usePage';
 
 interface Props {
   profiles: Profile[];
-  pageSize?: number;
+  pageCount: number;
+  page: number;
+  increment: () => void;
+  decrement: () => void;
+  setPage: (page: number) => void;
   maxPages?: number;
 }
 
-export const SearchResults: React.FC<Props> = ({ profiles, pageSize = 10, maxPages = 5 }) => {
+export const SearchResults: React.FC<Props> = ({ profiles, pageCount, page, increment, decrement, setPage, maxPages = 5 }) => {
+
+  const pages = useMemo<number[]>(() => {
+    const newPages = [];
+    if (pageCount > 2) {
+      const midPoint = Math.ceil(maxPages / 2);
+      let startPage: number;
+      let endPage: number;
+      if (page < midPoint) { // near the start--show the first few pages
+        startPage = 0;
+        endPage = Math.min(maxPages, pageCount) - 1;
+      } else if (page >= pageCount - midPoint) { // near the end--show the last few pages
+        startPage = pageCount - Math.min(maxPages, pageCount);
+        endPage = pageCount - 1;
+      } else { // in between--show some pages from the middle
+        startPage = page - midPoint + 1;
+        endPage = Math.min(maxPages, pageCount) + page - midPoint;
+      }
+      for (let i = startPage; i <= endPage; i++) {
+        newPages.push(i);
+      }
+    }
+    return newPages;
+  }, [ pageCount, page, maxPages ]);
+
+  if (!profiles) {
+    return null;
+  }
+
   const total = profiles.length;
-  const pageCount = Math.ceil(profiles.length / pageSize);
-
-  const [ page, pages, incrementPage, decrementPage, setPage, setPageCount ] = usePage(pageCount, maxPages, 0);
-
-  useEffect(() => {
-    setPageCount(Math.ceil(profiles.length / pageSize));
-    setPage(0);
-  }, [ profiles, pageSize ]);
 
   return (
     <>
@@ -32,12 +55,12 @@ export const SearchResults: React.FC<Props> = ({ profiles, pageSize = 10, maxPag
           <>
             <p>Showing results {page * pageSize + 1} to {Math.min((page + 1) * pageSize, total)}</p>
             <div className="mb-4">
-              <button className="btn btn-primary-dark btn-sm" onClick={() => decrementPage()}><IoIosArrowBack /></button>
+              <button className="btn btn-primary-dark btn-sm" onClick={() => decrement()}><IoIosArrowBack /></button>
               {pages.map(i => (
-                // tslint:disable:jsx-key
+                // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
                 <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => setPage(i)}>{i + 1}</button>
               ))}
-              <button className="btn btn-primary-dark btn-sm" onClick={() => incrementPage()}><IoIosArrowForward /></button>
+              <button className="btn btn-primary-dark btn-sm" onClick={() => increment()}><IoIosArrowForward /></button>
             </div>
           </>
         )
@@ -48,19 +71,19 @@ export const SearchResults: React.FC<Props> = ({ profiles, pageSize = 10, maxPag
       {pageCount > 1
         ? (
           <>
-            <button className="btn btn-primary-dark btn-sm" onClick={() => decrementPage()}><IoIosArrowBack /></button>
+            <button className="btn btn-primary-dark btn-sm" onClick={() => decrement()}><IoIosArrowBack /></button>
             {pages.map(i => (
-              // tslint:disable:jsx-key
+              // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
               <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => setPage(i)}>{i + 1}</button>
             ))}
-            <button className="btn btn-primary-dark btn-sm" onClick={() => incrementPage()}><IoIosArrowForward /></button>
+            <button className="btn btn-primary-dark btn-sm" onClick={() => increment()}><IoIosArrowForward /></button>
           </>
         )
         : null
       }
 
       <style jsx>{`
-      button { border-radius: .25rem; padding-left: 0; padding-right: 0; margin-right: 2px; width: 40px }
+        button { border-radius: .25rem; padding-left: 0; padding-right: 0; margin-right: 2px; width: 40px }
       `}</style>
     </>
   );

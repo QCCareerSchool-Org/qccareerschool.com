@@ -143,17 +143,20 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
-            <Button size="sm" className="caps">Normal Button</Button>
+            <div className="buttonSpacer" />
+            <div className="absoluteButton btn btn-primary btn-sm caps">Normal Button</div>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Admission<br />Requirements</h3>
             <p>Interested in enrolling with QC Career School? Find out the admissions requirements and enroll here!</p>
-            <Button size="sm" className="caps">Normal Button</Button>
+            <div className="buttonSpacer" />
+            <div className="absoluteButton btn btn-primary btn-sm caps">Normal Button</div>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Find<br />Professionals</h3>
             <p>Hire a QC graduate here! Search by profession and location</p>
-            <Button size="sm" className="caps">Normal Button</Button>
+            <div className="buttonSpacer" />
+            <div className="absoluteButton btn btn-primary btn-sm caps">Normal Button</div>
           </Col>
         </Row>
       </Container>
@@ -163,6 +166,13 @@ const IndexPage: NextPage = () => (
       #first-section {
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
         background-size: cover;
+      }
+      .buttonSpacer {
+        height: 31px;
+      }
+      .absoluteButton {
+        position: absolute;
+        bottom: 0px;
       }
     `}</style>
 
