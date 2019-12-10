@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -49,9 +48,7 @@ const IndexPage: NextPage = () => (
         <h2>QC Career School Faculties</h2>
         <p className="lead">Lorem ipsum dolor sit amet</p>
         <Bar className="text-primary mb-5" />
-
         <Row>
-
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={MakeupFaculties}
@@ -61,7 +58,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.qcmakeupacademy.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={EventFaculties}
@@ -71,7 +67,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.qceventplanning.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={DesignFaculties}
@@ -81,7 +76,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.qcdesignschool.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={PetFaculties}
@@ -91,7 +85,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.doggroomingcourse.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={WellnessFaculties}
@@ -101,7 +94,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.qcwellnessstudies.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={StyleFaculties}
@@ -111,7 +103,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.qcstyleacademy.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
               img={TravelFaculties}
@@ -121,7 +112,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.qctravelschool.com/"
             />
           </Col>
-
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
               img={WritingFaculties}
@@ -131,7 +121,6 @@ const IndexPage: NextPage = () => (
               buttonLink="https://www.winghill.com/"
             />
           </Col>
-
         </Row>
 
       </Container>
