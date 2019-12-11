@@ -56,5 +56,9 @@
     "webp-loader": "^0.5.0",
     "xbbcode-parser": "^0.1.2",
     "xml": "^1.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.3.3",
+    "jest": "^24.9.0"
   }
 }
