@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -144,19 +145,19 @@ const IndexPage: NextPage = () => (
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
             <div className="buttonSpacer" />
-            <div className="absoluteButton btn btn-primary btn-sm caps">Normal Button</div>
+            <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">Learn More</a></Link>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Admission<br />Requirements</h3>
             <p>Interested in enrolling with QC Career School? Find out the admissions requirements and enroll here!</p>
             <div className="buttonSpacer" />
-            <div className="absoluteButton btn btn-primary btn-sm caps">Normal Button</div>
+            <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Learn More</a></Link>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Find<br />Professionals</h3>
             <p>Hire a QC graduate here! Search by profession and location</p>
             <div className="buttonSpacer" />
-            <div className="absoluteButton btn btn-primary btn-sm caps">Normal Button</div>
+            <Link href="/find-professionals"><a className="absoluteButton btn btn-primary btn-sm caps">Learn More</a></Link>
           </Col>
         </Row>
       </Container>
