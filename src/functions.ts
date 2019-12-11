@@ -1,13 +1,125 @@
 import fetch from 'isomorphic-unfetch';
 import { Auth } from './providers/auth';
 
-export const getTelephoneNumber = (countryCode: string) => {
-  if (countryCode === 'CA') {
-    return '1-833-000-000';
+/**
+ * Returns whether the country is a country with a +44 country dialing code. E.g., United Kingdom
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const isCallingCode44 = (countryCode: string) => [ 'GB', 'IM', 'GG', 'JE' ].indexOf(countryCode) !== -1;
+
+/**
+ * Returns whether the country is a country with a +61 country dialing code. E.g., Australia
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const isCallingCode61 = (countryCode: string) => [ 'AU', 'CX', 'CC' ].indexOf(countryCode) !== -1;
+
+/**
+ * Returns whether the country is a country with a +64 country dialing code. E.g., New Zealand
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const isCallingCode64 = (countryCode: string) => [ 'NZ', 'PN' ].indexOf(countryCode) !== -1;
+
+/**
+ * Returns whether the country is a country with a +1 country dialing code. E.g., Canada, United States, Jamaica
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const isCallingCode1 = (countryCode: string) => [ 'CA', 'US', 'AG', 'AI', 'AS', 'BB', 'BM', 'BS', 'DM', 'DO', 'GD', 'GU', 'JM', 'KN', 'KY', 'LC', 'MP', 'MS', 'PR', 'SX', 'TC', 'TT', 'VC', 'VG', 'VI', 'UM' ].indexOf(countryCode) !== -1;
+
+/**
+ * Returns the country dialing code for a particular country. Only supports +1, +44, +61, and +64.
+ * Returns null for unknown
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const getCallingCode = (countryCode: string): number | null => {
+  if (isCallingCode1(countryCode)) {
+    return 1;
   }
-  return '+1 613-749-8248';
+  if (isCallingCode44(countryCode)) {
+    return 44;
+  }
+  if (isCallingCode61(countryCode)) {
+    return 61;
+  }
+  if (isCallingCode64(countryCode)) {
+    return 64;
+  }
+  return null;
 };
 
+/**
+ * Returns the telephone number we should display to a visitor from a particular country
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const getTelephoneNumber = (countryCode: string): string => {
+  switch (getCallingCode(countryCode)) {
+    case 1:
+      return '1-833-000-000';
+    case 44:
+      return '0800 066 4734';
+    case 61:
+      return '0800-451-979';
+    case 64:
+      return '1800 531 923';
+    default:
+      return '+1 613-749-8248';
+  }
+};
+
+/**
+ * Returns the address we should display to a visitor from a particular country
+ * @param countryCode the two-letter iso-3166-1 alpha-2 country code
+ */
+export const getAddress = (countryCode: string): string[] => {
+  switch (countryCode) {
+    case 'GB':
+    case 'IM':
+    case 'GG':
+    case 'JE':
+      return [
+        '186 St. Albans Road',
+        'Suite 18',
+        'Watford WD24 4AS',
+      ];
+    case 'AU':
+    case 'CX':
+    case 'CC':
+      return [
+        '78 Williams Street',
+        'Suite 23',
+        'Sydney, NSW 2011',
+      ];
+    case 'NZ':
+    case 'PN': // like AU, but with the country
+      return [
+        '78 Williams Street',
+        'Suite 23',
+        'Sydney, NSW 2011',
+        'Australia',
+      ];
+    case 'CA':
+      return [
+        '38 McArthur Avenue',
+        'Ottawa, ON K1L 6R2',
+      ];
+    case 'US':
+      return [
+        '7201 Wisconsin Avenue',
+        'Suite 440',
+        'Bethesda, MD 20814',
+      ];
+    default: // like CA, but with the country
+      return [
+        '38 McArthur Avenue',
+        'Ottawa, ON K1L 6R2',
+        'Canada',
+      ];
+  }
+};
+
+/**
+ * Creates a query string from an object
+ * @param params the query string values
+ */
 export function getQueryString(params: any) {
   return Object.keys(params).map(k => {
     if (Array.isArray(params[k])) {
