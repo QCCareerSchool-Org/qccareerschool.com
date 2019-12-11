@@ -9,7 +9,7 @@
     "build": "node generate-sitemap.js && next build",
     "start": "next start",
     "start-custom": "NODE_ENV=production node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "QC Career School",
@@ -58,7 +58,10 @@
     "xml": "^1.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.3",
+    "@types/jest": "^24.0.23",
+    "@types/testing-library__react": "^9.1.2",
     "jest": "^24.9.0"
   }
 }

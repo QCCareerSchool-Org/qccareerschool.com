@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 
 import { DefaultLayout } from '../layouts/default-layout';
@@ -83,7 +83,7 @@ const ContactPage: NextPage = () => {
         </Container>
       </section>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         #first-section {
           background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 50% 0;
           background-size: cover;
