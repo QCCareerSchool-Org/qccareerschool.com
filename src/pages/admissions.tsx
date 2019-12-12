@@ -40,13 +40,13 @@ const AdmissionsPage: NextPage = () => (
     <section>
       <Container>
         <Row>
-          <Col xs={12} md={6} className="order-2 order-md-1">
+          <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
+            <img src={PrivateGroup} alt="Private Group Discounts" className="sideImage" />
+          </Col>
+          <Col xs={12} md={6} className="order-md-1">
             <h3>Private Group Admissions &amp; Discounts</h3>
             <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
             <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact QC</a></Link>
-          </Col>
-          <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
-            <img src={PrivateGroup} alt="Private Group Discounts" className="sideImage" />
           </Col>
         </Row>
       </Container>
@@ -55,18 +55,18 @@ const AdmissionsPage: NextPage = () => (
     <section className="bg-light">
       <Container>
         <Row>
-          <Col xs={12} md={6} className="order-2 order-md-1">
+          <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
+            <img src={Corporate} alt="Corporate Admissions" className="sideImage" />
+          </Col>
+          <Col xs={12} md={6} className="order-md-1">
             <h3>Corporate Admissions</h3>
             <p className="mb-4">Over the years QC has worked with corporations to adapt course content, assignments and tuition/billing practices to corporate groups with specific goals for their employees. If you are a member of a corporation looking to train your employees via a QC course, please contact us to speak with a business development representative who will be happy to prepare a proposal that will suit your needs.           </p>
             <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact QC</a></Link>
           </Col>
-          <Col xs={12} md={6} className="mb-4 md-md-0 order-1 order-md-2">
-            <img src={Corporate} alt="Corporate Admissions" className="sideImage" />
-          </Col>
         </Row>
       </Container>
     </section>
-  
+
     <style jsx={true}>{`
       #first-section {
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
