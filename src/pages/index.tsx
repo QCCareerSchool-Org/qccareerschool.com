@@ -41,7 +41,6 @@ const IndexPage: NextPage = () => (
         <Col xs="12" md="8" className="offset-md-2">
           <img src={Emblem} alt="emblem" className="mb-4" />
           <h2 className="text-center">Welcome to QC Career School!</h2>
-          <p className="lead">Lorem ipsum dolor sit amet</p>
           <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC’s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you’ll graduate with the skills and confidence you need to start a successful professional career!</p>
         </Col>
       </Container>
@@ -50,7 +49,6 @@ const IndexPage: NextPage = () => (
     <section className="text-dark bg-light">
       <Container>
         <h2>QC Career School Faculties</h2>
-        <p className="lead">Lorem ipsum dolor sit amet</p>
         <Bar className="text-primary mb-5" />
         <Row>
           <Col xs="12" md="6" className="mb-g d-flex">
