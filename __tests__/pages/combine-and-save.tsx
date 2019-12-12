@@ -6,7 +6,8 @@ import CombineAndSavePage from '../../src/pages/combine-and-save';
 describe('<CombineAndSavePage>', () => {
 
   test('it works', () => {
-    render(<CombineAndSavePage />);
+    const { rerender } = render(<CombineAndSavePage />);
+    rerender(<CombineAndSavePage />);
   });
 
 });

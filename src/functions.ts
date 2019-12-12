@@ -53,7 +53,7 @@ export const getCallingCode = (countryCode: string): number | null => {
 export const getTelephoneNumber = (countryCode: string): string => {
   switch (getCallingCode(countryCode)) {
     case 1:
-      return '1-833-000-000';
+      return '1-833-000-001';
     case 44:
       return '0800 066 4734';
     case 61:

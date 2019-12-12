@@ -9,7 +9,8 @@
     "build": "node generate-sitemap.js && next build",
     "start": "next start",
     "start-custom": "NODE_ENV=production node server.js",
-    "test": "jest"
+    "test": "jest --verbose",
+    "test:watch": "jest --verbose --watch"
   },
   "keywords": [],
   "author": "QC Career School",
@@ -60,8 +61,10 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.3",
+    "@types/faker": "^4.1.8",
     "@types/jest": "^24.0.23",
     "@types/testing-library__react": "^9.1.2",
+    "faker": "^4.1.0",
     "jest": "^24.9.0"
   }
 }
