@@ -17,7 +17,7 @@ const CareersPage: NextPage = () => (
     <section id="first-section" className="bg-dark text-light">
       <Container>
         <h1>Careers</h1>
-        <p className="lead mb-5 bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <p className="lead mb-5 bold">Come work for QC Career School!</p>
       </Container>
     </section>
 
