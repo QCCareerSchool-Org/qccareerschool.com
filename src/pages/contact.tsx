@@ -1,94 +1,18 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
-import { useContext } from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { IoMdChatbubbles, IoMdMail, IoMdPhonePortrait   } from 'react-icons/io';
+import { IoMdChatbubbles, IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
 
 import { DefaultLayout } from '../layouts/default-layout';
-import { LocationStateContext } from '../providers/location';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 const ContactPage: NextPage = () => {
   const iconSize = 100;
-  const location = useContext(LocationStateContext);
-
-  function address(): JSX.Element {
-    switch (location?.countryCode) {
-      case 'GB': return (
-        <>
-          <h3>Address</h3>
-          186 St. Albans Road<br />
-          Suite 18<br />
-          Watford WD24 4AS<br />
-          0800 066 4734
-        </>
-      );
-      case 'AU': return (
-        <>
-          <section className="text-dark">
-          <h3>Address</h3>
-          78 Williams Street<br />
-          Suite 23<br />
-          Sydney, NSW 2011<br />
-          1800 531 923
-          </section>
-        </>
-      );
-      case 'NZ': return (
-        <>
-          <section className="text-dark">
-          <h3>Address</h3>
-          78 Williams Street<br />
-          Suite 23<br />
-          Sydney, NSW 2011<br />
-          Australia
-          0800-451-979
-          </section>
-        </>
-      );
-      case 'CA': return (
-        <>
-          <section className="text-dark">
-          <h3>Address</h3>
-          38 McArthur Avenue<br />
-          Ottawa, ON K1L 6R2<br />
-          1-833-600-3751
-          </section>
-        </>
-      );
-      case 'US': return (
-        <>
-          <section className="text-dark">
-          <h3>Address</h3>
-          7201 Wisconsin Avenue<br />
-          Suite 440<br />
-          Bethesda, MD 20814<br />
-          1-833-600-3751
-          </section>
-        </>
-      );
-      default: return (
-        <>
-          <section className="text-dark">
-          <h3>Address</h3>
-          38 McArthur Avenue<br />
-          Ottawa, ON K1L 6R2<br />
-          Canada<br />
-          +1-613-749-8248
-          </section>
-        </>
-      );
-    }
-  }
 
   return (
     <DefaultLayout>
-      <Head>
-        <title>Contact Us - QC Career School</title>
-      </Head>
 
       <section id="first-section" className="text-light">
         <Container>
@@ -97,7 +21,7 @@ const ContactPage: NextPage = () => {
         </Container>
       </section>
 
-<section className="text-dark">
+      <section className="text-dark text-center">
         <Container>
           <Row>
             <Col xs={12} md={4}>
@@ -116,12 +40,6 @@ const ContactPage: NextPage = () => {
               <p>Have a quick question and want a speedy response? Our live chat representatives are there to help!</p>
             </Col>
           </Row>
-        </Container>
-      </section>
-
-      <section>
-        <Container>
-          {address()}
         </Container>
       </section>
 
