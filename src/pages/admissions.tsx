@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
+import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Corporate from '../images/admissions-corporate.jpg';
@@ -12,6 +13,10 @@ import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 const AdmissionsPage: NextPage = () => (
   <DefaultLayout>
+<SEO
+      title="Admissions"
+      description="Enroll in a course today and join the QC Career School community!"
+      canonical="/admissions" />
 
     <section id="first-section" className="text-light">
       <Container>

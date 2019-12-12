@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { IoMdChatbubbles, IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
 
+import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
@@ -15,7 +16,12 @@ const ContactPage: NextPage = () => {
   return (
     <DefaultLayout>
 
-      <section id="first-section" className="text-dark">
+<SEO
+      title="Contact"
+      description="QC’s team of friendly student advisors are always happy to help. Reach out to us any time!"
+      canonical="/contact" />
+
+      <section id="first-section" className="text-light">
         <Container>
           <h1>Contact</h1>
           <p className="lead">Whether you have a question about enrolling, are a student looking for help with your account or an assignment, or are a graduate looking to expand your skillset, QC’s team of friendly student advisors are always happy to help. Reach out to us any time!</p>

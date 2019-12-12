@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import MakeupGlobalBeauty from '../../images/course-makeup-global-beauty.jpg';
@@ -16,6 +17,11 @@ import MakeupSkin from '../../images/course-makeup-skincare.jpg';
 
 const MakeupAcademy: NextPage = () => (
   <DefaultLayout>
+
+<SEO
+      title="QC Makeup Academy"
+      description="QC is a leader in online distance education. QC offers affordable and convenient career training in a variety of professional fields."
+      canonical="/programs/qc-makeup-academy" />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

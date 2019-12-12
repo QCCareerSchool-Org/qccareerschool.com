@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import OtherPrograms from '../../images/hero-additional-programs.jpg';
@@ -15,13 +16,18 @@ import WritingFaculties from '../../images/writing-faculties-woman.jpg';
 const AdditionalPrograms: NextPage = () => (
   <DefaultLayout>
 
+<SEO
+      title="Additional Programs"
+      description="Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!"
+      canonical="/programs/additional-programs" />
+
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
         <Row>
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>Additional Programs</h1>
-            <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac dolor eget lorem condimentum eleifend a sit amet ante. Vivamus id mattis mi. Morbi ut arcu et ante gravida tempor. Aenean nisl ex, scelerisque sed rhoncus ut, venenatis vitae arcu. Maecenas tristique felis id eros molestie, vitae sagittis odio rutrum. Suspendisse pellentesque pretium orci, eget hendrerit magna bibendum vitae. Nam imperdiet quam suscipit lacinia tincidunt.</p>
+            <p className="lead">Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!</p>
           </Col>
         </Row>
       </Container>

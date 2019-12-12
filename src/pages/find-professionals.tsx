@@ -11,6 +11,7 @@ import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
+import { SEO } from '../components/seo';
 import { getQueryString } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
 import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
@@ -128,6 +129,11 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
   return (
     <DefaultLayout>
+
+<SEO
+      title="Find Professionals"
+      description="Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you."
+      canonical="/find-professionals" />
 
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 

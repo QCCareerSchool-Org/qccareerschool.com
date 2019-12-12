@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import DesignHomeStaging from '../../images/course-design-homestaging.jpg';
@@ -14,6 +15,11 @@ import DesignOrganizing from '../../images/course-design-organizing.jpg';
 
 const InteriorDecoratingPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Design School"
+      description="Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time."
+      canonical="/programs/qc-design-school" />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

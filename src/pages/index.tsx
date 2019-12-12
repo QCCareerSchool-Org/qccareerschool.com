@@ -24,8 +24,10 @@ import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
 const IndexPage: NextPage = () => (
   <DefaultLayout>
 
-    <SEO title="QC Career School" description="Lorem ipsum dolor" />
-
+    <SEO
+      title="QC Career School"
+      description="QC is a leader in online distance education. QC offers affordable and convenient career training in a variety of professional fields."
+      canonical="/" />
     <section id="first-section" className="text-light">
       <Container>
         <Col xs="12" md="10" lg="7" className="offset-md-1">
