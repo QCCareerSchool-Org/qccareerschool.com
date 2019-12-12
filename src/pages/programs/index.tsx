@@ -33,7 +33,7 @@ const ProgramsPage: NextPage = () => (
         <Row>
           <Col xs={12} md={8}>
             <h2>QC Career School Faculties</h2>
-            <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="lead">QC contains 7 faculty schools that specialize in different industries.</p>
             <Bar className="text-primary" />
           </Col>
         </Row>
@@ -92,7 +92,7 @@ const ProgramsPage: NextPage = () => (
             <CourseCard
               img={OtherPrograms}
               title="Additional Programs"
-              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac dolor eget lorem condimentum eleifend a sit amet ante. Vivamus id mattis mi. Morbi ut arcu et ante gravida tempor. Aenean nisl ex, scelerisque sed rhoncus ut, venenatis vitae arcu. Maecenas tristique felis id eros molestie, vitae sagittis odio rutrum. Suspendisse pellentesque pretium orci, eget hendrerit magna bibendum vitae. Nam imperdiet quam suscipit lacinia tincidunt."
+              body="Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!"
               buttonText="Learn More"
               link="/programs/additional-programs"
             />
