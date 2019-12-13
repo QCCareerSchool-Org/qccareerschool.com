@@ -15,7 +15,7 @@ const AdmissionsPage: NextPage = () => (
   <DefaultLayout>
 <SEO
       title="Admissions"
-      description="Enroll in a course today and join the QC Career School community!"
+      description="Enroll in a course today &amp; join the QC Career School community! We offer private group &amp; corporate discounts. Read on about our admissions process here!"
       canonical="/admissions" />
 
     <section id="first-section" className="text-light">

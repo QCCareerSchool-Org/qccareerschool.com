@@ -130,10 +130,10 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   return (
     <DefaultLayout>
 
-<SEO
-      title="Find Professionals"
-      description="Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you."
-      canonical="/find-professionals" />
+      <SEO
+        title="Find Professionals"
+        description="Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form to find a professional near you."
+        canonical="/find-professionals" />
 
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
@@ -257,7 +257,7 @@ FindProfessionalsPage.getInitialProps = async ({ foo, reduxStore, res }: NextPag
     if (state.findProfessionals.professions.length === 0) {
       reduxStore.dispatch(FindProfessionals.actionCreators.setProfessions(professionGroups));
     }
-    return { };
+    return {};
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (res) {

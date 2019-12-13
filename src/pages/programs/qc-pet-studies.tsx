@@ -17,7 +17,7 @@ const DogGroominPage: NextPage = () => (
 
     <SEO
       title="QC Pet Studies"
-      description="QC is working to bring animal care careers into the world of online learning! With online training under an expert’s tutelage, you’ll work at your own pace!"
+      description="Get the training to become a professional dog groomer with QC's affordable online dog grooming course. Learn from the experts and start your career today!"
       canonical="/programs/qc-pet-studies" />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">

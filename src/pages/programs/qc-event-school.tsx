@@ -19,7 +19,7 @@ const EventPlanningPage: NextPage = () => (
 
 <SEO
       title="QC Event School"
-      description=" If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning!"
+      description="If you enjoy working with people you might have found your new career in event planning! We provide courses for event planning professionals of all skill levels!"
       canonical="/programs/qc-event-school" />
 
   <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">

@@ -21,7 +21,7 @@ const ProgramsPage: NextPage = () => (
   <DefaultLayout>
 <SEO
       title="Courses &amp; Professional Training Programs"
-      description="QC’s expert course developers and tutors have spent years developing a unique and comprehensive approach to online learning!"
+      description="QC’s comprehensive approach to online learning will offer the flexibility you need while giving you the high-quality training &amp; personalized feedback you deserve"
       canonical="/programs" />
 
     <section id="first-section" className="bg-dark text-light text-shadow">
