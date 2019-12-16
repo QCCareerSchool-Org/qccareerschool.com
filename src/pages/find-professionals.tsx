@@ -132,7 +132,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
       <SEO
         title="Find Professionals"
-        description="Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form to find a professional near you."
+        description="Seeking a skilled professional in your area? Look no further! QC graduates are well prepared to help you. Simply fill in the form to find a professional near you."
         canonical="/find-professionals" />
 
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
