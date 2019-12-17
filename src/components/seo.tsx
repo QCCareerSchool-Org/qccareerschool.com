@@ -5,7 +5,7 @@ import React from 'react';
 interface Props {
   title: string;
   description: string;
-  canonical?: string;
+  canonical: string;
 }
 
 export const SEO: React.FC<Props> = ({ title, description, canonical }) => (
@@ -19,7 +19,8 @@ export const SEO: React.FC<Props> = ({ title, description, canonical }) => (
     <meta name="twitter:creator" content="QC Career School" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {canonical ? <link rel="canonical" href={canonical} /> : null}
+    <link rel="canonical" href={canonical} />
+    {/* {canonical ? <link rel="canonical" href={canonical} /> : null} */}
   </Head>
 );
 

@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-
 import { DefaultLayout } from '../layouts/default-layout';
 
 const CoursesPage: NextPage = () => (
@@ -21,6 +20,7 @@ const CoursesPage: NextPage = () => (
         <Col xs="12" md="8" lg="6">sdjkfhsdkjfhM</Col>
         <Card>
           <Card.Body>
+
             sdfkjdslfkj
           </Card.Body>
         </Card>
