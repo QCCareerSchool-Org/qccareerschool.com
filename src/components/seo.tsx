@@ -20,7 +20,6 @@ export const SEO: React.FC<Props> = ({ title, description, canonical }) => (
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <link rel="canonical" href={canonical} />
-    {/* {canonical ? <link rel="canonical" href={canonical} /> : null} */}
   </Head>
 );
 
