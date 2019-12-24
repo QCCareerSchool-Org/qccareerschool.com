@@ -47,11 +47,21 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/qc-design-school"><a className="dropdown-item">QC Design School</a></Link>
                 <Link href="/programs/qc-event-school"><a className="dropdown-item">QC Event School</a></Link>
                 <Link href="/programs/qc-pet-studies"><a className="dropdown-item">QC Pet Studies</a></Link>
+                <Link href="/programs/qc-wellness-studies"><a className="dropdown-item">QC Wellness Studies</a></Link>
                 <Link href="/programs/additional-programs"><a className="dropdown-item">Additional Programs</a></Link>
+                <Link href="/combine-and-save"><a className="dropdown-item">Combine and Save</a></Link>
               </NavDropdown>
-              <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
+              <NavDropdown title="Admissions" id="admissions-dropdown">
+                <Link href="/how-it-works"><a className="dropdown-item">How It Works</a></Link>
+                <Link href="/admissions"><a className="dropdown-item">Individual Admission</a></Link>
+                <Link href="/admissions#group"><a className="dropdown-item">Group Admissions</a></Link>
+                <Link href="/admissions#corporate"><a className="dropdown-item">Corporate Admissions</a></Link>
+              </NavDropdown>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
-              <Link href="/contact"><a className="nav-link">Contact</a></Link>
+              <NavDropdown title="Contact" id="contact-dropdown">
+                <Link href="/contact"><a className="dropdown-item">Contact Us</a></Link>
+                <Link href="/programs/careers"><a className="dropdown-item">Careers</a></Link>
+              </NavDropdown>
             </Nav>
             <a href="https://enroll.qcmakeupacademy.com">
               {mobile
