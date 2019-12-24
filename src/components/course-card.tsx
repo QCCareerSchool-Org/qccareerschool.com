@@ -9,9 +9,10 @@ interface Props {
   buttonText: string;
   link: string;
   externalLink?: boolean;
+  alt?: string;
 }
 
-export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, link, externalLink }) => (
+export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, link, externalLink, alt }) => (
   <Card className="shadow-lg rounded-lg">
     {externalLink
       ? <a href={link}><Card.Img variant="top" src={img} /></a>
