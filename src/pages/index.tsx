@@ -54,6 +54,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={MakeupFaculties}
+              alt="makeup artist applying makeup on a client"
               title="QC Makeup Academy"
               body="Basic and advanced professional makeup artistry courses for all skill levels."
               buttonText="LEARN MORE"
@@ -64,6 +65,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={EventFaculties}
+              alt="event planning - professionally decorated dinner set"
               title="QC Event School"
               body="Training event planning professionals to launch their own business. Courses include party planning, wedding planning, corporate event planning and more."
               buttonText="LEARN MORE"
@@ -74,6 +76,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={DesignFaculties}
+              alt="professionally designed living room"
               title="QC Design School"
               body=" Offering courses in all areas of home design from interior decorating to professional organizing."
               buttonText="LEARN MORE"
@@ -84,6 +87,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={PetFaculties}
+              alt="dog groomer bathing a small dog"
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
               buttonText="LEARN MORE"
@@ -94,6 +98,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={WellnessFaculties}
+              alt="wellness professional putting a baby to sleep"
               title="QC Wellness Studies"
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
               buttonText="LEARN MORE"
@@ -104,6 +109,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
               img={StyleFaculties}
+              alt="professional stylist shopping with her client"
               title="QC Style Academy"
               body="Partnered with QC Makeup Academy to offer courses to beauty professionals expanding into personal styling."
               buttonText="LEARN MORE"
@@ -114,6 +120,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
               img={TravelFaculties}
+              alt="traveling couple enjoying an amazing view"
               title="QC Travel School"
               body="Training professional travel agents in an ever competing marketplace."
               buttonText="LEARN MORE"
@@ -124,6 +131,7 @@ const IndexPage: NextPage = () => (
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
               img={WritingFaculties}
+              alt="person writing a book"
               title="Winghill Writing School"
               body="The school that started it all! Winghill offers a myriad of writing courses from novel writing to family history writing and much more."
               buttonText="LEARN MORE"
