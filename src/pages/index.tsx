@@ -132,7 +132,6 @@ const IndexPage: NextPage = () => (
             />
           </Col>
         </Row>
-
       </Container>
     </section>
 

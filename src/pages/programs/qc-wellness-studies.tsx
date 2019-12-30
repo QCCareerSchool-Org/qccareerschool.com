@@ -8,7 +8,6 @@ import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import WellnessCare from '../../images/course-welness-personal-care.jpg';
 import WellnessSleep from '../../images/course-welness-sleep.jpg';
 
 const WelnessPage: NextPage = () => (

@@ -15,7 +15,7 @@ const ContactPage: NextPage = () => {
   return (
     <DefaultLayout>
 
-      <section id="first-section" className="text-dark">
+      <section id="first-section" className="text-light">
         <Container>
           <h1>Contact</h1>
           <p className="lead">Whether you have a question about enrolling, are a student looking for help with your account or an assignment, or are a graduate looking to expand your skillset, QC’s team of friendly student advisors are always happy to help. Reach out to us any time!</p>
