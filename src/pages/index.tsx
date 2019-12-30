@@ -57,7 +57,7 @@ const IndexPage: NextPage = () => (
               alt="makeup artist applying makeup on a client"
               title="QC Makeup Academy"
               body="Basic and advanced professional makeup artistry courses for all skill levels."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC MAKEUP ACADEMY"
               link="https://www.qcmakeupacademy.com/"
               externalLink={true}
             />
@@ -68,7 +68,7 @@ const IndexPage: NextPage = () => (
               alt="event planning - professionally decorated dinner set"
               title="QC Event School"
               body="Training event planning professionals to launch their own business. Courses include party planning, wedding planning, corporate event planning and more."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC EVENT SCHOOL"
               link="https://www.qceventplanning.com/"
               externalLink={true}
             />
@@ -79,7 +79,7 @@ const IndexPage: NextPage = () => (
               alt="professionally designed living room"
               title="QC Design School"
               body=" Offering courses in all areas of home design from interior decorating to professional organizing."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC DESIGN SCHOOL"
               link="https://www.qcdesignschool.com/"
               externalLink={true}
             />
@@ -90,7 +90,7 @@ const IndexPage: NextPage = () => (
               alt="dog groomer bathing a small dog"
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC PET STUDIES"
               link="https://www.doggroomingcourse.com/"
               externalLink={true}
             />
@@ -101,7 +101,7 @@ const IndexPage: NextPage = () => (
               alt="wellness professional putting a baby to sleep"
               title="QC Wellness Studies"
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC WELLNESS STUDIES"
               link="https://www.qcwellnessstudies.com/"
               externalLink={true}
             />
@@ -112,7 +112,7 @@ const IndexPage: NextPage = () => (
               alt="professional stylist shopping with her client"
               title="QC Style Academy"
               body="Partnered with QC Makeup Academy to offer courses to beauty professionals expanding into personal styling."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC STYLE ACADEMY"
               link="https://www.qcstyleacademy.com/"
               externalLink={true}
             />
@@ -123,7 +123,7 @@ const IndexPage: NextPage = () => (
               alt="traveling couple enjoying an amazing view"
               title="QC Travel School"
               body="Training professional travel agents in an ever competing marketplace."
-              buttonText="LEARN MORE"
+              buttonText="VISIT QC TRAVEL SCHOOL"
               link="https://www.qctravelschool.com/"
               externalLink={true}
             />
@@ -134,7 +134,7 @@ const IndexPage: NextPage = () => (
               alt="person writing a book"
               title="Winghill Writing School"
               body="The school that started it all! Winghill offers a myriad of writing courses from novel writing to family history writing and much more."
-              buttonText="LEARN MORE"
+              buttonText="VISIT WINGHILL WRITING SCHOOL"
               link="https://www.winghill.com/"
               externalLink={true}
             />
@@ -150,19 +150,19 @@ const IndexPage: NextPage = () => (
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
             <div className="buttonSpacer" />
-            <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">Learn More</a></Link>
+            <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">Visit Course Catalog</a></Link>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Admission<br />Requirements</h3>
             <p>Interested in enrolling with QC Career School? Find out the admissions requirements and enroll here!</p>
             <div className="buttonSpacer" />
-            <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Learn More</a></Link>
+            <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Enroll Now</a></Link>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Find<br />Professionals</h3>
             <p>Hire a QC graduate here! Search by profession and location</p>
             <div className="buttonSpacer" />
-            <Link href="/find-professionals"><a className="absoluteButton btn btn-primary btn-sm caps">Learn More</a></Link>
+            <Link href="/find-professionals"><a className="absoluteButton btn btn-primary btn-sm caps">Find Professionals</a></Link>
           </Col>
         </Row>
       </Container>
