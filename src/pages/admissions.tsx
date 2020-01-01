@@ -37,7 +37,7 @@ const AdmissionsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section>
+    <section id="group">
       <Container>
         <Row>
           <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
@@ -52,7 +52,7 @@ const AdmissionsPage: NextPage = () => (
       </Container>
     </section>
 
-    <section className="bg-light">
+    <section id="corporate" className="bg-light">
       <Container>
         <Row>
           <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
