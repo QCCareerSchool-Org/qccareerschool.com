@@ -57,7 +57,7 @@ const CareersPage: NextPage = () => (
             </p>
             <p className="mb-4">We’re always happy to accept tutors from around the world! QC is an International school, and most of our students are located in the United States, Canada, Australia, the United Kingdom, and New Zealand.</p>
             <div className="text-left">
-              <Link href="/contact"><a className="btn btn-secondary btn-lg">Contact QC</a></Link>
+              <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
             </div>
           </Col>
         </Row>
