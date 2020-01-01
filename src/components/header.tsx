@@ -63,10 +63,10 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/careers"><a className="dropdown-item">Careers</a></Link>
               </NavDropdown>
             </Nav>
-            <a href="https://enroll.qcmakeupacademy.com">
+            <a href="https://studentcenter.qccareerschoool.com">
               {mobile
-                ? <Button variant="link" className="p-0">Student Login</Button>
-                : <Button size="sm">Student Login</Button>
+                ? <Button variant="link" className="p-0">Student Log In</Button>
+                : <Button size="sm">Student Log In</Button>
               }
             </a>
           </Navbar.Collapse>
