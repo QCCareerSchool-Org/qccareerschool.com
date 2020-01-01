@@ -16,10 +16,11 @@ const ContactPage: NextPage = () => {
   return (
     <DefaultLayout>
 
-<SEO
-      title="Contact"
-      description="QC’s team of friendly student advisors are always happy to help. Reach out to us by phone email or live chat at any time!"
-      canonical="/contact" />
+      <SEO
+        title="Contact"
+        description="QC’s team of friendly student advisors are always happy to help. Reach out to us by phone email or live chat at any time!"
+        canonical="/contact"
+      />
 
       <section id="first-section" className="text-light">
         <Container>

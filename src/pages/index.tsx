@@ -27,7 +27,9 @@ const IndexPage: NextPage = () => (
     <SEO
       title="QC Career School"
       description="QC is a leader in online distance education. With QC you’ll graduate with the skills and confidence you need to start a successful professional career!"
-      canonical="/" />
+      canonical="/"
+    />
+
     <section id="first-section" className="text-light">
       <Container>
         <Col xs="12" md="10" lg="7" className="offset-md-1">
