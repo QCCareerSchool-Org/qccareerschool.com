@@ -21,7 +21,7 @@ const AdditionalPrograms: NextPage = () => (
           <Col xs={12} md={8} className="offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>Additional Programs</h1>
-            <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac dolor eget lorem condimentum eleifend a sit amet ante. Vivamus id mattis mi. Morbi ut arcu et ante gravida tempor. Aenean nisl ex, scelerisque sed rhoncus ut, venenatis vitae arcu. Maecenas tristique felis id eros molestie, vitae sagittis odio rutrum. Suspendisse pellentesque pretium orci, eget hendrerit magna bibendum vitae. Nam imperdiet quam suscipit lacinia tincidunt.</p>
+            <p className="lead">Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!</p>
           </Col>
         </Row>
       </Container>
