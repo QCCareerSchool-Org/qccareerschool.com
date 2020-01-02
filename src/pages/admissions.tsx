@@ -13,10 +13,12 @@ import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 const AdmissionsPage: NextPage = () => (
   <DefaultLayout>
-<SEO
+
+    <SEO
       title="Admissions"
       description="Enroll in a course today &amp; join the QC Career School community! QC offers private group &amp; corporate discounts. Read on about QC admissions process here!"
-      canonical="/admissions" />
+      canonical="/admissions"
+    />
 
     <section id="first-section" className="text-light">
       <Container>

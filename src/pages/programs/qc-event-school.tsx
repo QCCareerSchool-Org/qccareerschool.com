@@ -17,12 +17,13 @@ import EventWedding from '../../images/course-event-wedding.jpg';
 const EventPlanningPage: NextPage = () => (
   <DefaultLayout>
 
-<SEO
+    <SEO
       title="QC Event School"
       description="If you enjoy working with people you might have found your new career in event planning! QC provides courses for planning professionals of all skill levels!"
-      canonical="/programs/qc-event-school" />
+      canonical="/programs/qc-event-school"
+    />
 
-  <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+    <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
         <Row>
           <Col xs={12} md={8} className="offset-md-4">

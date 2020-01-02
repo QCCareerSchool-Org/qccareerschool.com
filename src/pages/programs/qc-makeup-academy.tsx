@@ -18,10 +18,11 @@ import MakeupSkin from '../../images/course-makeup-skincare.jpg';
 const MakeupAcademy: NextPage = () => (
   <DefaultLayout>
 
-<SEO
+    <SEO
       title="QC Makeup Academy"
       description="QC Makeup Academy offers a number of courses for makeup artists. You’ll find a course to help develop your makeup skills &amp; take you to the next level!"
-      canonical="/programs/qc-makeup-academy" />
+      canonical="/programs/qc-makeup-academy"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

@@ -14,10 +14,11 @@ const HowItWorksPage: NextPage = () => {
   return (
     <DefaultLayout>
 
-<SEO
-      title="How It Works"
-      description="QC's Approach to Online Learning: a hands-on methodology, personalized tutor feedback, unmatched student support, flexible payment plans and more!"
-      canonical="/how-it-works" />
+      <SEO
+        title="How It Works"
+        description="QC's Approach to Online Learning: a hands-on methodology, personalized tutor feedback, unmatched student support, flexible payment plans and more!"
+        canonical="/how-it-works"
+      />
 
       <section id="first-section" className="bg-dark text-light text-shadow">
         <div className="my-5">

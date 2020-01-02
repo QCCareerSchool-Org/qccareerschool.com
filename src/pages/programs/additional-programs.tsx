@@ -16,10 +16,11 @@ import WritingFaculties from '../../images/writing-faculties-woman.jpg';
 const AdditionalPrograms: NextPage = () => (
   <DefaultLayout>
 
-<SEO
+    <SEO
       title="Additional Programs"
       description="Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!"
-      canonical="/programs/additional-programs" />
+      canonical="/programs/additional-programs"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

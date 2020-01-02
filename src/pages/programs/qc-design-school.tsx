@@ -19,7 +19,8 @@ const InteriorDecoratingPage: NextPage = () => (
     <SEO
       title="QC Design School"
       description="Start a career in home design. Become a certified design professional with flexible online training from industry experts. Find out more!"
-      canonical="/programs/qc-design-school" />
+      canonical="/programs/qc-design-school"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

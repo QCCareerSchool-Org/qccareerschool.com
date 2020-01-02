@@ -19,10 +19,12 @@ import OtherPrograms from '../../images/hero-additional-programs.jpg';
 
 const ProgramsPage: NextPage = () => (
   <DefaultLayout>
-<SEO
+
+    <SEO
       title="Courses &amp; Professional Training Programs"
       description="QC’s comprehensive approach to online learning will offer the flexibility you need while giving you the high-quality training &amp; personalized feedback you deserve"
-      canonical="/programs" />
+      canonical="/programs"
+    />
 
     <section id="first-section" className="bg-dark text-light text-shadow">
       <Container>
