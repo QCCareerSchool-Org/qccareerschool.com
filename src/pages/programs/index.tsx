@@ -22,7 +22,7 @@ const ProgramsPage: NextPage = () => (
 
     <SEO
       title="Courses & Professional Training Programs"
-      description="QC’s comprehensive approach to online learning will offer the flexibility you need while giving you the high-quality training &amp; personalized feedback you deserve"
+      description="QC’s comprehensive approach to online learning will offer the flexibility you need while giving you the high-quality training & personalized feedback you deserve"
       canonical="/programs"
     />
 

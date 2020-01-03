@@ -42,7 +42,7 @@ const InteriorDecoratingPage: NextPage = () => (
               img={DesignInterior}
               alt="professionally decorated dining room"
               title="Interior Decorating Course"
-              body="Interior Decorating is a home designer’s bread &amp; butter. In this course you’ll learn how to create beautiful spaces customized to your clients’ tastes and for their specific needs. The course comes with full business training, so you’ll graduate with all the tools and skills you need to start a successful decorating business."
+              body="Interior Decorating is a home designer’s bread & butter. In this course you’ll learn how to create beautiful spaces customized to your clients’ tastes and for their specific needs. The course comes with full business training, so you’ll graduate with all the tools and skills you need to start a successful decorating business."
               buttonText="Full Course Overview"
               link="https://www.qcdesignschool.com/online-courses/interior-decorating/"
               externalLink={true}
