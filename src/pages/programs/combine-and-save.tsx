@@ -5,17 +5,17 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { Bar } from '../components/bar';
-import { SEO } from '../components/seo';
-import { DefaultLayout } from '../layouts/default-layout';
+import { Bar } from '../../components/bar';
+import { SEO } from '../../components/seo';
+import { DefaultLayout } from '../../layouts/default-layout';
 
-import HeroHome from '../images/backgrounds/hero-home.jpg';
-import BusinessCommunications from '../images/combine-business-communications.jpg';
-import DecorColor from '../images/combine-decor-color.jpg';
-import DestinationTravel from '../images/combine-destination-travel.jpg';
-import DecorEvent from '../images/combine-interior-decorating-event-decor.jpg';
-import MakeupWedding from '../images/combine-makeup-wedding-planning.jpg';
-import WriteMakeup from '../images/combine-screenwriting-makeup.jpg';
+import HeroHome from '../../images/backgrounds/hero-home.jpg';
+import BusinessCommunications from '../../images/combine-business-communications.jpg';
+import DecorColor from '../../images/combine-decor-color.jpg';
+import DestinationTravel from '../../images/combine-destination-travel.jpg';
+import DecorEvent from '../../images/combine-interior-decorating-event-decor.jpg';
+import MakeupWedding from '../../images/combine-makeup-wedding-planning.jpg';
+import WriteMakeup from '../../images/combine-screenwriting-makeup.jpg';
 
 const CombinePage: NextPage = () => (
   <DefaultLayout>
