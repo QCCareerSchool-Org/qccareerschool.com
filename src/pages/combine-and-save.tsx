@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../components/bar';
+import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
@@ -18,6 +19,12 @@ import WriteMakeup from '../images/combine-screenwriting-makeup.jpg';
 
 const CombinePage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="Combine Your Training and Save"
+      description="When you enroll with QC Career School, you join a community of creative professionals who understand & value the benefits of continued education."
+      canonical="/combine-and-save"
+    />
 
     <section id="first-section" className="text-light">
       <Container>

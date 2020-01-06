@@ -11,6 +11,7 @@ import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
+import { SEO } from '../components/seo';
 import { getQueryString } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
 import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
@@ -128,6 +129,12 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
   return (
     <DefaultLayout>
+
+      <SEO
+        title="Find Professionals"
+        description="Seeking a skilled professional in your area? Look no further! QC graduates are well prepared to help you. Simply fill in the form to find a professional near you."
+        canonical="/find-professionals"
+      />
 
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
@@ -251,7 +258,7 @@ FindProfessionalsPage.getInitialProps = async ({ foo, reduxStore, res }: NextPag
     if (state.findProfessionals.professions.length === 0) {
       reduxStore.dispatch(FindProfessionals.actionCreators.setProfessions(professionGroups));
     }
-    return { };
+    return {};
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (res) {

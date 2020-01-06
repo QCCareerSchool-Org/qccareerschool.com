@@ -6,12 +6,19 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import WellnessSleep from '../../images/course-welness-sleep.jpg';
 
 const WelnessPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Wellness Studies"
+      description="If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered."
+      canonical="/programs/qc-wellness-studies"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

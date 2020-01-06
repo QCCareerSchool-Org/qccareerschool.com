@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { IoMdChatbubbles, IoMdCheckmarkCircle, IoMdHand, IoMdPeople, IoMdShuffle, IoMdTimer } from 'react-icons/io';
 
+import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
@@ -12,6 +13,12 @@ const HowItWorksPage: NextPage = () => {
   const iconSize = 100;
   return (
     <DefaultLayout>
+
+      <SEO
+        title="How It Works"
+        description="QC's Approach to Online Learning: a hands-on methodology, personalized tutor feedback, unmatched student support, flexible payment plans and more!"
+        canonical="/how-it-works"
+      />
 
       <section id="first-section" className="bg-dark text-light text-shadow">
         <div className="my-5">

@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import PetFirstAid from '../../images/course-pet-firstaid.jpg';
@@ -13,6 +14,12 @@ import PetGrooming from '../../images/course-pet-grooming.jpg';
 
 const DogGroominPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Pet Studies"
+      description="Get the training to become a professional dog groomer with QC's affordable online dog grooming course. Learn from the experts and start your career today!"
+      canonical="/programs/qc-pet-studies"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>

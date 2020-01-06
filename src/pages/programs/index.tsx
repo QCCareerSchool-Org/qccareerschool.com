@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import HeroHome from '../../images/backgrounds/hero-home.jpg';
@@ -18,6 +19,12 @@ import OtherPrograms from '../../images/hero-additional-programs.jpg';
 
 const ProgramsPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="Courses & Professional Training Programs"
+      description="QC’s comprehensive approach to online learning will offer the flexibility you need while giving you the high-quality training & personalized feedback you deserve"
+      canonical="/programs"
+    />
 
     <section id="first-section" className="bg-dark text-light text-shadow">
       <Container>

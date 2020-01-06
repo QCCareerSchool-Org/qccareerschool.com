@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import CareersHeadquarters from '../../images/careers-headquarters.jpg';
@@ -13,6 +14,12 @@ import HeroCareers from '../../images/hero-careers.jpg';
 
 const CareersPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="Careers"
+      description="Get informed about: careers for students and graduates, how to become a QC Tutor, and careers at QC headquarters. Come work for QC Career School!"
+      canonical="/programs/careers"
+    />
 
     <section id="first-section" className="bg-dark text-light">
       <Container>

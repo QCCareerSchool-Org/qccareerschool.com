@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import DesignHomeStaging from '../../images/course-design-homestaging.jpg';
@@ -14,6 +15,12 @@ import DesignOrganizing from '../../images/course-design-organizing.jpg';
 
 const InteriorDecoratingPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Design School"
+      description="Start a career in home design. Become a certified design professional with flexible online training from industry experts. Find out more!"
+      canonical="/programs/qc-design-school"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
@@ -35,7 +42,7 @@ const InteriorDecoratingPage: NextPage = () => (
               img={DesignInterior}
               alt="professionally decorated dining room"
               title="Interior Decorating Course"
-              body="Interior Decorating is a home designer’s bread &amp; butter. In this course you’ll learn how to create beautiful spaces customized to your clients’ tastes and for their specific needs. The course comes with full business training, so you’ll graduate with all the tools and skills you need to start a successful decorating business."
+              body="Interior Decorating is a home designer’s bread & butter. In this course you’ll learn how to create beautiful spaces customized to your clients’ tastes and for their specific needs. The course comes with full business training, so you’ll graduate with all the tools and skills you need to start a successful decorating business."
               buttonText="Full Course Overview"
               link="https://www.qcdesignschool.com/online-courses/interior-decorating/"
               externalLink={true}

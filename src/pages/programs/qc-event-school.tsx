@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Bar } from '../../components/bar';
 import CardColumn from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
 import EventAccelerate from '../../images/course-event-accelerate.jpg';
@@ -15,6 +16,12 @@ import EventWedding from '../../images/course-event-wedding.jpg';
 
 const EventPlanningPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Event School"
+      description="If you enjoy working with people you might have found your new career in event planning! QC provides courses for planning professionals of all skill levels!"
+      canonical="/programs/qc-event-school"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
