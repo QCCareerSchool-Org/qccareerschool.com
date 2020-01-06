@@ -4,12 +4,12 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { SEO } from '../components/seo';
-import { DefaultLayout } from '../layouts/default-layout';
+import { SEO } from '../../components/seo';
+import { DefaultLayout } from '../../layouts/default-layout';
 
-import Corporate from '../images/admissions-corporate.jpg';
-import PrivateGroup from '../images/admissions-private-group.jpg';
-import HeroHome from '../images/backgrounds/hero-home.jpg';
+import Corporate from '../../images/admissions-corporate.jpg';
+import PrivateGroup from '../../images/admissions-private-group.jpg';
+import HeroHome from '../../images/backgrounds/hero-home.jpg';
 
 const AdmissionsPage: NextPage = () => (
   <DefaultLayout>
