@@ -1,7 +1,7 @@
 import { fireEvent, render, waitForElement } from '@testing-library/react';
 import React from 'react';
 
-import CombineAndSavePage from '../../src/pages/combine-and-save';
+import CombineAndSavePage from '../../src/pages/programs/combine-and-save';
 
 describe('<CombineAndSavePage>', () => {
 

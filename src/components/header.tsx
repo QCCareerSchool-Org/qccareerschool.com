@@ -49,7 +49,7 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/qc-pet-studies"><a className="dropdown-item">QC Pet Studies</a></Link>
                 <Link href="/programs/qc-wellness-studies"><a className="dropdown-item">QC Wellness Studies</a></Link>
                 <Link href="/programs/additional-programs"><a className="dropdown-item">Additional Programs</a></Link>
-                <Link href="/combine-and-save"><a className="dropdown-item">Combine and Save</a></Link>
+                <Link href="/programs/combine-and-save"><a className="dropdown-item">Combine and Save</a></Link>
               </NavDropdown>
               <NavDropdown title="Admissions" id="admissions-dropdown">
                 <Link href="/how-it-works"><a className="dropdown-item">How It Works</a></Link>
@@ -60,7 +60,7 @@ export const Header: React.FC<Props> = ({ className }) => {
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
               <NavDropdown title="Contact" id="contact-dropdown">
                 <Link href="/contact"><a className="dropdown-item">Contact Us</a></Link>
-                <Link href="/programs/careers"><a className="dropdown-item">Careers</a></Link>
+                <Link href="/careers"><a className="dropdown-item">Careers</a></Link>
               </NavDropdown>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
