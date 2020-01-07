@@ -29,5 +29,6 @@ export interface Profile {
   backgroundName: string | null;
   backgroundUrl: string | null;
   professions: string[];
+  certifications: string[];
   images: Picture[];
 }

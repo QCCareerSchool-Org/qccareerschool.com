@@ -3,14 +3,13 @@ import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterestSquare, FaTwitterSquare } from 'react-icons/fa';
 
 import parseBBCode from '../../../bbcode-parser';
 import { nl2br } from '../../../functions';
 import { Profile } from '../../../models/profile';
 
+import { Certification } from '../../../components/certification';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 
 interface Props {
@@ -32,9 +31,9 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
 
-      <Row className="mb-4">
+      <div className="row mb-4">
 
-        <Col xs={12} lg={7} xl={8} className="text-center text-md-left mb-2">
+        <div className="col-12 col-lg-7 col-xl-8 text-center text-md-left mb-2">
           {profile.company
             ? (
               <>
@@ -48,9 +47,9 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
             ? <p className="lead mb-0 professionList">{profile.professions.join(', ')}</p>
             : null
           }
-        </Col>
+        </div>
 
-        <Col xs={12} lg={5} xl={4} className="mt-4 mt-md-0 text-center text-lg-right">
+        <div className="col-12 col-lg-5 col-xl-4 mt-4 mt-md-0 text-center text-lg-right">
           {profile.website ? <a href={profile.website} className="btn btn-primary ml-3">My Website</a> : null}
           {profile.images.length ? <Link href="/profiles/[id]/portfolio" as={`/profiles/${profile.id}/portfolio`}><a className="btn btn-primary ml-3">View Portfolio</a></Link> : null}
           <div className="my-3">
@@ -60,21 +59,36 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
             {profile.pinterest ? <a target="_blank" rel="noopener noreferrer" title="pinterest" className="text-dark" href={`https://pinterest.com/${profile.pinterest}`}><FaPinterestSquare size={iconSize} className="ml-1" /></a> : null}
             {profile.linkedin ? <a target="_blank" rel="noopener noreferrer" title="linkedin" className="text-dark" href={`https://linkedin.com/${profile.linkedin}`}><FaLinkedin size={iconSize} className="ml-1" /></a> : null}
           </div>
-        </Col>
+        </div>
 
-      </Row>
+      </div>
 
-      <Row>
+      <div className="row">
 
-        <Col xs={12} md={4} className="text-center text-md-left mb-4 overflow-hidden">
+        <div className="col-12 col-md-4 text-center text-md-left mb-4 overflow-hidden">
           <img className="img-fluid my-2" src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}`} alt="Elena Martinez MIMP" />
           <br />
           {profile.city ? <>{profile.city}{profile.provinceCode ? `, ${profile.provinceCode}` : ''}<br /></> : null}
           {profile.phoneNumber ? <>{profile.phoneNumber}<br /></> : null}
           {profile.emailAddress ? <><a href={`mailto:${profile.emailAddress}`}>{profile.emailAddress}</a><br /></> : null}
-        </Col>
+          {profile.certifications.length
+            ? (
+              <div className="mt-3 text-center">
+                <h5>Certifications</h5>
+                <div>
+                  {profile.certifications.slice(0, 3).map(c => <Certification key={c} courseCode={c} inverse={profile.dark} />)}
+                </div>
+                {profile.certifications.length > 1
+                  ? <Link href="/profiles/[id]/certifications" as={`/profiles/${profile.id}/certifications`}><a>View All</a></Link>
+                  : null
+                }
+              </div>
+            )
+            : null
+          }
+        </div>
 
-        <Col xs={12} md={8} className="overflow-hidden">
+        <div className="col-12 col-md-8 overflow-hidden">
           {profile.slogan
             ? <p className="lead" dangerouslySetInnerHTML={{ __html: nl2br(parseBBCode(profile.slogan)) }} />
             : null
@@ -96,9 +110,9 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
             )
             : null
           }
-        </Col>
+        </div>
 
-      </Row>
+      </div>
 
       <style jsx>{`
         .professionList { text-transform: capitalize; }
