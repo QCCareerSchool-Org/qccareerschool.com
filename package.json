@@ -16,6 +16,7 @@
   "author": "QC Career School",
   "license": "UNLICENSED",
   "private": true,
+  "engines": { "node": "12.x" },
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@qccareerschool/http-status": "^2.1.0",
