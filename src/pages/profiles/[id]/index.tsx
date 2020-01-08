@@ -10,6 +10,7 @@ import { nl2br } from '../../../functions';
 import { Profile } from '../../../models/profile';
 
 import { Certification } from '../../../components/certification';
+import { Testimonial } from '../../../components/testimonial';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 
 interface Props {
@@ -110,6 +111,22 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
             )
             : null
           }
+          {profile.testimonials.length
+            ? (
+              <div className="mt-3 text-left">
+                <h4>Testimonials</h4>
+                <div>
+                  {profile.testimonials.slice(0, 3).map((t, i) => <Testimonial key={i} testimonial={t} />)}
+                </div>
+                {profile.testimonials.length > 1
+                  ? <Link href="/profiles/[id]/testimonials" as={`/profiles/${profile.id}/testimonials`}><a>See All Testimonials</a></Link>
+                  : null
+                }
+              </div>
+            )
+            : null
+          }
+
         </div>
 
       </div>
@@ -134,6 +151,7 @@ ProfilePage.getInitialProps = async context => {
     if (profile.active === false) {
       throw new HttpStatus.NotFound();
     }
+
     return { profile };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;

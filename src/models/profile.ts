@@ -31,4 +31,5 @@ export interface Profile {
   professions: string[];
   certifications: string[];
   images: Picture[];
+  testimonials: Testimonial[];
 }
