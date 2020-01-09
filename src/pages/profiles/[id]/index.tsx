@@ -28,7 +28,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
   if (!profile) {
     return <ErrorPage statusCode={500} />;
   }
-
+  console.log(profile);
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
 
