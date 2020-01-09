@@ -17,7 +17,7 @@ export const Testimonial: React.FC<Props> = ({ testimonial }) => {
       <p><strong>{`${testimonial.name}`}</strong></p>
       <p className="mb-5">
         {testimonial.rating
-          ? Array(5).fill(0).map((x, i) => <IoMdStar key={i} size={iconSize} color={i < testimonial.rating! ? 'black' : 'red'} />)
+          ? Array(5).fill(0).map((x, i) => <IoMdStar key={i} size={iconSize} color={i < testimonial.rating! ? 'black' : '#CCCCCC'} />)
           : null
         }
       </p>
