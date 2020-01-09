@@ -27,7 +27,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
 
-      <div className="row mb-4">
+      <div className="row">
         <div className="col-12 col-lg-7 col-xl-8 text-center text-md-left mb-2">
           <h1 className="fontName">Testimonials for {profile.firstName} {profile.lastName}</h1>
         </div>
@@ -37,7 +37,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
         </div>
       </div>
       <div className="row">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden col-12 col-lg-7 col-xl-8 text-center text-md-left mb-2">
           {profile.testimonials.length
             ? (
               <div className="mt-3 text-left">
