@@ -1,4 +1,5 @@
 import { Picture } from './picture';
+import { Testimonial } from './testimonial';
 
 export interface Profile {
   id: number;
