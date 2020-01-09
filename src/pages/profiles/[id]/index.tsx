@@ -144,6 +144,7 @@ ProfilePage.getInitialProps = async context => {
   const url = `https://api.qccareerschool.com/qccareerschool/profiles/${id}`;
   try {
     const response = await fetch(url);
+    console.log(response);
     if (!response.ok) {
       throw new HttpStatus.HttpResponse(response.status, response.statusText);
     }
@@ -158,6 +159,7 @@ ProfilePage.getInitialProps = async context => {
     if (context.res) {
       context.res.statusCode = errorCode;
     }
+    console.log(errorCode);
     return { errorCode };
   }
 };

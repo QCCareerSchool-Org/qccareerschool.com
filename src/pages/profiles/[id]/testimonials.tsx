@@ -21,7 +21,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
   }
 
   if (!profile) {
-    return <ErrorPage statusCode={500} />;
+    return <ErrorPage statusCode={404} />;
   }
 
   return (
@@ -61,13 +61,15 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
 
 TestimonialPage.getInitialProps = async context => {
   const { id } = context.query;
-  const url = `https://api.qccareerschool.com/qccareerschool/profiles/${id}`;
+  const url = `https://api.qccareerschool.com/qccareerschool/profiles/${id}/testimonials`;
   try {
     const response = await fetch(url);
+
     if (!response.ok) {
       throw new HttpStatus.HttpResponse(response.status, response.statusText);
     }
     const profile: Profile = await response.json();
+
     if (profile.active === false) {
       throw new HttpStatus.NotFound();
     }
@@ -75,9 +77,11 @@ TestimonialPage.getInitialProps = async context => {
     return { profile };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+
     if (context.res) {
       context.res.statusCode = errorCode;
     }
+
     return { errorCode };
   }
 };
