@@ -118,7 +118,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
                 <div>
                   {profile.testimonials.slice(0, 3).map((t, i) => <Testimonial key={i} testimonial={t} />)}
                 </div>
-                {profile.testimonials.length > 1
+                {profile.testimonials.length > 3
                   ? <Link href="/profiles/[id]/testimonials" as={`/profiles/${profile.id}/testimonials`}><a>See All Testimonials</a></Link>
                   : null
                 }
