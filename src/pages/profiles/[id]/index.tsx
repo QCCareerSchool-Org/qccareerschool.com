@@ -79,7 +79,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
                 <div>
                   {profile.certifications.slice(0, 3).map(c => <Certification key={c} courseCode={c} inverse={profile.dark} />)}
                 </div>
-                {profile.certifications.length > 1
+                {profile.certifications.length > 3
                   ? <Link href="/profiles/[id]/certifications" as={`/profiles/${profile.id}/certifications`}><a>View All</a></Link>
                   : null
                 }
@@ -144,7 +144,6 @@ ProfilePage.getInitialProps = async context => {
   const url = `https://api.qccareerschool.com/qccareerschool/profiles/${id}`;
   try {
     const response = await fetch(url);
-    console.log(response);
     if (!response.ok) {
       throw new HttpStatus.HttpResponse(response.status, response.statusText);
     }
@@ -152,14 +151,12 @@ ProfilePage.getInitialProps = async context => {
     if (profile.active === false) {
       throw new HttpStatus.NotFound();
     }
-
     return { profile };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (context.res) {
       context.res.statusCode = errorCode;
     }
-    console.log(errorCode);
     return { errorCode };
   }
 };

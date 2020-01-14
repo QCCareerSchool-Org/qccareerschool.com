@@ -15,7 +15,6 @@ interface Props {
 }
 
 const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
-
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
   }
@@ -36,6 +35,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
           <div className="my-3" />
         </div>
       </div>
+
       <div className="row">
         <div className="overflow-hidden col-12 col-lg-7 col-xl-8 text-center text-md-left mb-2">
           {profile.testimonials.length
@@ -71,8 +71,7 @@ TestimonialPage.getInitialProps = async context => {
     if (profile.active === false) {
       throw new HttpStatus.NotFound();
     }
-
-    if (profile.testimonials.length < 4) {
+    if (profile.testimonials.length <= 3) {
       throw new HttpStatus.NotFound();
     }
     return { profile };
