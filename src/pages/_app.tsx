@@ -12,7 +12,6 @@ import '../style.scss';
 
 export default class QCApp extends App {
   public componentDidMount() {
-    console.log(window.location.host);
     if (!window.location.host.startsWith('localhost')) {
       if (!(window as any).GA_INITIALIZED) {
         initGA();
