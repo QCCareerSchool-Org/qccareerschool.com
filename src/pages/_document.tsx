@@ -1,5 +1,4 @@
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
-import { LiveChat } from '../components/live-chat';
 
 export default class QCDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext) {
