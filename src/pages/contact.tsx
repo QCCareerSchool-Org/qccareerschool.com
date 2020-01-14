@@ -1,17 +1,21 @@
 import { NextPage } from 'next';
-import React from 'react';
+import React, { useContext } from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { IoMdChatbubbles, IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
 
 import { SEO } from '../components/seo';
+import { getTelephoneNumber } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
+import { LocationStateContext } from '../providers/location';
 
 import HeroHome from '../images/backgrounds/hero-home.jpg';
 
 const ContactPage: NextPage = () => {
   const iconSize = 100;
+  const location = useContext(LocationStateContext);
+  const telephoneNumber = getTelephoneNumber(location?.countryCode);
 
   return (
     <DefaultLayout>
@@ -35,12 +39,12 @@ const ContactPage: NextPage = () => {
             <Col xs={12} md={4}>
               <IoMdPhonePortrait size={iconSize} />
               <h3>By Phone:</h3>
-              <p>Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals at 1-833-600-3751.</p>
+              <p>Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals at <a href={`tel:${telephoneNumber}`} className="text-nowrap">{telephoneNumber}</a>.</p>
             </Col>
             <Col xs={12} md={4}>
               <IoMdMail size={iconSize} />
               <h3>By Email:</h3>
-              <p>You are more than welcome to email us at info@qccareerschool.com. You can be sure to receive a quick and informative reply.</p>
+              <p>You are more than welcome to email us at <a href="mailto:info@qccareerschool.com" className="text-nowrap">info@qccareerschool.com</a>. You can be sure to receive a quick and informative reply.</p>
             </Col>
             <Col xs={12} md={4}>
               <IoMdChatbubbles size={iconSize} />

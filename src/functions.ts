@@ -30,7 +30,10 @@ export const isCallingCode1 = (countryCode: string) => [ 'CA', 'US', 'AG', 'AI',
  * Returns null for unknown
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
  */
-export const getCallingCode = (countryCode: string): number | null => {
+export const getCallingCode = (countryCode?: string): number | null => {
+  if (typeof countryCode === 'undefined') {
+    return null;
+  }
   if (isCallingCode1(countryCode)) {
     return 1;
   }
@@ -50,10 +53,10 @@ export const getCallingCode = (countryCode: string): number | null => {
  * Returns the telephone number we should display to a visitor from a particular country
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
  */
-export const getTelephoneNumber = (countryCode: string): string => {
+export const getTelephoneNumber = (countryCode?: string): string => {
   switch (getCallingCode(countryCode)) {
     case 1:
-      return '1-833-000-001';
+      return '1-833-600-3751';
     case 44:
       return '0800 066 4734';
     case 61:
