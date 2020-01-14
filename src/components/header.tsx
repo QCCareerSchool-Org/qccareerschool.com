@@ -31,7 +31,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       id="main-nav"
       bg={scrollPosition > maxPosition ? 'light' : undefined}
       variant={scrollPosition > maxPosition ? undefined : 'dark'}
-      expand="md"
+      expand="lg"
       className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
     >
       <Container>
