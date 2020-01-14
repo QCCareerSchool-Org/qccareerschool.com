@@ -10,7 +10,7 @@ import { getTelephoneNumber } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
 import { LocationStateContext } from '../providers/location';
 
-import HeroHome from '../images/backgrounds/hero-home.jpg';
+import Hero from '../images/backgrounds/hero-contact.jpg';
 
 const ContactPage: NextPage = () => {
   const iconSize = 100;
@@ -57,7 +57,7 @@ const ContactPage: NextPage = () => {
 
       <style jsx>{`
         #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 50% 0;
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
           background-size: cover;
         }
       `}</style>
