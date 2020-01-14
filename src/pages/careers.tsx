@@ -7,10 +7,10 @@ import Row from 'react-bootstrap/Row';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
+import Hero from '../images/backgrounds/hero-careers.jpg';
 import CareersHeadquarters from '../images/careers-headquarters.jpg';
 import CareerStudents from '../images/careers-students.jpg';
 import CareerTutors from '../images/careers-tutors.jpg';
-import Hero from '../images/hero-careers.jpg';
 
 const CareersPage: NextPage = () => (
   <DefaultLayout>
