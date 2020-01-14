@@ -1,4 +1,5 @@
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import { LiveChat } from '../components/live-chat';
 
 export default class QCDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext) {
@@ -34,6 +35,7 @@ export default class QCDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <LiveChat license={1056788} group={16} gaVersion="gtag" />
       </Html>
     );
   }
