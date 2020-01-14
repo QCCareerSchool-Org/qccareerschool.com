@@ -10,6 +10,7 @@ import { nl2br } from '../../../functions';
 import { Profile } from '../../../models/profile';
 
 import { Certification } from '../../../components/certification';
+import { Testimonial } from '../../../components/testimonial';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 
 interface Props {
@@ -50,7 +51,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
         </div>
 
         <div className="col-12 col-lg-5 col-xl-4 mt-4 mt-md-0 text-center text-lg-right">
-          {profile.website ? <a href={profile.website} className="btn btn-primary ml-3">My Website</a> : null}
+          {profile.website ? <a target="_blank" rel="noopener noreferrer" className="btn btn-primary ml-3" href={profile.website}>My Website</a> : null}
           {profile.images.length ? <Link href="/profiles/[id]/portfolio" as={`/profiles/${profile.id}/portfolio`}><a className="btn btn-primary ml-3">View Portfolio</a></Link> : null}
           <div className="my-3">
             {profile.facebook ? <a target="_blank" rel="noopener noreferrer" title="facebook" className="text-dark" href={`https://facebook.com/${profile.facebook}`}><FaFacebookSquare size={iconSize} className="ml-1" /></a> : null}
@@ -78,7 +79,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
                 <div>
                   {profile.certifications.slice(0, 3).map(c => <Certification key={c} courseCode={c} inverse={profile.dark} />)}
                 </div>
-                {profile.certifications.length > 1
+                {profile.certifications.length > 3
                   ? <Link href="/profiles/[id]/certifications" as={`/profiles/${profile.id}/certifications`}><a>View All</a></Link>
                   : null
                 }
@@ -110,6 +111,22 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
             )
             : null
           }
+          {profile.testimonials.length
+            ? (
+              <div className="mt-3 text-left">
+                <h4>Testimonials</h4>
+                <div>
+                  {profile.testimonials.slice(0, 3).map((t, i) => <Testimonial key={i} testimonial={t} />)}
+                </div>
+                {profile.testimonials.length > 3
+                  ? <Link href="/profiles/[id]/testimonials" as={`/profiles/${profile.id}/testimonials`}><a>See All Testimonials</a></Link>
+                  : null
+                }
+              </div>
+            )
+            : null
+          }
+
         </div>
 
       </div>

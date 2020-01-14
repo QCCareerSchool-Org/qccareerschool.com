@@ -1,4 +1,5 @@
 import { Picture } from './picture';
+import { Testimonial } from './testimonial';
 
 export interface Profile {
   id: number;
@@ -31,4 +32,5 @@ export interface Profile {
   professions: string[];
   certifications: string[];
   images: Picture[];
+  testimonials: Testimonial[];
 }
