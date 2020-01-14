@@ -12,7 +12,7 @@ import { DefaultLayout } from '../layouts/default-layout';
 
 import Corporate from '../images/admissions-corporate.jpg';
 import PrivateGroup from '../images/admissions-private-group.jpg';
-import HeroHome from '../images/backgrounds/hero-home.jpg';
+import Hero from '../images/backgrounds/hero-admissions.jpg';
 
 const AdmissionsPage: NextPage = () => {
   const iconSize = 42;
@@ -131,7 +131,7 @@ const AdmissionsPage: NextPage = () => {
 
       <style jsx={true}>{`
         #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
           background-size: cover;
         }
         .sideImage {
