@@ -43,9 +43,9 @@ const AdmissionsPage: NextPage = () => {
 
       <section className="bg-light text-dark">
         <Container>
-          <Tab.Container id="left-tabs-example" defaultActiveKey="individuals">
+          <Tab.Container id="admissions-tabs" defaultActiveKey="individuals">
             <Row>
-              <Col sm={3} className="mb-3 mb-sm-0">
+              <Col md={3} className="mb-3 mb-md-0">
                 <Nav variant="pills" className="flex-column">
                   <Nav.Item>
                     <Nav.Link eventKey="individuals">Individuals</Nav.Link>
@@ -58,13 +58,13 @@ const AdmissionsPage: NextPage = () => {
                   </Nav.Item>
                 </Nav>
               </Col>
-              <Col sm={9}>
+              <Col md={9}>
                 <Tab.Content>
                   <Tab.Pane eventKey="individuals">
                     <h3>Admissions For Individuals</h3>
                     <p>If you would like to enroll in one of QC’s courses, you can do so at the faculties’ online enrollment pages:</p>
                     <Row>
-                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                      <div className="col-6 col-lg-4 mb-g d-flex">
                         <Card className="shadow-lg rounded-lg">
                           <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com"><Card.Img variant="top" src={Makeup} alt="QC Makeup Academy" /></a>
                           <Card.Body className="pb-3">
@@ -73,7 +73,7 @@ const AdmissionsPage: NextPage = () => {
                           </Card.Body>
                         </Card>
                       </div>
-                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                      <div className="col-6 col-lg-4 mb-g d-flex">
                         <Card className="shadow-lg rounded-lg">
                           <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com"><Card.Img variant="top" src={Event} alt="QC Event School" /></a>
                           <Card.Body className="pb-3">
@@ -82,7 +82,7 @@ const AdmissionsPage: NextPage = () => {
                           </Card.Body>
                         </Card>
                       </div>
-                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                      <div className="col-6 col-lg-4 mb-g d-flex">
                         <Card className="shadow-lg rounded-lg">
                           <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com"><Card.Img variant="top" src={Design} alt="QC Design School" /></a>
                           <Card.Body className="pb-3">
@@ -91,7 +91,7 @@ const AdmissionsPage: NextPage = () => {
                           </Card.Body>
                         </Card>
                       </div>
-                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                      <div className="col-6 col-lg-4 mb-g d-flex">
                         <Card className="shadow-lg rounded-lg">
                           <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com"><Card.Img variant="top" src={Pet} alt="QC Pet Studies" /></a>
                           <Card.Body className="pb-3">
@@ -100,7 +100,7 @@ const AdmissionsPage: NextPage = () => {
                           </Card.Body>
                         </Card>
                       </div>
-                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                      <div className="col-6 col-lg-4 mb-g d-flex">
                         <Card className="shadow-lg rounded-lg">
                           <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com"><Card.Img variant="top" src={Wellness} alt="QC Wellness Studies" /></a>
                           <Card.Body className="pb-3">
@@ -149,7 +149,8 @@ const AdmissionsPage: NextPage = () => {
           <Row>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdTimer size={iconSize} /></span>No Deadlines or Mandatory Classes</h3>
-              <p>You’ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way! (As a reference point, the average program completion time is 3 to 6 months.)</p>
+              <p>You’ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way!</p>
+              <p>Typically, students who work on their assignments for a short period each week will complete their course within four to six months.</p>
             </Col>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdHand size={iconSize} /></span>A hands-on approach</h3>
