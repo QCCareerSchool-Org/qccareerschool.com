@@ -82,7 +82,7 @@ const InteriorDecoratingPage: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${DesignInterior}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .90)), url(${DesignInterior}) 10% 0;
         background-size: cover;
       }
     `}</style>
