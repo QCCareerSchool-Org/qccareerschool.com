@@ -26,7 +26,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
   }
 
   if (!profile) {
-    return <ErrorPage statusCode={404} />;
+    return <ErrorPage statusCode={500} />;
   }
 
   return (

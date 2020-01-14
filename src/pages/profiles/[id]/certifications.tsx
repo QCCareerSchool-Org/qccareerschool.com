@@ -25,8 +25,8 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
       <h1 className="text-center text-md-left mb-4">Certifications for {profile.company
-       ? profile.company
-       : `${profile.firstName} ${profile.lastName}`
+        ? profile.company
+        : `${profile.firstName} ${profile.lastName}`
       }</h1>
       <p className="text-center text-md-left mb-4"><Link href="/profiles/[id]" as={`/profiles/${profile.id}`}><a className="btn btn-primary">Back to Profile</a></Link></p>
       <div className="wrapper">
@@ -51,7 +51,8 @@ PortfolioPage.getInitialProps = async context => {
     if (profile.active === false) {
       throw new HttpStatus.NotFound();
     }
-    if (profile.certifications.length === 0) {
+
+    if (profile.certifications.length < 2) {
       throw new HttpStatus.NotFound();
     }
     return { profile };
