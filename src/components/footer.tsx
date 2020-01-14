@@ -26,7 +26,7 @@ export const Footer: React.FC<Props> = ({ className }) => (
         </div>
       </div>
       <hr style={{ borderColor: 'rgba(255,255,255,0.4)' }} />
-      <small>&copy; {new Date().getFullYear()} QC Career School &nbsp;|&nbsp; Privacy Policy</small>
+      <small>&copy; {new Date().getFullYear()} QC Career School &nbsp;|&nbsp; <Link href="/privacy-policy"><a className="text-light">Privacy Policy</a></Link></small>
     </div>
     <style jsx>{`
       #footer-right { width: 120px; margin-left: auto; margin-right: auto; text-align: center; }
