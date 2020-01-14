@@ -51,7 +51,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
         </div>
 
         <div className="col-12 col-lg-5 col-xl-4 mt-4 mt-md-0 text-center text-lg-right">
-          {profile.website ? <a href={profile.website} className="btn btn-primary ml-3">My Website</a> : null}
+          {profile.website ? <a target="_blank" rel="noopener noreferrer" className="btn btn-primary ml-3" href={profile.website}>My Website</a> : null}
           {profile.images.length ? <Link href="/profiles/[id]/portfolio" as={`/profiles/${profile.id}/portfolio`}><a className="btn btn-primary ml-3">View Portfolio</a></Link> : null}
           <div className="my-3">
             {profile.facebook ? <a target="_blank" rel="noopener noreferrer" title="facebook" className="text-dark" href={`https://facebook.com/${profile.facebook}`}><FaFacebookSquare size={iconSize} className="ml-1" /></a> : null}
