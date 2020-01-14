@@ -154,13 +154,13 @@ const IndexPage: NextPage = () => (
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
             <div className="buttonSpacer" />
-            <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">Visit Course Catalog</a></Link>
+            <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">View Course Catalog</a></Link>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
-            <h3 className="mb-3">Admission<br />Requirements</h3>
-            <p>Interested in enrolling with QC Career School? Find out the admissions requirements and enroll here!</p>
+            <h3 className="mb-3">Enroll<br />Today</h3>
+            <p>QC offers individual, group, and corporate admissions! Learn more about the admissions process and how you can enroll in a QC course!</p>
             <div className="buttonSpacer" />
-            <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Enroll Now</a></Link>
+            <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Admissions</a></Link>
           </Col>
           <Col xs="12" md="4" className="mb-5 mb-md-0">
             <h3 className="mb-3">Find<br />Professionals</h3>
