@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 interface Props {
   img: any;
   title: string;
-  body: string;
+  body?: string;
   buttonText: string;
   link: string;
   externalLink?: boolean;
@@ -20,7 +20,7 @@ export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, link
     }
     <Card.Body>
       <Card.Title>{title}</Card.Title>
-      <Card.Text>{body}</Card.Text>
+      {body ? <Card.Text>{body}</Card.Text> : null}
       <div className="buttonSpacer" />
       {externalLink
         ? <a href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a>

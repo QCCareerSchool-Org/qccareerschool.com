@@ -17,13 +17,13 @@ import { DefaultLayout } from '../layouts/default-layout';
 import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
-import { ProfessionGroup, professionGroups } from '../profession-groups';
+import { professionGroups } from '../profession-groups';
 import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
 import * as FindProfessionals from '../reducers/find-professionals';
 import { State } from '../store';
 
-import HeroHome from '../images/backgrounds/hero-home.jpg';
+import Hero from '../images/backgrounds/hero-find-professionals.jpg';
 
 interface SubmitPayload {
   profession: string;
@@ -235,7 +235,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
       <style jsx>{`
         #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 50% 0;
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
           background-size: cover;
         }
       `}</style>

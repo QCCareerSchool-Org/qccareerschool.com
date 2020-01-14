@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
-import CardColumn from '../../components/card-column';
+import { CardColumn } from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';

@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,12 +8,19 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import { IoMdChatbubbles, IoMdCheckmarkCircle, IoMdHand, IoMdPeople, IoMdShuffle, IoMdTimer } from 'react-icons/io';
 
+import { CourseCard } from '../components/course-card';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Corporate from '../images/admissions-corporate.jpg';
 import PrivateGroup from '../images/admissions-private-group.jpg';
 import Hero from '../images/backgrounds/hero-admissions.jpg';
+
+import Design from '../images/course-design-interior.jpg';
+import Event from '../images/course-event-wedding.jpg';
+import Makeup from '../images/course-makeup-master.jpg';
+import Pet from '../images/course-pet-grooming.jpg';
+import Wellness from '../images/course-welness-sleep.jpg';
 
 const AdmissionsPage: NextPage = () => {
   const iconSize = 42;
@@ -55,16 +63,54 @@ const AdmissionsPage: NextPage = () => {
                   <Tab.Pane eventKey="individuals">
                     <h3>Admissions For Individuals</h3>
                     <p>If you would like to enroll in one of QC’s courses, you can do so at the faculties’ online enrollment pages:</p>
-                    <ul>
-                      <li><a href="https://www.qcmakeupacademy.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Makeup Academy</a></li>
-                      <li><a href="https://www.qceventplanning.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Event School</a></li>
-                      <li><a href="https://www.qcdesignschool.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Design School</a></li>
-                      <li><a href="https://www.doggroomingcourse.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Pet Studies</a></li>
-                      <li><a href="https://www.qcwellnessstudies.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Wellness Studies</a></li>
-                      <li><a href="https://www.winghill.com/" target="_blank" rel="noopener noreferrer">Enroll with Winghill School of Writing</a></li>
-                      <li><a href="https://www.qcstyleacademy.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Style Academy</a></li>
-                      <li><a href="https://www.qctravelschool.com/" target="_blank" rel="noopener noreferrer">Enroll with QC Travel School</a></li>
-                    </ul>
+                    <Row>
+                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                        <Card className="shadow-lg rounded-lg">
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com"><Card.Img variant="top" src={Makeup} alt="QC Makeup Academy" /></a>
+                          <Card.Body className="pb-3">
+                            <Card.Title className="h6">QC Makeup Academy</Card.Title>
+                            <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                        <Card className="shadow-lg rounded-lg">
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com"><Card.Img variant="top" src={Event} alt="QC Event School" /></a>
+                          <Card.Body className="pb-3">
+                            <Card.Title className="h6">QC Event School</Card.Title>
+                            <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                        <Card className="shadow-lg rounded-lg">
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com"><Card.Img variant="top" src={Design} alt="QC Design School" /></a>
+                          <Card.Body className="pb-3">
+                            <Card.Title className="h6">QC Design School</Card.Title>
+                            <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                        <Card className="shadow-lg rounded-lg">
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com"><Card.Img variant="top" src={Pet} alt="QC Pet Studies" /></a>
+                          <Card.Body className="pb-3">
+                            <Card.Title className="h6">QC Pet Studies</Card.Title>
+                            <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                      <div className="col-12 col-md-8 col-lg-4 mb-g d-flex">
+                        <Card className="shadow-lg rounded-lg">
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com"><Card.Img variant="top" src={Wellness} alt="QC Wellness Studies" /></a>
+                          <Card.Body className="pb-3">
+                            <Card.Title className="h6">QC Wellness Studies</Card.Title>
+                            <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                    </Row>
+
                   </Tab.Pane>
                   <Tab.Pane eventKey="groups">
                     <Row>
@@ -103,7 +149,7 @@ const AdmissionsPage: NextPage = () => {
           <Row>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdTimer size={iconSize} /></span>No Deadlines or Mandatory Classes</h3>
-              <p>You’ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way! (as a reference point, the average program completion time is 3 to 6 months)</p>
+              <p>You’ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way! (As a reference point, the average program completion time is 3 to 6 months.)</p>
             </Col>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdHand size={iconSize} /></span>A hands-on approach</h3>

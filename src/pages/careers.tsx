@@ -10,7 +10,7 @@ import { DefaultLayout } from '../layouts/default-layout';
 import CareersHeadquarters from '../images/careers-headquarters.jpg';
 import CareerStudents from '../images/careers-students.jpg';
 import CareerTutors from '../images/careers-tutors.jpg';
-import HeroCareers from '../images/hero-careers.jpg';
+import Hero from '../images/hero-careers.jpg';
 
 const CareersPage: NextPage = () => (
   <DefaultLayout>
@@ -87,7 +87,7 @@ const CareersPage: NextPage = () => (
 
     <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroCareers}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
         background-size: cover;
       }
       .sideImage {
