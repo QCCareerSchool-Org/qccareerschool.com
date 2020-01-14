@@ -53,10 +53,7 @@ export const Header: React.FC<Props> = ({ className }) => {
               </NavDropdown>
               <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
-              <NavDropdown title="Contact" id="contact-dropdown">
-                <Link href="/contact"><a className="dropdown-item">Contact Us</a></Link>
-                <Link href="/careers"><a className="dropdown-item">Careers</a></Link>
-              </NavDropdown>
+              <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
               {mobile
