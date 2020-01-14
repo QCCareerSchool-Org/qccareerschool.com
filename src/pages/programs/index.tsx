@@ -110,7 +110,6 @@ const ProgramsPage: NextPage = () => (
               link="/programs/additional-programs"
             />
           </CardColumn>
-
         </Row>
       </Container>
     </section>
