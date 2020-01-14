@@ -51,12 +51,7 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/additional-programs"><a className="dropdown-item">Additional Programs</a></Link>
                 <Link href="/programs/combine-and-save"><a className="dropdown-item">Combine and Save</a></Link>
               </NavDropdown>
-              <NavDropdown title="Admissions" id="admissions-dropdown">
-                <Link href="/admissions/how-it-works"><a className="dropdown-item">How It Works</a></Link>
-                <Link href="/admissions"><a className="dropdown-item">Individual Admission</a></Link>
-                <Link href="/admissions#group"><a className="dropdown-item">Group Admissions</a></Link>
-                <Link href="/admissions#corporate"><a className="dropdown-item">Corporate Admissions</a></Link>
-              </NavDropdown>
+              <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
               <NavDropdown title="Contact" id="contact-dropdown">
                 <Link href="/contact"><a className="dropdown-item">Contact Us</a></Link>
