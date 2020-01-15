@@ -9,13 +9,14 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import MakeupGlobalBeauty from '../../images/course-makeup-global-beauty.jpg';
-import MakeupMaster from '../../images/course-makeup-master.jpg';
-import MakeupPro from '../../images/course-makeup-pro-makeup.jpg';
-import MakeupSFX from '../../images/course-makeup-sfx.jpg';
-import MakeupSkin from '../../images/course-makeup-skincare.jpg';
+import Hero from '../../images/backgrounds/hero-faculty-makeup.jpg';
+import GB from '../../images/course-makeup-global-beauty.jpg';
+import MM from '../../images/course-makeup-master-makeup-artistry.jpg';
+import MW from '../../images/course-makeup-pro-makeup-workshop.jpg';
+import SK from '../../images/course-makeup-skincare.jpg';
+import SF from '../../images/course-makeup-special-fx.jpg';
 
-const MakeupAcademy: NextPage = () => (
+const MakeupPage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
@@ -37,12 +38,11 @@ const MakeupAcademy: NextPage = () => (
     </section>
 
     <section className="negative-section">
-
       <Container>
         <Row>
           <CardColumn>
             <CourseCard
-              img={MakeupMaster}
+              img={MM}
               alt="makeup artist applying liptstick on a client"
               title="Master Makeup Artistry Course"
               body="QC’s most popular foundational makeup course trains you to be a professional makeup artist from the ground up. This comprehensive training course will teach you everything from basic makeup applications to bridal and editorial makeup, and more!"
@@ -53,7 +53,7 @@ const MakeupAcademy: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupPro}
+              img={MW}
               alt="makeup artist tools"
               title="Pro Makeup Workshop with Nathan Johnson"
               body="Work with celebrity executive makeup artist Nathan Johnson to challenge your professional skills in this intense cutting-edge course. You’ll work with Nathan to enhance your creativity and use your advanced skills to become a trendsetter in the industry."
@@ -64,7 +64,7 @@ const MakeupAcademy: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupSkin}
+              img={SK}
               alt="applying skincare cream"
               title="Skincare Course"
               body="It’s hard to make a work of art if you don’t start with a healthy canvas. That’s why QC tutors recommend that every student takes the skincare course! This course will teach makeup artists how to help clients achieve healthy, glowing skin which will make your makeup skills shine!"
@@ -75,7 +75,7 @@ const MakeupAcademy: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupSFX}
+              img={SF}
               alt="makeup artist applying special fx makeup on a client"
               title="Special FX Makeup Course"
               body="This popular specialty makeup course will teach makeup artists the art of creating special effects through their makeup artistry. Whether you want to age a character, create a gunshot wound, or transform your subject into a mythical creature, this course will teach you the skills to get there."
@@ -86,7 +86,7 @@ const MakeupAcademy: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupGlobalBeauty}
+              img={GB}
               alt="makeup artist applying makeup on a client"
               title="Global Beauty Makeup Workshop"
               body="Makeup is a lifelong learning process. Once you’re done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world."
@@ -108,10 +108,10 @@ const MakeupAcademy: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .90)), url(${MakeupMaster}) 10% 0;
+        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${Hero}) 10% 0;
         background-size: cover;
       }
     `}</style>
   </DefaultLayout>
 );
-export default MakeupAcademy;
+export default MakeupPage;

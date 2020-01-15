@@ -11,17 +11,17 @@ import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Emblem from '../images/35-year-emblem.png';
-import HeroHome from '../images/backgrounds/hero-home.jpg';
-import DesignFaculties from '../images/design-faculties-modern-living-room.jpg';
-import EventFaculties from '../images/event-faculties-table.jpg';
-import MakeupFaculties from '../images/makeup-faculties-applying-eyeliner.jpg';
-import PetFaculties from '../images/pet-faculties-washing-dog.jpg';
-import StyleFaculties from '../images/style-faculties-shopping-clothes.jpg';
-import TravelFaculties from '../images/travel-faculties-woman-hiking.jpg';
-import WritingFaculties from '../images/writing-faculties-woman.jpg';
-import WellnessFaculties from '../images/writing-wellness-woman-baby.jpg';
+import Design from '../images/backgrounds/hero-faculty-design.jpg';
+import Event from '../images/backgrounds/hero-faculty-event.jpg';
+import Makeup from '../images/backgrounds/hero-faculty-makeup.jpg';
+import Pet from '../images/backgrounds/hero-faculty-pet.jpg';
+import Style from '../images/backgrounds/hero-faculty-style.jpg';
+import Travel from '../images/backgrounds/hero-faculty-travel.jpg';
+import Wellness from '../images/backgrounds/hero-faculty-wellness.jpg';
+import Writing from '../images/backgrounds/hero-faculty-writing.jpg';
+import Hero from '../images/backgrounds/hero-home.jpg';
 
-const IndexPage: NextPage = () => (
+const HomePage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
@@ -57,7 +57,7 @@ const IndexPage: NextPage = () => (
         <Row>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={MakeupFaculties}
+              img={Makeup}
               alt="makeup artist applying makeup on a client"
               title="QC Makeup Academy"
               body="Basic and advanced professional makeup artistry courses for all skill levels."
@@ -68,7 +68,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={EventFaculties}
+              img={Event}
               alt="event planning - professionally decorated dinner set"
               title="QC Event School"
               body="Training event planning professionals to launch their own business. Courses include party planning, wedding planning, corporate event planning and more."
@@ -79,7 +79,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={DesignFaculties}
+              img={Design}
               alt="professionally designed living room"
               title="QC Design School"
               body=" Offering courses in all areas of home design from interior decorating to professional organizing."
@@ -90,7 +90,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={PetFaculties}
+              img={Pet}
               alt="dog groomer bathing a small dog"
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
@@ -101,7 +101,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={WellnessFaculties}
+              img={Wellness}
               alt="wellness professional putting a baby to sleep"
               title="QC Wellness Studies"
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
@@ -112,7 +112,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={StyleFaculties}
+              img={Style}
               alt="professional stylist shopping with her client"
               title="QC Style Academy"
               body="Partnered with QC Makeup Academy to offer courses to beauty professionals expanding into personal styling."
@@ -123,7 +123,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
-              img={TravelFaculties}
+              img={Travel}
               alt="traveling couple enjoying an amazing view"
               title="QC Travel School"
               body="Training professional travel agents in an ever competing marketplace."
@@ -134,7 +134,7 @@ const IndexPage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
-              img={WritingFaculties}
+              img={Writing}
               alt="person writing a book"
               title="Winghill Writing School"
               body="The school that started it all! Winghill offers a myriad of writing courses from novel writing to family history writing and much more."
@@ -174,7 +174,7 @@ const IndexPage: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
         background-size: cover;
       }
       .buttonSpacer {
@@ -189,4 +189,4 @@ const IndexPage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default IndexPage;
+export default HomePage;

@@ -15,11 +15,11 @@ import Corporate from '../images/admissions-corporate.jpg';
 import PrivateGroup from '../images/admissions-private-group.jpg';
 import Hero from '../images/backgrounds/hero-admissions.jpg';
 
-import Design from '../images/course-design-interior.jpg';
-import Event from '../images/course-event-wedding.jpg';
-import Makeup from '../images/course-makeup-master.jpg';
-import Pet from '../images/course-pet-grooming.jpg';
-import Wellness from '../images/course-welness-sleep.jpg';
+import Design from '../images/backgrounds/hero-faculty-design.jpg';
+import Event from '../images/backgrounds/hero-faculty-event.jpg';
+import Makeup from '../images/backgrounds/hero-faculty-makeup.jpg';
+import Pet from '../images/backgrounds/hero-faculty-pet.jpg';
+import Wellness from '../images/backgrounds/hero-faculty-wellness.jpg';
 
 const AdmissionsPage: NextPage = () => {
   const iconSize = 42;

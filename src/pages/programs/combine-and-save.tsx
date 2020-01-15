@@ -17,7 +17,7 @@ import DecorEvent from '../../images/combine-interior-decorating-event-decor.jpg
 import MakeupWedding from '../../images/combine-makeup-wedding-planning.jpg';
 import WriteMakeup from '../../images/combine-screenwriting-makeup.jpg';
 
-const CombinePage: NextPage = () => (
+const CombineAndSavePage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
@@ -173,4 +173,4 @@ const CombinePage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default CombinePage;
+export default CombineAndSavePage;

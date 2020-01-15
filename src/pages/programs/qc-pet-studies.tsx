@@ -9,10 +9,11 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import PetFirstAid from '../../images/course-pet-firstaid.jpg';
-import PetGrooming from '../../images/course-pet-grooming.jpg';
+import Hero from '../../images/backgrounds/hero-faculty-pet.jpg'
+import DG from '../../images/course-pet-dog-grooming.jpg';
+import FA from '../../images/course-pet-first-aid-for-groomers.jpg';
 
-const DogGroominPage: NextPage = () => (
+const PetPage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
@@ -38,7 +39,7 @@ const DogGroominPage: NextPage = () => (
         <Row>
           <CardColumn>
             <CourseCard
-              img={PetGrooming}
+              img={DG}
               alt="dog groomer cutting dog's hair"
               title="Dog Grooming Course"
               body="Regular grooming is a key part to maintaining a dog’s health, and most dog owners prefer to leave their pooch’s grooming up to a qualified professional.  With the dog grooming course, you’ll learn how to groom all different breeds and the various popular cuts safely and effectively. You’ll also learn how to launch your own successful dog grooming business."
@@ -49,7 +50,7 @@ const DogGroominPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={PetFirstAid}
+              img={FA}
               alt="dog groomer applying first aid practices on a dog"
               title="First Aid for Groomers"
               body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
@@ -68,7 +69,7 @@ const DogGroominPage: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .90)), url(${PetGrooming}) 100% 0;
+        background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, .50)), url(${Hero}) 100% 0;
         background-size: cover;
       }
     `}</style>
@@ -76,4 +77,4 @@ const DogGroominPage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default DogGroominPage;
+export default PetPage;

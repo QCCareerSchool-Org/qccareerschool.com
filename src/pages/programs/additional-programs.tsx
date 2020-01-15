@@ -8,12 +8,12 @@ import { Bar } from '../../components/bar';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import OtherPrograms from '../../images/hero-additional-programs.jpg';
-import StyleFaculties from '../../images/style-faculties-shopping-clothes.jpg';
-import TravelFaculties from '../../images/travel-faculties-woman-hiking.jpg';
-import WritingFaculties from '../../images/writing-faculties-woman.jpg';
+import Hero from '../../images/backgrounds/hero-additional-programs.jpg';
+import Style from '../../images/backgrounds/hero-faculty-style.jpg';
+import Travel from '../../images/backgrounds/hero-faculty-travel.jpg';
+import Writing from '../../images/backgrounds/hero-faculty-writing.jpg';
 
-const AdditionalPrograms: NextPage = () => (
+const AdditionalProgramsPage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
@@ -38,7 +38,7 @@ const AdditionalPrograms: NextPage = () => (
       <Container>
         <Row>
           <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
-            <img src={WritingFaculties} alt="person writing a book" className="sideImage" />
+            <img src={Writing} alt="person writing a book" className="sideImage" />
           </Col>
           <Col xs={12} md={6} className="order-md-1">
             <h3>Winghill School of Writing</h3>
@@ -53,7 +53,7 @@ const AdditionalPrograms: NextPage = () => (
       <Container>
         <Row>
           <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
-            <img src={TravelFaculties} alt="couple traveling through a beautiful landscape" className="sideImage" />
+            <img src={Travel} alt="couple traveling through a beautiful landscape" className="sideImage" />
           </Col>
           <Col xs={12} md={6} className="order-md-1">
             <h3>QC Travel School</h3>
@@ -68,7 +68,7 @@ const AdditionalPrograms: NextPage = () => (
       <Container>
         <Row>
           <Col xs={12} md={6} className="mb-4 mb-md-0 order-md-2">
-            <img src={StyleFaculties} alt="style professional helping customer" className="sideImage" />
+            <img src={Style} alt="style professional helping customer" className="sideImage" />
           </Col>
           <Col xs={12} md={6} className="order-md-1">
             <h3>QC Style Academy</h3>
@@ -81,7 +81,7 @@ const AdditionalPrograms: NextPage = () => (
 
     <style jsx={true}>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${OtherPrograms}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
         background-size: cover;
       }
       .sideImage {
@@ -92,4 +92,4 @@ const AdditionalPrograms: NextPage = () => (
   </DefaultLayout>
 );
 
-export default AdditionalPrograms;
+export default AdditionalProgramsPage;
