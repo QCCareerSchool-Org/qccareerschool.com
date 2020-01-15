@@ -9,7 +9,7 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Hero from '../../images/backgrounds/hero-faculty-pet.jpg'
+import Hero from '../../images/backgrounds/hero-faculty-pet.jpg';
 import DG from '../../images/course-pet-dog-grooming.jpg';
 import FA from '../../images/course-pet-first-aid-for-groomers.jpg';
 
@@ -60,9 +60,9 @@ const PetPage: NextPage = () => (
             />
           </CardColumn>
         </Row>
-        <h3>Additional Design Courses:</h3>
+        <h3>Additional QC Pet Studies Courses</h3>
         <ul>
-          <li>Breed Styling Workshop</li>
+          <li><a href="https://www.doggroomingcourse.com/online-courses/breed-styling-workshop/">Breed Styling Workshop</a></li>
         </ul>
       </Container>
     </section>

@@ -98,10 +98,10 @@ const MakeupPage: NextPage = () => (
         </Row>
         <h3>Additional Courses for Makeup Artists</h3>
         <ul>
-          <li>Airbrush Makeup Workshop</li>
-          <li>Portfolio Development Workshop</li>
-          <li>Hair Styling Essentials Course</li>
-          <li>Personal Makeup Course</li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/airbrush-makeup-workshop/">Airbrush Makeup Workshop</a></li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/portfolio-development/">Portfolio Development Workshop</a></li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/hair-styling-essentials/">Hair Styling Essentials</a></li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/makeup-artistry/">Personal Makeup</a></li>
         </ul>
       </Container>
     </section>

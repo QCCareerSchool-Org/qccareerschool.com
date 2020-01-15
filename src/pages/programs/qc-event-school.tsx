@@ -86,12 +86,12 @@ const EventPage: NextPage = () => (
         </Row>
         <h3>Additional Event Planning Courses:</h3>
         <ul>
-          <li>Private Event Planning Course</li>
-          <li>Wedding Planning Course</li>
-          <li>Luxury Wedding Planning Specialization</li>
-          <li>Destination Wedding Planning Specialization</li>
-          <li>Festivals &amp; Live Events Planning Specialization</li>
-          <li>Promotional Event Planning Specialization</li>
+          <li><a href="https://www.qceventplanning.com/online-event-courses/event-planning/">Private Event Planning</a></li>
+          <li><a href="https://www.qceventplanning.com/online-event-courses/wedding-planning/">Wedding Planning</a></li>
+          <li><a href="https://www.qceventplanning.com/online-event-courses/luxury-wedding-and-event-planning-specialization/">Luxury Wedding &amp; Event Planning</a></li>
+          <li><a href="https://www.qceventplanning.com/online-event-courses/destination-wedding-planning-specialization/">Destination Wedding Planning</a></li>
+          <li><a href="https://www.qceventplanning.com/online-event-courses/festivals-and-live-events/">Festivals &amp; Live Events Planning</a></li>
+          <li><a href="https://www.qceventplanning.com/online-event-courses/promotional-event-planning/">Promotional Event Planning</a></li>
         </ul>
       </Container>
     </section>

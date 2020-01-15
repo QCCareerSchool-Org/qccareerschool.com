@@ -72,11 +72,11 @@ const DesignPage: NextPage = () => (
             />
           </CardColumn>
         </Row>
-        <h3>Additional Design Courses:</h3>
+        <h3>Additional Design Courses</h3>
         <ul>
-          <li>Color Consultant Course</li>
-          <li>Feng Shui Design Course</li>
-          <li>Aging in Place Course</li>
+          <li><a href="https://www.qcdesignschool.com/online-courses/color-consultant/">Color Consultant</a></li>
+          <li><a href="https://www.qcdesignschool.com/online-courses/feng-shui-design/">Feng Shui Design</a></li>
+          <li><a href="https://www.qcdesignschool.com/online-courses/aging-in-place/">Aging in Place</a></li>
         </ul>
       </Container>
     </section>
