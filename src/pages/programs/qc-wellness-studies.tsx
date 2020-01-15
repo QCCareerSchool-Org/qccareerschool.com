@@ -51,7 +51,7 @@ const WellnessPage: NextPage = () => (
       </Container>
     </section>
 
-    <style jsx={true}>{`
+    <style>{`
       #first-section {
         background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${Hero}) 90% 0;
         background-size: cover;

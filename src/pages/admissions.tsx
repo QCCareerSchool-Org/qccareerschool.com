@@ -175,7 +175,7 @@ const AdmissionsPage: NextPage = () => {
         </Container>
       </section>
 
-      <style jsx={true}>{`
+      <style>{`
         #first-section {
           background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
           background-size: cover;

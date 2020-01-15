@@ -67,7 +67,7 @@ const PetPage: NextPage = () => (
       </Container>
     </section>
 
-    <style jsx={true}>{`
+    <style jsx>{`
       #first-section {
         background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, .50)), url(${Hero}) 100% 0;
         background-size: cover;
