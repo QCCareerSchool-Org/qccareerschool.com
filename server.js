@@ -17,6 +17,16 @@ app.prepare().then(() => {
     ] }));
   });
 
+  server.get('/profile', (req, res) => {
+    if (req.query.id) {
+      const id = parseInt(req.query.id, 10);
+      res.redirect(`/profiles/${id}`);
+      return;
+    }
+    const parsedUrl = parse(req.url, true);
+    handle(req, res, parsedUrl);
+  })
+
   server.get('*', (req, res) => {
     // Be sure to pass `true` as the second argument to `url.parse`.
     // This tells it to parse the query portion of the URL.
