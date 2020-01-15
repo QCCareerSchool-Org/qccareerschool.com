@@ -154,19 +154,19 @@ const AdmissionsPage: NextPage = () => {
             </Col>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdHand size={iconSize} /></span>A hands-on approach</h3>
-              <p>Some people have trouble understanding how you can learn a practical skill online. The answer is, your online training has to follow the same kind of hands-on methods as you’ll get in the classroom. Your training assignments will be a mix of theoretical and practical. Depending on the program you take, “practical” can mean anything from completing thorough case studies or real-world scenarios to actually completing a full makeup application or grooming a live dog!</p>
+              <p>You might be wondering how you can learn a practical skill online. The answer is simple. Your online training relies on the same kind of hands-on methods you would follow in the classroom. Your training assignments are a mix of theoretical and practical. Depending on the program you take, “practical” can mean anything from completing case studies or working through real-world scenarios to completing a full makeup application or grooming a dog!</p>
             </Col>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdChatbubbles size={iconSize} /></span>100% Personalized Tutor Feedback</h3>
-              <p>All your assignments will be graded by a live tutor, who is a working professional in the industry you’re studying. Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is how QC students graduate way ahead of the curve in all programs.</p>
+              <p>All your assignments will be graded by a your personal tutor, who is a working professional in the field you’re studying. Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is why QC students graduate way ahead of the curve.</p>
             </Col>
             <Col xs={12} md={6} className="mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdPeople size={iconSize} /></span>Unmatched Student Support</h3>
-              <p>QC’s student advisors are available on extended hours to help you in any way they can. Whether you have a question about enrolling in a course, are having trouble with an assignment, or are looking for job seeking advice, your student support team will be available to help answer your questions or point you in the right direction!</p>
+              <p>QC’s student advisors are available on extended hours to help you in any way they can. You might have a question about enrolling in a course, have trouble with an assignment, or be looking for advice on a job you are considering. Rest assured that your student support team will help answer your questions and will point you in the right direction.</p>
             </Col>
             <Col xs={12} md={6}>
               <h3 className="h5"><span className="icon-wrapper"><IoMdShuffle size={iconSize} /></span>Flexible Payment Plans</h3>
-              <p>With QC, you’ll receive top quality training at a cost you can afford. Every course comes with an available payment plan where you can pay off your tuition in affordable monthly installments. What’s more, if you ever need to miss a tuition payment, simply call your student advisor who will be happy to work with you!</p>
+              <p>With QC, you’ll receive top quality training at a price you can afford. Every course comes with a payment plan where you can pay off your tuition in affordable monthly installments. What’s more, if you ever need to miss a tuition payment, simply call your student advisor who will be happy to work with you!</p>
             </Col>
             <Col xs={12} md={6}>
               <h3 className="h5"><span className="icon-wrapper"><IoMdCheckmarkCircle size={iconSize} /></span>Proven Track Record</h3>
