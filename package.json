@@ -7,8 +7,8 @@
     "dev": "next --port $PORT",
     "dev-custom": "node src/server.js --port $PORT",
     "build": "node generate-sitemap.js && next build",
-    "start": "next start",
-    "start-custom": "NODE_ENV=production node server.js",
+    "start-original": "next start",
+    "start": "node server.js",
     "test": "jest --verbose",
     "test:watch": "jest --verbose --watch"
   },
