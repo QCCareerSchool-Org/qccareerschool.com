@@ -64,8 +64,8 @@ const EventPlanningPage: NextPage = () => (
             <CourseCard
               img={EventDecor}
               alt="professionally decorated dinner table"
-              title="Event Décor Course"
-              body="The perfect course to complement your fundamental event planner training. The Event Décor Course teaches you to create a cohesive décor to suit any theme, and how to plan for and incorporate all decorative elements that brings an event together. Being an event decorator can be a full-time job, or it can be a perfect addition to your booming event planning business!"
+              title="Event Decor Course"
+              body="The perfect course to complement your fundamental event planner training. The Event Decor Course teaches you to create a cohesive decor to suit any theme, and how to plan for and incorporate all decorative elements that brings an event together. Being an event decorator can be a full-time job, or it can be a perfect addition to your booming event planning business!"
               buttonText="Full Course Overview"
               link="https://www.qceventplanning.com/online-event-courses/event-decor/"
               externalLink={true}

@@ -72,7 +72,7 @@ const CombinePage: NextPage = () => (
             <img src={DecorEvent} alt="interior decorated event" className="sideImage" />
           </Col>
           <Col xs={12} md={6}>
-            <h3>Interior Decorating + Event Décor</h3>
+            <h3>Interior Decorating + Event Decor</h3>
             <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
             <div className="text-left">
               <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact Us</a></Link>
