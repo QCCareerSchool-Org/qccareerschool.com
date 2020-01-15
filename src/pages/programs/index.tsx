@@ -9,13 +9,13 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Other from '../../images/backgrounds/hero-additional-programs.jpg';
-import Design from '../../images/backgrounds/hero-faculty-design.jpg';
-import Event from '../../images/backgrounds/hero-faculty-event.jpg';
-import Makeup from '../../images/backgrounds/hero-faculty-makeup.jpg';
-import Pet from '../../images/backgrounds/hero-faculty-pet.jpg';
-import Wellness from '../../images/backgrounds/hero-faculty-wellness.jpg';
+import Other from '../../images/additional-programs.jpg';
 import Hero from '../../images/backgrounds/hero-home.jpg';
+import Design from '../../images/faculty-design.jpg';
+import Event from '../../images/faculty-event.jpg';
+import Makeup from '../../images/faculty-makeup.jpg';
+import Pet from '../../images/faculty-pet.jpg';
+import Wellness from '../../images/faculty-wellness.jpg';
 
 const ProgramsPage: NextPage = () => (
   <DefaultLayout>

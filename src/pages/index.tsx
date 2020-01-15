@@ -11,15 +11,15 @@ import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Emblem from '../images/35-year-emblem.png';
-import Design from '../images/backgrounds/hero-faculty-design.jpg';
-import Event from '../images/backgrounds/hero-faculty-event.jpg';
-import Makeup from '../images/backgrounds/hero-faculty-makeup.jpg';
-import Pet from '../images/backgrounds/hero-faculty-pet.jpg';
-import Style from '../images/backgrounds/hero-faculty-style.jpg';
-import Travel from '../images/backgrounds/hero-faculty-travel.jpg';
-import Wellness from '../images/backgrounds/hero-faculty-wellness.jpg';
-import Writing from '../images/backgrounds/hero-faculty-writing.jpg';
 import Hero from '../images/backgrounds/hero-home.jpg';
+import Design from '../images/faculty-design.jpg';
+import Event from '../images/faculty-event.jpg';
+import Makeup from '../images/faculty-makeup.jpg';
+import Pet from '../images/faculty-pet.jpg';
+import Style from '../images/faculty-style.jpg';
+import Travel from '../images/faculty-travel.jpg';
+import Wellness from '../images/faculty-wellness.jpg';
+import Writing from '../images/faculty-writing.jpg';
 
 const HomePage: NextPage = () => (
   <DefaultLayout>
