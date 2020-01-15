@@ -22,7 +22,7 @@ const CombinePage: NextPage = () => (
 
     <SEO
       title="Combine Your Training and Save"
-      description="When you enroll with QC Career School, you join a community of creative professionals who understand & value the benefits of continued education."
+      description="When you enroll with QC Career School, you join a community of creative professionals who understand &amp; value the benefits of continued education."
       canonical="/combine-and-save"
     />
 

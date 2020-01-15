@@ -7,7 +7,7 @@ const PrivacyPolicyPage: NextPage = () => (
   <MonospaceLayout>
     <SEO
       title="Privacy Policy"
-      description=""
+      description="The privacy policy for the QC Career School website"
       canonical="/privacy-policy"
     />
 

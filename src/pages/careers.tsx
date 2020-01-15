@@ -17,7 +17,7 @@ const CareersPage: NextPage = () => (
 
     <SEO
       title="Careers"
-      description="Get informed about: careers for students and graduates, how to become a QC Tutor, and careers at QC headquarters. Come work for QC Career School!"
+      description="Get informed about careers for students and graduates, how to become a QC Tutor, and careers at QC headquarters. Come work for QC Career School!"
       canonical="/programs/careers"
     />
 

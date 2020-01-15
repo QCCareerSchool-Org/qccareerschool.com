@@ -20,7 +20,7 @@ const MakeupAcademy: NextPage = () => (
 
     <SEO
       title="QC Makeup Academy"
-      description="QC Makeup Academy offers a number of courses for makeup artists. You’ll find a course to help develop your makeup skills & take you to the next level!"
+      description="QC Makeup Academy offers a number of courses for makeup artists. You’ll find a course to help develop your makeup skills &amp; take you to the next level!"
       canonical="/programs/qc-makeup-academy"
     />
 
