@@ -19,5 +19,9 @@
   ],
   "builds": [
     { "src": "next.config.js", "use": "@now/next" }
+  ],
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/profile/?id=(.*)", "destination": "/profiles/$1" }
   ]
 }
