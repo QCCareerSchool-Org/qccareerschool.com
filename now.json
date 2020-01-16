@@ -15,7 +15,9 @@
     { "source": "/why-distance-learning.php", "destination": "/admissions" },
     { "source": "/faq.php", "destination": "/" },
     { "source": "/prospective-students.php", "destination": "/programs" },
-    { "source": "/find-professionals.php", "destination": "/find-professionals" }
+    { "source": "/find-professionals.php", "destination": "/find-professionals" },
+    { "source": "/about-qc/", "destination": "/" },
+    { "source": "/contact-us.php", "destination": "/contact" }
   ],
   "rewrites": [
     { "source": "/service-worker.js", "destination": "/_next/static/service-worker.js" }
