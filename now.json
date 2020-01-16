@@ -18,6 +18,6 @@
     { "source": "/find-professionals.php", "destination": "/find-professionals" }
   ],
   "rewrites": [
-    { "source": "^/service-worker.js$", "destination": "/_next/static/service-worker.js" }
+    { "source": "/service-worker.js", "destination": "/_next/static/service-worker.js" }
   ]
 }
