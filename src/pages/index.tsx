@@ -16,8 +16,6 @@ import Design from '../images/faculty-design.jpg';
 import Event from '../images/faculty-event.jpg';
 import Makeup from '../images/faculty-makeup.jpg';
 import Pet from '../images/faculty-pet.jpg';
-import Style from '../images/faculty-style.jpg';
-import Travel from '../images/faculty-travel.jpg';
 import Wellness from '../images/faculty-wellness.jpg';
 import Writing from '../images/faculty-writing.jpg';
 
@@ -107,28 +105,6 @@ const HomePage: NextPage = () => (
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
               buttonText="VISIT QC WELLNESS STUDIES"
               link="https://www.qcwellnessstudies.com/"
-              externalLink={true}
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
-            <CourseCard
-              img={Style}
-              alt="professional stylist shopping with her client"
-              title="QC Style Academy"
-              body="Partnered with QC Makeup Academy to offer courses to beauty professionals expanding into personal styling."
-              buttonText="VISIT QC STYLE ACADEMY"
-              link="https://www.qcstyleacademy.com/"
-              externalLink={true}
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
-            <CourseCard
-              img={Travel}
-              alt="traveling couple enjoying an amazing view"
-              title="QC Travel School"
-              body="Training professional travel agents in an ever competing marketplace."
-              buttonText="VISIT QC TRAVEL SCHOOL"
-              link="https://www.qctravelschool.com/"
               externalLink={true}
             />
           </Col>
