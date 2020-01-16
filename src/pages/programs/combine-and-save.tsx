@@ -30,7 +30,7 @@ const CombineAndSavePage: NextPage = () => (
       <Container>
         <h1>Combine Your Training and Save</h1>
         <p className="lead mb-5 bold">When you enroll with QC Career School, you join an international community of creative professionals who understand and value the benefits of continued education.</p>
-        <p className="lead mb-5 bold">That's why QC offers a 50% discount on all additional courses you enroll in!</p>
+        <p className="lead mb-5 bold">That's why QC offers a 50% discount on additional courses you enroll in!</p>
       </Container>
     </section>
 
@@ -73,7 +73,7 @@ const CombineAndSavePage: NextPage = () => (
           </Col>
           <Col xs={12} md={6}>
             <h3>Interior Decorating + Event Decor</h3>
-            <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
+            <p className="mb-4">Interior decorating is all about having a good eye for color, proportions, and being good at planning. The Event Décor field requires the same skills, to be applied to a specific special event. Taking these two courses could allow you to expand your decorating business to also service event planners and private events, which could lead to a huge increase in sales and cross-selling to your clients.</p>
             <div className="text-left">
               <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact Us</a></Link>
             </div>
