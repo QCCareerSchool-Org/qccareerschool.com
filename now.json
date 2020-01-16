@@ -21,6 +21,10 @@
     { "src": "next.config.js", "use": "@now/next" }
   ],
   "redirects": [
-    { "source": "/free-brochure.php", "destination": "/programs" }
+    { "source": "/free-brochure.php", "destination": "/programs" },
+    { "source": "/why-distance-learning.php", "destination": "/admissions" },
+    { "source": "/faq.php", "destination": "/" },
+    { "source": "/prospective-students.php", "destination": "/programs" },
+    { "source": "/find-professionals.php", "destination": "/find-professionals" }
   ]
 }
