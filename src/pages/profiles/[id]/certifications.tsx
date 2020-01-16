@@ -13,7 +13,7 @@ interface Props {
   profile?: Profile;
 }
 
-const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
+const CertificationsPage: NextPage<Props> = ({ errorCode, profile }) => {
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
   }
@@ -39,7 +39,7 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
   );
 };
 
-PortfolioPage.getInitialProps = async context => {
+CertificationsPage.getInitialProps = async context => {
   const { id } = context.query;
   const url = `https://api.qccareerschool.com/qccareerschool/profiles/${id}`;
   try {
@@ -64,4 +64,4 @@ PortfolioPage.getInitialProps = async context => {
   }
 };
 
-export default PortfolioPage;
+export default CertificationsPage;

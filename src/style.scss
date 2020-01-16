@@ -45,7 +45,6 @@ $font-weight-bolder: 600;
  $border-radius-lg: .75rem;
  $border-radius-sm: .2rem;
 
-
 /**
  * Buttons
  * We override $btn-border-radius directly and don't modify the more-general $border-radius
@@ -95,7 +94,6 @@ body {
   border-top-left-radius: $border-radius-lg;
   border-top-right-radius: $border-radius-lg;
 }
-
 
 h1, .h1 { color: black; }
 h2, .h2 { color: #1f2938; letter-spacing: -0.055rem; }
@@ -230,100 +228,3 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 .nav-tabs { border-bottom: 1px solid #e9ecef }
 
 pre { color: inherit }
-
-// @media (min-width: 979px) {
-//   .nav .dropdown:hover > .dropdown-menu {
-//     display: block;
-//   }
-// }
-
-
-
-// .inner-container {
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-// .inner-container-left {
-//   padding-left: 0;
-//   padding-right: 15px;
-//   margin-left: auto;
-// }
-// .inner-container-right {
-//   padding-left: 15px;
-//   padding-right: 0;
-//   margin-right: auto;
-// }
-// @media (min-width: 576px) {
-//   // max 540
-//   .inner-container, .inner-container-sm {
-//     max-width: 540px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   .inner-container-left, .inner-container-left-sm {
-//     max-width: 255px;
-//     margin-left: auto;
-//     margin-right: 0;
-//   }
-//   .inner-container-right, .inner-container-right-sm {
-//     max-width: 255px;
-//     margin-left: 0;
-//     margin-right: auto;
-//   }
-// }
-// @media (min-width: 768px) {
-//   // max 720
-//   .inner-container, .inner-container-sm, .inner-container-md {
-//     max-width: 720px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   .inner-container-left, .inner-container-left-sm, .inner-container-left-md {
-//     max-width: 345px;
-//     margin-left: auto;
-//     margin-right: 0;
-//   }
-//   .inner-container-right, .inner-container-right-sm, .inner-container-right-md {
-//     max-width: 345px;
-//     margin-left: 0;
-//     margin-right: auto;
-//   }
-// }
-// @media (min-width: 992px) {
-//   // max 960
-//   .inner-container, .inner-container-sm, .inner-container-md, .inner-container-lg {
-//     max-width: 960px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   .inner-container-left, .inner-container-left-sm, .inner-container-left-md, .inner-container-left-lg {
-//     max-width: 465px;
-//     margin-left: auto;
-//     margin-right: 0;
-//   }
-//   .inner-container-right, .inner-container-right-sm, .inner-container-right-md, .inner-container-right-lg {
-//     max-width: 465px;
-//     margin-left: 0;
-//     margin-right: auto;
-//   }
-// }
-// @media (min-width: 1200px) {
-//   // max 1140
-//   .inner-container, .inner-container-sm, .inner-container-md, .inner-container-lg, .inner-container-xl {
-//     max-width: 1140px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   .inner-container-left, .inner-container-left-sm, .inner-container-left-md, .inner-container-left-lg, .inner-container-left-xl {
-//     max-width: 555px;
-//     margin-left: auto;
-//     margin-right: 0;
-//   }
-//   .inner-container-right, .inner-container-right-sm, .inner-container-right-md, .inner-container-right-lg, .inner-container-right-xl {
-//     max-width: 555px;
-//     margin-left: 0;
-//     margin-right: auto;
-//   }
-// }

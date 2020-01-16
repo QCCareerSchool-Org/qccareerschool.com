@@ -7,17 +7,19 @@
       "NPM_TOKEN": "@npm_token"
     }
   },
-  "routes": [
-    {
-      "src": "^/service-worker.js$",
-      "dest": "/_next/static/service-worker.js",
-      "headers": {
-        "cache-control": "public, max-age=43200, immutable",
-        "Service-Worker-Allowed": "/"
-      }
-    }
-  ],
   "builds": [
     { "src": "next.config.js", "use": "@now/next" }
+  ],
+  "redirects": [
+    { "source": "/free-brochure.php", "destination": "/programs" },
+    { "source": "/why-distance-learning.php", "destination": "/admissions" },
+    { "source": "/faq.php", "destination": "/" },
+    { "source": "/prospective-students.php", "destination": "/programs" },
+    { "source": "/find-professionals.php", "destination": "/find-professionals" },
+    { "source": "/about-qc/", "destination": "/" },
+    { "source": "/contact-us.php", "destination": "/contact" }
+  ],
+  "rewrites": [
+    { "source": "/service-worker.js", "destination": "/_next/static/service-worker.js" }
   ]
 }

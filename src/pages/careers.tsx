@@ -7,17 +7,17 @@ import Row from 'react-bootstrap/Row';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
+import Hero from '../images/backgrounds/hero-careers.jpg';
 import CareersHeadquarters from '../images/careers-headquarters.jpg';
 import CareerStudents from '../images/careers-students.jpg';
 import CareerTutors from '../images/careers-tutors.jpg';
-import HeroCareers from '../images/hero-careers.jpg';
 
 const CareersPage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
       title="Careers"
-      description="Get informed about: careers for students and graduates, how to become a QC Tutor, and careers at QC headquarters. Come work for QC Career School!"
+      description="Get informed about careers for students and graduates, how to become a QC Tutor, and careers at QC headquarters. Come work for QC Career School!"
       canonical="/programs/careers"
     />
 
@@ -87,7 +87,7 @@ const CareersPage: NextPage = () => (
 
     <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroCareers}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
         background-size: cover;
       }
       .sideImage {

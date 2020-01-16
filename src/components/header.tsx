@@ -31,7 +31,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       id="main-nav"
       bg={scrollPosition > maxPosition ? 'light' : undefined}
       variant={scrollPosition > maxPosition ? undefined : 'dark'}
-      expand="md"
+      expand="lg"
       className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
     >
       <Container>
@@ -51,17 +51,9 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/additional-programs"><a className="dropdown-item">Additional Programs</a></Link>
                 <Link href="/programs/combine-and-save"><a className="dropdown-item">Combine and Save</a></Link>
               </NavDropdown>
-              <NavDropdown title="Admissions" id="admissions-dropdown">
-                <Link href="/admissions/how-it-works"><a className="dropdown-item">How It Works</a></Link>
-                <Link href="/admissions"><a className="dropdown-item">Individual Admission</a></Link>
-                <Link href="/admissions#group"><a className="dropdown-item">Group Admissions</a></Link>
-                <Link href="/admissions#corporate"><a className="dropdown-item">Corporate Admissions</a></Link>
-              </NavDropdown>
+              <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
-              <NavDropdown title="Contact" id="contact-dropdown">
-                <Link href="/contact"><a className="dropdown-item">Contact Us</a></Link>
-                <Link href="/careers"><a className="dropdown-item">Careers</a></Link>
-              </NavDropdown>
+              <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
               {mobile
