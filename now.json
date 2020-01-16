@@ -17,7 +17,9 @@
     { "source": "/prospective-students.php", "destination": "/programs" },
     { "source": "/find-professionals.php", "destination": "/find-professionals" },
     { "source": "/about-qc/", "destination": "/" },
-    { "source": "/contact-us.php", "destination": "/contact" }
+    { "source": "/contact-us.php", "destination": "/contact" },
+    { "source": "/online-career-center.php", "destination": "/" },
+    { "source": "/catalog", "destination": "/programs" }
   ],
   "rewrites": [
     { "source": "/service-worker.js", "destination": "/_next/static/service-worker.js" }
