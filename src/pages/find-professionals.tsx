@@ -11,18 +11,19 @@ import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
+import { SEO } from '../components/seo';
 import { getQueryString } from '../functions';
 import { DefaultLayout } from '../layouts/default-layout';
 import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
-import { ProfessionGroup, professionGroups } from '../profession-groups';
+import { professionGroups } from '../profession-groups';
 import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
 import * as FindProfessionals from '../reducers/find-professionals';
 import { State } from '../store';
 
-import HeroHome from '../images/backgrounds/hero-home.jpg';
+import Hero from '../images/backgrounds/hero-find-professionals.jpg';
 
 interface SubmitPayload {
   profession: string;
@@ -129,6 +130,12 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   return (
     <DefaultLayout>
 
+      <SEO
+        title="Find Professionals"
+        description="Seeking a skilled professional in your area? Look no further! QC graduates are well prepared to help you. Simply fill in the form to find a professional near you."
+        canonical="/find-professionals"
+      />
+
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
         <section id="first-section" className="text-light">
@@ -136,7 +143,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
             <Row>
               <Col xs={12} md={10} lg={8} xl={6}>
                 <h1>Find Professionals</h1>
-                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the state.form below to find a professional near you.</p>
+                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
               </Col>
             </Row>
           </Container>
@@ -228,7 +235,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
       <style jsx>{`
         #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 50% 0;
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
           background-size: cover;
         }
       `}</style>
@@ -251,7 +258,7 @@ FindProfessionalsPage.getInitialProps = async ({ foo, reduxStore, res }: NextPag
     if (state.findProfessionals.professions.length === 0) {
       reduxStore.dispatch(FindProfessionals.actionCreators.setProfessions(professionGroups));
     }
-    return { };
+    return {};
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (res) {

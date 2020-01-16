@@ -5,22 +5,30 @@ import Card from 'react-bootstrap/Card';
 interface Props {
   img: any;
   title: string;
-  body: string;
+  body?: string;
   buttonText: string;
-  buttonLink: string;
+  link: string;
+  externalLink?: boolean;
+  alt: string;
 }
 
-export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, buttonLink }) => (
+export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, link, externalLink, alt }) => (
   <Card className="shadow-lg rounded-lg">
-  <Card.Img variant="top" src={img} />
-  <Card.Body>
-    <Card.Title>{title}</Card.Title>
-    <Card.Text>{body}</Card.Text>
-    <div className="buttonSpacer" />
-    <Link href={buttonLink}><a className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a></Link>
-  </Card.Body>
+    {externalLink
+      ? <a href={link}><Card.Img variant="top" src={img} alt={alt} /></a>
+      : <Link href={link}><a><Card.Img variant="top" src={img} alt={alt} /></a></Link>
+    }
+    <Card.Body>
+      <Card.Title>{title}</Card.Title>
+      {body ? <Card.Text>{body}</Card.Text> : null}
+      <div className="buttonSpacer" />
+      {externalLink
+        ? <a href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a>
+        : <Link href={link}><a className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a></Link>
+      }
+    </Card.Body>
 
-  <style jsx>{`
+    <style jsx>{`
     .buttonSpacer {
       height: 31px;
     }
@@ -29,5 +37,5 @@ export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, butt
       bottom: 20px;
     }
   `}</style>
-</Card>
+  </Card>
 );

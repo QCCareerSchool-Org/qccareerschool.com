@@ -1,0 +1,13 @@
+import { fireEvent, render, waitForElement } from '@testing-library/react';
+import React from 'react';
+
+import CombineAndSavePage from '../../src/pages/programs/combine-and-save';
+
+describe('<CombineAndSavePage>', () => {
+
+  test('it works', () => {
+    const { rerender } = render(<CombineAndSavePage />);
+    rerender(<CombineAndSavePage />);
+  });
+
+});

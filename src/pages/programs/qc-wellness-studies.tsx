@@ -4,15 +4,22 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
-import CardColumn from '../../components/card-column';
+import { CardColumn } from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import WellnessCare from '../../images/course-welness-personal-care.jpg';
-import WellnessSleep from '../../images/course-welness-sleep.jpg';
+import Hero from '../../images/backgrounds/hero-faculty-wellness.jpg';
+import SL from '../../images/course-wellness-sleep-consultant.jpg';
 
-const WelnessPage: NextPage = () => (
+const WellnessPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Wellness Studies"
+      description="If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered."
+      canonical="/programs/qc-wellness-studies"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
@@ -31,20 +38,22 @@ const WelnessPage: NextPage = () => (
         <Row>
           <CardColumn>
             <CourseCard
-              img={WellnessSleep}
+              img={SL}
+              alt="sleeping baby"
               title="Pediatric Sleep Consultant Course"
               body="Sleep consulting is a growing industry as more busy parents seek professional help to ensure their child gets a good night’s rest. As a highly trained professional sleep consultant, you’ll have the tools and skills you need to work with families in desperate need of your help. After all, if baby doesn’t sleep, the parents don’t either!"
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcwellnessstudies.com/courses-and-tuition/sleep-consultant/"
+              link="https://www.qcwellnessstudies.com/courses-and-tuition/sleep-consultant/"
+              externalLink={true}
             />
           </CardColumn>
         </Row>
       </Container>
     </section>
 
-    <style jsx={true}>{`
+    <style>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${WellnessSleep}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${Hero}) 90% 0;
         background-size: cover;
       }
     `}</style>
@@ -52,4 +61,4 @@ const WelnessPage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default WelnessPage;
+export default WellnessPage;

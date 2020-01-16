@@ -4,18 +4,26 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
-import CardColumn from '../../components/card-column';
+import { CardColumn } from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import MakeupGlobalBeauty from '../../images/course-makeup-global-beauty.jpg';
-import MakeupMaster from '../../images/course-makeup-master.jpg';
-import MakeupPro from '../../images/course-makeup-pro-makeup.jpg';
-import MakeupSFX from '../../images/course-makeup-sfx.jpg';
-import MakeupSkin from '../../images/course-makeup-skincare.jpg';
+import Hero from '../../images/backgrounds/hero-faculty-makeup.jpg';
+import GB from '../../images/course-makeup-global-beauty.jpg';
+import MM from '../../images/course-makeup-master-makeup-artistry.jpg';
+import MW from '../../images/course-makeup-pro-makeup-workshop.jpg';
+import SK from '../../images/course-makeup-skincare.jpg';
+import SF from '../../images/course-makeup-special-fx.jpg';
 
-const MakeupAcademy: NextPage = () => (
+const MakeupPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Makeup Academy"
+      description="QC Makeup Academy offers a number of courses for makeup artists. You’ll find a course to help develop your makeup skills &amp; take you to the next level!"
+      canonical="/programs/qc-makeup-academy"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
@@ -30,71 +38,80 @@ const MakeupAcademy: NextPage = () => (
     </section>
 
     <section className="negative-section">
-
       <Container>
         <Row>
           <CardColumn>
             <CourseCard
-              img={MakeupMaster}
+              img={MM}
+              alt="makeup artist applying liptstick on a client"
               title="Master Makeup Artistry Course"
               body="QC’s most popular foundational makeup course trains you to be a professional makeup artist from the ground up. This comprehensive training course will teach you everything from basic makeup applications to bridal and editorial makeup, and more!"
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/master-makeup-artistry/"
+              link="https://www.qcmakeupacademy.com/online-makeup-courses/master-makeup-artistry/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupPro}
+              img={MW}
+              alt="makeup artist tools"
               title="Pro Makeup Workshop with Nathan Johnson"
               body="Work with celebrity executive makeup artist Nathan Johnson to challenge your professional skills in this intense cutting-edge course. You’ll work with Nathan to enhance your creativity and use your advanced skills to become a trendsetter in the industry."
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/pro-makeup-workshop/"
+              link="https://www.qcmakeupacademy.com/online-makeup-courses/pro-makeup-workshop/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupSkin}
+              img={SK}
+              alt="applying skincare cream"
               title="Skincare Course"
               body="It’s hard to make a work of art if you don’t start with a healthy canvas. That’s why QC tutors recommend that every student takes the skincare course! This course will teach makeup artists how to help clients achieve healthy, glowing skin which will make your makeup skills shine!"
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/skincare-course/"
+              link="https://www.qcmakeupacademy.com/online-makeup-courses/skincare-course/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupSFX}
+              img={SF}
+              alt="makeup artist applying special fx makeup on a client"
               title="Special FX Makeup Course"
               body="This popular specialty makeup course will teach makeup artists the art of creating special effects through their makeup artistry. Whether you want to age a character, create a gunshot wound, or transform your subject into a mythical creature, this course will teach you the skills to get there."
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/special-fx-makeup/"
+              link="https://www.qcmakeupacademy.com/online-makeup-courses/special-fx-makeup/"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MakeupGlobalBeauty}
+              img={GB}
+              alt="makeup artist applying makeup on a client"
               title="Global Beauty Makeup Workshop"
-              body="Makeup is a lifelong learning process. Once you’re done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world. "
+              body="Makeup is a lifelong learning process. Once you’re done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world."
               buttonText="Full Course Overview"
-              buttonLink="https://www.qcmakeupacademy.com/online-makeup-courses/global-beauty-workshop/"
+              link="https://www.qcmakeupacademy.com/online-makeup-courses/global-beauty-workshop/"
+              externalLink={true}
             />
           </CardColumn>
         </Row>
         <h3>Additional Courses for Makeup Artists</h3>
         <ul>
-          <li>Airbrush Makeup Workshop</li>
-          <li>Portfolio Development Workshop</li>
-          <li>Hair Styling Essentials Course</li>
-          <li>Personal Makeup Course</li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/airbrush-makeup-workshop/">Airbrush Makeup Workshop</a></li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/portfolio-development/">Portfolio Development Workshop</a></li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/hair-styling-essentials/">Hair Styling Essentials</a></li>
+          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/makeup-artistry/">Personal Makeup</a></li>
         </ul>
       </Container>
     </section>
 
-    <style jsx={true}>{`
+    <style>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${MakeupMaster}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${Hero}) 10% 0;
         background-size: cover;
       }
     `}</style>
   </DefaultLayout>
 );
-export default MakeupAcademy;
+export default MakeupPage;

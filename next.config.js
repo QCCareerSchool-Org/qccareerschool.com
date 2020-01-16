@@ -12,7 +12,7 @@ const nextConfig = {
   // // Trying to set NODE_ENV=production when running yarn dev causes a build-time error so we
   // // turn on the SW in dev mode so that we can actually test it
   
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     // https://github.com/zeit/next.js/tree/canary/examples/with-polyfills
     const originalEntry = config.entry
     config.entry = async () => {

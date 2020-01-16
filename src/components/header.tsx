@@ -31,7 +31,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       id="main-nav"
       bg={scrollPosition > maxPosition ? 'light' : undefined}
       variant={scrollPosition > maxPosition ? undefined : 'dark'}
-      expand="md"
+      expand="lg"
       className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
     >
       <Container>
@@ -47,16 +47,18 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <Link href="/programs/qc-design-school"><a className="dropdown-item">QC Design School</a></Link>
                 <Link href="/programs/qc-event-school"><a className="dropdown-item">QC Event School</a></Link>
                 <Link href="/programs/qc-pet-studies"><a className="dropdown-item">QC Pet Studies</a></Link>
+                <Link href="/programs/qc-wellness-studies"><a className="dropdown-item">QC Wellness Studies</a></Link>
                 <Link href="/programs/additional-programs"><a className="dropdown-item">Additional Programs</a></Link>
+                <Link href="/programs/combine-and-save"><a className="dropdown-item">Combine and Save</a></Link>
               </NavDropdown>
               <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
-              <Link href="/contact"><a className="nav-link">Contact</a></Link>
+              <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
             </Nav>
-            <a href="https://enroll.qcmakeupacademy.com">
+            <a href="https://studentcenter.qccareerschool.com">
               {mobile
-                ? <Button variant="link" className="p-0">Student Login</Button>
-                : <Button size="sm">Student Login</Button>
+                ? <Button variant="link" className="p-0">Student Log In</Button>
+                : <Button size="sm">Student Log In</Button>
               }
             </a>
           </Navbar.Collapse>

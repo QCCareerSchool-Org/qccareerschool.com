@@ -4,15 +4,23 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
-import CardColumn from '../../components/card-column';
+import { CardColumn } from '../../components/card-column';
 import { CourseCard } from '../../components/course-card';
+import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import PetFirstAid from '../../images/course-pet-firstaid.jpg';
-import PetGrooming from '../../images/course-pet-grooming.jpg';
+import Hero from '../../images/backgrounds/hero-faculty-pet.jpg';
+import DG from '../../images/course-pet-dog-grooming.jpg';
+import FA from '../../images/course-pet-first-aid-for-groomers.jpg';
 
-const DogGroominPage: NextPage = () => (
+const PetPage: NextPage = () => (
   <DefaultLayout>
+
+    <SEO
+      title="QC Pet Studies"
+      description="Get the training to become a professional dog groomer with QC's affordable online dog grooming course. Learn from the experts and start your career today!"
+      canonical="/programs/qc-pet-studies"
+    />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
       <Container>
@@ -31,33 +39,37 @@ const DogGroominPage: NextPage = () => (
         <Row>
           <CardColumn>
             <CourseCard
-              img={PetGrooming}
+              img={DG}
+              alt="dog groomer cutting dog's hair"
               title="Dog Grooming Course"
               body="Regular grooming is a key part to maintaining a dog’s health, and most dog owners prefer to leave their pooch’s grooming up to a qualified professional.  With the dog grooming course, you’ll learn how to groom all different breeds and the various popular cuts safely and effectively. You’ll also learn how to launch your own successful dog grooming business."
               buttonText="Full Course Overview"
-              buttonLink="http://gooogle.com"
+              link="http://gooogle.com"
+              externalLink={true}
             />
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={PetFirstAid}
+              img={FA}
+              alt="dog groomer applying first aid practices on a dog"
               title="First Aid for Groomers"
               body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
               buttonText="Full Course Overview"
-              buttonLink="https://www.doggroomingcourse.com/online-courses/dog-grooming/course-outline/"
+              link="https://www.doggroomingcourse.com/online-courses/dog-grooming/course-outline/"
+              externalLink={true}
             />
           </CardColumn>
         </Row>
-        <h3>Additional Design Courses:</h3>
+        <h3>Additional QC Pet Studies Courses</h3>
         <ul>
-          <li>Breed Styling Workshop</li>
+          <li><a href="https://www.doggroomingcourse.com/online-courses/breed-styling-workshop/">Breed Styling Workshop</a></li>
         </ul>
       </Container>
     </section>
 
-    <style jsx={true}>{`
+    <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${PetGrooming}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, .50)), url(${Hero}) 100% 0;
         background-size: cover;
       }
     `}</style>
@@ -65,4 +77,4 @@ const DogGroominPage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default DogGroominPage;
+export default PetPage;
