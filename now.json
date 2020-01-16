@@ -15,7 +15,8 @@
         "cache-control": "public, max-age=43200, immutable",
         "Service-Worker-Allowed": "/"
       }
-    }
+    },
+    { "src": "/free-brochure.php", "dest": "/programs" }
   ],
   "builds": [
     { "src": "next.config.js", "use": "@now/next" }
