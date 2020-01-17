@@ -1,6 +1,9 @@
 const CopyPlugin = require('copy-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob');
 const withSass = require('@zeit/next-sass');
 const withCss = require('@zeit/next-css');
+const withPurgeCss = require('next-purgecss');
 const optimizedImages = require('next-optimized-images');
 const withOffline = require('next-offline');
 
@@ -52,6 +55,10 @@ const nextConfig = {
       },
     ],
   },
+  purgeCssPaths: [
+    'src/pages/**/*',
+    'src/components/**/*',
+  ]
 };
 
-module.exports = withSass(withCss(optimizedImages(withOffline(nextConfig))));
+module.exports = withSass(withCss(withPurgeCss(optimizedImages(withOffline(nextConfig)))));
