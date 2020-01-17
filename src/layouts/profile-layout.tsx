@@ -14,7 +14,7 @@ interface Props {
 export const ProfileLayout: React.FC<Props> = props => (
   <GoogleAnalyticsWrapper>
     <Head>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
     </Head>
 
     <div className="profileWrapper">

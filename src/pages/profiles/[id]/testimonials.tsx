@@ -28,7 +28,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
 
       <div className="row">
         <div className="col-12 col-lg-7 col-xl-8 text-center text-md-left mb-2">
-          <h1 className="fontName">Testimonials for {profile.firstName} {profile.lastName}</h1>
+          <h1>Testimonials for {profile.firstName} {profile.lastName}</h1>
         </div>
         <div className="col-12 col-lg-5 col-xl-4 mt-4 mt-md-0 text-center text-lg-right">
           {profile.images.length ? <Link href="/profiles/[id]" as={`/profiles/${profile.id}`}><a className="btn btn-primary ml-3">Back to Profile</a></Link> : null}
@@ -50,10 +50,6 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
           }
         </div>
       </div>
-
-      <style jsx>{`
-        .fontName { font-family: 'Dancing Script', cursive; }
-      `}</style>
 
     </ProfileLayout>
   );
