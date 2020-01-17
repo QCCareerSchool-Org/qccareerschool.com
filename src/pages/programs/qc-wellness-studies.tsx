@@ -1,7 +1,4 @@
 import { NextPage } from 'next';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -19,20 +16,20 @@ const WellnessPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Wellness Studies</h2>
             <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="negative-section">
-      <Container>
-        <Row>
+      <div className="container">
+        <div className="row">
           <CardColumn>
             <CourseCard
               images={[
@@ -47,8 +44,8 @@ const WellnessPage: NextPage = () => (
               externalLink={true}
             />
           </CardColumn>
-        </Row>
-      </Container>
+        </div>
+      </div>
     </section>
 
     <style>{`

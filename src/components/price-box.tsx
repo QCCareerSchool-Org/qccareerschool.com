@@ -1,6 +1,5 @@
 import Big from 'big.js';
 import React, { useContext, useState } from 'react';
-import Nav from 'react-bootstrap/Nav';
 
 import { usePrice } from '../hooks/usePrice';
 import { LocationStateContext } from '../providers/location';
@@ -18,14 +17,14 @@ export const PriceBox: React.FC<Props> = ({ courses }) => {
   }
   return (
     <>
-      <Nav as="nav" variant="tabs" activeKey={plan} onSelect={(selectedKey: string) => setPlan(selectedKey)} className="mb-4">
+      {/* <Nav as="nav" variant="tabs" activeKey={plan} onSelect={(selectedKey: string) => setPlan(selectedKey)} className="mb-4">
         <Nav.Item>
           <Nav.Link eventKey="installment">Installment Plan</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="full">Pay In Full</Nav.Link>
         </Nav.Item>
-      </Nav>
+      </Nav> */}
       <div className="text-center" style={{ height: 220 }}>
         {plan === 'full'
           ? (

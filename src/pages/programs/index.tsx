@@ -1,7 +1,4 @@
 import { NextPage } from 'next';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -19,29 +16,29 @@ const ProgramsPage: NextPage = () => (
     />
 
     <section id="first-section" className="bg-dark text-light text-shadow">
-      <Container>
+      <div className="container">
         <Bar className="text-primary mb-5" />
         <p className="hat">QC Career School</p>
         <h1>Courses &amp; Professional Training Programs</h1>
         <p className="lead">Learning online doesn’t have to mean learning on your own. QC’s expert course developers and tutors have spent years developing a unique and comprehensive approach to online learning that will offer the flexibility you need while giving you the high quality training and personalized feedback you deserve!</p>
-      </Container>
+      </div>
     </section>
 
     <section>
-      <Container>
-        <Row>
-          <Col xs={12} md={8}>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8">
             <h2>QC Career School Faculties</h2>
             <p className="lead">QC contains 7 faculty schools that specialize in different industries.</p>
             <Bar className="text-primary" />
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="negative-section">
-      <Container>
-        <Row>
+      <div className="container">
+        <div className="row">
           <CardColumn>
             <CourseCard
               images={[
@@ -120,8 +117,8 @@ const ProgramsPage: NextPage = () => (
               link="/programs/additional-programs"
             />
           </CardColumn>
-        </Row>
-      </Container>
+        </div>
+      </div>
     </section>
 
     <style jsx>{`

@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -24,7 +22,7 @@ export const Header: React.FC<Props> = ({ className }) => {
   const maxPosition = 20;
 
   const logo = scrollPosition > maxPosition ? logoDark : logoLight;
-  const mobile = screenWidth < 768;
+  const mobile = screenWidth < 992;
 
   return (
     <Navbar
@@ -34,7 +32,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       expand="lg"
       className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
     >
-      <Container>
+      <div className="container">
         <div id="nav-wrapper">
           <Navbar.Brand>
             <Link href="/"><a><img src={logo} alt="QC Career School" style={{ display: 'block', height: 40 }} /></a></Link>
@@ -57,13 +55,13 @@ export const Header: React.FC<Props> = ({ className }) => {
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
               {mobile
-                ? <Button variant="link" className="p-0">Student Log In</Button>
-                : <Button size="sm">Student Log In</Button>
+                ? <button className="btn btn-link p-0">Student Log In</button>
+                : <button className="btn btn-primary btn-sm">Student Log In</button>
               }
             </a>
           </Navbar.Collapse>
         </div>
-      </Container>
+      </div>
     </Navbar>
   );
 };

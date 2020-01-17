@@ -1,9 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../components/bar';
 import { CourseCard } from '../components/course-card';
@@ -20,31 +17,35 @@ const HomePage: NextPage = () => (
     />
 
     <section id="first-section" className="text-light">
-      <Container>
-        <Col xs="12" md="10" lg="7" className="offset-md-1">
-          <p className="hat">QC Career School</p>
-          <h1 className="text-shadow">Providing Quality Distance Education for 35 Years and Counting</h1>
-          <Bar className="text-secondary" />
-        </Col>
-      </Container>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-10 col-lg-7 offset-md-1">
+            <p className="hat">QC Career School</p>
+            <h1 className="text-shadow">Providing Quality Distance Education for 35 Years and Counting</h1>
+            <Bar className="text-secondary" />
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <Container className="text-center">
-        <Col xs="12" md="8" className="offset-md-2">
-          <img src={require('../images/35-year-emblem.png')} alt="emblem" className="mb-4" />
-          <h2 className="text-center">Welcome to QC Career School!</h2>
-          <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC’s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you’ll graduate with the skills and confidence you need to start a successful professional career!</p>
-        </Col>
-      </Container>
+    <section className="text-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <img src={require('../images/35-year-emblem.png')} alt="emblem" className="mb-4" />
+            <h2 className="text-center">Welcome to QC Career School!</h2>
+            <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC’s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you’ll graduate with the skills and confidence you need to start a successful professional career!</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="text-dark bg-light">
-      <Container>
+      <div className="container">
         <h2>QC Career School Faculties</h2>
         <Bar className="text-primary mb-5" />
-        <Row>
-          <Col xs="12" md="6" className="mb-g d-flex">
+        <div className="row">
+          <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
               images={[
                 { src: require('../images/faculty-makeup.jpg'), type: 'image/jpg' },
@@ -57,8 +58,8 @@ const HomePage: NextPage = () => (
               link="https://www.qcmakeupacademy.com/"
               externalLink={true}
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </div>
+          <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
               images={[
                 { src: require('../images/faculty-event.jpg'), type: 'image/jpg' },
@@ -71,8 +72,8 @@ const HomePage: NextPage = () => (
               link="https://www.qceventplanning.com/"
               externalLink={true}
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </div>
+          <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
               images={[
                 { src: require('../images/faculty-design.jpg'), type: 'image/jpg' },
@@ -85,8 +86,8 @@ const HomePage: NextPage = () => (
               link="https://www.qcdesignschool.com/"
               externalLink={true}
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          </div>
+          <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
               images={[
                 { src: require('../images/faculty-pet.jpg'), type: 'image/jpg' },
@@ -99,8 +100,8 @@ const HomePage: NextPage = () => (
               link="https://www.doggroomingcourse.com/"
               externalLink={true}
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
+          </div>
+          <div className="col-12 col-md-6 mb-g mb-md-0 d-flex">
             <CourseCard
               images={[
                 { src: require('../images/faculty-wellness.jpg'), type: 'image/jpg' },
@@ -113,8 +114,8 @@ const HomePage: NextPage = () => (
               link="https://www.qcwellnessstudies.com/"
               externalLink={true}
             />
-          </Col>
-          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
+          </div>
+          <div className="col-12 col-md-6 mb-g mb-md-0 d-flex">
             <CourseCard
               images={[
                 { src: require('../images/faculty-writing.jpg'), type: 'image/jpg' },
@@ -127,34 +128,34 @@ const HomePage: NextPage = () => (
               link="https://www.winghill.com/"
               externalLink={true}
             />
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="text-light bg-dark">
-      <Container>
-        <Row>
-          <Col xs="12" md="4" className="mb-5 mb-md-0">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-4 mb-5 mb-md-0">
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
             <div className="buttonSpacer" />
             <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">View Course Catalog</a></Link>
-          </Col>
-          <Col xs="12" md="4" className="mb-5 mb-md-0">
+          </div>
+          <div className="col-12 col-md-4 mb-5 mb-md-0">
             <h3 className="mb-3">Enroll<br />Today</h3>
             <p>QC offers individual, group, and corporate admissions! Learn more about the admissions process and how you can enroll in a QC course!</p>
             <div className="buttonSpacer" />
             <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Admissions</a></Link>
-          </Col>
-          <Col xs="12" md="4" className="mb-5 mb-md-0">
+          </div>
+          <div className="col-12 col-md-4 mb-5 mb-md-0">
             <h3 className="mb-3">Find<br />Professionals</h3>
             <p>Hire a QC graduate here! Search by profession and location</p>
             <div className="buttonSpacer" />
             <Link href="/find-professionals"><a className="absoluteButton btn btn-primary btn-sm caps">Find Professionals</a></Link>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <style>{`

@@ -1,7 +1,4 @@
 import { NextPage } from 'next';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -19,20 +16,20 @@ const MakeupPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>QC Makeup Academy</h1>
             <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="negative-section">
-      <Container>
-        <Row>
+      <div className="container">
+        <div className="row">
           <CardColumn>
             <CourseCard
               images={[
@@ -103,7 +100,7 @@ const MakeupPage: NextPage = () => (
               externalLink={true}
             />
           </CardColumn>
-        </Row>
+        </div>
         <h3>Additional Courses for Makeup Artists</h3>
         <ul>
           <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/airbrush-makeup-workshop/">Airbrush Makeup Workshop</a></li>
@@ -111,7 +108,7 @@ const MakeupPage: NextPage = () => (
           <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/hair-styling-essentials/">Hair Styling Essentials</a></li>
           <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/makeup-artistry/">Personal Makeup</a></li>
         </ul>
-      </Container>
+      </div>
     </section>
 
     <style>{`

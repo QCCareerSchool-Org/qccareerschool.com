@@ -3,11 +3,6 @@ import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import { useContext, useEffect, useRef, useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
@@ -139,23 +134,23 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
         <section id="first-section" className="text-light">
-          <Container>
-            <Row>
-              <Col xs={12} md={10} lg={8} xl={6}>
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-10 col-lg-8 col-xl-6">
                 <h1>Find Professionals</h1>
                 <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="bg-light">
-          <Container>
-            <Row>
-              <Col xs={12} sm={10} md={8} lg={5} className="offset-sm-1 offset-md-2 offset-lg-0 mb-5 mb-lg-0">
-                <Card className="shadow-lg rounded-lg text-dark">
-                  <Card.Body>
-                    <Card.Title className="mb-4">Find a Professional</Card.Title>
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-sm-10 col-md-8 col-lg-5 offset-sm-1 offset-md-2 offset-lg-0 mb-5 mb-lg-0">
+                <div className="card shadow-lg rounded-lg text-dark">
+                  <div className="card-body">
+                    <h5 className="card-title mb-4">Find a Professional</h5>
                     <form method="post" onSubmit={handleFormSubmit}>
                       <div className="form-group">
                         <label htmlFor="profession">Profession</label>
@@ -201,12 +196,12 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                           <input type="text" className="form-control" id="lastName" value={state.form.lastName} onChange={e => dispatch(FindProfessionals.actionCreators.updateLastName(e.target.value))} />
                         </div>
                       </div>
-                      <Button type="submit" className="mt-2">Search</Button>
+                      <button type="submit" className="btn btn-primary mt-2">Search</button>
                     </form>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col xs={12} lg={7} className={sm ? 'text-left' : 'text-center'}>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-lg-7 text-center text-sm-left">
                 {error ? (
                   <>
                     <p className="lead">Network Error</p>
@@ -226,9 +221,9 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                     />
                   )
                   : null}
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </section>
 
       </div>

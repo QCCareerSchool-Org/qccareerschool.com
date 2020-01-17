@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import Card from 'react-bootstrap/Card';
 
 interface Image {
   src: string;
@@ -18,20 +17,20 @@ interface Props {
 }
 
 export const CourseCard: React.FC<Props> = ({ images, title, body, buttonText, link, externalLink, alt }) => (
-  <Card className="shadow-lg rounded-lg">
+  <div className="card shadow-lg rounded-lg">
     {externalLink
       ? <a href={link}><CardImage images={images} alt={alt} /></a>
       : <Link href={link}><a><CardImage images={images} alt={alt} /></a></Link>
     }
-    <Card.Body>
-      <Card.Title>{title}</Card.Title>
-      {body ? <Card.Text>{body}</Card.Text> : null}
+    <div className="card-body">
+      <h5 className="card-title">{title}</h5>
+      {body ? <p className="card-text">{body}</p> : null}
       <div className="buttonSpacer" />
       {externalLink
         ? <a href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a>
         : <Link href={link}><a className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a></Link>
       }
-    </Card.Body>
+    </div>
 
     <style jsx>{`
     .buttonSpacer {
@@ -42,7 +41,7 @@ export const CourseCard: React.FC<Props> = ({ images, title, body, buttonText, l
       bottom: 20px;
     }
   `}</style>
-  </Card>
+  </div>
 );
 
 interface CardImageProps {

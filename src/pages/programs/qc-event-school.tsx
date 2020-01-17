@@ -1,7 +1,4 @@
 import { NextPage } from 'next';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -19,20 +16,20 @@ const EventPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>QC Event School</h1>
             <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="negative-section">
-      <Container>
-        <Row>
+      <div className="container">
+        <div className="row">
           <CardColumn>
             <CourseCard
               images={[
@@ -89,7 +86,7 @@ const EventPage: NextPage = () => (
               externalLink={true}
             />
           </CardColumn>
-        </Row>
+        </div>
         <h3>Additional Event Planning Courses:</h3>
         <ul>
           <li><a href="https://www.qceventplanning.com/online-event-courses/event-planning/">Private Event Planning</a></li>
@@ -99,7 +96,7 @@ const EventPage: NextPage = () => (
           <li><a href="https://www.qceventplanning.com/online-event-courses/festivals-and-live-events/">Festivals &amp; Live Events Planning</a></li>
           <li><a href="https://www.qceventplanning.com/online-event-courses/promotional-event-planning/">Promotional Event Planning</a></li>
         </ul>
-      </Container>
+      </div>
     </section>
 
     <style>{`

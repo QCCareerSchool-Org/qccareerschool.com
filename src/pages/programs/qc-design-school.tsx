@@ -1,7 +1,4 @@
 import { NextPage } from 'next';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -19,20 +16,20 @@ const DesignPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>QC Design School</h1>
             <p className="lead">Home design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="negative-section">
-      <Container>
-        <Row>
+      <div className="container">
+        <div className="row">
           <CardColumn>
             <CourseCard
               images={[
@@ -75,14 +72,14 @@ const DesignPage: NextPage = () => (
               externalLink={true}
             />
           </CardColumn>
-        </Row>
+        </div>
         <h3>Additional Design Courses</h3>
         <ul>
           <li><a href="https://www.qcdesignschool.com/online-courses/color-consultant/">Color Consultant</a></li>
           <li><a href="https://www.qcdesignschool.com/online-courses/feng-shui-design/">Feng Shui Design</a></li>
           <li><a href="https://www.qcdesignschool.com/online-courses/aging-in-place/">Aging in Place</a></li>
         </ul>
-      </Container>
+      </div>
     </section>
 
     <style>{`

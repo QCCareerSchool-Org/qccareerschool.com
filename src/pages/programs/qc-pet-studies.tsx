@@ -1,7 +1,4 @@
 import { NextPage } from 'next';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -19,20 +16,20 @@ const PetPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Container>
-        <Row>
-          <Col xs={12} md={8} className="offset-md-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Pet Studies</h2>
             <p className="lead">Working with animals is a dream for many people. But most animal fields require years of study before you can start your career.  QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field.</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section className="negative-section">
-      <Container>
-        <Row>
+      <div className="container">
+        <div className="row">
           <CardColumn>
             <CourseCard
               images={[
@@ -61,12 +58,12 @@ const PetPage: NextPage = () => (
               externalLink={true}
             />
           </CardColumn>
-        </Row>
+        </div>
         <h3>Additional QC Pet Studies Courses</h3>
         <ul>
           <li><a href="https://www.doggroomingcourse.com/online-courses/breed-styling-workshop/">Breed Styling Workshop</a></li>
         </ul>
-      </Container>
+      </div>
     </section>
 
     <style jsx>{`
