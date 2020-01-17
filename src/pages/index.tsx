@@ -10,15 +10,6 @@ import { CourseCard } from '../components/course-card';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import Emblem from '../images/35-year-emblem.png';
-import Hero from '../images/backgrounds/hero-home.jpg';
-import Design from '../images/faculty-design.jpg';
-import Event from '../images/faculty-event.jpg';
-import Makeup from '../images/faculty-makeup.jpg';
-import Pet from '../images/faculty-pet.jpg';
-import Wellness from '../images/faculty-wellness.jpg';
-import Writing from '../images/faculty-writing.jpg';
-
 const HomePage: NextPage = () => (
   <DefaultLayout>
 
@@ -41,7 +32,7 @@ const HomePage: NextPage = () => (
     <section>
       <Container className="text-center">
         <Col xs="12" md="8" className="offset-md-2">
-          <img src={Emblem} alt="emblem" className="mb-4" />
+          <img src={require('../images/35-year-emblem.png')} alt="emblem" className="mb-4" />
           <h2 className="text-center">Welcome to QC Career School!</h2>
           <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC’s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you’ll graduate with the skills and confidence you need to start a successful professional career!</p>
         </Col>
@@ -55,7 +46,10 @@ const HomePage: NextPage = () => (
         <Row>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={Makeup}
+              images={[
+                { src: require('../images/faculty-makeup.jpg'), type: 'image/jpg' },
+                { src: require('../images/faculty-makeup.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="makeup artist applying makeup on a client"
               title="QC Makeup Academy"
               body="Basic and advanced professional makeup artistry courses for all skill levels."
@@ -66,7 +60,10 @@ const HomePage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={Event}
+              images={[
+                { src: require('../images/faculty-event.jpg'), type: 'image/jpg' },
+                { src: require('../images/faculty-event.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="event planning - professionally decorated dinner set"
               title="QC Event School"
               body="Training event planning professionals to launch their own business. Courses include party planning, wedding planning, corporate event planning and more."
@@ -77,7 +74,10 @@ const HomePage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={Design}
+              images={[
+                { src: require('../images/faculty-design.jpg'), type: 'image/jpg' },
+                { src: require('../images/faculty-design.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="professionally designed living room"
               title="QC Design School"
               body=" Offering courses in all areas of home design from interior decorating to professional organizing."
@@ -88,7 +88,10 @@ const HomePage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g d-flex">
             <CourseCard
-              img={Pet}
+              images={[
+                { src: require('../images/faculty-pet.jpg'), type: 'image/jpg' },
+                { src: require('../images/faculty-pet.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="dog groomer bathing a small dog"
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
@@ -97,9 +100,12 @@ const HomePage: NextPage = () => (
               externalLink={true}
             />
           </Col>
-          <Col xs="12" md="6" className="mb-g d-flex">
+          <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
-              img={Wellness}
+              images={[
+                { src: require('../images/faculty-wellness.jpg'), type: 'image/jpg' },
+                { src: require('../images/faculty-wellness.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="wellness professional putting a baby to sleep"
               title="QC Wellness Studies"
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
@@ -110,7 +116,10 @@ const HomePage: NextPage = () => (
           </Col>
           <Col xs="12" md="6" className="mb-g mb-md-0 d-flex">
             <CourseCard
-              img={Writing}
+              images={[
+                { src: require('../images/faculty-writing.jpg'), type: 'image/jpg' },
+                { src: require('../images/faculty-writing.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="person writing a book"
               title="Winghill Writing School"
               body="The school that started it all! Winghill offers a myriad of writing courses from novel writing to family history writing and much more."
@@ -150,7 +159,7 @@ const HomePage: NextPage = () => (
 
     <style>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-home.jpg')}) 0 0;
         background-size: cover;
       }
       .buttonSpacer {

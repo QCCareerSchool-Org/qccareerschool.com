@@ -9,12 +9,6 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Hero from '../../images/backgrounds/hero-faculty-event.jpg';
-import EB from '../../images/course-event-accelerate-your-business.jpg';
-import CP from '../../images/course-event-corporate-event-planning.jpg';
-import EP from '../../images/course-event-event-and-wedding-planning.jpg';
-import ED from '../../images/course-event-event-decor.jpg';
-
 const EventPage: NextPage = () => (
   <DefaultLayout>
 
@@ -41,7 +35,10 @@ const EventPage: NextPage = () => (
         <Row>
           <CardColumn>
             <CourseCard
-              img={EP}
+              images={[
+                { src: require('../../images/course-event-event-and-wedding-planning.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-event-event-and-wedding-planning.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="professionally decorated wedding table"
               title="Event &amp; Wedding Planning Course"
               body="This dual-certification course will prepare you to plan and coordinate any number of private events from weddings to birthday parties to religious celebrations. You’ll learn how to negotiate with vendors, establish long-lasting client relationships, and budget for any event or client. With QC’s unparalleled business training, you’ll graduate from this course with the knowledge and skills to be a successful planning professional."
@@ -52,7 +49,10 @@ const EventPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={CP}
+              images={[
+                { src: require('../../images/course-event-corporate-event-planning.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-event-corporate-event-planning.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="corporate event master of ceremonies making a speech"
               title="Corporate Event Planning Course"
               body="Catering to corporate clients is a very different experience from working for private clients. This course focuses on the project management aspects you’ll be expected to master in order to work with a number of corporate stakeholders. You’ll also learn how to work around the unique challenges of planning conferences, trade shows, and other types of corporate events."
@@ -63,7 +63,10 @@ const EventPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={ED}
+              images={[
+                { src: require('../../images/course-event-event-decor.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-event-event-decor.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="professionally decorated dinner table"
               title="Event Decor Course"
               body="The perfect course to complement your fundamental event planner training. The Event Decor Course teaches you to create a cohesive decor to suit any theme, and how to plan for and incorporate all decorative elements that brings an event together. Being an event decorator can be a full-time job, or it can be a perfect addition to your booming event planning business!"
@@ -74,7 +77,10 @@ const EventPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={EB}
+              images={[
+                { src: require('../../images/course-event-accelerate-your-business.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-event-accelerate-your-business.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="business owners closing a new deal"
               title="Accelerate Your Business Workshop"
               body="For the established event planning business owner who wants to take their business to the next level.  In this advanced course, you’ll work one-on-one with your tutor to enhance a specific area of your business where you can use some help. This is a very flexible course where you set the tone with your tutor. You’ll work on a specific goal for your business."
@@ -98,7 +104,7 @@ const EventPage: NextPage = () => (
 
     <style>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${Hero}) 10% 0;
+        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${require('../../images/backgrounds/hero-faculty-event.jpg')}) 10% 0;
         background-size: cover;
       }
     `}</style>

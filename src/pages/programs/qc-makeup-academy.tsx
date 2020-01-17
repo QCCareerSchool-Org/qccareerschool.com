@@ -9,13 +9,6 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Hero from '../../images/backgrounds/hero-faculty-makeup.jpg';
-import GB from '../../images/course-makeup-global-beauty.jpg';
-import MM from '../../images/course-makeup-master-makeup-artistry.jpg';
-import MW from '../../images/course-makeup-pro-makeup-workshop.jpg';
-import SK from '../../images/course-makeup-skincare.jpg';
-import SF from '../../images/course-makeup-special-fx.jpg';
-
 const MakeupPage: NextPage = () => (
   <DefaultLayout>
 
@@ -42,7 +35,10 @@ const MakeupPage: NextPage = () => (
         <Row>
           <CardColumn>
             <CourseCard
-              img={MM}
+              images={[
+                { src: require('../../images/course-makeup-master-makeup-artistry.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-makeup-master-makeup-artistry.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="makeup artist applying liptstick on a client"
               title="Master Makeup Artistry Course"
               body="QC’s most popular foundational makeup course trains you to be a professional makeup artist from the ground up. This comprehensive training course will teach you everything from basic makeup applications to bridal and editorial makeup, and more!"
@@ -53,7 +49,10 @@ const MakeupPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={MW}
+              images={[
+                { src: require('../../images/course-makeup-pro-makeup-workshop.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-makeup-pro-makeup-workshop.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="makeup artist tools"
               title="Pro Makeup Workshop with Nathan Johnson"
               body="Work with celebrity executive makeup artist Nathan Johnson to challenge your professional skills in this intense cutting-edge course. You’ll work with Nathan to enhance your creativity and use your advanced skills to become a trendsetter in the industry."
@@ -64,7 +63,10 @@ const MakeupPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={SK}
+              images={[
+                { src: require('../../images/course-makeup-skincare.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-makeup-skincare.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="applying skincare cream"
               title="Skincare Course"
               body="It’s hard to make a work of art if you don’t start with a healthy canvas. That’s why QC tutors recommend that every student takes the skincare course! This course will teach makeup artists how to help clients achieve healthy, glowing skin which will make your makeup skills shine!"
@@ -75,7 +77,10 @@ const MakeupPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={SF}
+              images={[
+                { src: require('../../images/course-makeup-special-fx.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-makeup-special-fx.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="makeup artist applying special fx makeup on a client"
               title="Special FX Makeup Course"
               body="This popular specialty makeup course will teach makeup artists the art of creating special effects through their makeup artistry. Whether you want to age a character, create a gunshot wound, or transform your subject into a mythical creature, this course will teach you the skills to get there."
@@ -86,7 +91,10 @@ const MakeupPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={GB}
+              images={[
+                { src: require('../../images/course-makeup-global-beauty.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-makeup-global-beauty.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="makeup artist applying makeup on a client"
               title="Global Beauty Makeup Workshop"
               body="Makeup is a lifelong learning process. Once you’re done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world."
@@ -108,7 +116,7 @@ const MakeupPage: NextPage = () => (
 
     <style>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${Hero}) 10% 0;
+        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${require('../../images/backgrounds/hero-faculty-makeup.jpg')}) 10% 0;
         background-size: cover;
       }
     `}</style>

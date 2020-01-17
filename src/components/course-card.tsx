@@ -2,8 +2,13 @@ import Link from 'next/link';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 
+interface Image {
+  src: string;
+  type: string;
+}
+
 interface Props {
-  img: any;
+  images: Image[];
   title: string;
   body?: string;
   buttonText: string;
@@ -12,11 +17,11 @@ interface Props {
   alt: string;
 }
 
-export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, link, externalLink, alt }) => (
+export const CourseCard: React.FC<Props> = ({ images, title, body, buttonText, link, externalLink, alt }) => (
   <Card className="shadow-lg rounded-lg">
     {externalLink
-      ? <a href={link}><Card.Img variant="top" src={img} alt={alt} /></a>
-      : <Link href={link}><a><Card.Img variant="top" src={img} alt={alt} /></a></Link>
+      ? <a href={link}><CardImage images={images} alt={alt} /></a>
+      : <Link href={link}><a><CardImage images={images} alt={alt} /></a></Link>
     }
     <Card.Body>
       <Card.Title>{title}</Card.Title>
@@ -39,3 +44,21 @@ export const CourseCard: React.FC<Props> = ({ img, title, body, buttonText, link
   `}</style>
   </Card>
 );
+
+interface CardImageProps {
+  images: Image[];
+  alt: string;
+}
+
+const CardImage: React.FC<CardImageProps> = ({ images, alt }) => {
+  if (images.length === 0) {
+    return null;
+  }
+  return (
+    <picture>
+      {images.slice(1).reverse().map((image, i)  => <source key={i} srcSet={image.src} type={image.type} />)}
+      <source srcSet={images[0].src} type={images[0].type} />
+      <img className="card-img-top" src={images[0].src} alt={alt} />
+    </picture>
+  );
+};

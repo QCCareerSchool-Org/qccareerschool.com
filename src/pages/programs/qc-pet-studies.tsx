@@ -9,10 +9,6 @@ import { CourseCard } from '../../components/course-card';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Hero from '../../images/backgrounds/hero-faculty-pet.jpg';
-import DG from '../../images/course-pet-dog-grooming.jpg';
-import FA from '../../images/course-pet-first-aid-for-groomers.jpg';
-
 const PetPage: NextPage = () => (
   <DefaultLayout>
 
@@ -39,7 +35,10 @@ const PetPage: NextPage = () => (
         <Row>
           <CardColumn>
             <CourseCard
-              img={DG}
+              images={[
+                { src: require('../../images/course-pet-dog-grooming.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-pet-dog-grooming.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="dog groomer cutting dog's hair"
               title="Dog Grooming Course"
               body="Regular grooming is a key part to maintaining a dog’s health, and most dog owners prefer to leave their pooch’s grooming up to a qualified professional.  With the dog grooming course, you’ll learn how to groom all different breeds and the various popular cuts safely and effectively. You’ll also learn how to launch your own successful dog grooming business."
@@ -50,7 +49,10 @@ const PetPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              img={FA}
+              images={[
+                { src: require('../../images/course-pet-first-aid-for-groomers.jpg'), type: 'image/jpg' },
+                { src: require('../../images/course-pet-first-aid-for-groomers.jpg?webp'), type: 'image/webp' },
+              ]}
               alt="dog groomer applying first aid practices on a dog"
               title="First Aid for Groomers"
               body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
@@ -69,7 +71,7 @@ const PetPage: NextPage = () => (
 
     <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, .50)), url(${Hero}) 100% 0;
+        background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, .50)), url(${require('../../images/backgrounds/hero-faculty-pet.jpg')}) 100% 0;
         background-size: cover;
       }
     `}</style>
