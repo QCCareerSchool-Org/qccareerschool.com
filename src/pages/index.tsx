@@ -163,6 +163,10 @@ const HomePage: NextPage = () => (
         background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-home.jpg')}) 0 0;
         background-size: cover;
       }
+      .webp #first-section {
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-home.jpg?webp')}) 0 0;
+        background-size: cover;
+      }
       .buttonSpacer {
         height: 31px;
       }

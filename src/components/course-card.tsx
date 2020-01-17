@@ -55,8 +55,7 @@ const CardImage: React.FC<CardImageProps> = ({ images, alt }) => {
   }
   return (
     <picture>
-      {images.slice(1).reverse().map((image, i)  => <source key={i} srcSet={image.src} type={image.type} />)}
-      <source srcSet={images[0].src} type={images[0].type} />
+      {images.reverse().map((image, i)  => <source key={i} srcSet={image.src} type={image.type} />)}
       <img className="card-img-top" src={images[0].src} alt={alt} />
     </picture>
   );

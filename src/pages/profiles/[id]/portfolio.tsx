@@ -30,8 +30,8 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
     <ProfileLayout backgroundImage={profile.backgroundName}>
       <LightBox id={lightBoxId} onClose={() => setLightBoxId(undefined)} />
       <h1 className="text-center text-md-left mb-4">Portfolio for {profile.company
-       ? profile.company
-       : `${profile.firstName} ${profile.lastName}`
+        ? profile.company
+        : `${profile.firstName} ${profile.lastName}`
       }</h1>
       <p className="text-center text-md-left mb-4"><Link href="/profiles/[id]" as={`/profiles/${profile.id}`}><a className="btn btn-primary">Back to Profile</a></Link></p>
       <div className="row">

@@ -51,6 +51,7 @@ CertificationsPage.getInitialProps = async context => {
     if (profile.active === false) {
       throw new HttpStatus.NotFound();
     }
+
     if (profile.certifications.length <= 3) {
       throw new HttpStatus.NotFound();
     }

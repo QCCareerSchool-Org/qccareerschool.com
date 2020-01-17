@@ -33,7 +33,7 @@ const AdditionalProgramsPage: NextPage = () => (
     <section>
       <div className="container">
         <div className="row">
-        <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
+          <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
             <img src={Writing} alt="person writing a book" className="sideImage" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
@@ -47,7 +47,7 @@ const AdditionalProgramsPage: NextPage = () => (
     <section className="bg-light">
       <div className="container">
         <div className="row">
-        <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
+          <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
             <img src={Travel} alt="couple traveling through a beautiful landscape" className="sideImage" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
