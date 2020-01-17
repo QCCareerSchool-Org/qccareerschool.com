@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { GoogleAnalyticsWrapper } from '../components/google-analytics-wrapper';
 
-import Logo from '../images/logo-inverse.svg';
+import Logo from '../images/logo-horizontal.svg';
 import None from '../images/profile-backgrounds/none.png';
 import Powder from '../images/profile-backgrounds/powder.jpg';
 
@@ -55,7 +55,7 @@ export const ProfileLayout: React.FC<Props> = props => (
         padding-top: 12px;
         padding-bottom: 12px;
       }
-      .profileLogo { height: 24px; }
+      .profileLogo { height: 32px; }
       @media (min-width: 576px){
         .profile { padding: 24px; }
         .profileLogo { margin-bottom: 6px; }
