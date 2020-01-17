@@ -29,7 +29,6 @@ export default class QCDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
           <meta name="theme-color" content="#f6f7fb" />
-          <script src="/livechat.js" />
         </Head>
         <body>
           <Main />
