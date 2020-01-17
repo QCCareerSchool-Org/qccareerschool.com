@@ -1,19 +1,15 @@
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-
 import { Bar } from './bar';
 
 const OverlaySection: React.FC<{ backgroundImage: string; }> = ({ children, backgroundImage }) => (
   <section className="overlay-section bg-dark text-light text-shadow text-right">
-    <Container>
-      <Row>
-        <Col xs={12} md={8} className="offset-md-4">
+    <div className="container">
+      <div className="row">
+        <div className="col-12 col-md-8 offset-md-4">
           <Bar className="text-primary ml-auto" />
           {children}
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
 
     <style jsx>{`
       section {

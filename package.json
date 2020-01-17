@@ -1,6 +1,6 @@
 {
   "name": "www.qccareerschool.com",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -42,6 +42,7 @@
     "next": "^9.1.7",
     "next-offline": "^5.0.0-beta.11",
     "next-optimized-images": "^2.5.4",
+    "next-purgecss": "^3.1.2",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

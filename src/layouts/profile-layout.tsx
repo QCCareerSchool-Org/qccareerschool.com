@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Logo from '../images/logo-inverse.svg';
+import { GoogleAnalyticsWrapper } from '../components/google-analytics-wrapper';
+
+import Logo from '../images/logo-horizontal.svg';
 import None from '../images/profile-backgrounds/none.png';
 import Powder from '../images/profile-backgrounds/powder.jpg';
 
@@ -10,9 +12,9 @@ interface Props {
 }
 
 export const ProfileLayout: React.FC<Props> = props => (
-  <>
+  <GoogleAnalyticsWrapper>
     <Head>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
     </Head>
 
     <div className="profileWrapper">
@@ -53,7 +55,7 @@ export const ProfileLayout: React.FC<Props> = props => (
         padding-top: 12px;
         padding-bottom: 12px;
       }
-      .profileLogo { height: 24px; }
+      .profileLogo { height: 32px; }
       @media (min-width: 576px){
         .profile { padding: 24px; }
         .profileLogo { margin-bottom: 6px; }
@@ -66,19 +68,5 @@ export const ProfileLayout: React.FC<Props> = props => (
         .profileLogo { margin-bottom: 12px; }
       }
     `}</style>
-    {/* <style global jsx>{`
-      h1 {
-        font-size: 3.5rem;
-        font-family: 'Dancing Script', cursive;
-        font-weight: 400;
-      }
-      h2, h3, h4, h5, h6 {
-        font-weight: 400;
-        text-transform: none;
-        font-family: 'Open Sans', sans-serif;
-        letter-spacing: 0;
-      }
-      h2 { font-size: 1.5rem; }
-    `}</style> */}
-  </>
+  </GoogleAnalyticsWrapper>
 );

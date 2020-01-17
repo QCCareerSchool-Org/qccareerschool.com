@@ -11,16 +11,6 @@ import { initGA, logPageView } from '../ga';
 import '../style.scss';
 
 export default class QCApp extends App {
-  public componentDidMount() {
-    if (!window.location.host.startsWith('localhost')) {
-      if (!(window as any).GA_INITIALIZED) {
-        initGA();
-        (window as any).GA_INITIALIZED = true;
-      }
-      logPageView();
-    }
-  }
-
   public render() {
     const { Component, pageProps } = this.props;
     return (

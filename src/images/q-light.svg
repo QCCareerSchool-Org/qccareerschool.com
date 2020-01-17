@@ -2,22 +2,19 @@
 <!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="54px" height="54px" viewBox="0 0 54 54" enable-background="new 0 0 54 54" xml:space="preserve">
-<g>
-	
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="764.6016" y1="604.4512" x2="775.4741" y2="570.0215" gradientTransform="matrix(1 0 0 1 -740 -558.876)">
-		<stop  offset="0" style="stop-color:#D1D3D4"/>
-		<stop  offset="0.12" style="stop-color:#DBDDDE"/>
-		<stop  offset="0.4104" style="stop-color:#EFF0F0"/>
-		<stop  offset="0.7032" style="stop-color:#FBFBFB"/>
-		<stop  offset="1" style="stop-color:#FFFFFF"/>
-	</linearGradient>
-	<path fill="url(#SVGID_1_)" d="M50.601,33.427l-22.888-0.021l6.589,6.6c-2.156,1.212-4.639,1.916-7.287,1.914
-		c-8.208-0.008-14.88-6.697-14.872-14.904c0.007-8.211,6.692-14.882,14.897-14.875c6.876,0.007,12.653,4.697,14.354,11.043
-		l9.747,0.008C49.298,11.53,39.234,2.597,27.048,2.587C13.555,2.575,2.603,13.509,2.59,27.008
-		C2.579,40.506,13.512,51.459,27.006,51.469c5.298,0.006,10.189-1.693,14.197-4.554l5.627,5.648l6.76-6.754l-5.84-5.862
-		C48.998,37.949,49.964,35.755,50.601,33.427z"/>
-	<path fill="#FFFFFF" d="M41.17,46.915l5.628,5.646l6.76-6.754l-5.841-5.858c1.249-2.001,2.217-4.194,2.853-6.523l-22.888-0.021
-		l6.588,6.6"/>
-</g>
+	 width="53.268px" height="52.076px" viewBox="0.732 0.627 53.268 52.076" enable-background="new 0.732 0.627 53.268 52.076"
+	 xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="203.3047" y1="-316.1558" x2="203.3047" y2="-277.7003" gradientTransform="matrix(1 0 0 -1 -176 -269.876)">
+	<stop  offset="0" style="stop-color:#ABABAB"/>
+	<stop  offset="0.7032" style="stop-color:#FBFBFB"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M50.764,32.756l-23.852-0.014l6.866,6.877c-2.246,1.263-4.834,1.996-7.593,1.994
+	c-8.553-0.008-15.506-6.979-15.497-15.53c0.007-8.556,6.973-15.508,15.523-15.5c7.165,0.007,13.185,4.895,14.958,11.507
+	l10.156,0.008C49.404,9.946,38.917,0.638,26.219,0.627C12.159,0.615,0.746,12.008,0.732,26.074
+	C0.721,40.14,12.114,51.554,26.175,51.563c5.521,0.007,10.618-1.765,14.794-4.745l5.863,5.885l7.044-7.037l-6.085-6.108
+	C49.092,37.476,50.295,35.348,50.764,32.756z"/>
+<path fill="#FFFFFF" d="M40.935,46.818l5.864,5.883L54,45.719l-6.243-6.159c1.301-2.085,2.31-4.37,2.973-6.797l-23.851-0.021
+	l6.865,6.877"/>
+<path fill="#C4C2C2" d="M47.757,39.56l-6.986-6.804l10.007-0.011C50.777,32.745,50.22,36.24,47.757,39.56z"/>
 </svg>

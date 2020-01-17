@@ -1,7 +1,7 @@
 'use strict';
 
 self.addEventListener('install', () => {
-  console.log('[serviceWorker] installed');
+  // console.log('[serviceWorker] installed');
 });
 
 self.addEventListener('push', event => {
@@ -15,7 +15,7 @@ self.addEventListener('push', event => {
         throw Error('invalid data');
       }
     } catch (err) {
-      console.log('[serviceWorker] Error: ', err);
+      // console.log('[serviceWorker] Error: ', err);
     }
   }
 });
