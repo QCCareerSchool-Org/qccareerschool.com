@@ -58,6 +58,7 @@ const nextConfig = {
   purgeCssPaths: [
     'src/pages/**/*',
     'src/components/**/*',
+    'src/layouts/**/*',
   ]
 };
 
