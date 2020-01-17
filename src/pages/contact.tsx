@@ -22,7 +22,7 @@ const ContactPage: NextPage = () => {
 
       <SEO
         title="Contact"
-        description="QC’s team of friendly student advisors are always happy to help. Reach out to us by phone email or live chat at any time!"
+        description="QC’s team of friendly student advisors are always happy to help. Reach out to us by phone or email at any time!"
         canonical="/contact"
       />
 
@@ -40,7 +40,7 @@ const ContactPage: NextPage = () => {
       <section className="text-dark text-center">
         <Container>
           <Row>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="offset-md-2">
               <IoMdPhonePortrait size={iconSize} />
               <h3>By Phone</h3>
               <p>Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals at <a href={`tel:${telephoneNumber}`} className="text-nowrap">{telephoneNumber}</a>.</p>
@@ -49,11 +49,6 @@ const ContactPage: NextPage = () => {
               <IoMdMail size={iconSize} />
               <h3>By Email</h3>
               <p>You are more than welcome to email us at <a href="mailto:info@qccareerschool.com" className="text-nowrap">info@qccareerschool.com</a>. You can be sure to receive a quick and informative reply.</p>
-            </Col>
-            <Col xs={12} md={4}>
-              <IoMdChatbubbles size={iconSize} />
-              <h3>By Live Chat</h3>
-              <p>Have a quick question and want a speedy response? Our live chat representatives are there to help!</p>
             </Col>
           </Row>
         </Container>
