@@ -6,6 +6,7 @@ import ErrorPage from 'next/error';
 import Link from 'next/link';
 import { useState } from 'react';
 import { LightBox } from '../../../components/lightbox';
+import { SEO } from '../../../components/seo';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 import { Profile } from '../../../models/profile';
 
@@ -28,6 +29,11 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
 
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
+      <SEO
+        title="Portfolio"
+        description="QC Career School - Portfolio"
+        canonical={`/profiles/${profile.id}/portfolio`}
+      />
       <LightBox id={lightBoxId} onClose={() => setLightBoxId(undefined)} />
       <h1 className="text-center text-md-left mb-4">Portfolio for {profile.company
         ? profile.company

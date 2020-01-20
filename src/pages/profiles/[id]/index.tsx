@@ -10,6 +10,7 @@ import { nl2br } from '../../../functions';
 import { Profile } from '../../../models/profile';
 
 import { Certification } from '../../../components/certification';
+import { SEO } from '../../../components/seo';
 import { Testimonial } from '../../../components/testimonial';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 
@@ -31,6 +32,12 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
 
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
+
+      <SEO
+        title="Profiles"
+        description="QC Career School - Profiles"
+        canonical={`/profiles/${profile.id}`}
+      />
 
       <div className="row mb-4">
 
