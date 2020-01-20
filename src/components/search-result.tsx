@@ -4,7 +4,7 @@ import { MdLocationOn, MdPhone } from 'react-icons/md';
 import { Profile } from '../models/profile';
 
 interface Props {
-  profile: Profile;
+  profile: Partial<Profile>;
 }
 
 export const SearchResult: React.FC<Props> = ({ profile }) => {
@@ -41,7 +41,7 @@ export const SearchResult: React.FC<Props> = ({ profile }) => {
           height: 351px;
           background-size: cover;
           background-position: center;
-          background-image: url(https://studentcenter.qccareerschool.com/public/view-portrait.php?id=${profile.id}&thumb=310);
+          background-image: url(https://studentcenter.qccareerschool.com/public/view-portrait.php?id=${profile.id}&thumb=310&v=${profile.portrait ? profile.portrait.modified : 0});
           margin: 0 auto 1rem;
         }
         @media (min-width: 576px) {

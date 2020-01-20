@@ -6,7 +6,7 @@ import { pageSize } from '../reducers/find-professionals';
 import { SearchResult } from './search-result';
 
 interface Props {
-  profiles: Profile[];
+  profiles: Array<Partial<Profile>>;
   pageCount: number;
   page: number;
   increment: () => void;

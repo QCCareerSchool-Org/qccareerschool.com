@@ -3,6 +3,6 @@ export interface Portrait {
   filename: string;
   width: number;
   height: number;
-  mime_type: string;
+  mimeType: string;
   modified: number;
 }
