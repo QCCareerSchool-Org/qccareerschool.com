@@ -28,7 +28,7 @@ export const Certification: CertificationComponent<Props> = ({ courseCode, inver
   }
   return (
     <>
-      <a href={certificationData.url}>
+      <a href={certificationData.url} target="_blank" rel="noopener noreferrer">
         <img src={`${cdnUrl}${certificationData.code.toLowerCase()}.svg`} alt={certificationData.title} className="logo" />
       </a>
       <style jsx>{`
