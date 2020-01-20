@@ -20,7 +20,7 @@ export interface State {
     lastName: string;
     area: string;
   };
-  profiles?: Profile[];
+  profiles?: Array<Partial<Profile>>;
   page: number;
   pageCount: number;
   scrollPosition: number;
@@ -36,7 +36,7 @@ export type Action =
   | { type: 'LAST_NAME_SET'; payload: string; }
   | { type: 'AREA_SET'; payload: string; }
   | { type: 'CLEAR_PROFILES'; }
-  | { type: 'SET_PROFILES'; payload: Profile[]; }
+  | { type: 'SET_PROFILES'; payload: Array<Partial<Profile>>; }
   | { type: 'SET_PAGE'; payload: number; }
   | { type: 'INCREMENT_PAGE'; }
   | { type: 'DECREMENT_PAGE'; }
@@ -154,7 +154,7 @@ export const actionCreators = {
   updateLastName: (lastName: string) => ({ type: 'LAST_NAME_SET', payload: lastName }),
   updateArea: (area: string) => ({ type: 'AREA_SET', payload: area }),
   clear: () => ({ type: 'CLEAR_PROFILES' }),
-  set: (payload: Profile[]) => ({ type: 'SET_PROFILES', payload }),
+  set: (payload: Array<Partial<Profile>>) => ({ type: 'SET_PROFILES', payload }),
   setPage: (page: number) => ({ type: 'SET_PAGE', payload: page }),
   incrementPage: () => ({ type: 'INCREMENT_PAGE' }),
   decrementPage: () => ({ type: 'DECREMENT_PAGE' }),
