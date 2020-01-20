@@ -30,12 +30,14 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
     return <ErrorPage statusCode={500} />;
   }
 
+  const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
+
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
 
       <SEO
-        title="Profiles"
-        description="QC Career School - Profiles"
+        title={title}
+        description={profile.slogan ? profile.slogan : `Professional Profile for ${title}`}
         canonical={`/profiles/${profile.id}`}
       />
 

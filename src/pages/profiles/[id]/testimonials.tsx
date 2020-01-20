@@ -24,12 +24,14 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
     return <ErrorPage statusCode={500} />;
   }
 
+  const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
+
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
 
       <SEO
-        title="Testimonials"
-        description="QC Career School - Testimonials"
+        title={`${title} Testimonials`}
+        description={`Testimonials for ${title}`}
         canonical={`/profiles/${profile.id}/testimonials`}
       />
 

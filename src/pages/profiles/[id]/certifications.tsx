@@ -23,13 +23,17 @@ const CertificationsPage: NextPage<Props> = ({ errorCode, profile }) => {
     return <ErrorPage statusCode={500} />;
   }
 
+  const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
+
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
+
       <SEO
-        title="Certifications"
-        description="QC Career School - Certifications"
+        title={`${title} Certifications`}
+        description={`Certifications for ${title}`}
         canonical={`/profiles/${profile.id}/certifications`}
       />
+
       <h1 className="text-center text-md-left mb-4">Certifications for {profile.company
         ? profile.company
         : `${profile.firstName} ${profile.lastName}`
@@ -38,9 +42,11 @@ const CertificationsPage: NextPage<Props> = ({ errorCode, profile }) => {
       <div className="wrapper">
         {profile.certifications.map(c => <Certification key={c} courseCode={c} inverse={profile.dark} />)}
       </div>
+
       <style jsx>{`
         .wrapper { display: flex; flex-wrap: wrap; justify-content: space-between; }
       `}</style>
+
     </ProfileLayout>
   );
 };
