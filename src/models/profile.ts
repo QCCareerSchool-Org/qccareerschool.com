@@ -1,4 +1,5 @@
 import { Picture } from './picture';
+import { Portrait } from './portrait';
 import { Testimonial } from './testimonial';
 
 export interface Profile {
@@ -33,4 +34,5 @@ export interface Profile {
   certifications: string[];
   images: Picture[];
   testimonials: Testimonial[];
+  portrait: Portrait | null;
 }
