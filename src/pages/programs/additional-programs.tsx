@@ -1,14 +1,11 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 
 import { Bar } from '../../components/bar';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Link from 'next/link';
 import Hero from '../../images/backgrounds/hero-additional-programs.jpg';
-import Style from '../../images/backgrounds/hero-faculty-style.jpg';
-import Travel from '../../images/backgrounds/hero-faculty-travel.jpg';
-import Writing from '../../images/backgrounds/hero-faculty-writing.jpg';
 
 const AdditionalProgramsPage: NextPage = () => (
   <DefaultLayout>
@@ -35,7 +32,11 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={Style} alt="style professional helping customer" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-style.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-style.jpg')} />
+              <img src={require('../../images/backgrounds/hero-faculty-style.jpg')} alt="Style Course" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Style Academy</h3>
@@ -50,7 +51,11 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={Writing} alt="person writing a book" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-writing.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-writing.jpg')} />
+              <img src={require('../../images/backgrounds/hero-faculty-writing.jpg')} alt="Style Course" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Winghill School of Writing</h3>
@@ -64,7 +69,11 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={Travel} alt="couple traveling through a beautiful landscape" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-travel.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-travel.jpg')} />
+              <img src={require('../../images/backgrounds/hero-faculty-travel.jpg')} alt="Style Course" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Travel School</h3>
