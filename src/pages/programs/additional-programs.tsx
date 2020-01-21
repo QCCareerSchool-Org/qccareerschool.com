@@ -4,6 +4,7 @@ import { Bar } from '../../components/bar';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
+import Link from 'next/link';
 import Hero from '../../images/backgrounds/hero-additional-programs.jpg';
 import Style from '../../images/backgrounds/hero-faculty-style.jpg';
 import Travel from '../../images/backgrounds/hero-faculty-travel.jpg';
@@ -34,6 +35,21 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
+            <img src={Style} alt="style professional helping customer" className="sideImage" />
+          </div>
+          <div className="col-12 col-md-6 order-md-1">
+            <h3>QC Style Academy</h3>
+            <p className="mb-4">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
+            <Link href="https://www.qcmakeupacademy.com/online-makeup-courses/fashion-styling/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-light">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
             <img src={Writing} alt="person writing a book" className="sideImage" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
@@ -44,7 +60,7 @@ const AdditionalProgramsPage: NextPage = () => (
       </div>
     </section>
 
-    <section className="bg-light">
+    <section>
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
@@ -53,20 +69,6 @@ const AdditionalProgramsPage: NextPage = () => (
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Travel School</h3>
             <p className="mb-4">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={Style} alt="style professional helping customer" className="sideImage" />
-          </div>
-          <div className="col-12 col-md-6 order-md-1">
-            <h3>QC Style Academy</h3>
-            <p className="mb-4">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
           </div>
         </div>
       </div>
