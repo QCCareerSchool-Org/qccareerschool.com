@@ -5,9 +5,6 @@ import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
 import Hero from '../images/backgrounds/hero-careers.jpg';
-import CareersHeadquarters from '../images/careers-headquarters.jpg';
-import CareerStudents from '../images/careers-students.jpg';
-import CareerTutors from '../images/careers-tutors.jpg';
 
 const CareersPage: NextPage = () => (
   <DefaultLayout>
@@ -29,7 +26,11 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={CareerStudents} alt="QC Student" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../images/careers-students.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../images/careers-students.jpg')} />
+              <img src={require('../images/careers-students.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers for Students and Graduates</h3>
@@ -44,8 +45,12 @@ const CareersPage: NextPage = () => (
     <section className="bg-light">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-6 mb-4 mb-md-0">
-            <img src={CareerTutors} alt="QC Tutor" className="sideImage" />
+          <div className="col-12 col-md-6 mb-4 mb-md-0">
+            <picture>
+              <source type="image/webp" srcSet={require('../images/careers-tutors.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../images/careers-tutors.jpg')} />
+              <img src={require('../images/careers-tutors.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+            </picture>
           </div>
           <div className="col-12 col-md-6">
             <h3>Become a QC Tutor</h3>
@@ -72,7 +77,11 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={CareersHeadquarters} alt="Ottawa Landscape" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../images/careers-headquarters.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../images/careers-headquarters.jpg')} />
+              <img src={require('../images/careers-headquarters.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers at QC Headquarters</h3>

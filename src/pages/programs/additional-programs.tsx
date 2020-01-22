@@ -35,7 +35,7 @@ const AdditionalProgramsPage: NextPage = () => (
             <picture>
               <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-style.jpg?webp')} />
               <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-style.jpg')} />
-              <img src={require('../../images/backgrounds/hero-faculty-style.jpg')} alt="Style Course" className="sideImage" />
+              <img src={require('../../images/backgrounds/hero-faculty-style.jpg')} alt="style professional helping customer" className="sideImage" />
             </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
@@ -54,12 +54,13 @@ const AdditionalProgramsPage: NextPage = () => (
             <picture>
               <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-writing.jpg?webp')} />
               <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-writing.jpg')} />
-              <img src={require('../../images/backgrounds/hero-faculty-writing.jpg')} alt="Style Course" className="sideImage" />
+              <img src={require('../../images/backgrounds/hero-faculty-writing.jpg')} alt="person writing a book" className="sideImage" />
             </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Winghill School of Writing</h3>
             <p className="mb-4">Let your creativity soar with a number of writing courses that will help you become a published author. Winghill’s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor. Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others</p>
+            <Link href="https://www.winghill.com/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
           </div>
         </div>
       </div>
@@ -72,12 +73,13 @@ const AdditionalProgramsPage: NextPage = () => (
             <picture>
               <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-travel.jpg?webp')} />
               <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-travel.jpg')} />
-              <img src={require('../../images/backgrounds/hero-faculty-travel.jpg')} alt="Style Course" className="sideImage" />
+              <img src={require('../../images/backgrounds/hero-faculty-travel.jpg')} alt="couple traveling through a beautiful landscape" className="sideImage" />
             </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Travel School</h3>
             <p className="mb-4">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
+            <Link href="https://www.qceventplanning.com/online-event-courses/travel-and-tourism/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
           </div>
         </div>
       </div>
