@@ -7,16 +7,6 @@ import { IoMdChatbubbles, IoMdCheckmarkCircle, IoMdHand, IoMdPeople, IoMdShuffle
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import Corporate from '../images/admissions-corporate.jpg';
-import PrivateGroup from '../images/admissions-private-group.jpg';
-import Hero from '../images/backgrounds/hero-admissions.jpg';
-
-import Design from '../images/faculty-design.jpg';
-import Event from '../images/faculty-event.jpg';
-import Makeup from '../images/faculty-makeup.jpg';
-import Pet from '../images/faculty-pet.jpg';
-import Wellness from '../images/faculty-wellness.jpg';
-
 const AdmissionsPage: NextPage = () => {
   const iconSize = 42;
 
@@ -61,45 +51,79 @@ const AdmissionsPage: NextPage = () => {
                     <div className="row">
                       <div className="col-6 col-lg-4 mb-g d-flex">
                         <div className="card shadow-lg rounded-lg">
-                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com"><img className="card-img-top" src={Makeup} alt="QC Makeup Academy" /></a>
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com">
+                            <picture>
+                              <source type="image/webp" srcSet={require('../images/faculty-makeup.jpg?webp')} />
+                              <source type="image/jpg" srcSet={require('../images/faculty-makeup.jpg')} />
+                              <img src={require('../images/faculty-makeup.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+                            </picture></a>
                           <div className="card-body pb-3">
                             <h5 className="h6 card-title">QC Makeup Academy</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
                       </div>
                       <div className="col-6 col-lg-4 mb-g d-flex">
                         <div className="card shadow-lg rounded-lg">
-                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com"><img className="card-img-top" src={Event} alt="QC Event School" /></a>
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com">
+                            <picture>
+                              <source type="image/webp" srcSet={require('../images/faculty-event.jpg?webp')} />
+                              <source type="image/jpg" srcSet={require('../images/faculty-event.jpg')} />
+                              <img src={require('../images/faculty-event.jpg')} alt="QC Event School" className="card-img-top" />
+                            </picture>
+                          </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Event School</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
                       </div>
                       <div className="col-6 col-lg-4 mb-g d-flex">
                         <div className="card shadow-lg rounded-lg">
-                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com"><img className="card-img-top" src={Design} alt="QC Design School" /></a>
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com">
+                            <picture>
+                              <source type="image/webp" srcSet={require('../images/faculty-design.jpg?webp')} />
+                              <source type="image/jpg" srcSet={require('../images/faculty-design.jpg')} />
+                              <img src={require('../images/faculty-design.jpg')} alt="QC Design School" className="card-img-top" />
+                            </picture>
+                          </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Design School</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
                       </div>
                       <div className="col-6 col-lg-4 mb-g d-flex">
                         <div className="card shadow-lg rounded-lg">
-                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com"><img className="card-img-top" src={Pet} alt="QC Pet Studies" /></a>
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com">
+                            <picture>
+                              <source type="image/webp" srcSet={require('../images/faculty-pet.jpg?webp')} />
+                              <source type="image/jpg" srcSet={require('../images/faculty-pet.jpg')} />
+                              <img src={require('../images/faculty-pet.jpg')} alt="QC Pet Studies" className="card-img-top" />
+                            </picture>
+                          </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Pet Studies</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
                       </div>
                       <div className="col-6 col-lg-4 mb-g d-flex">
                         <div className="card shadow-lg rounded-lg">
-                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com"><img className="card-img-top" src={Wellness} alt="QC Wellness Studies" /></a>
+                          <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com">
+                            <picture>
+                              <source type="image/webp" srcSet={require('../images/faculty-wellness.jpg?webp')} />
+                              <source type="image/jpg" srcSet={require('../images/faculty-wellness.jpg')} />
+                              <img src={require('../images/faculty-wellness.jpg')} alt="QC Wellness Studies" className="card-img-top" />
+                            </picture>
+                          </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Wellness Studies</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
@@ -114,7 +138,12 @@ const AdmissionsPage: NextPage = () => {
                         <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
                       </div>
                       <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
-                        <img src={PrivateGroup} alt="Private Group Discounts" className="sideImage" />
+                        <picture>
+                          <source type="image/webp" srcSet={require('../images/admissions-private-group.jpg?webp')} />
+                          <source type="image/jpg" srcSet={require('../images/admissions-private-group.jpg')} />
+                          <img src={require('../images/admissions-private-group.jpg')} alt="Private Group Discounts" className="sideImage" />
+                        </picture>
+
                       </div>
                     </div>
                   </Tab.Pane>
@@ -126,7 +155,11 @@ const AdmissionsPage: NextPage = () => {
                         <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
                       </div>
                       <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
-                        <img src={Corporate} alt="Corporate Admissions" className="sideImage" />
+                        <picture>
+                          <source type="image/webp" srcSet={require('../images/admissions-corporate.jpg?webp')} />
+                          <source type="image/jpg" srcSet={require('../images/admissions-corporate.jpg')} />
+                          <img src={require('../images/admissions-corporate.jpg')} alt="Corporate Admissions" className="sideImage" />
+                        </picture>
                       </div>
                     </div>
                   </Tab.Pane>
@@ -172,7 +205,7 @@ const AdmissionsPage: NextPage = () => {
 
       <style>{`
         #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-admissions.jpg')}) 0 0;
           background-size: cover;
         }
         .sideImage {
@@ -180,6 +213,13 @@ const AdmissionsPage: NextPage = () => {
         }
         .icon-wrapper { margin-right: 1rem; }
         .h6.card-title { font-weight: normal; }
+        .buttonSpacer {
+          height: 31px;
+        }
+        .absoluteButton {
+          position: absolute;
+          bottom: 1rem;
+        }
       `}</style>
 
     </DefaultLayout>

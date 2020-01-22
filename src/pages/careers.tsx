@@ -4,11 +4,6 @@ import Link from 'next/link';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import Hero from '../images/backgrounds/hero-careers.jpg';
-import CareersHeadquarters from '../images/careers-headquarters.jpg';
-import CareerStudents from '../images/careers-students.jpg';
-import CareerTutors from '../images/careers-tutors.jpg';
-
 const CareersPage: NextPage = () => (
   <DefaultLayout>
 
@@ -29,12 +24,16 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={CareerStudents} alt="QC Student" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../images/careers-students.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../images/careers-students.jpg')} />
+              <img src={require('../images/careers-students.jpg')} alt="QC Student" className="card-img-top" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers for Students and Graduates</h3>
             <p className="mb-4">QC Career School is an international distance-learning institution, and thus providing individual employment assistance to students and graduates is not available. However, all students and graduates have access to full business training as well as career resources to help you look for and secure work.</p>
-            <p className="mb-4">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here’s where you can <Link href="/find-professionals"><a>find Professional Profiles of QC-trained professionals.</a></Link>
+            <p className="mb-4">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here’s where you can <Link href="/find-professionals"><a>find professional profiles of QC-trained professionals.</a></Link>
             </p>
           </div>
         </div>
@@ -44,8 +43,12 @@ const CareersPage: NextPage = () => (
     <section className="bg-light">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-6 mb-4 mb-md-0">
-            <img src={CareerTutors} alt="QC Tutor" className="sideImage" />
+          <div className="col-12 col-md-6 mb-4 mb-md-0">
+            <picture>
+              <source type="image/webp" srcSet={require('../images/careers-tutors.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../images/careers-tutors.jpg')} />
+              <img src={require('../images/careers-tutors.jpg')} alt="QC Tutor" className="card-img-top" />
+            </picture>
           </div>
           <div className="col-12 col-md-6">
             <h3>Become a QC Tutor</h3>
@@ -72,7 +75,11 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <img src={CareersHeadquarters} alt="Ottawa Landscape" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../images/careers-headquarters.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../images/careers-headquarters.jpg')} />
+              <img src={require('../images/careers-headquarters.jpg')} alt="Ottawa Landscape" className="card-img-top" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers at QC Headquarters</h3>
@@ -84,7 +91,7 @@ const CareersPage: NextPage = () => (
 
     <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-careers.jpg')}) 0 0;
         background-size: cover;
       }
       .sideImage {

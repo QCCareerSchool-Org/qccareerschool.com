@@ -6,14 +6,6 @@ import { Bar } from '../../components/bar';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import HeroHome from '../../images/backgrounds/hero-home.jpg';
-import BusinessCommunications from '../../images/combine-business-communications.jpg';
-import DecorColor from '../../images/combine-decor-color.jpg';
-import DestinationTravel from '../../images/combine-destination-travel.jpg';
-import DecorEvent from '../../images/combine-interior-decorating-event-decor.jpg';
-import MakeupWedding from '../../images/combine-makeup-wedding-planning.jpg';
-import WriteMakeup from '../../images/combine-screenwriting-makeup.jpg';
-
 const CombineAndSavePage: NextPage = () => (
   <DefaultLayout>
 
@@ -49,7 +41,11 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <img src={MakeupWedding} alt="applying makeup on wedding bride" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/combine-makeup-wedding-planning.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/combine-makeup-wedding-planning.jpg')} />
+              <img src={require('../../images/combine-makeup-wedding-planning.jpg')} alt="applying makeup on wedding bride" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Master Makeup Artistry + Event &amp; Wedding Planning</h3>
@@ -66,7 +62,11 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <img src={DecorEvent} alt="interior decorated event" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/combine-interior-decorating-event-decor.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/combine-interior-decorating-event-decor.jpg')} />
+              <img src={require('../../images/combine-interior-decorating-event-decor.jpg')} alt="interior decorated event" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6">
             <h3>Interior Decorating + Event Decor</h3>
@@ -83,7 +83,11 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <img src={DestinationTravel} alt="destination wedding and travel" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/combine-destination-travel.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/combine-destination-travel.jpg')} />
+              <img src={require('../../images/combine-destination-travel.jpg')} alt="destination wedding and travel" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Destination Wedding Planning + Travel &amp; Tourism</h3>
@@ -100,7 +104,11 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <img src={WriteMakeup} alt="screenwriting and makeup" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/combine-screenwriting-makeup.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/combine-screenwriting-makeup.jpg')} />
+              <img src={require('../../images/combine-screenwriting-makeup.jpg')} alt="screenwriting and makeup" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6">
             <h3>Screenwriting + Master Makeup Artistry</h3>
@@ -117,10 +125,14 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <img src={DecorColor} alt="event decoration and color consulting" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/combine-decor-color.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/combine-decor-color.jpg')} />
+              <img src={require('../../images/combine-decor-color.jpg')} alt="event decoration and color consulting" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
-            <h3>Event Décor + Color Consulting</h3>
+            <h3>Event Decor + Color Consulting</h3>
             <p className="mb-4">Event Decorators often need inspiration to create an event’s theme. Being able to draw that inspiration from your clients’ life can make the event even more magical. The color consultant course shows you how to bring the color wheel to life and help your clients choose a color palette that speaks to them. As an event decorator, you can use these same skills to develop an event theme that will wow any client.</p>
             <div className="text-left">
               <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact Us</a></Link>
@@ -134,7 +146,11 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <img src={BusinessCommunications} alt="business communications" className="sideImage" />
+            <picture>
+              <source type="image/webp" srcSet={require('../../images/combine-business-communications.jpg?webp')} />
+              <source type="image/jpg" srcSet={require('../../images/combine-business-communications.jpg')} />
+              <img src={require('../../images/combine-business-communications.jpg')} alt="business communications" className="sideImage" />
+            </picture>
           </div>
           <div className="col-12 col-md-6">
             <h3>Any QC Course + Business Communications</h3>
@@ -157,7 +173,7 @@ const CombineAndSavePage: NextPage = () => (
 
     <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${HeroHome}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../../images/backgrounds/hero-home.jpg')}) 0 0;
         background-size: cover;
       }
       .sideImage {
