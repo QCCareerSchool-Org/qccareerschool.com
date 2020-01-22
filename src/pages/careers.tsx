@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import Hero from '../images/backgrounds/hero-careers.jpg';
-
 const CareersPage: NextPage = () => (
   <DefaultLayout>
 
@@ -93,7 +91,7 @@ const CareersPage: NextPage = () => (
 
     <style jsx>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-careers.jpg')}) 0 0;
         background-size: cover;
       }
       .sideImage {
