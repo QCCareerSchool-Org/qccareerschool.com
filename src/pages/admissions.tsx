@@ -61,6 +61,7 @@ const AdmissionsPage: NextPage = () => {
                             </picture></a>
                           <div className="card-body pb-3">
                             <h5 className="h6 card-title">QC Makeup Academy</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
@@ -76,6 +77,7 @@ const AdmissionsPage: NextPage = () => {
                           </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Event School</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
@@ -91,6 +93,7 @@ const AdmissionsPage: NextPage = () => {
                           </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Design School</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
@@ -106,6 +109,7 @@ const AdmissionsPage: NextPage = () => {
                           </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Pet Studies</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
@@ -121,6 +125,7 @@ const AdmissionsPage: NextPage = () => {
                           </a>
                           <div className="card-body pb-3">
                             <h5 className="card-title h6">QC Wellness Studies</h5>
+                            <div className="buttonSpacer" />
                             <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com" className="absoluteButton btn btn-sm btn-secondary">Enroll</a>
                           </div>
                         </div>
@@ -210,6 +215,13 @@ const AdmissionsPage: NextPage = () => {
         }
         .icon-wrapper { margin-right: 1rem; }
         .h6.card-title { font-weight: normal; }
+        .buttonSpacer {
+          height: 31px;
+        }
+        .absoluteButton {
+          position: absolute;
+          bottom: 1rem;
+        }
       `}</style>
 
     </DefaultLayout>
