@@ -7,8 +7,6 @@ import { IoMdChatbubbles, IoMdCheckmarkCircle, IoMdHand, IoMdPeople, IoMdShuffle
 import { SEO } from '../components/seo';
 import { DefaultLayout } from '../layouts/default-layout';
 
-import Hero from '../images/backgrounds/hero-admissions.jpg';
-
 const AdmissionsPage: NextPage = () => {
   const iconSize = 42;
 
@@ -207,7 +205,7 @@ const AdmissionsPage: NextPage = () => {
 
       <style>{`
         #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 0 0;
+          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-admissions.jpg')}) 0 0;
           background-size: cover;
         }
         .sideImage {
