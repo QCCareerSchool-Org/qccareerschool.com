@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { Profile } from '../../../models/profile';
 
+import { SEO } from '../../../components/seo';
 import { Testimonial } from '../../../components/testimonial';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 
@@ -23,8 +24,16 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
     return <ErrorPage statusCode={500} />;
   }
 
+  const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
+
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
+
+      <SEO
+        title={`${title} Testimonials`}
+        description={`Testimonials for ${title}`}
+        canonical={`/profiles/${profile.id}/testimonials`}
+      />
 
       <div className="row">
         <div className="col-12 col-lg-7 col-xl-8 text-center text-md-left mb-2">

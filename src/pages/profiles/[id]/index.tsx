@@ -10,6 +10,7 @@ import { nl2br } from '../../../functions';
 import { Profile } from '../../../models/profile';
 
 import { Certification } from '../../../components/certification';
+import { SEO } from '../../../components/seo';
 import { Testimonial } from '../../../components/testimonial';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 
@@ -29,8 +30,16 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
     return <ErrorPage statusCode={500} />;
   }
 
+  const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
+
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
+
+      <SEO
+        title={title}
+        description={profile.slogan ? profile.slogan : `Professional Profile for ${title}`}
+        canonical={`/profiles/${profile.id}`}
+      />
 
       <div className="row mb-4">
 

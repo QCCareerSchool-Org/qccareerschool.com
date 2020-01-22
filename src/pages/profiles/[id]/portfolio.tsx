@@ -6,6 +6,7 @@ import ErrorPage from 'next/error';
 import Link from 'next/link';
 import { useState } from 'react';
 import { LightBox } from '../../../components/lightbox';
+import { SEO } from '../../../components/seo';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 import { Profile } from '../../../models/profile';
 
@@ -26,9 +27,19 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
     return <ErrorPage statusCode={500} />;
   }
 
+  const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
+
   return (
     <ProfileLayout backgroundImage={profile.backgroundName}>
+
+      <SEO
+        title={`${title} Portfolio`}
+        description={`Portfolio for ${title}`}
+        canonical={`/profiles/${profile.id}/portfolio`}
+      />
+
       <LightBox id={lightBoxId} onClose={() => setLightBoxId(undefined)} />
+
       <h1 className="text-center text-md-left mb-4">Portfolio for {profile.company
         ? profile.company
         : `${profile.firstName} ${profile.lastName}`
@@ -49,6 +60,7 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
           margin: 0 auto;
         }
       `}</style>
+
     </ProfileLayout>
   );
 };

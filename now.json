@@ -16,10 +16,18 @@
     { "source": "/faq.php", "destination": "/" },
     { "source": "/prospective-students.php", "destination": "/programs" },
     { "source": "/find-professionals.php", "destination": "/find-professionals" },
-    { "source": "/about-qc/", "destination": "/" },
+    { "source": "/about-qc", "destination": "/" },
     { "source": "/contact-us.php", "destination": "/contact" },
     { "source": "/online-career-center.php", "destination": "/" },
-    { "source": "/catalog", "destination": "/programs" }
+    { "source": "/catalog", "destination": "/programs" },
+    { "source": "/catalog/dowload.php", "destination": "/programs" },
+    { "source": "/enroll.php", "destination": "/" },
+    { "source": "/design/viewprofile.php", "destination": "/profile/" },
+    { "source": "/event/viewprofile.php", "destination": "/profile/" },
+    { "source": "/makeup/viewprofile.php", "destination": "/profile/" },
+    { "source": "/style/viewprofile.php", "destination": "/profile/" },
+    { "source": "/travel/viewprofile.php", "destination": "/profile/" },
+    { "source": "/general/viewprofile.php", "destination": "/profile/" }
   ],
   "rewrites": [
     { "source": "/service-worker.js", "destination": "/_next/static/service-worker.js" }

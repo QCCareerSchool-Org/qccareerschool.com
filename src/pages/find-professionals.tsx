@@ -89,7 +89,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
       if (!searchResponse.ok) {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
-      const data: Profile[] = await searchResponse.json();
+      const data: Array<Partial<Profile>> = await searchResponse.json();
       dispatch(FindProfessionals.actionCreators.set(data));
       setError(false);
     } catch (err) {
