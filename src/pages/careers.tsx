@@ -35,7 +35,7 @@ const CareersPage: NextPage = () => (
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers for Students and Graduates</h3>
             <p className="mb-4">QC Career School is an international distance-learning institution, and thus providing individual employment assistance to students and graduates is not available. However, all students and graduates have access to full business training as well as career resources to help you look for and secure work.</p>
-            <p className="mb-4">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here’s where you can <Link href="/find-professionals"><a>find Professional Profiles of QC-trained professionals.</a></Link>
+            <p className="mb-4">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here’s where you can <Link href="/find-professionals"><a>find professional profiles of QC-trained professionals.</a></Link>
             </p>
           </div>
         </div>

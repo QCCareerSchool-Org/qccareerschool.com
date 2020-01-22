@@ -5,14 +5,12 @@ import { Bar } from '../../components/bar';
 import { SEO } from '../../components/seo';
 import { DefaultLayout } from '../../layouts/default-layout';
 
-import Hero from '../../images/backgrounds/hero-additional-programs.jpg';
-
 const AdditionalProgramsPage: NextPage = () => (
   <DefaultLayout>
 
     <SEO
       title="Additional Programs"
-      description="Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!"
+      description="Other QC Schools include QC Style Academy, QC Travel School, and Winghill Writing School. Explore these additional programs here!"
       canonical="/programs/additional-programs"
     />
 
@@ -22,7 +20,7 @@ const AdditionalProgramsPage: NextPage = () => (
           <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>Additional Programs</h1>
-            <p className="lead">Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!</p>
+            <p className="lead">Other QC Schools include QC Style Academy, QC Travel School, and Winghill Writing School. Explore these additional programs here!</p>
           </div>
         </div>
       </div>
@@ -40,7 +38,7 @@ const AdditionalProgramsPage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Style Academy</h3>
-            <p className="mb-4">Partnered closely with QC Makeup Academy, the Style academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
+            <p className="mb-4">Partnered closely with QC Makeup Academy, QC Style Academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
             <Link href="https://www.qcmakeupacademy.com/online-makeup-courses/fashion-styling/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
           </div>
         </div>
@@ -87,7 +85,7 @@ const AdditionalProgramsPage: NextPage = () => (
 
     <style>{`
       #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
+        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../../images/backgrounds/hero-additional-programs.jpg')}) 50% 0;
         background-size: cover;
       }
       .sideImage {
