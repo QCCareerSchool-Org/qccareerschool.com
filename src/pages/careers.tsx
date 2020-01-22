@@ -29,7 +29,7 @@ const CareersPage: NextPage = () => (
             <picture>
               <source type="image/webp" srcSet={require('../images/careers-students.jpg?webp')} />
               <source type="image/jpg" srcSet={require('../images/careers-students.jpg')} />
-              <img src={require('../images/careers-students.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+              <img src={require('../images/careers-students.jpg')} alt="QC Student" className="card-img-top" />
             </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
@@ -49,7 +49,7 @@ const CareersPage: NextPage = () => (
             <picture>
               <source type="image/webp" srcSet={require('../images/careers-tutors.jpg?webp')} />
               <source type="image/jpg" srcSet={require('../images/careers-tutors.jpg')} />
-              <img src={require('../images/careers-tutors.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+              <img src={require('../images/careers-tutors.jpg')} alt="QC Tutor" className="card-img-top" />
             </picture>
           </div>
           <div className="col-12 col-md-6">
@@ -80,7 +80,7 @@ const CareersPage: NextPage = () => (
             <picture>
               <source type="image/webp" srcSet={require('../images/careers-headquarters.jpg?webp')} />
               <source type="image/jpg" srcSet={require('../images/careers-headquarters.jpg')} />
-              <img src={require('../images/careers-headquarters.jpg')} alt="QC Makeup Academy" className="card-img-top" />
+              <img src={require('../images/careers-headquarters.jpg')} alt="Ottawa Landscape" className="card-img-top" />
             </picture>
           </div>
           <div className="col-12 col-md-6 order-md-1">
