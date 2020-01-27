@@ -77,7 +77,6 @@ const AdditionalProgramsPage: NextPage = () => (
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Travel School</h3>
             <p className="mb-4">Travel agents might not be as common these days thanks to cheap online travel sites, however for the clientele will still pay handsomely for the services of a seasoned travel agent who can arrange a fantastic getaway &amp; travel itinerary from start to finish. Learn the tools of the trade and how to make a successful career in this highly competitive industry with the Travel &amp; Tourism Course!</p>
-            <Link href="https://www.qceventplanning.com/online-event-courses/travel-and-tourism/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
           </div>
         </div>
       </div>
