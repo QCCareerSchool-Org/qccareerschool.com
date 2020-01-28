@@ -67,7 +67,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
             {profile.twitter ? <a target="_blank" rel="noopener noreferrer" title="twitter" className="text-dark" href={`https://twitter.com/${profile.twitter}`}><FaTwitterSquare size={iconSize} className="ml-1" /></a> : null}
             {profile.instagram ? <a target="_blank" rel="noopener noreferrer" title="instagram" className="text-dark" href={`https://instagram.com/${profile.instagram}`}><FaInstagram size={iconSize} className="ml-1" /></a> : null}
             {profile.pinterest ? <a target="_blank" rel="noopener noreferrer" title="pinterest" className="text-dark" href={`https://pinterest.com/${profile.pinterest}`}><FaPinterestSquare size={iconSize} className="ml-1" /></a> : null}
-            {profile.linkedin ? <a target="_blank" rel="noopener noreferrer" title="linkedin" className="text-dark" href={`https://linkedin.com/${profile.linkedin}`}><FaLinkedin size={iconSize} className="ml-1" /></a> : null}
+            {profile.linkedin ? <a target="_blank" rel="noopener noreferrer" title="linkedin" className="text-dark" href={`https://linkedin.com/in/${profile.linkedin}`}><FaLinkedin size={iconSize} className="ml-1" /></a> : null}
           </div>
         </div>
 
