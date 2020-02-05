@@ -186,16 +186,6 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                         <label htmlFor="area">Area</label>
                         <input type="text" className="form-control" id="area" value={state.form.area} onChange={e => dispatch(FindProfessionals.actionCreators.updateArea(e.target.value))} />
                       </div>
-                      <div className="row">
-                        <div className="form-group col-12 col-md-6">
-                          <label htmlFor="firstName">First Name</label>
-                          <input type="text" className="form-control" id="firstName" value={state.form.firstName} onChange={e => dispatch(FindProfessionals.actionCreators.updateFirstName(e.target.value))} />
-                        </div>
-                        <div className="form-group col-12 col-md-6">
-                          <label htmlFor="lastName">Last Name</label>
-                          <input type="text" className="form-control" id="lastName" value={state.form.lastName} onChange={e => dispatch(FindProfessionals.actionCreators.updateLastName(e.target.value))} />
-                        </div>
-                      </div>
                       <button type="submit" className="btn btn-primary mt-2">Search</button>
                     </form>
                   </div>
