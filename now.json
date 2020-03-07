@@ -10,6 +10,7 @@
   "builds": [
     { "src": "next.config.js", "use": "@now/next" }
   ],
+  "trailingSlash": false,
   "redirects": [
     { "source": "/free-brochure.php", "destination": "/programs" },
     { "source": "/why-distance-learning.php", "destination": "/admissions" },
@@ -27,7 +28,17 @@
     { "source": "/makeup/viewprofile.php", "destination": "/profile/" },
     { "source": "/style/viewprofile.php", "destination": "/profile/" },
     { "source": "/travel/viewprofile.php", "destination": "/profile/" },
-    { "source": "/general/viewprofile.php", "destination": "/profile/" }
+    { "source": "/general/viewprofile.php", "destination": "/profile/" },
+    { "source": "^/signup-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/recruit.php?ref=$1" },
+    { "source": "^/([0-9]+)-([a-z]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevads.php?id=$1&ad=$3" },
+    { "source": "^/([0-9]+)-([a-z]+)-([0-9]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevads.php?id=$1&ad=$3&page=$4" },
+    { "source": "^/([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1" },
+    { "source": "^/([0-9]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1&page=$2" },
+    { "source": "^/([0-9]+)-([0-9]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1&page=$2&set=$3" },
+    { "source": "^/([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1&page=$2&set=$3&link=$4" },
+    { "source": "^/([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([a-zA-Z]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1&page=$2&set=$3&link=$4&keyword=$5" },
+    { "source": "^/([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([a-zA-Z]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1&page=$2&set=$3&link=$4&keyword=$5&custom=$6" },
+    { "source": "^/([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([a-zA-Z]+)-([0-9]+)-([0-9]+).html$", "destination": "https://affiliates.qccareerschool.com/idevaffiliate.php?id=$1&page=$2&set=$3&link=$4&keyword=$5&custom=$6&url=$7" }
   ],
   "rewrites": [
     { "source": "/service-worker.js", "destination": "/_next/static/service-worker.js" }
