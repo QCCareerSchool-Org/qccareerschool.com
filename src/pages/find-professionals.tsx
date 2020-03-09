@@ -89,7 +89,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
       if (!searchResponse.ok) {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
-      const data: Array<Partial<Profile>> = await searchResponse.json();
+      const data: Partial<Profile>[] = await searchResponse.json();
       dispatch(FindProfessionals.actionCreators.set(data));
       setError(false);
     } catch (err) {
@@ -150,7 +150,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
               <div className="col-12 col-sm-10 col-md-8 col-lg-5 offset-sm-1 offset-md-2 offset-lg-0 mb-5 mb-lg-0">
                 <div className="card shadow-lg rounded-lg text-dark">
                   <div className="card-body">
-                    <h5 className="card-title mb-4">Find a Professional</h5>
+                    <h2 className="h5 card-title mb-4">Find a Professional</h2>
                     <form method="post" onSubmit={handleFormSubmit}>
                       <div className="form-group">
                         <label htmlFor="profession">Profession</label>

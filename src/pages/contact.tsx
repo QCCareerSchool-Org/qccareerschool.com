@@ -39,12 +39,12 @@ const ContactPage: NextPage = () => {
           <div className="row">
             <div className="col-12 col-md-4 offset-md-2">
               <IoMdPhonePortrait size={iconSize} />
-              <h3>By Phone</h3>
+              <h2 className="h3">By Phone</h2>
               <p>Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals at <a href={`tel:${telephoneNumber}`} className="text-nowrap">{telephoneNumber}</a>.</p>
             </div>
             <div className="col-12 col-md-4">
               <IoMdMail size={iconSize} />
-              <h3>By Email</h3>
+              <h2 className="h3">By Email</h2>
               <p>You are more than welcome to email us at <a href="mailto:info@qccareerschool.com" className="text-nowrap">info@qccareerschool.com</a>. You can be sure to receive a quick and informative reply.</p>
             </div>
           </div>

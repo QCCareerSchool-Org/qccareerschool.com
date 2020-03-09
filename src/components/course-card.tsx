@@ -24,7 +24,7 @@ export const CourseCard: React.FC<Props> = ({ images, title, body, buttonText, l
     }
     <div className="card-body">
       <h5 className="card-title">{title}</h5>
-      {body ? <p className="card-text">{body}</p> : null}
+      {body !== null && <p className="card-text">{body}</p>}
       <div className="buttonSpacer" />
       {externalLink
         ? <a href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a>

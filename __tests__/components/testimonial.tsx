@@ -1,33 +1,32 @@
 import { render } from '@testing-library/react';
+import * as faker from 'faker';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import React from 'react';
 
 import { Testimonial } from '../../src/components/testimonial';
-import { Testimonial as T } from '../../src/models/testimonial';
-import ProfilePage from '../../src/pages/programs/combine-and-save';
 
-export interface Props {
-  testimonial: T;
-}
+expect.extend(toHaveNoViolations);
 
-test('First test', () => {
-  expect(true).toBeTruthy();
-});
+describe('<Testimonial>', () => {
+  let quote: string;
+  let name: string;
+  let rating: number;
 
-test('Secont test', () => {
-  expect(undefined).toBeUndefined();
-});
+  beforeEach(() => {
+    quote = faker.random.words(25);
+    name = faker.name.firstName() + ' ' + faker.name.lastName();
+    rating = faker.random.number({ min: 1, max: 5 });
+  });
 
-describe('<ProfilePage>', () => {
+  it('shouldn\'t have any usability violations', async () => {
+    const { container } = render(<Testimonial testimonial={{ quote, name, rating }} />);
+    const result = await axe(container);
+    expect(result).toHaveNoViolations();
+  });
 
-  test('it works', () => {
-    const { rerender } = render(<ProfilePage />); rerender(<ProfilePage />);
+  it('should have the correct number of stars', () => {
+    const { queryAllByTitle } = render(<Testimonial testimonial={{ quote, name, rating }} />);
+    expect(queryAllByTitle(/filled-star/i)).toHaveLength(rating);
+    expect(queryAllByTitle(/empty-star/i)).toHaveLength(5 - rating);
   });
 });
-
-describe('testimonial component rendering', () => {
-
-  test('it works', () => {
-    render(
-        <Testimonial key={4} testimonial={{ quote: 'asdasd', name: 'asdas', rating: 5 }} />);
-      });
-    });

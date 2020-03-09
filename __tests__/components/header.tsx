@@ -1,16 +1,17 @@
 import { render } from '@testing-library/react';
-import React from 'react';
 import { axe, toHaveNoViolations } from 'jest-axe';
+import React from 'react';
 
-import ContactPage from '../../src/pages/contact';
+import { Header } from '../../src/components/header';
 
 expect.extend(toHaveNoViolations);
 
-describe('<ContactPage>', () => {
+describe('<Header>', () => {
 
-  it('should have no usability violations', async () => {
-    const { container } = render(<ContactPage />);
+  it('shouldn\'t have any usability violations', async () => {
+    const { container } = render(<Header />);
     const result = await axe(container);
     expect(result).toHaveNoViolations();
   });
+
 });
