@@ -1,6 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
-const withSass = require('@zeit/next-sass');
-const withCss = require('@zeit/next-css');
+// const withSass = require('@zeit/next-sass');
+// const withCss = require('@zeit/next-css');
 const withPurgeCss = require('next-purgecss');
 const optimizedImages = require('next-optimized-images');
 const withOffline = require('next-offline');
@@ -76,4 +76,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass(withCss(withPurgeCss(optimizedImages(withOffline(nextConfig)))));
+module.exports = withPurgeCss(optimizedImages(withOffline(nextConfig)));
