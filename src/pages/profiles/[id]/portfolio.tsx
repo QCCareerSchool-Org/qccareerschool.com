@@ -9,6 +9,7 @@ import { LightBox } from '../../../components/lightbox';
 import { SEO } from '../../../components/seo';
 import { ProfileLayout } from '../../../layouts/profile-layout';
 import { Profile } from '../../../models/profile';
+import { Picture } from '../../../models/picture';
 
 interface Props {
   errorCode?: number;
@@ -17,7 +18,7 @@ interface Props {
 
 const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
   const size = 131;
-  const [ lightBoxId, setLightBoxId ] = useState<number>();
+  const [ lightBoxPicture, setLightBoxPicture ] = useState<Picture>();
 
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
@@ -38,7 +39,7 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
         canonical={`/profiles/${profile.id}/portfolio`}
       />
 
-      <LightBox id={lightBoxId} onClose={() => setLightBoxId(undefined)} />
+      <LightBox picture={lightBoxPicture} onClose={() => setLightBoxPicture(undefined)} />
 
       <h1 className="text-center text-md-left mb-4">Portfolio for {profile.company
         ? profile.company
@@ -48,7 +49,7 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
       <div className="row">
         {profile.images.map(image => (
           <div key={image.id} className="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-4">
-            <div onClick={() => setLightBoxId(image.id)} className="portfolioImage" style={{ backgroundImage: `url(https://studentcenter.qccareerschool.com/public/view-image.php?id=${image.id}&thumbnail=${size})` }} />
+            <div onClick={() => setLightBoxPicture(image)} className="portfolioImage" style={{ backgroundImage: `url(https://studentcenter.qccareerschool.com/public/view-image.php?id=${image.id}&thumbnail=${size})` }} />
           </div>
         ))}
       </div>

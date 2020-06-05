@@ -2,13 +2,14 @@ import { useContext } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
 
 import { ScreenWidthContext } from '../providers/screen-width';
+import { Picture } from '../models/picture';
 
 interface Props {
-  id?: number;
+  picture?: Picture;
   onClose: () => void;
 }
 
-export const LightBox: React.FC<Props> = ({ id, onClose }) => {
+export const LightBox: React.FC<Props> = ({ picture, onClose }) => {
   const screenWidth = useContext(ScreenWidthContext);
   let maxWidth = 320;
   let top = 96;
@@ -24,14 +25,18 @@ export const LightBox: React.FC<Props> = ({ id, onClose }) => {
     maxWidth = 480;
   }
 
-  if (!id) {
+  if (!picture) {
     return null;
   }
 
   return (
     <div className="lightbox">
       <div className="close" onClick={onClose}><IoIosCloseCircle size={40} /></div>
-      <img className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${id}&maxwidth=${maxWidth}&maxheight=600`} />
+      <div className="wrapper">
+      <img className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}&maxwidth=${maxWidth}&maxheight=600`} />
+      <h6>{picture.heading}</h6>
+      <p>{picture.description}</p>
+      </div>
       <style jsx>{`
         .lightbox {
           background: rgba(0,0,0,0.8);
@@ -50,10 +55,22 @@ export const LightBox: React.FC<Props> = ({ id, onClose }) => {
           top: 32px;
           right: 32px;
         }
-        .portfolioImage {
-          border: 3px solid white;
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           position: relative;
           top: ${top}px;
+          color: white;
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+        .wrapper h6 {
+          margin-top: 1rem;
+        }
+        .portfolioImage {
+          display: block;
+          border: 3px solid white;
           max-width: ${maxWidth}px;
         }
       `}</style>
