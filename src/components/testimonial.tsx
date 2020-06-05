@@ -16,10 +16,7 @@ export const Testimonial: React.FC<Props> = ({ testimonial }) => {
       <p>{`${testimonial.quote}`}</p>
       <p><strong>{`${testimonial.name}`}</strong></p>
       <p className="mb-5">
-        {testimonial.rating
-          ? Array(5).fill(0).map((x, i) => <IoMdStar key={i} size={iconSize} color={i < testimonial.rating! ? 'black' : '#CCCCCC'} />)
-          : null
-        }
+        {testimonial.rating !== null && Array(5).fill(null).map((x, i) => <IoMdStar key={i} title={i < testimonial.rating! ? 'filled-star' : 'empty-star'} size={iconSize} color={i < testimonial.rating! ? 'black' : '#CCCCCC'} />)}
       </p>
     </div>
   );
