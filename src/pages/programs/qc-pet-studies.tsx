@@ -40,7 +40,7 @@ const PetPage: NextPage = () => (
               title="Dog Grooming Course"
               body="Regular grooming is a key part to maintaining a dog’s health, and most dog owners prefer to leave their pooch’s grooming up to a qualified professional.  With the dog grooming course, you’ll learn how to groom all different breeds and the various popular cuts safely and effectively. You’ll also learn how to launch your own successful dog grooming business."
               buttonText="Full Course Overview"
-              link="http://gooogle.com"
+              link="https://www.doggroomingcourse.com/online-courses/dog-grooming/"
               externalLink={true}
             />
           </CardColumn>
@@ -54,7 +54,7 @@ const PetPage: NextPage = () => (
               title="First Aid for Groomers"
               body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
               buttonText="Full Course Overview"
-              link="https://www.doggroomingcourse.com/online-courses/dog-grooming/course-outline/"
+              link="https://www.doggroomingcourse.com/online-courses/first-aid-for-groomers/"
               externalLink={true}
             />
           </CardColumn>
