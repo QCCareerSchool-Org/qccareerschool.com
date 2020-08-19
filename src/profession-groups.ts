@@ -11,6 +11,9 @@ export const professionGroups: ProfessionGroup[] = [
       'airbrush makeup artist',
       'special fx makeup artist',
       'hair stylist',
+      'personal stylist',
+      'fashion merchandiser',
+      'editorial stylist',
     ],
   },
   {
@@ -22,6 +25,7 @@ export const professionGroups: ProfessionGroup[] = [
       'corporate event planner',
       'destination wedding planner',
       'luxury event and wedding planner',
+      'travel consultant',
     ],
   },
   {
@@ -37,8 +41,6 @@ export const professionGroups: ProfessionGroup[] = [
       'professional organizer',
     ],
   },
-  { name: 'QC Travel School', professions: [ 'travel consultant' ] },
-  { name: 'QC Style Academy', professions: [ 'personal stylist', 'fashion merchandiser', 'editorial stylist' ] },
   { name: 'Winghill Writing School', professions: [ 'screenwriter' ] },
   { name: 'QC Wellness Studies', professions: [ 'sleep consultant' ] },
 ];
