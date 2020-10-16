@@ -40,7 +40,20 @@ const ContactPage: NextPage = () => {
             <div className="col-12 col-md-4 offset-md-2">
               <IoMdPhonePortrait size={iconSize} />
               <h2 className="h3">By Phone</h2>
-              <p>Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals at <a href={`tel:${telephoneNumber}`} className="text-nowrap">{telephoneNumber}</a>.</p>
+              <p>
+                Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals.
+                <br />
+                {telephoneNumber === getTelephoneNumber()
+                  ? <a href={`tel:${telephoneNumber}`} className="text-nowrap">{telephoneNumber}</a>
+                  : (
+                    <div className="mt-3">
+                      Toll Free: <a href={`tel:${telephoneNumber}`} className="text-nowrap">{telephoneNumber}</a>
+                      <br />
+                      International: <a href={`tel:${getTelephoneNumber()}`} className="text-nowrap">{getTelephoneNumber()}</a>
+                    </div>
+                  )
+                }
+                </p>
             </div>
             <div className="col-12 col-md-4">
               <IoMdMail size={iconSize} />
