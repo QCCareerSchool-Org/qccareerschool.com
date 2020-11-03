@@ -14,7 +14,8 @@ const PrivacyPolicyPage: NextPage = () => (
     <h1>Enrollment Agreement</h1>
     <h2>1. Shipping Policy</h2>
     <p>All course materials are shipped within 2 business days from the date of enrollment. Materials are shipped via courier, and are expected to be delivered within 10 business days.</p>
-    <h2>2. 21-Day Money-Back Guarantee</h2>
+    <h2>2. Money-Back Guarantee</h2>
+    <h3>21-Day Money-Back Guarantee</h3>
     <p>You have 21 days from the date of enrollment to examine the course and materials. If you are not entirely satisfied or choose not to complete the course, contact the School within this 21-day period, either by phone or email.</p>
     <ul>
       <li>QC will provide you with shipping instructions and ask you to return the physical course materials, postage paid and with a tracking number. QC is not responsible for lost return shipments that do not have a valid tracking number.</li>
@@ -22,8 +23,20 @@ const PrivacyPolicyPage: NextPage = () => (
       <li>Returned course materials must be unused and in their original condition. A full refund cannot be issued if any materials have been used or are not in their original condition.</li>
       <li>A full refund cannot be granted if you have already submitted course work to your tutor for grading. In this case, a partial tuition refund may be offered instead.</li>
     </ul>
+    <h3>1-Year Money-back Guarantee for Sleep Consultant Course</h3>
+    <p>QC's sleep consultant course offers a 1-year money back guarantee. If, after graduation, you do not earn the equivalent of your course tuition in professional consulting fees, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to obtain clients.</p>
+    <p>Graduates who request a refund under the 1-year guarantee must contact the School within 13-18 months post-graduation and provide proof that they:</p>
+    <ul>
+      <li>Have completed the optional business training unit in full before graduation;</li>
+      <li>Have a working website and social media presence that are at least 10 months old and that follow best practices outlined in the course's business unit; and</li>
+      <li>Provide examples of how their services were advertised over the course of the past 10 months (social media ads, direct mailers, proof of one-on-one outreach, etc.)</li>
+    </ul>
+    <h3>1-Year Money-back Guarantee for Writing Courses</h3>
+    <p>The Creative Writing Course offers a 1-year money-back guarantee. If, after graduation, you do not earn the equivalent of your course tuition with your writing, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to sell your writing.</p>
+    <p>Graduates who request a refund under the 1-year guarantee must contact the School within 13-18 months post-graduation and provide proof that they have made a reasonable effort to sell their writing.</p>
     <h3>Non-Refundable Materials</h3>
-    <p>Please note that the Special FX Makeup Kit and the Airbrush Makeup Kits are non-refundable. Each has a value of $100 (US). If you choose to withdraw under QC's 21-day guarantee, you are still required to pay for those makeup starter kits.</p>
+    <p>Please note that the Special FX Makeup Kit and the Airbrush Makeup Kits are non-refundable. The Special FX kit has a value of $100 (US) and the Airbrush Makeup Kit has a value of $200 (US). If you choose to withdraw from the Special FX Makeup or Airbrush Makeup course under QC's 21-day guarantee, you are still required to pay for your makeup starter kit(s).</p>
+    <p>For the Screenwriting Course, please note that the Movie Magic Screenwriter software (value $170 US) is non-refundable. If you choose to withdraw under Winghill's 21-day guarantee, you are still required to pay for the Movie Magic Screenwriter software.</p>
     <h2>3. Tuition Payments &amp; Installment Plans</h2>
     <p>If you choose to pay your course fees in monthly installments, you are obligated and agree to continue to make your scheduled payments until the entire tuition amount has been paid.</p>
     <h3>Missed Payments</h3>
