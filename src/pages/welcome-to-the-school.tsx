@@ -174,16 +174,28 @@ WelcomeToTheSchoolPage.getInitialProps = async ({ res, query }): Promise<Props> 
       headers: { 'X-API-Version': '2' },
     });
     if (!response.ok) {
-      console.log(response.statusText);
       throw new HttpStatus.HttpResponse(response.status, response.statusText);
     }
     const enrollment: Enrollment = await response.json();
     if (!enrollment.complete || !enrollment.success) {
       throw new HttpStatus.NotFound();
     }
+    if (!enrollment.emailed) {
+      try {
+        fetch(`https://api.qccareerschool.com/enrollments/${query.enrollmentId}/email`, {
+          method: 'post',
+          headers: {
+            'X-API-Version': '2',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ code: query.code }),
+        });
+      } catch (err) {
+        //
+      }
+    }
     return { enrollment };
   } catch (err) {
-    console.log(err);
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
     if (res) {
       res.statusCode = errorCode;
