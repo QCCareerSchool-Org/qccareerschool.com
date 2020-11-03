@@ -5,10 +5,14 @@ import { Footer } from '../components/footer';
 import { GoogleAnalyticsWrapper } from '../components/google-analytics-wrapper';
 import { Header } from '../components/header';
 
-export const DefaultLayout: React.FC = ({ children }) => (
+type Props = {
+  noHero?: boolean;
+}
+
+export const DefaultLayout: React.FC<Props> = ({ noHero, children }) => (
   <GoogleAnalyticsWrapper>
     <div className="d-flex flex-column vh-100">
-      <Header className="flex-shrink-0 fixed-top" />
+      <Header noHero={noHero} className="flex-shrink-0 fixed-top" />
       <main className="flex-shrink-0">
         {children}
       </main>
@@ -18,5 +22,5 @@ export const DefaultLayout: React.FC = ({ children }) => (
 );
 
 DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired,
+  noHero: PropTypes.bool,
 };

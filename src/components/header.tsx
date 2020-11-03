@@ -11,10 +11,11 @@ import { ScreenWidthContext } from '../providers/screen-width';
 import { ScrollPositionContext } from '../providers/scroll-position';
 
 interface Props {
+  noHero?: boolean;
   className?: string;
 }
 
-export const Header: React.FC<Props> = ({ className }) => {
+export const Header: React.FC<Props> = ({ noHero, className }) => {
   const screenWidth = useContext(ScreenWidthContext);
   const scrollPosition = useContext(ScrollPositionContext);
   const [ mobileMenu, setMobileMenu ] = useState(false);
@@ -27,7 +28,7 @@ export const Header: React.FC<Props> = ({ className }) => {
   return (
     <Navbar
       id="main-nav"
-      bg={scrollPosition > maxPosition ? 'light' : undefined}
+      bg={scrollPosition > maxPosition ? 'light' : noHero ? 'dark' : undefined}
       variant={scrollPosition > maxPosition ? undefined : 'dark'}
       expand="lg"
       className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
