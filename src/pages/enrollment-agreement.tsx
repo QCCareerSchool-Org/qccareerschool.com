@@ -79,7 +79,7 @@ const PrivacyPolicyPage: NextPage = () => (
     <p>QC Quality of Course Inc.<br />
 Corporation Number: 208502-0<br />
 Business Number (BN): 105927339RC0001</p>
-    <p>Email: <a href="/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="f29b9c949db2839191938097978081919a9d9d9edc919d9f">[email&#160;protected]</a><br />Phone: 1-613-749-8248</p>
+    <p>Email: <a href="mailto:info@qccareershool.com">info@qccareershool.com</a><br />Phone: 1-613-749-8248</p>
     <table>
       <tbody>
         <tr>
