@@ -53,6 +53,7 @@ export const Header: React.FC<Props> = ({ noHero, className }) => {
               <Link href="/admissions"><a className="nav-link">Admissions</a></Link>
               <Link href="/find-professionals"><a className="nav-link">Find Professionals</a></Link>
               <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
+              <Link href="https://enroll.qccareerschool.com"><a className="nav-link">Enroll Online</a></Link>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
               {mobile
