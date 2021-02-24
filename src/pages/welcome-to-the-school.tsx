@@ -167,33 +167,53 @@ WelcomeToTheSchoolPage.propTypes = {
   errorCode: PropTypes.number,
 };
 
+const sendEmail = async (enrollmentId: number, code: string): Promise<void> => {
+  const response = await fetch(`https://api.qccareerschool.com/enrollments/${enrollmentId}/email`, {
+    method: 'post',
+    headers: {
+      'X-API-Version': '2',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ code }),
+  });
+  if (!response.ok) {
+    throw new HttpStatus.HttpResponse(response.status, response.statusText);
+  }
+  await response.json();
+};
+
+const getEnrollment = async (enrollmentId: number, code: string): Promise<Enrollment> => {
+  const url = `https://api.qccareerschool.com/enrollments/${enrollmentId}?code=${code}`;
+  const response = await fetch(url, {
+    headers: { 'X-API-Version': '2' },
+  });
+  if (!response.ok) {
+    throw new HttpStatus.HttpResponse(response.status, response.statusText);
+  }
+  return response.json();
+};
+
+
 WelcomeToTheSchoolPage.getInitialProps = async ({ res, query }): Promise<Props> => {
-  const url = `https://api.qccareerschool.com/enrollments/${query.enrollmentId}?code=${query.code}`;
   try {
-    const response = await fetch(url, {
-      headers: { 'X-API-Version': '2' },
-    });
-    if (!response.ok) {
-      throw new HttpStatus.HttpResponse(response.status, response.statusText);
+    if (typeof query.enrollmentId !== 'string' || typeof query.code !== 'string') {
+      throw new HttpStatus.BadRequest();
     }
-    const enrollment: Enrollment = await response.json();
+    const enrollmentId = parseInt(query.enrollmentId, 10);
+    const code = query.code;
+
+    const enrollment = await getEnrollment(enrollmentId, code);
+
     if (!enrollment.complete || !enrollment.success) {
       throw new HttpStatus.NotFound();
     }
+
     if (!enrollment.emailed) {
       try {
-        fetch(`https://api.qccareerschool.com/enrollments/${query.enrollmentId}/email`, {
-          method: 'post',
-          headers: {
-            'X-API-Version': '2',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ code: query.code }),
-        });
-      } catch (err) {
-        //
-      }
+        await sendEmail(enrollmentId, code);
+      } catch (err) { /* ignore */ }
     }
+
     return { enrollment };
   } catch (err) {
     const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
