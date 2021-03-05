@@ -41,6 +41,14 @@ export const professionGroups: ProfessionGroup[] = [
       'professional organizer',
     ],
   },
-  { name: 'Winghill Writing School', professions: [ 'screenwriter' ] },
-  { name: 'QC Wellness Studies', professions: [ 'sleep consultant' ] },
+  // { name: 'QC Pet Studies', professions: [ 'dog groomer' ] },
+  {
+    name: 'QC Wellness Studies',
+    professions: [
+      'sleep consultant',
+      'personal caregiver',
+      'professional caregiver',
+      'aging in place consultant',
+    ],
+  },
 ];
