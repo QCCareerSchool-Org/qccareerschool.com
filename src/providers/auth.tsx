@@ -16,7 +16,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [ auth, setAuth ] = useState<Auth | undefined>();
 
   useEffect(() => {
-    cookieLogin().then(setAuth);
+    cookieLogin().then(setAuth).catch(() => { /* empty */ });
   }, []);
 
   return (

@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const PriceBox: React.FC<Props> = ({ courses }) => {
-  const [ plan, setPlan ] = useState('installment');
+  const [ plan ] = useState('installment');
   const location = useContext(LocationStateContext);
   const [ price ] = usePrice([ courses ], location?.countryCode, location?.provinceCode);
   if (!price) {

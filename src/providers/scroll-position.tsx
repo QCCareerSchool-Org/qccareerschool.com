@@ -8,7 +8,7 @@ export const ScrollPositionProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     setScrollPosition(window.pageYOffset);
-    const handleScroll = () => setScrollPosition(window.pageYOffset);
+    const handleScroll = (): void => setScrollPosition(window.pageYOffset);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

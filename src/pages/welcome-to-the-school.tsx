@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
+import { telephoneNumber } from '@qccareerschool/helper-functions';
+import * as HttpStatus from '@qccareerschool/http-status';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import PropTypes from 'prop-types';
-import * as HttpStatus from '@qccareerschool/http-status';
-import { telephoneNumber } from '@qccareerschool/helper-functions';
+import React, { useContext } from 'react';
 
-import { DefaultLayout } from '../layouts/default-layout';
 import { SEO } from '../components/seo';
+import { DefaultLayout } from '../layouts/default-layout';
 import { Enrollment } from '../models/enrollment';
 import { LocationStateContext } from '../providers/location';
 
 type Props = {
   enrollment?: Enrollment;
   errorCode?: number;
-}
+};
 
 const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
   const location = useContext(LocationStateContext);
@@ -42,7 +42,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
           <div className="row row d-flex align-items-center mb-3 mt-3">
             <div className="col-12 col-sm-10 col-md-8 col-lg-8">
               <h1 className="text-dark">Thank You for Enrolling with QC Career School!</h1>
-              <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don't see an email from us, please check your spam folder.</p>
+              <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don&apos;t see an email from us, please check your spam folder.</p>
               <p>If you have any questions regarding the course, or if you want to discuss your goals, our friendly and knowledgeable student support advisors are available 7 days a week by email at <a href="mailto:info@qccareerschool.com">info@qccareerschool.com</a> or by phone at {telephoneNumber(location?.countryCode ?? 'US')}. We would be delighted to speak with you and assist you in any way we can. We hope your learning experience with us will be enjoyable, interesting, and valuable.</p>
               <p className="lead">Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
               <p className="text-dark"><strong>Best of luck with your studies!</strong></p>
@@ -115,7 +115,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                         </tr>
                       )}
                       <tr>
-                        <td><strong>Today's Deposit</strong></td>
+                        <td><strong>Today&apos;s Deposit</strong></td>
                         <td>{enrollment.currencySymbol}{c.deposit.toFixed(2)}</td>
                       </tr>
                       <tr>
@@ -160,7 +160,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
 
     </DefaultLayout>
   );
-}
+};
 
 WelcomeToTheSchoolPage.propTypes = {
   enrollment: PropTypes.any,
@@ -192,7 +192,6 @@ const getEnrollment = async (enrollmentId: number, code: string): Promise<Enroll
   }
   return response.json();
 };
-
 
 WelcomeToTheSchoolPage.getInitialProps = async ({ res, query }): Promise<Props> => {
   try {

@@ -1,13 +1,14 @@
 import { NextPage, NextPageContext } from 'next';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Store } from 'redux';
+import { AnyAction, Store } from 'redux';
 
 import { initializeStore, State } from '../store';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-explicit-any
 export const withRedux = (PageComponent: NextPage<any>, { ssr = true } = {}) => {
 
-  const WithRedux = ({ initialReduxState, ...props }: { initialReduxState: State }) => {
+  const WithRedux = ({ initialReduxState, ...props }: { initialReduxState: State }): JSX.Element => {
     const store = getOrInitializeStore(initialReduxState);
     return (
       <Provider store={store}>
@@ -26,7 +27,7 @@ export const withRedux = (PageComponent: NextPage<any>, { ssr = true } = {}) => 
 
   // Set the correct displayName in development
   if (process.env.NODE_ENV !== 'production') {
-    const displayName = PageComponent.displayName || PageComponent.name || 'Component';
+    const displayName = PageComponent.displayName ?? PageComponent.name ?? 'Component';
     WithRedux.displayName = `withRedux(${displayName})`;
   }
 
@@ -56,7 +57,7 @@ export const withRedux = (PageComponent: NextPage<any>, { ssr = true } = {}) => 
 };
 
 let reduxStore: Store;
-const getOrInitializeStore = (initialState?: State) => {
+const getOrInitializeStore = (initialState?: State): Store<unknown, AnyAction> => {
   // Always make a new store if server, otherwise state is shared between requests
   if (typeof window === 'undefined') {
     return initializeStore(initialState);
@@ -70,4 +71,4 @@ const getOrInitializeStore = (initialState?: State) => {
   return reduxStore;
 };
 
-export type NextPageContextWithRedux = NextPageContext & { reduxStore: Store; };
+export type NextPageContextWithRedux = NextPageContext & { reduxStore: Store };

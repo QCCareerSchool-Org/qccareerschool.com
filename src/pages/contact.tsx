@@ -4,10 +4,9 @@ import { IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
 
 import { SEO } from '../components/seo';
 import { getTelephoneNumber } from '../functions';
+import Hero from '../images/backgrounds/hero-contact.jpg';
 import { DefaultLayout } from '../layouts/default-layout';
 import { LocationStateContext } from '../providers/location';
-
-import Hero from '../images/backgrounds/hero-contact.jpg';
 
 const ContactPage: NextPage = () => {
   const iconSize = 100;
@@ -27,8 +26,8 @@ const ContactPage: NextPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-10 col-lg-8">
-            <h1>Contact</h1>
-            <p className="lead">Whether you have a question about enrolling, are a student looking for help with your account or an assignment, or are a graduate looking to expand your skillset, QC’s team of friendly student advisors are always happy to help. Reach out to us any time!</p>
+              <h1>Contact</h1>
+              <p className="lead">Whether you have a question about enrolling, are a student looking for help with your account or an assignment, or are a graduate looking to expand your skillset, QC&apos;s team of friendly student advisors are always happy to help. Reach out to us any time!</p>
             </div>
           </div>
         </div>
@@ -53,7 +52,7 @@ const ContactPage: NextPage = () => {
                     </div>
                   )
                 }
-                </p>
+              </p>
             </div>
             <div className="col-12 col-md-4">
               <IoMdMail size={iconSize} />

@@ -3,12 +3,12 @@ import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-
-import { Profile } from '../../../models/profile';
+import React from 'react';
 
 import { SEO } from '../../../components/seo';
 import { Testimonial } from '../../../components/testimonial';
 import { ProfileLayout } from '../../../layouts/profile-layout';
+import { Profile } from '../../../models/profile';
 
 interface Props {
   profile?: Profile;

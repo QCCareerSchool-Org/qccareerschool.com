@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 import { Profile } from '../models/profile';
@@ -53,11 +53,12 @@ export const SearchResults: React.FC<Props> = ({ profiles, pageCount, page, incr
       {pageCount > 1
         ? (
           <>
-            <p>Showing results {page * pageSize + 1} to {Math.min((page + 1) * pageSize, total)}</p>
+            <p>Showing results {(page * pageSize) + 1} to {Math.min((page + 1) * pageSize, total)}</p>
             <div className="mb-4">
               <button className="btn btn-primary-dark btn-sm" onClick={() => decrement()}><IoIosArrowBack /></button>
               {pages.map(i => (
-                // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
+                // we want all the elements to be replaced, not updated
+                // eslint-disable-next-line react/jsx-key
                 <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => setPage(i)}>{i + 1}</button>
               ))}
               <button className="btn btn-primary-dark btn-sm" onClick={() => increment()}><IoIosArrowForward /></button>
@@ -73,7 +74,8 @@ export const SearchResults: React.FC<Props> = ({ profiles, pageCount, page, incr
           <>
             <button className="btn btn-primary-dark btn-sm" onClick={() => decrement()}><IoIosArrowBack /></button>
             {pages.map(i => (
-              // tslint:disable:jsx-key (we want all the elements to be replaced, not updated)
+              // we want all the elements to be replaced, not updated
+              // eslint-disable-next-line react/jsx-key
               <button className={'btn btn-sm ' + (i === page ? 'btn-gray' : 'btn-primary')} onClick={() => setPage(i)}>{i + 1}</button>
             ))}
             <button className="btn btn-primary-dark btn-sm" onClick={() => increment()}><IoIosArrowForward /></button>

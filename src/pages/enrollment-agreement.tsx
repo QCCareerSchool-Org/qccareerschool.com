@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 
 import { SEO } from '../components/seo';
 import { MonospaceLayout } from '../layouts/monospace-layout';
@@ -24,19 +25,19 @@ const PrivacyPolicyPage: NextPage = () => (
       <li>A full refund cannot be granted if you have already submitted course work to your tutor for grading. In this case, a partial tuition refund may be offered instead.</li>
     </ul>
     <h3>1-Year Money-back Guarantee for Sleep Consultant Course</h3>
-    <p>QC's sleep consultant course offers a 1-year money back guarantee. If, after graduation, you do not earn the equivalent of your course tuition in professional consulting fees, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to obtain clients.</p>
+    <p>QC&apos;s sleep consultant course offers a 1-year money back guarantee. If, after graduation, you do not earn the equivalent of your course tuition in professional consulting fees, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to obtain clients.</p>
     <p>Graduates who request a refund under the 1-year guarantee must contact the School within 13-18 months post-graduation and provide proof that they:</p>
     <ul>
       <li>Have completed the optional business training unit in full before graduation;</li>
-      <li>Have a working website and social media presence that are at least 10 months old and that follow best practices outlined in the course's business unit; and</li>
+      <li>Have a working website and social media presence that are at least 10 months old and that follow best practices outlined in the course&apos;s business unit; and</li>
       <li>Provide examples of how their services were advertised over the course of the past 10 months (social media ads, direct mailers, proof of one-on-one outreach, etc.)</li>
     </ul>
     <h3>1-Year Money-back Guarantee for Writing Courses</h3>
     <p>The Creative Writing Course offers a 1-year money-back guarantee. If, after graduation, you do not earn the equivalent of your course tuition with your writing, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to sell your writing.</p>
     <p>Graduates who request a refund under the 1-year guarantee must contact the School within 13-18 months post-graduation and provide proof that they have made a reasonable effort to sell their writing.</p>
     <h3>Non-Refundable Materials</h3>
-    <p>Please note that the Special FX Makeup Kit and the Airbrush Makeup Kits are non-refundable. The Special FX kit has a value of $100 (US) and the Airbrush Makeup Kit has a value of $200 (US). If you choose to withdraw from the Special FX Makeup or Airbrush Makeup course under QC's 21-day guarantee, you are still required to pay for your makeup starter kit(s).</p>
-    <p>For the Screenwriting Course, please note that the Movie Magic Screenwriter software (value $170 US) is non-refundable. If you choose to withdraw under Winghill's 21-day guarantee, you are still required to pay for the Movie Magic Screenwriter software.</p>
+    <p>Please note that the Special FX Makeup Kit and the Airbrush Makeup Kits are non-refundable. The Special FX kit has a value of $100 (US) and the Airbrush Makeup Kit has a value of $200 (US). If you choose to withdraw from the Special FX Makeup or Airbrush Makeup course under QC&apos;s 21-day guarantee, you are still required to pay for your makeup starter kit(s).</p>
+    <p>For the Screenwriting Course, please note that the Movie Magic Screenwriter software (value $170 US) is non-refundable. If you choose to withdraw under Winghill&apos;s 21-day guarantee, you are still required to pay for the Movie Magic Screenwriter software.</p>
     <h2>3. Tuition Payments &amp; Installment Plans</h2>
     <p>If you choose to pay your course fees in monthly installments, you are obligated and agree to continue to make your scheduled payments until the entire tuition amount has been paid.</p>
     <h3>Missed Payments</h3>
@@ -65,7 +66,7 @@ const PrivacyPolicyPage: NextPage = () => (
       <li>QC reserves the right to refuse any withdrawal request after the 21-day guarantee period.</li>
     </ul>
     <h2>7. Code of Conduct</h2>
-    <p>QC's tutors and support staff are dedicated to providing a top-quality experience to all students. When you communicate with the QC Team, you will be greeted in a courteous, friendly and respectful manner.</p>
+    <p>QC&apos;s tutors and support staff are dedicated to providing a top-quality experience to all students. When you communicate with the QC Team, you will be greeted in a courteous, friendly and respectful manner.</p>
     <p>Students who exhibit abusive, threatening or offensive behavior when communicating with any member of the QC team may be placed on academic probation or expelled from the School without a tuition refund.</p>
     <p>QC considers cyber-bullying to be a serious and dangerous situation for all. Any individual who is identifiable as a QC student who is found to exhibit threatening, harassing, abusive or offensive behavior online may be placed on academic probation or expelled from the School without a tuition refund.</p>
     <h3>Cheating &amp; Plagiarism</h3>
@@ -77,8 +78,8 @@ const PrivacyPolicyPage: NextPage = () => (
     <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with QC. Please contact the School for further details.</p>
     <h2>10. Contact Information</h2>
     <p>QC Quality of Course Inc.<br />
-Corporation Number: 208502-0<br />
-Business Number (BN): 105927339RC0001</p>
+      Corporation Number: 208502-0<br />
+      Business Number (BN): 105927339RC0001</p>
     <p>Email: <a href="mailto:info@qccareershool.com">info@qccareershool.com</a><br />Phone: 1-613-749-8248</p>
     <table>
       <tbody>
@@ -86,14 +87,14 @@ Business Number (BN): 105927339RC0001</p>
           <td style={{ paddingRight: '2em' }}>
             <p><em>Shipping</em></p>
             <p>38 McArthur Ave<br />
-Ottawa ON&nbsp; K1L 6R2<br />
-Canada</p>
+              Ottawa ON&nbsp; K1L 6R2<br />
+              Canada</p>
           </td>
           <td>
             <p><em>Registered Office</em></p>
             <p>2026 Delmar Crt<br />
-Ottawa ON&nbsp; K1H 5R6<br />
-Canada</p>
+              Ottawa ON&nbsp; K1H 5R6<br />
+              Canada</p>
           </td>
         </tr>
       </tbody>

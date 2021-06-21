@@ -1,5 +1,7 @@
 import { applyMiddleware, bindActionCreators, combineReducers, createStore, Store } from 'redux';
 import reduxThunk, { ThunkMiddleware } from 'redux-thunk';
+import { Country } from './models/country';
+import { ProfessionGroup } from './profession-groups';
 
 import * as Auth from './reducers/auth';
 import * as FindProfessionals from './reducers/find-professionals';
@@ -14,7 +16,7 @@ const rootReducer = combineReducers({
   findProfessionals: FindProfessionals.reducer,
 });
 
-export const initializeStore = (initialState?: State) => {
+export const initializeStore = (initialState?: State): Store => {
   return createStore(
     rootReducer,
     initialState,
@@ -22,7 +24,17 @@ export const initializeStore = (initialState?: State) => {
   );
 };
 
-export const initializeBoundActions = (store: Store) => ({
+type BoundActionsResult = {
+  findProfessionals: {
+    setCountries: (countries: Country[]) => { type: 'COUNTRIES_SET'; payload: Country[] };
+    setProfessions: (professions: ProfessionGroup[]) => { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[] };
+  };
+  auth: {
+    logIn: (emailAddress: string, password: string) => (dispatch: (action: Auth.Action) => void) => void;
+  };
+};
+
+export const initializeBoundActions = (store: Store): BoundActionsResult => ({
   findProfessionals: bindActionCreators(FindProfessionals.actionCreators, store.dispatch),
   auth: bindActionCreators(Auth.actionCreators, store.dispatch),
 });

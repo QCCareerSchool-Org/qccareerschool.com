@@ -2,14 +2,14 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import { LightBox } from '../../../components/lightbox';
 import { SEO } from '../../../components/seo';
 import { ProfileLayout } from '../../../layouts/profile-layout';
-import { Profile } from '../../../models/profile';
 import { Picture } from '../../../models/picture';
+import { Profile } from '../../../models/profile';
 
 interface Props {
   errorCode?: number;

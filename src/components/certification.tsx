@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface CertificationData {
   code: string;
   courses: string[];
@@ -100,6 +102,12 @@ Certification.data = courseCode => {
       courses: [ 'PW' ],
       title: 'Portfolio Development Graduate',
       url: 'https://www.qcmakeupacademy.com/online-makeup-courses/portfolio-development/',
+    },
+    {
+      code: 'VMCG',
+      courses: [ 'VM' ],
+      title: 'Virtual Makeup Consultation Graduate',
+      url: 'https://www.qcmakeupacademy.com/online-makeup-courses/virtual-makeup-consultation-course/',
     },
     // event
     {

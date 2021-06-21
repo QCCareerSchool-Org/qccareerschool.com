@@ -17,7 +17,7 @@ export const LocationProvider: React.FC = ({ children }) => {
   const [ location, setLocation ] = useState<Location>();
 
   useEffect(() => {
-    (async () => {
+    const fetchData = async (): Promise<void> => {
       try {
         const response = await fetch('https://api.qccareerschool.com/geoLocation/ip');
         const data = await response.json();
@@ -25,7 +25,8 @@ export const LocationProvider: React.FC = ({ children }) => {
       } catch (err) {
         setLocation(defaultLocation);
       }
-    })();
+    };
+    fetchData().catch(() => { /* empty */ });
   }, []);
 
   return (

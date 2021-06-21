@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import React from 'react';
 import { MdLocationOn, MdPhone } from 'react-icons/md';
 
 import { Profile } from '../models/profile';

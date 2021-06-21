@@ -5,9 +5,9 @@ export interface State {
 }
 
 export type Action =
-  | { type: 'LOG_IN_STARTED', payload: string }
-  | { type: 'LOG_IN_FINISHED', payload: number }
-  | { type: 'LOG_IN_FAILED', payload: Error };
+  | { type: 'LOG_IN_STARTED'; payload: string }
+  | { type: 'LOG_IN_FINISHED'; payload: number }
+  | { type: 'LOG_IN_FAILED'; payload: Error };
 
 const localStorageId = process.browser ? window.localStorage?.getItem('id') : null;
 const initialState: State = {
@@ -24,14 +24,14 @@ export const reducer = ((state: State = initialState, action: Action): State => 
 });
 
 export const actionCreators = {
-  logIn: (emailAddress: string, password: string) => (dispatch: (action: Action) => void) => {
+  logIn: (emailAddress: string, password: string) => (dispatch: (action: Action) => void): void => {
     dispatch({ type: 'LOG_IN_STARTED', payload: emailAddress });
     fetch('https://api.qccareerschool.com/qccareerschool/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ emailAddress, password }),
       credentials: 'include',
-    }).then(response => {
+    }).then(async response => {
       if (!response.ok) {
         throw Error('Server error');
       }

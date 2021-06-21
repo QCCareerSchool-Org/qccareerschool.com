@@ -34,7 +34,7 @@ const HomePage: NextPage = () => (
           <div className="col-12 col-md-8 offset-md-2">
             <img src={require('../images/35-year-emblem.png')} alt="emblem" className="mb-4" />
             <h2 className="text-center">Welcome to QC Career School!</h2>
-            <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC’s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you’ll graduate with the skills and confidence you need to start a successful professional career!</p>
+            <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC&apos;s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you&apos;ll graduate with the skills and confidence you need to start a successful professional career!</p>
           </div>
         </div>
       </div>

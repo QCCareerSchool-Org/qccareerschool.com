@@ -5,25 +5,25 @@ import { Auth } from './providers/auth';
  * Returns whether the country is a country with a +44 country dialing code. E.g., United Kingdom
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
  */
-export const isCallingCode44 = (countryCode: string) => [ 'GB', 'IM', 'GG', 'JE' ].indexOf(countryCode) !== -1;
+export const isCallingCode44 = (countryCode: string): boolean => [ 'GB', 'IM', 'GG', 'JE' ].includes(countryCode);
 
 /**
  * Returns whether the country is a country with a +61 country dialing code. E.g., Australia
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
  */
-export const isCallingCode61 = (countryCode: string) => [ 'AU', 'CX', 'CC' ].indexOf(countryCode) !== -1;
+export const isCallingCode61 = (countryCode: string): boolean => [ 'AU', 'CX', 'CC' ].includes(countryCode);
 
 /**
  * Returns whether the country is a country with a +64 country dialing code. E.g., New Zealand
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
  */
-export const isCallingCode64 = (countryCode: string) => [ 'NZ', 'PN' ].indexOf(countryCode) !== -1;
+export const isCallingCode64 = (countryCode: string): boolean => [ 'NZ', 'PN' ].includes(countryCode);
 
 /**
  * Returns whether the country is a country with a +1 country dialing code. E.g., Canada, United States, Jamaica
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
  */
-export const isCallingCode1 = (countryCode: string) => [ 'CA', 'US', 'AG', 'AI', 'AS', 'BB', 'BM', 'BS', 'DM', 'DO', 'GD', 'GU', 'JM', 'KN', 'KY', 'LC', 'MP', 'MS', 'PR', 'SX', 'TC', 'TT', 'VC', 'VG', 'VI', 'UM' ].indexOf(countryCode) !== -1;
+export const isCallingCode1 = (countryCode: string): boolean => [ 'CA', 'US', 'AG', 'AI', 'AS', 'BB', 'BM', 'BS', 'DM', 'DO', 'GD', 'GU', 'JM', 'KN', 'KY', 'LC', 'MP', 'MS', 'PR', 'SX', 'TC', 'TT', 'VC', 'VG', 'VI', 'UM' ].includes(countryCode);
 
 /**
  * Returns the country dialing code for a particular country. Only supports +1, +44, +61, and +64.
@@ -123,28 +123,30 @@ export const getAddress = (countryCode: string): string[] => {
  * Creates a query string from an object
  * @param params the query string values
  */
-export function getQueryString(params: any) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+export function getQueryString(params: any): string {
   return Object.keys(params).map(k => {
     if (Array.isArray(params[k])) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return params[k].map((val: any) => `${encodeURIComponent(k)}[]=${encodeURIComponent(val)}`).join('&');
     }
     return `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`;
   }).join('&');
 }
 
-export function nl2br(str?: string | null, xhtml?: boolean) {
+export function nl2br(str?: string | null, xhtml?: boolean): string {
   if (typeof str === 'undefined' || str === null) {
     return '';
   }
   const breakTag = (xhtml || typeof xhtml === 'undefined') ? '<br />' : '<br>';
-  return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+  return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/gu, '$1' + breakTag + '$2');
 }
 
 /**
  * Wraps the Notification.requestPermission function so that we know we're always dealing
  * with a Promise and not the deprecated callback version
  */
-const requestPermission = async () => {
+const requestPermission = async (): Promise<NotificationPermission> => {
   return new Promise((resolve, reject) => {
     if (!('Notification' in window)) {
       reject(Error('Notification object is not supported'));

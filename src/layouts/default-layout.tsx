@@ -7,7 +7,7 @@ import { Header } from '../components/header';
 
 type Props = {
   noHero?: boolean;
-}
+};
 
 export const DefaultLayout: React.FC<Props> = ({ noHero, children }) => (
   <GoogleAnalyticsWrapper>
