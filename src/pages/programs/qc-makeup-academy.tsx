@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -21,7 +22,7 @@ const MakeupPage: NextPage = () => (
           <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>QC Makeup Academy</h1>
-            <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
+            <p className="lead">QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you&apos;re a total beginner or a seasoned professional, you&apos;ll find a QC course to help develop your makeup skills and take you to the next level professionally!</p>
           </div>
         </div>
       </div>

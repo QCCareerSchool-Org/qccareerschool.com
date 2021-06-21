@@ -1,4 +1,4 @@
-import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { ThunkAction } from 'redux-thunk';
 
 import { needsProvince } from '../functions';
 import { Country } from '../models/country';
@@ -27,20 +27,20 @@ export interface State {
 }
 
 export type Action =
-  | { type: 'COUNTRIES_SET'; payload: Country[]; }
-  | { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[]; }
-  | { type: 'PROFESSION_SET'; payload: string; }
-  | { type: 'COUNTRY_SET'; payload: { countryCode: string; provinces: Province[]; }; }
-  | { type: 'PROVINCE_SET'; payload: string | null; }
-  | { type: 'FIRST_NAME_SET'; payload: string; }
-  | { type: 'LAST_NAME_SET'; payload: string; }
-  | { type: 'AREA_SET'; payload: string; }
-  | { type: 'CLEAR_PROFILES'; }
-  | { type: 'SET_PROFILES'; payload: Partial<Profile>[]; }
-  | { type: 'SET_PAGE'; payload: number; }
-  | { type: 'INCREMENT_PAGE'; }
-  | { type: 'DECREMENT_PAGE'; }
-  | { type: 'PAGE_SCROLLED'; payload: number; };
+  | { type: 'COUNTRIES_SET'; payload: Country[] }
+  | { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[] }
+  | { type: 'PROFESSION_SET'; payload: string }
+  | { type: 'COUNTRY_SET'; payload: { countryCode: string; provinces: Province[] } }
+  | { type: 'PROVINCE_SET'; payload: string | null }
+  | { type: 'FIRST_NAME_SET'; payload: string }
+  | { type: 'LAST_NAME_SET'; payload: string }
+  | { type: 'AREA_SET'; payload: string }
+  | { type: 'CLEAR_PROFILES' }
+  | { type: 'SET_PROFILES'; payload: Partial<Profile>[] }
+  | { type: 'SET_PAGE'; payload: number }
+  | { type: 'INCREMENT_PAGE' }
+  | { type: 'DECREMENT_PAGE' }
+  | { type: 'PAGE_SCROLLED'; payload: number };
 
 type ThunkResult<T> = ThunkAction<T, { findProfessionals: State }, undefined, Action>;
 
@@ -70,12 +70,12 @@ export const reducer = ((state: State = initialState, action: Action): State => 
         return { ...state, professions: [], form: { ...state.form, profession: '' } };
       } else if (action.payload.some(group => group.professions.includes(state.form.profession))) {
         return { ...state, professions: action.payload };
-      } else {
-        return { ...state, professions: action.payload, form: { ...state.form, profession: action.payload[0].professions[0] } };
       }
+      return { ...state, professions: action.payload, form: { ...state.form, profession: action.payload[0].professions[0] } };
+
     case 'PROFESSION_SET':
       return { ...state, form: { ...state.form, profession: action.payload } };
-    case 'COUNTRY_SET':
+    case 'COUNTRY_SET': {
       let provinceCode;
       if (action.payload.provinces.length === 0) {
         provinceCode = null;
@@ -89,6 +89,7 @@ export const reducer = ((state: State = initialState, action: Action): State => 
         provinces: action.payload.provinces,
         form: { ...state.form, countryCode: action.payload.countryCode, provinceCode },
       };
+    }
     case 'PROVINCE_SET':
       if (action.payload === null) {
         return { ...state, form: { ...state.form, provinceCode: null } };
@@ -131,32 +132,32 @@ export const reducer = ((state: State = initialState, action: Action): State => 
 const updateCountry = (countryCode: string): ThunkResult<void> => dispatch => {
   if (needsProvince(countryCode)) {
     const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${encodeURIComponent(countryCode)}`;
-    fetch(url).then(response => {
+    fetch(url).then(async response => {
       if (!response.ok) {
         throw Error('Unable to retreive provinces');
       }
       return response.json();
     }).then(provinces => {
       dispatch({ type: 'COUNTRY_SET', payload: { countryCode, provinces } });
-    });
+    }).catch(() => { /* empty */ });
   } else {
     dispatch({ type: 'COUNTRY_SET', payload: { countryCode, provinces: [] } });
   }
 };
 
 export const actionCreators = {
-  setCountries: (countries: Country[]) => ({ type: 'COUNTRIES_SET', payload: countries }),
-  setProfessions: (professions: ProfessionGroup[]) => ({ type: 'PROFESSIONS_SET', payload: professions }),
-  updateProfession: (profession: string) => ({ type: 'PROFESSION_SET', payload: profession }),
+  setCountries: (countries: Country[]): { type: 'COUNTRIES_SET'; payload: Country[] } => ({ type: 'COUNTRIES_SET', payload: countries }),
+  setProfessions: (professions: ProfessionGroup[]): { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[] } => ({ type: 'PROFESSIONS_SET', payload: professions }),
+  updateProfession: (profession: string): { type: 'PROFESSION_SET'; payload: string } => ({ type: 'PROFESSION_SET', payload: profession }),
   updateCountry,
-  updateProvince: (provinceCode: string | null) => ({ type: 'PROVINCE_SET', payload: provinceCode }),
-  updateFirstName: (firstName: string) => ({ type: 'FIRST_NAME_SET', payload: firstName }),
-  updateLastName: (lastName: string) => ({ type: 'LAST_NAME_SET', payload: lastName }),
-  updateArea: (area: string) => ({ type: 'AREA_SET', payload: area }),
-  clear: () => ({ type: 'CLEAR_PROFILES' }),
-  set: (payload: Partial<Profile>[]) => ({ type: 'SET_PROFILES', payload }),
-  setPage: (page: number) => ({ type: 'SET_PAGE', payload: page }),
-  incrementPage: () => ({ type: 'INCREMENT_PAGE' }),
-  decrementPage: () => ({ type: 'DECREMENT_PAGE' }),
-  scroll: (position: number) => ({ type: 'PAGE_SCROLLED', payload: position }),
+  updateProvince: (provinceCode: string | null): { type: 'PROVINCE_SET'; payload: string | null } => ({ type: 'PROVINCE_SET', payload: provinceCode }),
+  updateFirstName: (firstName: string): { type: 'FIRST_NAME_SET'; payload: string } => ({ type: 'FIRST_NAME_SET', payload: firstName }),
+  updateLastName: (lastName: string): { type: 'LAST_NAME_SET'; payload: string } => ({ type: 'LAST_NAME_SET', payload: lastName }),
+  updateArea: (area: string): { type: 'AREA_SET'; payload: string } => ({ type: 'AREA_SET', payload: area }),
+  clear: (): { type: 'CLEAR_PROFILES' } => ({ type: 'CLEAR_PROFILES' }),
+  set: (payload: Partial<Profile>[]): { type: 'SET_PROFILES'; payload: Partial<Profile>[] } => ({ type: 'SET_PROFILES', payload }),
+  setPage: (page: number): { type: 'SET_PAGE'; payload: number } => ({ type: 'SET_PAGE', payload: page }),
+  incrementPage: (): { type: 'INCREMENT_PAGE' } => ({ type: 'INCREMENT_PAGE' }),
+  decrementPage: (): { type: 'DECREMENT_PAGE' } => ({ type: 'DECREMENT_PAGE' }),
+  scroll: (position: number): { type: 'PAGE_SCROLLED'; payload: number } => ({ type: 'PAGE_SCROLLED', payload: position }),
 };

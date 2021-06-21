@@ -3,16 +3,16 @@ import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
+import React from 'react';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterestSquare, FaTwitterSquare } from 'react-icons/fa';
 
 import parseBBCode from '../../../bbcode-parser';
-import { nl2br } from '../../../functions';
-import { Profile } from '../../../models/profile';
-
 import { Certification } from '../../../components/certification';
 import { SEO } from '../../../components/seo';
 import { Testimonial } from '../../../components/testimonial';
+import { nl2br } from '../../../functions';
 import { ProfileLayout } from '../../../layouts/profile-layout';
+import { Profile } from '../../../models/profile';
 
 interface Props {
   profile?: Profile;
@@ -76,7 +76,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
       <div className="row">
 
         <div className="col-12 col-md-4 text-center text-md-left mb-4 overflow-hidden">
-          <img className="img-fluid my-2" src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}&v=${profile.portrait?.modified || 0}`} alt={profile.firstName + ' ' + profile.lastName} />
+          <img className="img-fluid my-2" src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}&v=${profile.portrait?.modified ?? 0}`} alt={profile.firstName + ' ' + profile.lastName} />
           <br />
           {profile.city ? <>{profile.city}{profile.provinceCode ? `, ${profile.provinceCode}` : ''}<br /></> : null}
           {profile.phoneNumber ? <>{profile.phoneNumber}<br /></> : null}

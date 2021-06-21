@@ -1,8 +1,8 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
 
-import { ScreenWidthContext } from '../providers/screen-width';
 import { Picture } from '../models/picture';
+import { ScreenWidthContext } from '../providers/screen-width';
 
 interface Props {
   picture?: Picture;
@@ -33,9 +33,9 @@ export const LightBox: React.FC<Props> = ({ picture, onClose }) => {
     <div className="lightbox">
       <div className="close" onClick={onClose}><IoIosCloseCircle size={40} /></div>
       <div className="wrapper">
-      <img className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}&maxwidth=${maxWidth}&maxheight=600`} />
-      <h6>{picture.heading}</h6>
-      <p>{picture.description}</p>
+        <img className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}&maxwidth=${maxWidth}&maxheight=600`} />
+        <h6>{picture.heading}</h6>
+        <p>{picture.description}</p>
       </div>
       <style jsx>{`
         .lightbox {

@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
+import React from 'react';
 
 import { Certification } from '../../../components/certification';
 import { SEO } from '../../../components/seo';

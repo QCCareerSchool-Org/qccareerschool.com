@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';

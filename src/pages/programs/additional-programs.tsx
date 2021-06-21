@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import React from 'react';
 
 import { Bar } from '../../components/bar';
 import { SEO } from '../../components/seo';
@@ -57,7 +58,7 @@ const AdditionalProgramsPage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Winghill School of Writing</h3>
-            <p className="mb-4">Let your creativity soar with a number of writing courses that will help you become a published author. Winghill’s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor. Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others</p>
+            <p className="mb-4">Let your creativity soar with a number of writing courses that will help you become a published author. Winghill&apos;s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor. Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others</p>
             <Link href="https://www.winghill.com/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
           </div>
         </div>

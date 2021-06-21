@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface CertificationData {
   code: string;
   courses: string[];

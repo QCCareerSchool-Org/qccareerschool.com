@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { Bar } from './bar';
 
-const OverlaySection: React.FC<{ backgroundImage: string; }> = ({ children, backgroundImage }) => (
+const OverlaySection: React.FC<{ backgroundImage: string }> = ({ children, backgroundImage }) => (
   <section className="overlay-section bg-dark text-light text-shadow text-right">
     <div className="container">
       <div className="row">

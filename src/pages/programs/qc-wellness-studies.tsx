@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -21,7 +22,7 @@ const WellnessPage: NextPage = () => (
           <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h2>QC Wellness Studies</h2>
-            <p className="lead">If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
+            <p className="lead">If you&apos;re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC&apos;s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training.</p>
           </div>
         </div>
       </div>

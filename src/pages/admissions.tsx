@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 import { IoMdChatbubbles, IoMdCheckmarkCircle, IoMdHand, IoMdPeople, IoMdShuffle, IoMdTimer } from 'react-icons/io';
@@ -47,7 +48,7 @@ const AdmissionsPage: NextPage = () => {
                 <Tab.Content>
                   <Tab.Pane eventKey="individuals">
                     <h3>Admissions For Individuals</h3>
-                    <p>If you would like to enroll in one of QC’s courses, you can do so at the faculties’ online enrollment pages:</p>
+                    <p>If you would like to enroll in one of QC&apos;s courses, you can do so at the faculties&apos; online enrollment pages:</p>
                     <div className="row">
                       <div className="col-6 col-lg-4 mb-g d-flex">
                         <div className="card shadow-lg rounded-lg">
@@ -134,7 +135,7 @@ const AdmissionsPage: NextPage = () => {
                     <div className="row">
                       <div className="col-12 col-md-6">
                         <h3>Private Group Admissions &amp; Discounts</h3>
-                        <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC’s group admissions discount! Any group of two or more enrolling in any course (you don’t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
+                        <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC&apos;s group admissions discount! Any group of two or more enrolling in any course (you don&apos;t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
                         <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
                       </div>
                       <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
@@ -176,24 +177,24 @@ const AdmissionsPage: NextPage = () => {
           <div className="row">
             <div className="col-12 col-md-6 mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdTimer size={iconSize} /></span>No Deadlines or Mandatory Classes</h3>
-              <p>You’ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there’s no rush and plenty of time if life gets in the way!</p>
+              <p>You&apos;ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there&apos;s no rush and plenty of time if life gets in the way!</p>
               <p>Typically, students who work on their assignments for a short period each week will complete their course within four to six months.</p>
             </div>
             <div className="col-12 col-md-6 mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdHand size={iconSize} /></span>A hands-on approach</h3>
-              <p>You might be wondering how you can learn a practical skill online. The answer is simple. Your online training relies on the same kind of hands-on methods you would follow in the classroom. Your training assignments are a mix of theoretical and practical. Depending on the program you take, “practical” can mean anything from completing case studies or working through real-world scenarios to completing a full makeup application or grooming a dog!</p>
+              <p>You might be wondering how you can learn a practical skill online. The answer is simple. Your online training relies on the same kind of hands-on methods you would follow in the classroom. Your training assignments are a mix of theoretical and practical. Depending on the program you take, &ldquo;practical&rdquo; can mean anything from completing case studies or working through real-world scenarios to completing a full makeup application or grooming a dog!</p>
             </div>
             <div className="col-12 col-md-6 mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdChatbubbles size={iconSize} /></span>100% Personalized Tutor Feedback</h3>
-              <p>All your assignments will be graded by a your personal tutor, who is a working professional in the field you’re studying. Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is why QC students graduate way ahead of the curve.</p>
+              <p>All your assignments will be graded by a your personal tutor, who is a working professional in the field you&apos;re studying. Your tutor will provide you with detailed audio feedback on your work, indicating your strengths and also the areas where you need to improve. This unique approach to providing constructive feedback is why QC students graduate way ahead of the curve.</p>
             </div>
             <div className="col-12 col-md-6 mb-3">
               <h3 className="h5"><span className="icon-wrapper"><IoMdPeople size={iconSize} /></span>Unmatched Student Support</h3>
-              <p>QC’s student advisors are available on extended hours to help you in any way they can. You might have a question about enrolling in a course, have trouble with an assignment, or be looking for advice on a job you are considering. Rest assured that your student support team will help answer your questions and will point you in the right direction.</p>
+              <p>QC&apos;s student advisors are available on extended hours to help you in any way they can. You might have a question about enrolling in a course, have trouble with an assignment, or be looking for advice on a job you are considering. Rest assured that your student support team will help answer your questions and will point you in the right direction.</p>
             </div>
             <div className="col-12 col-md-6">
               <h3 className="h5"><span className="icon-wrapper"><IoMdShuffle size={iconSize} /></span>Flexible Payment Plans</h3>
-              <p>With QC, you’ll receive top quality training at a price you can afford. Every course comes with a payment plan where you can pay off your tuition in affordable monthly installments. What’s more, if you ever need to miss a tuition payment, simply call your student advisor who will be happy to work with you!</p>
+              <p>With QC, you&apos;ll receive top quality training at a price you can afford. Every course comes with a payment plan where you can pay off your tuition in affordable monthly installments. What&apos;s more, if you ever need to miss a tuition payment, simply call your student advisor who will be happy to work with you!</p>
             </div>
             <div className="col-12 col-md-6">
               <h3 className="h5"><span className="icon-wrapper"><IoMdCheckmarkCircle size={iconSize} /></span>Proven Track Record</h3>

@@ -11,7 +11,7 @@ export interface Campaign {
   discount: DiscountAmounts;
   courseRestrictionType: string | null;
   courses: Array<{
-    course_code: string;
+    course_code: string; // eslint-disable-line camelcase
     name: string;
   }>;
   requirementsMet: boolean;

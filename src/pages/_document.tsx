@@ -1,12 +1,14 @@
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import React from 'react';
 
 export default class QCDocument extends Document {
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/explicit-module-boundary-types
   public static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>

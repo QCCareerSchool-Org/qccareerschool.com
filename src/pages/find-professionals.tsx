@@ -2,12 +2,13 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-import { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchResults } from '../components/search-results';
 import { SEO } from '../components/seo';
 import { getQueryString } from '../functions';
+import Hero from '../images/backgrounds/hero-find-professionals.jpg';
 import { DefaultLayout } from '../layouts/default-layout';
 import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
 import { Country } from '../models/country';
@@ -17,8 +18,6 @@ import { LocationStateContext } from '../providers/location';
 import { ScreenWidthContext } from '../providers/screen-width';
 import * as FindProfessionals from '../reducers/find-professionals';
 import { State } from '../store';
-
-import Hero from '../images/backgrounds/hero-find-professionals.jpg';
 
 interface SubmitPayload {
   profession: string;
@@ -52,13 +51,13 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   const scrolledEnough = useRef(false);
   const submitPayload = useRef<SubmitPayload>();
 
-  const lg = screenWidth >= 992;
-  const md = screenWidth >= 768;
   const sm = screenWidth >= 576;
 
   useEffect(() => {
     window.scrollTo(0, state.scrollPosition);
-    const handleScroll = () => dispatch(FindProfessionals.actionCreators.scroll(window.pageYOffset));
+    const handleScroll = (): void => {
+      dispatch(FindProfessionals.actionCreators.scroll(window.pageYOffset));
+    };
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -77,13 +76,13 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
     setProvinceLabel(state.form.countryCode === 'CA' ? 'Province' : 'State');
   }, [ state.form.countryCode ]);
 
-  function handleFormSubmit(event: React.FormEvent) {
+  const handleFormSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
     submitPayload.current = { ...state.form };
-    submit();
-  }
+    submit().catch(() => { /* empty */ });
+  };
 
-  async function submit() {
+  const submit = async (): Promise<void> => {
     try {
       const searchResponse = await fetch(`https://api.qccareerschool.com/qccareerschool/profiles/?${getQueryString(submitPayload.current)}`);
       if (!searchResponse.ok) {
@@ -95,28 +94,29 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
     } catch (err) {
       setError(true);
     }
-  }
+  };
 
   /** Records the vertical start position */
-  function handleTouchStart(e: React.TouchEvent) {
+  const handleTouchStart = (e: React.TouchEvent): void => {
     scrollStart.current = e.touches[0].pageY;
-  }
+  };
 
   /** Determines if we should activate the custom pull refresh when we recevie a touchEnd event */
-  function handleTouchMove(e: React.TouchEvent) {
+  const handleTouchMove = (e: React.TouchEvent): void => {
     const minScroll = 250; // the minimum amount of overscroll we need to detect
     scrolledEnough.current = document.scrollingElement?.scrollTop === 0 && // at the top
       e.touches[0].pageY > scrollStart.current + minScroll && // overscrolled the minimum amount
       !refreshing; // not already refreshing
-  }
+  };
 
   /** Activates custom pull-to-refresh */
-  function handleTouchEnd(e: React.TouchEvent) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleTouchEnd = (e: React.TouchEvent): void => {
     if (scrolledEnough.current) {
       setRefreshing(true);
-      submit().then(() => setRefreshing(false));
+      submit().then(() => setRefreshing(false)).catch(() => { /* empty */ });
     }
-  }
+  };
 
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
@@ -175,7 +175,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                         ? (
                           <div className="form-group">
                             <label htmlFor="provinceCode">{provinceLabel}</label>
-                            <select className="form-control" id="provinceCode" value={state.form.provinceCode || ''} onChange={e => dispatch(FindProfessionals.actionCreators.updateProvince(e.target.value))}>
+                            <select className="form-control" id="provinceCode" value={state.form.provinceCode ?? ''} onChange={e => dispatch(FindProfessionals.actionCreators.updateProvince(e.target.value))}>
                               {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                             </select>
                           </div>
@@ -229,7 +229,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   );
 };
 
-FindProfessionalsPage.getInitialProps = async ({ foo, reduxStore, res }: NextPageContextWithRedux | any) => {
+FindProfessionalsPage.getInitialProps = async ({ reduxStore, res }: NextPageContextWithRedux) => {
   const state: State = reduxStore.getState();
   try {
     if (state.findProfessionals.countries.length === 0) {

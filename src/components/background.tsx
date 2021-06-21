@@ -5,10 +5,10 @@ interface Props {
   style?: React.CSSProperties;
   className?: string;
   image: string;
-  overlay?: any[];
+  overlay?: unknown[];
 }
 
-export const Background: React.FC<Props> = ({ children, style, className, image, overlay = [] }) => (
+export const Background: React.FC<Props> = ({ children }) => (
   <div style={{ background: 'black' }}>
     {children}
   </div>

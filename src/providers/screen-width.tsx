@@ -8,7 +8,7 @@ export const ScreenWidthProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
-    const handleResize = () => setScreenWidth(window.innerWidth);
+    const handleResize = (): void => setScreenWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -17,7 +17,7 @@ export const ScreenWidthProvider: React.FC = ({ children }) => {
 
   return (
     <ScreenWidthContext.Provider value={screenWidth}>
-        {children}
+      {children}
     </ScreenWidthContext.Provider>
   );
 };

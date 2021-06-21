@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import React from 'react';
 
 import { GoogleAnalyticsWrapper } from '../components/google-analytics-wrapper';
-
 import Logo from '../images/logo-horizontal.svg';
 import None from '../images/profile-backgrounds/none.png';
 import Powder from '../images/profile-backgrounds/powder.jpg';

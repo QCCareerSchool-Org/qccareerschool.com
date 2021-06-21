@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -21,7 +22,7 @@ const EventPage: NextPage = () => (
           <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>QC Event School</h1>
-            <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
+            <p className="lead">The event planning industry is expecting a 110% growth over the next 10 years! If you&apos;re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels.</p>
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
+import React from 'react';
 
-const OldPortfolioPage: NextPage = props => <ErrorPage statusCode={404} />;
+const OldPortfolioPage: NextPage = () => <ErrorPage statusCode={404} />;
 
 OldPortfolioPage.getInitialProps = ({ query, res }) => {
   if (res) {

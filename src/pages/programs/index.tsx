@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 
 import { Bar } from '../../components/bar';
 import { CardColumn } from '../../components/card-column';
@@ -20,7 +21,7 @@ const ProgramsPage: NextPage = () => (
         <Bar className="text-primary mb-5" />
         <p className="hat">QC Career School</p>
         <h1>Courses &amp; Professional Training Programs</h1>
-        <p className="lead">Learning online doesn’t have to mean learning on your own. QC’s expert course developers and tutors have spent years developing a unique and comprehensive approach to online learning that will offer the flexibility you need while giving you the high quality training and personalized feedback you deserve!</p>
+        <p className="lead">Learning online doesn&apos;t have to mean learning on your own. QC&apos;s expert course developers and tutors have spent years developing a unique and comprehensive approach to online learning that will offer the flexibility you need while giving you the high quality training and personalized feedback you deserve!</p>
       </div>
     </section>
 
