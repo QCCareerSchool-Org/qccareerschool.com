@@ -103,6 +103,12 @@ Certification.data = courseCode => {
       title: 'Portfolio Development Graduate',
       url: 'https://www.qcmakeupacademy.com/online-makeup-courses/portfolio-development/',
     },
+    {
+      code: 'VMCG',
+      courses: [ 'VM' ],
+      title: 'Virtual Makeup Consultation Graduate',
+      url: 'https://www.qcmakeupacademy.com/online-makeup-courses/virtual-makeup-consultation-course/',
+    },
     // event
     {
       code: 'IEWP',
