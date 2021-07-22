@@ -26,6 +26,7 @@ export const professionGroups: ProfessionGroup[] = [
       'destination wedding planner',
       'luxury event and wedding planner',
       'travel consultant',
+      'festival & live events planner',
     ],
   },
   {
