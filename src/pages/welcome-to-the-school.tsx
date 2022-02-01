@@ -102,16 +102,16 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                         <td><strong>Cost</strong></td>
                         <td>{enrollment.currencySymbol}{c.baseCost.toFixed(2)}</td>
                       </tr>
-                      {c.discount > 0 && (
+                      {c.planDiscount > 0 && (
                         <tr>
                           <td><strong>Discount</strong></td>
-                          <td>&minus;{enrollment.currencySymbol}{c.discount.toFixed(2)}</td>
+                          <td>&minus;{enrollment.currencySymbol}{c.planDiscount.toFixed(2)}</td>
                         </tr>
                       )}
-                      {c.secondaryDiscount > 0 && (
+                      {c.discount > 0 && (
                         <tr>
-                          <td><strong>Multi-Course Discount</strong></td>
-                          <td>&minus;{enrollment.currencySymbol}{c.secondaryDiscount.toFixed(2)}</td>
+                          <td><strong>Special Discount</strong></td>
+                          <td>&minus;{enrollment.currencySymbol}{c.discount.toFixed(2)}</td>
                         </tr>
                       )}
                       <tr>
@@ -215,7 +215,7 @@ WelcomeToTheSchoolPage.getInitialProps = async ({ res, query }): Promise<Props> 
 
     return { enrollment };
   } catch (err) {
-    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+    const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
     if (res) {
       res.statusCode = errorCode;
     }

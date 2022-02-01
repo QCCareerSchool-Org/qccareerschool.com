@@ -9,7 +9,6 @@ import { DefaultLayout } from '../layouts/default-layout';
 
 const HomePage: NextPage = () => (
   <DefaultLayout>
-
     <SEO
       title="QC Career School"
       description="QC is a leader in online distance education. With QC you’ll graduate with the skills and confidence you need to start a successful professional career!"
@@ -175,7 +174,6 @@ const HomePage: NextPage = () => (
         bottom: 0px;
       }
     `}</style>
-
   </DefaultLayout>
 );
 

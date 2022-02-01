@@ -81,7 +81,7 @@ TestimonialPage.getInitialProps = async context => {
     }
     return { profile };
   } catch (err) {
-    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+    const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
     if (context.res) {
       context.res.statusCode = errorCode;
     }

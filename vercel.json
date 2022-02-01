@@ -7,9 +7,6 @@
       "NPM_TOKEN": "@npm_token"
     }
   },
-  "builds": [
-    { "src": "next.config.js", "use": "@now/next" }
-  ],
   "trailingSlash": false,
   "redirects": [
     { "source": "/free-brochure.php", "destination": "/programs" },

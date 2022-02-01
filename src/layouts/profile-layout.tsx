@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 
-import { GoogleAnalyticsWrapper } from '../components/google-analytics-wrapper';
 import Logo from '../images/logo-horizontal.svg';
 import None from '../images/profile-backgrounds/none.png';
 import Powder from '../images/profile-backgrounds/powder.jpg';
@@ -12,11 +11,7 @@ interface Props {
 }
 
 export const ProfileLayout: React.FC<Props> = props => (
-  <GoogleAnalyticsWrapper>
-    <Head>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
-    </Head>
-
+  <>
     <div className="profileWrapper">
       <div className="profile container my-sm-4">
 
@@ -68,5 +63,5 @@ export const ProfileLayout: React.FC<Props> = props => (
         .profileLogo { margin-bottom: 12px; }
       }
     `}</style>
-  </GoogleAnalyticsWrapper>
+  </>
 );

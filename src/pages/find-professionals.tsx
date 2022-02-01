@@ -62,7 +62,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [ state.scrollPosition, dispatch ]);
 
   useEffect(() => {
     if (location?.countryCode) {
@@ -70,7 +70,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
         dispatch(FindProfessionals.actionCreators.updateCountry(location.countryCode));
       }
     }
-  }, [ state.form.countryCode, location?.countryCode ]);
+  }, [ state.form.countryCode, location?.countryCode, dispatch ]);
 
   useEffect(() => {
     setProvinceLabel(state.form.countryCode === 'CA' ? 'Province' : 'State');
@@ -84,7 +84,8 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
   const submit = async (): Promise<void> => {
     try {
-      const searchResponse = await fetch(`https://api.qccareerschool.com/qccareerschool/profiles/?${getQueryString(submitPayload.current)}`);
+      const url = `https://api.qccareerschool.com/qccareerschool/profiles/?${getQueryString(submitPayload.current)}`;
+      const searchResponse = await fetch(url);
       if (!searchResponse.ok) {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
@@ -124,7 +125,6 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
   return (
     <DefaultLayout>
-
       <SEO
         title="Find Professionals"
         description="Seeking a skilled professional in your area? Look no further! QC graduates are well prepared to help you. Simply fill in the form to find a professional near you."
@@ -224,7 +224,6 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
           background-size: cover;
         }
       `}</style>
-
     </DefaultLayout>
   );
 };
@@ -244,8 +243,8 @@ FindProfessionalsPage.getInitialProps = async ({ reduxStore, res }: NextPageCont
       reduxStore.dispatch(FindProfessionals.actionCreators.setProfessions(professionGroups));
     }
     return {};
-  } catch (err) {
-    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+  } catch (err: any) {
+    const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
     if (res) {
       res.statusCode = errorCode;
     }
