@@ -1,18 +1,11 @@
 import { NextPage } from 'next';
 import { AppProps, NextWebVitalsMetric } from 'next/app';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import { ReactElement, ReactNode, useEffect } from 'react';
 
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
-import { pardotPageview } from '../lib/pardot';
-import { uetPageview } from '../lib/uet';
 import { Providers } from '../providers';
-import { AuthProvider } from '../providers/auth';
-import { LocationProvider } from '../providers/locationProvider';
-import { ScreenWidthProvider } from '../providers/screenWidthProvider';
-import { ScrollPositionProvider } from '../providers/scrollPositionProvider';
 
 import '../style.scss';
 
@@ -31,9 +24,6 @@ const QCApp = ({ Component, pageProps }: AppPropsWithLayout): ReactElement => {
   useEffect(() => {
     const handleRouteChange = (url: string): void => {
       gaPageview(url);
-      uetPageview(url);
-      fbqPageview(url);
-      pardotPageview(url);
     };
 
     // When the component is mounted, subscribe to router changes and log those page views
