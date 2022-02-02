@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import React from 'react';
+import { ReactElement } from 'react';
 
 import BBBLogo from '../images/bbb-a+.svg';
 
-interface Props {
+type Props = {
   className?: string;
-}
+};
 
-export const Footer: React.FC<Props> = ({ className }) => (
+export const Footer = ({ className }: Props): ReactElement => (
   <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={`bg-dark text-light py-4 ${className}`}>
     <div className="container">
       <div className="row align-items-center">

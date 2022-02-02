@@ -1,22 +1,22 @@
 import { telephoneNumber } from '@qccareerschool/helper-functions';
 import * as HttpStatus from '@qccareerschool/http-status';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import PropTypes from 'prop-types';
-import React, { useContext } from 'react';
+import { Fragment } from 'react';
 
-import { SEO } from '../components/seo';
-import { DefaultLayout } from '../layouts/default-layout';
+import { SEO } from '../components/SEO';
+import { useLocation } from '../hooks/useLocation';
+import { DefaultLayout } from '../layouts/DefaultLayout';
 import { Enrollment } from '../models/enrollment';
-import { LocationStateContext } from '../providers/location';
+import { NextPageWithLayout } from './_app';
 
 type Props = {
   enrollment?: Enrollment;
   errorCode?: number;
 };
 
-const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
-  const location = useContext(LocationStateContext);
+const WelcomeToTheSchoolPage: NextPageWithLayout<Props> = ({ enrollment, errorCode }) => {
+  const location = useLocation();
 
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
@@ -29,8 +29,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
   const paymentDate = new Date(enrollment.paymentDate);
 
   return (
-    <DefaultLayout noHero={true}>
-
+    <>
       <SEO
         title="Welcome to the School"
         description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
@@ -94,7 +93,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                     </>
                   )}
                   {enrollment.courses.map((c, i) => (
-                    <React.Fragment key={i}>
+                    <Fragment key={i}>
                       <tr>
                         <td colSpan={2}><h6 className="mt-4 mb-0">{c.name}</h6></td>
                       </tr>
@@ -122,7 +121,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                         <td><strong>Monthly Installment</strong></td>
                         <td>{enrollment.currencySymbol}{c.installment.toFixed(2)}</td>
                       </tr>
-                    </React.Fragment>
+                    </Fragment>
                   ))}
                 </tbody>
               </table>
@@ -157,8 +156,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
           <p>If you would like to make changes to your account, please contact the School at your earliest convenience by phone or email.</p>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 
@@ -166,6 +164,8 @@ WelcomeToTheSchoolPage.propTypes = {
   enrollment: PropTypes.any,
   errorCode: PropTypes.number,
 };
+
+WelcomeToTheSchoolPage.getLayout = page => <DefaultLayout noHero={true}>{page}</DefaultLayout>;
 
 const sendEmail = async (enrollmentId: number, code: string): Promise<void> => {
   const response = await fetch(`https://api.qccareerschool.com/enrollments/${enrollmentId}/email`, {

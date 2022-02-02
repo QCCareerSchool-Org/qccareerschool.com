@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import React from 'react';
+import { ReactElement } from 'react';
 
-interface Props {
+type Props = {
   title: string;
   description: string;
   canonical: string;
-}
+};
 
-export const SEO: React.FC<Props> = ({ title, description, canonical }) => (
+export const SEO = ({ title, description, canonical }: Props): ReactElement => (
   <Head>
     <title>{title === 'QC Career School' ? title : `${title} - QC Career School`}</title>
     <meta name="description" content={description} />

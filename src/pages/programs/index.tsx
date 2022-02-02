@@ -1,15 +1,12 @@
 import { NextPage } from 'next';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { CardColumn } from '../../components/card-column';
-import { CourseCard } from '../../components/course-card';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { CardColumn } from '../../components/CardColumn';
+import { CourseCard } from '../../components/CourseCard';
+import { SEO } from '../../components/SEO';
 
 const ProgramsPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="Courses &amp; Professional Training Programs"
       description="QC’s comprehensive approach to online learning will offer the flexibility you need while giving you the high-quality training &amp; personalized feedback you deserve"
@@ -128,7 +125,7 @@ const ProgramsPage: NextPage = () => (
         background-size: cover;
       }
     `}</style>
-  </DefaultLayout>
+  </>
 );
 
 export default ProgramsPage;

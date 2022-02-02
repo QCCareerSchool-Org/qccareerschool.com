@@ -4,11 +4,11 @@ import { needsProvince } from '../functions';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { Province } from '../models/province';
-import { ProfessionGroup } from '../profession-groups';
+import { ProfessionGroup } from '../professionGroups';
 
 export const pageSize = 15;
 
-export interface State {
+export type State = {
   professions: ProfessionGroup[];
   countries: Country[];
   provinces: Province[];
@@ -24,7 +24,7 @@ export interface State {
   page: number;
   pageCount: number;
   scrollPosition: number;
-}
+};
 
 export type Action =
   | { type: 'COUNTRIES_SET'; payload: Country[] }
@@ -131,18 +131,21 @@ export const reducer = ((state: State = initialState, action: Action): State => 
 
 const updateCountry = (countryCode: string): ThunkResult<void> => dispatch => {
   if (needsProvince(countryCode)) {
-    const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${encodeURIComponent(countryCode)}`;
-    fetch(url).then(async response => {
-      if (!response.ok) {
-        throw Error('Unable to retreive provinces');
-      }
-      return response.json();
-    }).then(provinces => {
+    makeCountriesRequest(countryCode).then(provinces => {
       dispatch({ type: 'COUNTRY_SET', payload: { countryCode, provinces } });
     }).catch(() => { /* empty */ });
   } else {
     dispatch({ type: 'COUNTRY_SET', payload: { countryCode, provinces: [] } });
   }
+};
+
+const makeCountriesRequest = async (countryCode: string): Promise<Province[]> => {
+  const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${encodeURIComponent(countryCode)}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw Error('Unable to retreive provinces');
+  }
+  return response.json();
 };
 
 export const actionCreators = {

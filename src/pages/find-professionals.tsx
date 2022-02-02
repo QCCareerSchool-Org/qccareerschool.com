@@ -2,35 +2,34 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { FormEventHandler, MouseEventHandler, TouchEventHandler, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { SearchResults } from '../components/search-results';
-import { SEO } from '../components/seo';
+import { SearchResults } from '../components/SearchResults';
+import { SEO } from '../components/SEO';
 import { getQueryString } from '../functions';
+import { useLocation } from '../hooks/useLocation';
+import { useScreenWidth } from '../hooks/useScreenWidth';
 import Hero from '../images/backgrounds/hero-find-professionals.jpg';
-import { DefaultLayout } from '../layouts/default-layout';
 import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
-import { professionGroups } from '../profession-groups';
-import { LocationStateContext } from '../providers/location';
-import { ScreenWidthContext } from '../providers/screen-width';
-import * as FindProfessionals from '../reducers/find-professionals';
+import { professionGroups } from '../professionGroups';
+import * as FindProfessionals from '../reducers/findProfessionals';
 import { State } from '../store';
 
-interface SubmitPayload {
+type SubmitPayload = {
   profession: string;
   countryCode?: string;
   provinceCode: string | null;
   area: string;
   firstName: string;
   lastName: string;
-}
+};
 
-interface Props {
+type Props = {
   errorCode?: number;
-}
+};
 
 const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   // redux
@@ -38,8 +37,8 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   const state = useSelector((p: State) => p.findProfessionals);
 
   // context
-  const location = useContext(LocationStateContext);
-  const screenWidth = useContext(ScreenWidthContext);
+  const location = useLocation();
+  const screenWidth = useScreenWidth();
 
   // local state
   const [ provinceLabel, setProvinceLabel ] = useState<string>();
@@ -76,8 +75,8 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
     setProvinceLabel(state.form.countryCode === 'CA' ? 'Province' : 'State');
   }, [ state.form.countryCode ]);
 
-  const handleFormSubmit = (event: React.FormEvent): void => {
-    event.preventDefault();
+  const handleFormSubmit: FormEventHandler = e => {
+    e.preventDefault();
     submitPayload.current = { ...state.form };
     submit().catch(() => { /* empty */ });
   };
@@ -98,12 +97,12 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   };
 
   /** Records the vertical start position */
-  const handleTouchStart = (e: React.TouchEvent): void => {
+  const handleTouchStart: TouchEventHandler = e => {
     scrollStart.current = e.touches[0].pageY;
   };
 
   /** Determines if we should activate the custom pull refresh when we recevie a touchEnd event */
-  const handleTouchMove = (e: React.TouchEvent): void => {
+  const handleTouchMove: TouchEventHandler = e => {
     const minScroll = 250; // the minimum amount of overscroll we need to detect
     scrolledEnough.current = document.scrollingElement?.scrollTop === 0 && // at the top
       e.touches[0].pageY > scrollStart.current + minScroll && // overscrolled the minimum amount
@@ -112,7 +111,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
   /** Activates custom pull-to-refresh */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleTouchEnd = (e: React.TouchEvent): void => {
+  const handleTouchEnd: TouchEventHandler = e => {
     if (scrolledEnough.current) {
       setRefreshing(true);
       submit().then(() => setRefreshing(false)).catch(() => { /* empty */ });
@@ -124,7 +123,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   }
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Find Professionals"
         description="Seeking a skilled professional in your area? Look no further! QC graduates are well prepared to help you. Simply fill in the form to find a professional near you."
@@ -224,7 +223,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
           background-size: cover;
         }
       `}</style>
-    </DefaultLayout>
+    </>
   );
 };
 

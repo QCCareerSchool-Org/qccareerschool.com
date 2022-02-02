@@ -1,8 +1,15 @@
-import React from 'react';
+// TODO: is this being used?
 
-import { Bar } from './bar';
+import { ReactElement, ReactNode } from 'react';
 
-const OverlaySection: React.FC<{ backgroundImage: string }> = ({ children, backgroundImage }) => (
+import { Bar } from './Bar';
+
+type Props = {
+  children: ReactNode;
+  backgroundImage: string;
+};
+
+export const OverlaySection = ({ children, backgroundImage }: Props): ReactElement => (
   <section className="overlay-section bg-dark text-light text-shadow text-right">
     <div className="container">
       <div className="row">
@@ -21,5 +28,3 @@ const OverlaySection: React.FC<{ backgroundImage: string }> = ({ children, backg
     `}</style>
   </section>
 );
-
-export default OverlaySection;

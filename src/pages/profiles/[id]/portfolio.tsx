@@ -1,22 +1,22 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import { LightBox } from '../../../components/lightbox';
-import { SEO } from '../../../components/seo';
-import { ProfileLayout } from '../../../layouts/profile-layout';
+import { LightBox } from '../../../components/Lightbox';
+import { ProfileWrapper } from '../../../components/ProfileWrapper';
+import { SEO } from '../../../components/SEO';
 import { Picture } from '../../../models/picture';
 import { Profile } from '../../../models/profile';
+import { NextPageWithLayout } from '../../_app';
 
-interface Props {
+type Props = {
   errorCode?: number;
   profile?: Profile;
-}
+};
 
-const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
+const PortfolioPage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
   const size = 131;
   const [ lightBoxPicture, setLightBoxPicture ] = useState<Picture>();
 
@@ -31,7 +31,7 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
   const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
 
   return (
-    <ProfileLayout backgroundImage={profile.backgroundName}>
+    <ProfileWrapper backgroundImage={profile.backgroundName}>
 
       <SEO
         title={`${title} Portfolio`}
@@ -62,7 +62,7 @@ const PortfolioPage: NextPage<Props> = ({ errorCode, profile }) => {
         }
       `}</style>
 
-    </ProfileLayout>
+    </ProfileWrapper>
   );
 };
 
@@ -90,5 +90,7 @@ PortfolioPage.getInitialProps = async context => {
     return { errorCode };
   }
 };
+
+PortfolioPage.getLayout = page => <>{page}</>;
 
 export default PortfolioPage;

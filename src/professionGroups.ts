@@ -1,7 +1,7 @@
-export interface ProfessionGroup {
+export type ProfessionGroup = {
   name: string;
   professions: string[];
-}
+};
 
 export const professionGroups: ProfessionGroup[] = [
   {

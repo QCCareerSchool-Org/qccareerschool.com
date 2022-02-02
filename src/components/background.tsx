@@ -1,14 +1,16 @@
-import React, { ReactNode } from 'react';
+// TODO: is this being used?
 
-interface Props {
+import { CSSProperties, ReactElement, ReactNode } from 'react';
+
+type Props = {
   children: ReactNode;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   className?: string;
   image: string;
   overlay?: unknown[];
-}
+};
 
-export const Background: React.FC<Props> = ({ children }) => (
+export const Background = ({ children }: Props): ReactElement => (
   <div style={{ background: 'black' }}>
     {children}
   </div>

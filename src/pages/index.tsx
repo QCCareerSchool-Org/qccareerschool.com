@@ -1,14 +1,12 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import React from 'react';
 
-import { Bar } from '../components/bar';
-import { CourseCard } from '../components/course-card';
-import { SEO } from '../components/seo';
-import { DefaultLayout } from '../layouts/default-layout';
+import { Bar } from '../components/Bar';
+import { CourseCard } from '../components/CourseCard';
+import { SEO } from '../components/SEO';
 
 const HomePage: NextPage = () => (
-  <DefaultLayout>
+  <>
     <SEO
       title="QC Career School"
       description="QC is a leader in online distance education. With QC you’ll graduate with the skills and confidence you need to start a successful professional career!"
@@ -174,7 +172,7 @@ const HomePage: NextPage = () => (
         bottom: 0px;
       }
     `}</style>
-  </DefaultLayout>
+  </>
 );
 
 export default HomePage;

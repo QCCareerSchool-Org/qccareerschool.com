@@ -1,11 +1,11 @@
-import React from 'react';
+import { CSSProperties, ReactElement } from 'react';
 
-interface Props {
+type Props = {
   className?: string;
-}
+};
 
-export const Bar: React.FC<Props> = ({ className }) => {
-  const style: React.CSSProperties = {
+export const Bar = ({ className }: Props): ReactElement => {
+  const style: CSSProperties = {
     borderWidth: '.6875rem',
     width: '6rem',
     borderColor: 'inherit',

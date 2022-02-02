@@ -1,14 +1,11 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { SEO } from '../../components/SEO';
 
 const CombineAndSavePage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="Combine Your Training and Save"
       description="When you enroll with QC Career School, you join a community of creative professionals who understand &amp; value the benefits of continued education."
@@ -180,7 +177,7 @@ const CombineAndSavePage: NextPage = () => (
         width: 100%;
       }
     `}</style>
-  </DefaultLayout>
+  </>
 );
 
 export default CombineAndSavePage;

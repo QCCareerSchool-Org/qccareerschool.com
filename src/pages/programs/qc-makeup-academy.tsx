@@ -1,15 +1,12 @@
 import { NextPage } from 'next';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { CardColumn } from '../../components/card-column';
-import { CourseCard } from '../../components/course-card';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { CardColumn } from '../../components/CardColumn';
+import { CourseCard } from '../../components/CourseCard';
+import { SEO } from '../../components/SEO';
 
 const MakeupPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="QC Makeup Academy"
       description="QC Makeup Academy offers a number of courses for makeup artists. You’ll find a course to help develop your makeup skills &amp; take you to the next level!"
@@ -118,6 +115,6 @@ const MakeupPage: NextPage = () => (
         background-size: cover;
       }
     `}</style>
-  </DefaultLayout>
+  </>
 );
 export default MakeupPage;

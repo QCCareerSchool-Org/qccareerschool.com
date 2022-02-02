@@ -1,23 +1,22 @@
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import { useScreenWidth } from '../hooks/useScreenWidth';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 import logoLight from '../images/q-light.svg';
 import logoDark from '../images/q.svg';
 
-import { ScreenWidthContext } from '../providers/screen-width';
-import { ScrollPositionContext } from '../providers/scroll-position';
-
-interface Props {
+type Props = {
   noHero?: boolean;
   className?: string;
-}
+};
 
-export const Header: React.FC<Props> = ({ noHero, className }) => {
-  const screenWidth = useContext(ScreenWidthContext);
-  const scrollPosition = useContext(ScrollPositionContext);
+export const Header = ({ noHero, className }: Props): ReactElement => {
+  const screenWidth = useScreenWidth();
+  const scrollPosition = useScrollPosition();
   const [ mobileMenu, setMobileMenu ] = useState(false);
 
   const maxPosition = 20;

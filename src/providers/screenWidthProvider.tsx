@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react';
 
-export const ScreenWidthContext = React.createContext<number>(0);
+export const ScreenWidthContext = createContext<number>(0);
 
-export const ScreenWidthProvider: React.FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const ScreenWidthProvider = ({ children }: Props): ReactElement => {
   const [ screenWidth, setScreenWidth ] = useState(0);
 
   useEffect(() => {

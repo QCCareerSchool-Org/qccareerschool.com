@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
+import { ReactElement } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
+import { useScreenWidth } from '../hooks/useScreenWidth';
 
 import { Picture } from '../models/picture';
-import { ScreenWidthContext } from '../providers/screen-width';
 
-interface Props {
+type Props = {
   picture?: Picture;
   onClose: () => void;
-}
+};
 
-export const LightBox: React.FC<Props> = ({ picture, onClose }) => {
-  const screenWidth = useContext(ScreenWidthContext);
+export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
+  const screenWidth = useScreenWidth();
+
   let maxWidth = 320;
   let top = 96;
   if (screenWidth >= 1200) {

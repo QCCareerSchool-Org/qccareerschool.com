@@ -1,25 +1,24 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-import React from 'react';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterestSquare, FaTwitterSquare } from 'react-icons/fa';
 
 import parseBBCode from '../../../bbcode-parser';
-import { Certification } from '../../../components/certification';
-import { SEO } from '../../../components/seo';
-import { Testimonial } from '../../../components/testimonial';
+import { Certification } from '../../../components/Certification';
+import { ProfileWrapper } from '../../../components/ProfileWrapper';
+import { SEO } from '../../../components/SEO';
+import { TestimonialBox } from '../../../components/TestimonialBox';
 import { nl2br } from '../../../functions';
-import { ProfileLayout } from '../../../layouts/profile-layout';
 import { Profile } from '../../../models/profile';
+import { NextPageWithLayout } from '../../_app';
 
-interface Props {
+type Props = {
   profile?: Profile;
   errorCode?: number;
-}
+};
 
-const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
+const ProfilePage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
   const iconSize = 40;
 
   if (errorCode) {
@@ -33,7 +32,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
   const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
 
   return (
-    <ProfileLayout backgroundImage={profile.backgroundName}>
+    <ProfileWrapper backgroundImage={profile.backgroundName}>
 
       <SEO
         title={title}
@@ -125,7 +124,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
               <div className="mt-3 text-left">
                 <h4>Testimonials</h4>
                 <div>
-                  {profile.testimonials.slice(0, 3).map((t, i) => <Testimonial key={i} testimonial={t} />)}
+                  {profile.testimonials.slice(0, 3).map((t, i) => <TestimonialBox key={i} testimonial={t} />)}
                 </div>
                 {profile.testimonials.length > 3
                   ? <Link href="/profiles/[id]/testimonials" as={`/profiles/${profile.id}/testimonials`}><a>See All Testimonials</a></Link>
@@ -144,7 +143,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
         .professionList { text-transform: capitalize; }
       `}</style>
 
-    </ProfileLayout>
+    </ProfileWrapper>
   );
 };
 
@@ -169,5 +168,7 @@ ProfilePage.getInitialProps = async context => {
     return { errorCode };
   }
 };
+
+ProfilePage.getLayout = page => <>{page}</>;
 
 export default ProfilePage;

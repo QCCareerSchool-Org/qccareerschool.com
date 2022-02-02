@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import React from 'react';
+import { ReactElement } from 'react';
 
-interface Image {
+type Image = {
   src: string;
   type: string;
-}
+};
 
-interface Props {
+type Props = {
   images: Image[];
   title: string;
   body?: string;
@@ -14,9 +14,9 @@ interface Props {
   link: string;
   externalLink?: boolean;
   alt: string;
-}
+};
 
-export const CourseCard: React.FC<Props> = ({ images, title, body, buttonText, link, externalLink, alt }) => (
+export const CourseCard = ({ images, title, body, buttonText, link, externalLink, alt }: Props): ReactElement => (
   <div className="card shadow-lg rounded-lg">
     {externalLink
       ? <a href={link}><CardImage images={images} alt={alt} /></a>
@@ -33,23 +33,23 @@ export const CourseCard: React.FC<Props> = ({ images, title, body, buttonText, l
     </div>
 
     <style jsx>{`
-    .buttonSpacer {
-      height: 31px;
-    }
-    .absoluteButton {
-      position: absolute;
-      bottom: 20px;
-    }
-  `}</style>
+      .buttonSpacer {
+        height: 31px;
+      }
+      .absoluteButton {
+        position: absolute;
+        bottom: 20px;
+      }
+    `}</style>
   </div>
 );
 
-interface CardImageProps {
+type CardImageProps = {
   images: Image[];
   alt: string;
-}
+};
 
-const CardImage: React.FC<CardImageProps> = ({ images, alt }) => {
+const CardImage = ({ images, alt }: CardImageProps): ReactElement | null => {
   if (images.length === 0) {
     return null;
   }

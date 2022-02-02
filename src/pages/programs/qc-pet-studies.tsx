@@ -1,15 +1,12 @@
 import { NextPage } from 'next';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { CardColumn } from '../../components/card-column';
-import { CourseCard } from '../../components/course-card';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { CardColumn } from '../../components/CardColumn';
+import { CourseCard } from '../../components/CourseCard';
+import { SEO } from '../../components/SEO';
 
 const PetPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="QC Pet Studies"
       description="Get the training to become a professional dog groomer with QC's affordable online dog grooming course. Learn from the experts and start your career today!"
@@ -73,8 +70,7 @@ const PetPage: NextPage = () => (
         background-size: cover;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default PetPage;

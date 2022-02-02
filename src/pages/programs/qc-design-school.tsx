@@ -1,15 +1,12 @@
 import { NextPage } from 'next';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { CardColumn } from '../../components/card-column';
-import { CourseCard } from '../../components/course-card';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { CardColumn } from '../../components/CardColumn';
+import { CourseCard } from '../../components/CourseCard';
+import { SEO } from '../../components/SEO';
 
 const DesignPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="QC Design School"
       description="Start a career in home design. Become a certified design professional with flexible online training from industry experts. Find out more!"
@@ -89,8 +86,7 @@ const DesignPage: NextPage = () => (
         background-size: cover;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default DesignPage;

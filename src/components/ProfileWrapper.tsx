@@ -1,29 +1,32 @@
-import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 import Logo from '../images/logo-horizontal.svg';
 import None from '../images/profile-backgrounds/none.png';
 import Powder from '../images/profile-backgrounds/powder.jpg';
 
-interface Props {
+type Props = {
   backgroundImage: string | null;
-}
+  children: ReactNode;
+};
 
-export const ProfileLayout: React.FC<Props> = props => (
+export const ProfileWrapper = ({ backgroundImage, children }: Props): ReactElement => (
   <>
     <div className="profileWrapper">
       <div className="profile container my-sm-4">
 
         <header>
-          <Link href="/">
-            <a><img className="profileLogo" src={Logo} alt="QC Career School" /></a>
-          </Link>
+          <div className="profileLogoWrapper">
+            <Link href="/">
+              <a><Image src={Logo} height={32} width={268} layout="fixed" alt="QC Career School" /></a>
+            </Link>
+          </div>
           <hr />
         </header>
 
         <main>
-          {props.children}
+          {children}
         </main>
 
         <footer className="mt-4 text-muted">
@@ -36,7 +39,7 @@ export const ProfileLayout: React.FC<Props> = props => (
 
     <style jsx>{`
       .profileWrapper {
-        background-image: url(${props.backgroundImage === 'Powder' ? Powder : None});
+        background-image: url(${backgroundImage === 'Powder' ? Powder : None});
         background-position: top center;
         background-color: #ddd;
         font-weight: 300;
@@ -50,17 +53,16 @@ export const ProfileLayout: React.FC<Props> = props => (
         padding-top: 12px;
         padding-bottom: 12px;
       }
-      .profileLogo { height: 32px; }
       @media (min-width: 576px){
         .profile { padding: 24px; }
-        .profileLogo { margin-bottom: 6px; }
+        .profileLogoWrapper { margin-bottom: 6px; }
       }
       @media (min-width: 768px){
         .profile { padding: 24px 36px; }
       }
       @media (min-width: 992px){
         .profile { padding: 36px 48px; }
-        .profileLogo { margin-bottom: 12px; }
+        .profileLogoWrapper { margin-bottom: 12px; }
       }
     `}</style>
   </>

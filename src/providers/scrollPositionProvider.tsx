@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react';
 
-export const ScrollPositionContext = React.createContext<number>(0);
+export const ScrollPositionContext = createContext<number>(0);
 
-export const ScrollPositionProvider: React.FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const ScrollPositionProvider = ({ children }: Props): ReactElement => {
   const [ scrollPosition, setScrollPosition ] = useState(0);
 
   useEffect(() => {

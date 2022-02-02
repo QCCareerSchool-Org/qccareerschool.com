@@ -1,15 +1,15 @@
 import { applyMiddleware, bindActionCreators, combineReducers, createStore, Store } from 'redux';
 import reduxThunk, { ThunkMiddleware } from 'redux-thunk';
+
 import { Country } from './models/country';
-import { ProfessionGroup } from './profession-groups';
-
+import { ProfessionGroup } from './professionGroups';
 import * as Auth from './reducers/auth';
-import * as FindProfessionals from './reducers/find-professionals';
+import * as FindProfessionals from './reducers/findProfessionals';
 
-export interface State {
+export type State = {
   auth: Auth.State;
   findProfessionals: FindProfessionals.State;
-}
+};
 
 const rootReducer = combineReducers({
   auth: Auth.reducer,

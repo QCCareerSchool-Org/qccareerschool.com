@@ -1,14 +1,15 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import { IoMdStar } from 'react-icons/io';
 
-import { Testimonial as T } from '../models/testimonial';
+import { Testimonial } from '../models/testimonial';
 
-export interface Props {
-  testimonial: T;
-}
+type Props = {
+  testimonial: Testimonial;
+};
 
-export const Testimonial: React.FC<Props> = ({ testimonial }) => {
-  const iconSize = 28;
+const iconSize = 28;
+
+export const TestimonialBox = ({ testimonial }: Props): ReactElement => {
 
   return (
     <div>

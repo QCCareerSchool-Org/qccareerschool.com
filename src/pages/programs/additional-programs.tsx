@@ -1,14 +1,11 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { SEO } from '../../components/SEO';
 
 const AdditionalProgramsPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="Additional Programs"
       description="Other QC Schools include QC Style Academy, QC Travel School, and Winghill Writing School. Explore these additional programs here!"
@@ -93,8 +90,7 @@ const AdditionalProgramsPage: NextPage = () => (
         width: 100%;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default AdditionalProgramsPage;

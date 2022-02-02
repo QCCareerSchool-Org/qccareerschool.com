@@ -1,15 +1,12 @@
 import { NextPage } from 'next';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { CardColumn } from '../../components/card-column';
-import { CourseCard } from '../../components/course-card';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { CardColumn } from '../../components/CardColumn';
+import { CourseCard } from '../../components/CourseCard';
+import { SEO } from '../../components/SEO';
 
 const EventPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="QC Event School"
       description="If you enjoy working with people you might have found your new career in event planning! QC provides courses for planning professionals of all skill levels!"
@@ -106,8 +103,7 @@ const EventPage: NextPage = () => (
         background-size: cover;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default EventPage;

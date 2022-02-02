@@ -1,21 +1,19 @@
 import { NextPage } from 'next';
-import React, { useContext } from 'react';
 import { IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
 
-import { SEO } from '../components/seo';
+import { SEO } from '../components/SEO';
 import { getTelephoneNumber } from '../functions';
+import { useLocation } from '../hooks/useLocation';
 import Hero from '../images/backgrounds/hero-contact.jpg';
-import { DefaultLayout } from '../layouts/default-layout';
-import { LocationStateContext } from '../providers/location';
+
+const iconSize = 100;
 
 const ContactPage: NextPage = () => {
-  const iconSize = 100;
-  const location = useContext(LocationStateContext);
+  const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode);
 
   return (
-    <DefaultLayout>
-
+    <>
       <SEO
         title="Contact"
         description="QC’s team of friendly student advisors are always happy to help. Reach out to us by phone or email at any time!"
@@ -69,8 +67,7 @@ const ContactPage: NextPage = () => {
           background-size: cover;
         }
       `}</style>
-
-    </DefaultLayout>
+    </>
   );
 };
 

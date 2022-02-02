@@ -1,21 +1,20 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-import React from 'react';
 
-import { SEO } from '../../../components/seo';
-import { Testimonial } from '../../../components/testimonial';
-import { ProfileLayout } from '../../../layouts/profile-layout';
+import { ProfileWrapper } from '../../../components/ProfileWrapper';
+import { SEO } from '../../../components/SEO';
+import { TestimonialBox } from '../../../components/TestimonialBox';
 import { Profile } from '../../../models/profile';
+import { NextPageWithLayout } from '../../_app';
 
-interface Props {
+type Props = {
   profile?: Profile;
   errorCode?: number;
-}
+};
 
-const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
+const TestimonialPage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
   }
@@ -27,7 +26,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
   const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
 
   return (
-    <ProfileLayout backgroundImage={profile.backgroundName}>
+    <ProfileWrapper backgroundImage={profile.backgroundName}>
 
       <SEO
         title={`${title} Testimonials`}
@@ -51,7 +50,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
             ? (
               <div className="mt-3 text-left">
                 <div>
-                  {profile.testimonials.map((t, i) => <Testimonial key={i} testimonial={t} />)}
+                  {profile.testimonials.map((t, i) => <TestimonialBox key={i} testimonial={t} />)}
                 </div>
               </div>
             )
@@ -60,7 +59,7 @@ const TestimonialPage: NextPage<Props> = ({ errorCode, profile }) => {
         </div>
       </div>
 
-    </ProfileLayout>
+    </ProfileWrapper>
   );
 };
 
@@ -88,5 +87,7 @@ TestimonialPage.getInitialProps = async context => {
     return { errorCode };
   }
 };
+
+TestimonialPage.getLayout = page => <>{page}</>;
 
 export default TestimonialPage;
