@@ -8,6 +8,7 @@ import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { pardotPageview } from '../lib/pardot';
 import { uetPageview } from '../lib/uet';
+import { Providers } from '../providers';
 import { AuthProvider } from '../providers/auth';
 import { LocationProvider } from '../providers/locationProvider';
 import { ScreenWidthProvider } from '../providers/screenWidthProvider';
@@ -48,15 +49,9 @@ const QCApp = ({ Component, pageProps }: AppPropsWithLayout): ReactElement => {
   const getLayout = Component.getLayout ?? (page => <DefaultLayout>{page}</DefaultLayout>);
 
   return (
-    <AuthProvider>
-      <LocationProvider>
-        <ScreenWidthProvider>
-          <ScrollPositionProvider>
-            {getLayout(<Component {...pageProps} />)}
-          </ScrollPositionProvider>
-        </ScreenWidthProvider>
-      </LocationProvider>
-    </AuthProvider>
+    <Providers>
+      {getLayout(<Component {...pageProps} />)}
+    </Providers>
   );
 };
 
