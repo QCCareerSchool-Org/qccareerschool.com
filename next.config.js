@@ -1,15 +1,15 @@
-// const withCss = require('@zeit/next-css');
-// const withSass = require('@zeit/next-sass');
 const CopyPlugin = require('copy-webpack-plugin');
 // const withOffline = require('next-offline');
-const optimizedImages = require('next-optimized-images');
 const withPurgeCss = require('next-purgecss');
 
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    disableStaticImages: true,
+    domains: [
+      'studentcenter.qccareerschool.com',
+      'aeea626a74ffdd96fbcf-77df9cf355bf5239094a1d99115ccf2c.ssl.cf1.rackcdn.com',
+    ],
   },
 
   // Trying to set NODE_ENV=production when running yarn dev causes a build-time error so we
@@ -78,4 +78,4 @@ const nextConfig = {
   },
 };
 
-module.exports = optimizedImages(withPurgeCss(nextConfig));
+module.exports = withPurgeCss(nextConfig);

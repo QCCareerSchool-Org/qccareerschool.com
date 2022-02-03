@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ReactElement } from 'react';
 
 import { getCertificationData } from '../lib/certifications';
@@ -21,10 +22,12 @@ export const Certification = ({ courseCode, inverse = false }: Props): ReactElem
   return (
     <>
       <a href={certificationData.url} target="_blank" rel="noopener noreferrer">
-        <img src={`${cdnUrl}${certificationData.code.toLowerCase()}.svg`} alt={certificationData.title} className="logo" />
+        <div className="logoWrapper">
+          <Image src={`${cdnUrl}${certificationData.code.toLowerCase()}.svg`} width={180} height={180} alt={certificationData.title} className="logo" />
+        </div>
       </a>
       <style jsx>{`
-        .logo { width: 180px; margin-bottom: 1rem; }
+        .logoWrapper { margin-bottom: 1rem; }
       `}</style>
     </>
   );

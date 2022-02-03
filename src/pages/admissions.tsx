@@ -1,10 +1,20 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 import { IoMdChatbubbles, IoMdCheckmarkCircle, IoMdHand, IoMdPeople, IoMdShuffle, IoMdTimer } from 'react-icons/io';
 
+import { Overlay } from '../components/Overlay';
 import { SEO } from '../components/SEO';
+import AdmissionsCorporate from '../images/admissions-corporate.jpg';
+import AdmissionsPrivate from '../images/admissions-private-group.jpg';
+import Hero from '../images/backgrounds/hero-admissions.jpg';
+import FacultyDesign from '../images/faculty-design.jpg';
+import FacultyEvent from '../images/faculty-event.jpg';
+import FacultyMakeup from '../images/faculty-makeup.jpg';
+import FacultyPet from '../images/faculty-pet.jpg';
+import FacultyWellness from '../images/faculty-wellness.jpg';
 
 const iconSize = 42;
 
@@ -17,6 +27,8 @@ const AdmissionsPage: NextPage = () => (
     />
 
     <section id="first-section" className="text-light">
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues working at a table" />
+      <Overlay />
       <div className="container">
         <h1>Admissions</h1>
         <p className="lead mb-5">Enroll in a course today and join the QC Career School community!</p>
@@ -49,11 +61,8 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-lg rounded-lg">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com">
-                          <picture>
-                            <source type="image/webp" srcSet={require('../images/faculty-makeup.jpg?webp')} />
-                            <source type="image/jpg" srcSet={require('../images/faculty-makeup.jpg')} />
-                            <img src={require('../images/faculty-makeup.jpg')} alt="QC Makeup Academy" className="card-img-top" />
-                          </picture></a>
+                          <Image src={FacultyMakeup} alt="QC Makeup Academy" className="card-img-top" />
+                        </a>
                         <div className="card-body pb-3">
                           <h5 className="h6 card-title">QC Makeup Academy</h5>
                           <div className="buttonSpacer" />
@@ -64,11 +73,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-lg rounded-lg">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com">
-                          <picture>
-                            <source type="image/webp" srcSet={require('../images/faculty-event.jpg?webp')} />
-                            <source type="image/jpg" srcSet={require('../images/faculty-event.jpg')} />
-                            <img src={require('../images/faculty-event.jpg')} alt="QC Event School" className="card-img-top" />
-                          </picture>
+                          <Image src={FacultyEvent} alt="QC Event School" className="card-img-top" />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Event School</h5>
@@ -80,11 +85,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-lg rounded-lg">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com">
-                          <picture>
-                            <source type="image/webp" srcSet={require('../images/faculty-design.jpg?webp')} />
-                            <source type="image/jpg" srcSet={require('../images/faculty-design.jpg')} />
-                            <img src={require('../images/faculty-design.jpg')} alt="QC Design School" className="card-img-top" />
-                          </picture>
+                          <Image src={FacultyDesign} alt="QC Design School" className="card-img-top" />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Design School</h5>
@@ -96,11 +97,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-lg rounded-lg">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com">
-                          <picture>
-                            <source type="image/webp" srcSet={require('../images/faculty-pet.jpg?webp')} />
-                            <source type="image/jpg" srcSet={require('../images/faculty-pet.jpg')} />
-                            <img src={require('../images/faculty-pet.jpg')} alt="QC Pet Studies" className="card-img-top" />
-                          </picture>
+                          <Image src={FacultyPet} alt="QC Pet Studies" className="card-img-top" />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Pet Studies</h5>
@@ -112,11 +109,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-lg rounded-lg">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com">
-                          <picture>
-                            <source type="image/webp" srcSet={require('../images/faculty-wellness.jpg?webp')} />
-                            <source type="image/jpg" srcSet={require('../images/faculty-wellness.jpg')} />
-                            <img src={require('../images/faculty-wellness.jpg')} alt="QC Wellness Studies" className="card-img-top" />
-                          </picture>
+                          <Image src={FacultyWellness} alt="QC Wellness Studies" className="card-img-top" />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Wellness Studies</h5>
@@ -135,12 +128,7 @@ const AdmissionsPage: NextPage = () => (
                       <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
                     </div>
                     <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
-                      <picture>
-                        <source type="image/webp" srcSet={require('../images/admissions-private-group.jpg?webp')} />
-                        <source type="image/jpg" srcSet={require('../images/admissions-private-group.jpg')} />
-                        <img src={require('../images/admissions-private-group.jpg')} alt="Private Group Discounts" className="sideImage" />
-                      </picture>
-
+                      <Image src={AdmissionsPrivate} layout="responsive" alt="Private Group Discounts" />
                     </div>
                   </div>
                 </Tab.Pane>
@@ -152,11 +140,7 @@ const AdmissionsPage: NextPage = () => (
                       <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
                     </div>
                     <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
-                      <picture>
-                        <source type="image/webp" srcSet={require('../images/admissions-corporate.jpg?webp')} />
-                        <source type="image/jpg" srcSet={require('../images/admissions-corporate.jpg')} />
-                        <img src={require('../images/admissions-corporate.jpg')} alt="Corporate Admissions" className="sideImage" />
-                      </picture>
+                      <Image src={AdmissionsCorporate} layout="responsive" alt="Corporate Admissions" />
                     </div>
                   </div>
                 </Tab.Pane>
@@ -201,13 +185,6 @@ const AdmissionsPage: NextPage = () => (
     </section>
 
     <style>{`
-      #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-admissions.jpg')}) 0 0;
-        background-size: cover;
-      }
-      .sideImage {
-        width: 100%;
-      }
       .icon-wrapper { margin-right: 1rem; }
       .h6.card-title { font-weight: normal; }
       .buttonSpacer {

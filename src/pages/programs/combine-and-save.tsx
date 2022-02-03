@@ -1,8 +1,17 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
+import { Overlay } from '../../components/Overlay';
 import { SEO } from '../../components/SEO';
+import Hero from '../../images/backgrounds/hero-home.jpg';
+import CombineBusinessCommunications from '../../images/combine-business-communications.jpg';
+import CombineDecorAndColorConsulting from '../../images/combine-decor-color.jpg';
+import CombineDestinationAndTravel from '../../images/combine-destination-travel.jpg';
+import CombineDecoratingAndDecor from '../../images/combine-interior-decorating-event-decor.jpg';
+import CombineMakeupAndWedding from '../../images/combine-makeup-wedding-planning.jpg';
+import CombineScreenwritingAndMakeup from '../../images/combine-screenwriting-makeup.jpg';
 
 const CombineAndSavePage: NextPage = () => (
   <>
@@ -13,10 +22,16 @@ const CombineAndSavePage: NextPage = () => (
     />
 
     <section id="first-section" className="text-light">
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues collaborating around a computer" />
+      <Overlay />
       <div className="container">
-        <h1>Combine Your Training and Save</h1>
-        <p className="lead mb-5 bold">When you enroll with QC Career School, you join an international community of creative professionals who understand and value the benefits of continued education.</p>
-        <p className="lead mb-5 bold">That&apos;s why QC offers a 50% discount on additional courses you enroll in!</p>
+        <div className="row">
+          <div className="col-12">
+            <h1>Combine Your Training and Save</h1>
+            <p className="lead mb-5 bold">When you enroll with QC Career School, you join an international community of creative professionals who understand and value the benefits of continued education.</p>
+            <p className="lead mb-5 bold">That&apos;s why QC offers a 50% discount on additional courses you enroll in!</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -24,7 +39,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
-            <p className="lead mb-5 bold">Many QC students choose to get more than one certification in order to diversify their skill set and enhance their business. It&apos;s very common to combine courses from the same school (example: Master Makeup Artistry + Pro Makeup Workshop, or Event &amp; Wedding Planning + Event Décor), however you can also mix &amp; match courses between different schools!</p>
+            <p className="lead mb-5 bold">Many QC students choose to get more than one certification in order to diversify their skill set and enhance their business. It&apos;s very common to combine courses from the same school (example: Master Makeup Artistry + Pro Makeup Workshop, or Event &amp; Wedding Planning + Event Decor), however you can also mix &amp; match courses between different schools!</p>
           </div>
           <div className="col-12 col-md-6">
             <p className="lead mb-5 bold">Consider taking these complementary courses to expand your business reach &amp; clientele:</p>
@@ -38,11 +53,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/combine-makeup-wedding-planning.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/combine-makeup-wedding-planning.jpg')} />
-              <img src={require('../../images/combine-makeup-wedding-planning.jpg')} alt="applying makeup on wedding bride" className="sideImage" />
-            </picture>
+            <Image src={CombineMakeupAndWedding} alt="applying makeup on wedding bride" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h2 className="h3">Master Makeup Artistry + Event &amp; Wedding Planning</h2>
@@ -59,15 +70,11 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/combine-interior-decorating-event-decor.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/combine-interior-decorating-event-decor.jpg')} />
-              <img src={require('../../images/combine-interior-decorating-event-decor.jpg')} alt="interior decorated event" className="sideImage" />
-            </picture>
+            <Image src={CombineDecoratingAndDecor} alt="interior decorated event" />
           </div>
           <div className="col-12 col-md-6">
             <h2 className="h3">Interior Decorating + Event Decor</h2>
-            <p className="mb-4">Interior decorating is all about having a good eye for color, proportions, and being good at planning. The Event Décor field requires the same skills, to be applied to a specific special event. Taking these two courses could allow you to expand your decorating business to also service event planners and private events, which could lead to a huge increase in sales and cross-selling to your clients.</p>
+            <p className="mb-4">Interior decorating is all about having a good eye for color, proportions, and being good at planning. The Event Decor field requires the same skills, to be applied to a specific special event. Taking these two courses could allow you to expand your decorating business to also service event planners and private events, which could lead to a huge increase in sales and cross-selling to your clients.</p>
             <div className="text-left">
               <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact Us</a></Link>
             </div>
@@ -80,11 +87,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/combine-destination-travel.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/combine-destination-travel.jpg')} />
-              <img src={require('../../images/combine-destination-travel.jpg')} alt="destination wedding and travel" className="sideImage" />
-            </picture>
+            <Image src={CombineDestinationAndTravel} alt="destination wedding and travel" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h2 className="h3">Destination Wedding Planning + Travel &amp; Tourism</h2>
@@ -101,11 +104,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/combine-screenwriting-makeup.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/combine-screenwriting-makeup.jpg')} />
-              <img src={require('../../images/combine-screenwriting-makeup.jpg')} alt="screenwriting and makeup" className="sideImage" />
-            </picture>
+            <Image src={CombineScreenwritingAndMakeup} alt="screenwriting and makeup" />
           </div>
           <div className="col-12 col-md-6">
             <h3>Screenwriting + Master Makeup Artistry</h3>
@@ -122,11 +121,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/combine-decor-color.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/combine-decor-color.jpg')} />
-              <img src={require('../../images/combine-decor-color.jpg')} alt="event decoration and color consulting" className="sideImage" />
-            </picture>
+            <Image src={CombineDecorAndColorConsulting} alt="event decor and color consulting" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h2 className="h3">Event Decor + Color Consulting</h2>
@@ -143,11 +138,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/combine-business-communications.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/combine-business-communications.jpg')} />
-              <img src={require('../../images/combine-business-communications.jpg')} alt="business communications" className="sideImage" />
-            </picture>
+            <Image src={CombineBusinessCommunications} alt="business communications" />
           </div>
           <div className="col-12 col-md-6">
             <h2 className="h3">Any QC Course + Business Communications</h2>
@@ -167,16 +158,6 @@ const CombineAndSavePage: NextPage = () => (
         <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact Us</a></Link>
       </div>
     </section>
-
-    <style jsx>{`
-      #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../../images/backgrounds/hero-home.jpg')}) 0 0;
-        background-size: cover;
-      }
-      .sideImage {
-        width: 100%;
-      }
-    `}</style>
   </>
 );
 

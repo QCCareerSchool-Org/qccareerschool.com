@@ -2,8 +2,10 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-import { FormEventHandler, MouseEventHandler, TouchEventHandler, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import { FormEventHandler, TouchEventHandler, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Overlay } from '../components/Overlay';
 
 import { SearchResults } from '../components/SearchResults';
 import { SEO } from '../components/SEO';
@@ -133,6 +135,8 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
         <section id="first-section" className="text-light">
+          <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="workers in an office" />
+          <Overlay />
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-10 col-lg-8 col-xl-6">
@@ -216,13 +220,6 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
         </section>
 
       </div>
-
-      <style jsx>{`
-        #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
-          background-size: cover;
-        }
-      `}</style>
     </>
   );
 };

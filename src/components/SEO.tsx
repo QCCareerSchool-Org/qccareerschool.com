@@ -6,11 +6,13 @@ type Props = {
   title: string;
   description: string;
   canonical: string;
+  noIndex?: boolean;
 };
 
-export const SEO = ({ title, description, canonical }: Props): ReactElement => (
+export const SEO = ({ title, description, canonical, noIndex = false }: Props): ReactElement => (
   <Head>
     <title>{title === 'QC Career School' ? title : `${title} - QC Career School`}</title>
+    {noIndex && <meta name="robots" content="noindex" />}
     <meta name="description" content={description} />
     <meta name="og:title" content={title} />
     <meta name="og:description" content={description} />

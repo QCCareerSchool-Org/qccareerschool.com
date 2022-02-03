@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ReactElement } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
 import { useScreenWidth } from '../hooks/useScreenWidth';
@@ -12,6 +13,7 @@ type Props = {
 export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
   const screenWidth = useScreenWidth();
 
+  const maxHeight = 600;
   let maxWidth = 320;
   let top = 96;
   if (screenWidth >= 1200) {
@@ -30,11 +32,24 @@ export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
     return null;
   }
 
+  let width = picture.width;
+  let height = picture.height;
+  if (width > maxWidth) {
+    width = maxWidth;
+    height = picture.height / picture.width * maxWidth;
+  }
+  if (height >= maxHeight) {
+    height = maxHeight;
+    width = picture.width / picture.height * 600;
+  }
+
   return (
     <div className="lightbox">
       <div className="close" onClick={onClose}><IoIosCloseCircle size={40} /></div>
       <div className="wrapper">
-        <img className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}&maxwidth=${maxWidth}&maxheight=600`} />
+        <div className="imageWrapper">
+          <Image className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}&maxwidth=${maxWidth}&maxheight=${maxHeight}`} width={width} height={height} layout="fixed" alt="" />
+        </div>
         <h6>{picture.heading}</h6>
         <p>{picture.description}</p>
       </div>
@@ -66,13 +81,13 @@ export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
           margin-left: 1rem;
           margin-right: 1rem;
         }
+        .imageWrapper {
+          width: 100%;
+          max-width: ${maxWidth}px;
+          max-height: 600px;
+        }
         .wrapper h6 {
           margin-top: 1rem;
-        }
-        .portfolioImage {
-          display: block;
-          border: 3px solid white;
-          max-width: ${maxWidth}px;
         }
       `}</style>
     </div>

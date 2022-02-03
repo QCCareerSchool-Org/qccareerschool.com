@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import { IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
+import { Overlay } from '../components/Overlay';
 
 import { SEO } from '../components/SEO';
 import { getTelephoneNumber } from '../functions';
@@ -21,6 +23,8 @@ const ContactPage: NextPage = () => {
       />
 
       <section id="first-section" className="text-light">
+        <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="three people using their phones" />
+        <Overlay />
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-10 col-lg-8">
@@ -60,13 +64,6 @@ const ContactPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        #first-section {
-          background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${Hero}) 50% 0;
-          background-size: cover;
-        }
-      `}</style>
     </>
   );
 };

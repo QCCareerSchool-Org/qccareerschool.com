@@ -39,7 +39,7 @@ export const ProfileWrapper = ({ backgroundImage, children }: Props): ReactEleme
 
     <style jsx>{`
       .profileWrapper {
-        background-image: url(${backgroundImage === 'Powder' ? Powder : None});
+        background-image: url(${backgroundImage === 'Powder' ? Powder.src : None.src});
         background-position: top center;
         background-color: #ddd;
         font-weight: 300;

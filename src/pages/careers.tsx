@@ -1,7 +1,13 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
+import { Overlay } from '../components/Overlay';
 import { SEO } from '../components/SEO';
+import Hero from '../images/backgrounds/hero-careers.jpg';
+import OttawaLandscape from '../images/careers-headquarters.jpg';
+import StudentWithLaptop from '../images/careers-students.jpg';
+import TutorWithLaptop from '../images/careers-tutors.jpg';
 
 const CareersPage: NextPage = () => (
   <>
@@ -12,6 +18,8 @@ const CareersPage: NextPage = () => (
     />
 
     <section id="first-section" className="bg-dark text-light">
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="two people working at a laptop" />
+      <Overlay />
       <div className="container">
         <h1>Careers</h1>
         <p className="lead mb-5 bold">Come work for QC Career School!</p>
@@ -22,11 +30,7 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../images/careers-students.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../images/careers-students.jpg')} />
-              <img src={require('../images/careers-students.jpg')} alt="QC Student" className="card-img-top" />
-            </picture>
+            <Image src={StudentWithLaptop} alt="QC Student" className="card-img-top" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers for Students and Graduates</h3>
@@ -42,11 +46,7 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0">
-            <picture>
-              <source type="image/webp" srcSet={require('../images/careers-tutors.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../images/careers-tutors.jpg')} />
-              <img src={require('../images/careers-tutors.jpg')} alt="QC Tutor" className="card-img-top" />
-            </picture>
+            <Image src={TutorWithLaptop} alt="QC Tutor" className="card-img-top" />
           </div>
           <div className="col-12 col-md-6">
             <h3>Become a QC Tutor</h3>
@@ -73,11 +73,7 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../images/careers-headquarters.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../images/careers-headquarters.jpg')} />
-              <img src={require('../images/careers-headquarters.jpg')} alt="Ottawa Landscape" className="card-img-top" />
-            </picture>
+            <Image src={OttawaLandscape} alt="Ottawa Landscape" className="card-img-top" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers at QC Headquarters</h3>
@@ -86,16 +82,6 @@ const CareersPage: NextPage = () => (
         </div>
       </div>
     </section>
-
-    <style jsx>{`
-      #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../images/backgrounds/hero-careers.jpg')}) 0 0;
-        background-size: cover;
-      }
-      .sideImage {
-        width: 100%;
-      }
-    `}</style>
   </>
 );
 

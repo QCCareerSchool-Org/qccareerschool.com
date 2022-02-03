@@ -1,9 +1,16 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 
 import { Bar } from '../../components/Bar';
 import { CardColumn } from '../../components/CardColumn';
 import { CourseCard } from '../../components/CourseCard';
+import { Overlay } from '../../components/Overlay';
 import { SEO } from '../../components/SEO';
+import Hero from '../../images/backgrounds/hero-faculty-event.jpg';
+import AccelerateYourBusiness from '../../images/course-event-accelerate-your-business.jpg';
+import CorporateEventPlanning from '../../images/course-event-corporate-event-planning.jpg';
+import EventAndWeddingPlanning from '../../images/course-event-event-and-wedding-planning.jpg';
+import EventDecor from '../../images/course-event-event-decor.jpg';
 
 const EventPage: NextPage = () => (
   <>
@@ -14,6 +21,8 @@ const EventPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="10% top" placeholder="blur" alt="table set for a wedding" />
+      <Overlay opacityTop={0.4} opacityBottom={0.6} />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 offset-md-4">
@@ -30,11 +39,7 @@ const EventPage: NextPage = () => (
         <div className="row">
           <CardColumn>
             <CourseCard
-              images={[
-                { src: require('../../images/course-event-event-and-wedding-planning.jpg'), type: 'image/jpg' },
-                { src: require('../../images/course-event-event-and-wedding-planning.jpg?webp'), type: 'image/webp' },
-              ]}
-              alt="professionally decorated wedding table"
+              imageComponent={<Image src={EventAndWeddingPlanning} className="card-img-top" alt="professionally decorated wedding table" />}
               title="Event &amp; Wedding Planning Course"
               body="This dual-certification course will prepare you to plan and coordinate any number of private events from weddings to birthday parties to religious celebrations. You’ll learn how to negotiate with vendors, establish long-lasting client relationships, and budget for any event or client. With QC’s unparalleled business training, you’ll graduate from this course with the knowledge and skills to be a successful planning professional."
               buttonText="Full Course Overview"
@@ -44,11 +49,7 @@ const EventPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              images={[
-                { src: require('../../images/course-event-corporate-event-planning.jpg'), type: 'image/jpg' },
-                { src: require('../../images/course-event-corporate-event-planning.jpg?webp'), type: 'image/webp' },
-              ]}
-              alt="corporate event master of ceremonies making a speech"
+              imageComponent={<Image src={CorporateEventPlanning} className="card-img-top" alt="corporate event master of ceremonies making a speech" />}
               title="Corporate Event Planning Course"
               body="Catering to corporate clients is a very different experience from working for private clients. This course focuses on the project management aspects you’ll be expected to master in order to work with a number of corporate stakeholders. You’ll also learn how to work around the unique challenges of planning conferences, trade shows, and other types of corporate events."
               buttonText="Full Course Overview"
@@ -58,11 +59,7 @@ const EventPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              images={[
-                { src: require('../../images/course-event-event-decor.jpg'), type: 'image/jpg' },
-                { src: require('../../images/course-event-event-decor.jpg?webp'), type: 'image/webp' },
-              ]}
-              alt="professionally decorated dinner table"
+              imageComponent={<Image src={EventDecor} className="card-img-top" alt="professionally decorated dinner table" />}
               title="Event Decor Course"
               body="The perfect course to complement your fundamental event planner training. The Event Decor Course teaches you to create a cohesive decor to suit any theme, and how to plan for and incorporate all decorative elements that brings an event together. Being an event decorator can be a full-time job, or it can be a perfect addition to your booming event planning business!"
               buttonText="Full Course Overview"
@@ -72,11 +69,7 @@ const EventPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              images={[
-                { src: require('../../images/course-event-accelerate-your-business.jpg'), type: 'image/jpg' },
-                { src: require('../../images/course-event-accelerate-your-business.jpg?webp'), type: 'image/webp' },
-              ]}
-              alt="business owners closing a new deal"
+              imageComponent={<Image src={AccelerateYourBusiness} className="card-img-top" alt="business owners closing a new deal" />}
               title="Accelerate Your Business Workshop"
               body="For the established event planning business owner who wants to take their business to the next level.  In this advanced course, you’ll work one-on-one with your tutor to enhance a specific area of your business where you can use some help. This is a very flexible course where you set the tone with your tutor. You’ll work on a specific goal for your business."
               buttonText="Full Course Overview"
@@ -96,13 +89,6 @@ const EventPage: NextPage = () => (
         </ul>
       </div>
     </section>
-
-    <style>{`
-      #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .60)), url(${require('../../images/backgrounds/hero-faculty-event.jpg')}) 10% 0;
-        background-size: cover;
-      }
-    `}</style>
   </>
 );
 

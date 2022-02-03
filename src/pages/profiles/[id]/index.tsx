@@ -1,6 +1,7 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
 import ErrorPage from 'next/error';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterestSquare, FaTwitterSquare } from 'react-icons/fa';
 
@@ -75,7 +76,9 @@ const ProfilePage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
       <div className="row">
 
         <div className="col-12 col-md-4 text-center text-md-left mb-4 overflow-hidden">
-          <img className="img-fluid my-2" src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}&v=${profile.portrait?.modified ?? 0}`} alt={profile.firstName + ' ' + profile.lastName} />
+          <div className="my-2" style={{ display: 'relative' }}>
+            <Image src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}&v=${profile.portrait?.modified ?? 0}`} width={profile.portrait?.width ?? 0} height={profile.portrait?.height ?? 0} alt={profile.firstName + ' ' + profile.lastName} />
+          </div>
           <br />
           {profile.city ? <>{profile.city}{profile.provinceCode ? `, ${profile.provinceCode}` : ''}<br /></> : null}
           {profile.phoneNumber ? <>{profile.phoneNumber}<br /></> : null}
