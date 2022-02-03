@@ -1,5 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
-// const withOffline = require('next-offline');
+const withOffline = require('next-offline');
 const withPurgeCss = require('next-purgecss');
 
 const nextConfig = {
@@ -78,4 +78,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPurgeCss(nextConfig);
+module.exports = withOffline(withPurgeCss(nextConfig));
