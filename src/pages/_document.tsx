@@ -6,8 +6,7 @@ const googleAnalyticsScript = `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
-gtag('config', 'AW-1071836607', { allow_enhanced_conversions: true });`;
+gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });`;
 
 const livechatScript = `
 window.__lc = window.__lc || { };
