@@ -17,7 +17,7 @@ import { NextPageContextWithRedux, withRedux } from '../lib/with-redux';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { professionGroups } from '../professionGroups';
-import * as FindProfessionals from '../reducers/findProfessionals';
+import { findProfessionalsActionCreators } from '../reducers/findProfessionals';
 import { State } from '../store';
 
 type SubmitPayload = {
@@ -57,7 +57,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   useEffect(() => {
     window.scrollTo(0, state.scrollPosition);
     const handleScroll = (): void => {
-      dispatch(FindProfessionals.actionCreators.scroll(window.pageYOffset));
+      dispatch(findProfessionalsActionCreators.scroll(window.pageYOffset));
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -68,7 +68,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
   useEffect(() => {
     if (location?.countryCode) {
       if (state.form.countryCode === '') {
-        dispatch(FindProfessionals.actionCreators.updateCountry(location.countryCode));
+        dispatch(findProfessionalsActionCreators.updateCountry(location.countryCode));
       }
     }
   }, [ state.form.countryCode, location?.countryCode, dispatch ]);
@@ -91,7 +91,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
         throw Error(`Server responded with response code ${searchResponse.status}`);
       }
       const data: Partial<Profile>[] = await searchResponse.json();
-      dispatch(FindProfessionals.actionCreators.set(data));
+      dispatch(findProfessionalsActionCreators.set(data));
       setError(false);
     } catch (err) {
       setError(true);
@@ -141,7 +141,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
             <div className="row">
               <div className="col-12 col-md-10 col-lg-8 col-xl-6">
                 <h1>Find Professionals</h1>
-                <p className="lead">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
+                <p className="lead mb-0">Seeking a skilled professional in your area? Look no further! Our graduates are well prepared to help you. Simply fill in the form below to find a professional near you.</p>
               </div>
             </div>
           </div>
@@ -157,7 +157,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                     <form method="post" onSubmit={handleFormSubmit}>
                       <div className="form-group">
                         <label htmlFor="profession">Profession</label>
-                        <select className="form-control" id="profession" value={state.form.profession} onChange={e => dispatch(FindProfessionals.actionCreators.updateProfession(e.target.value))}>
+                        <select className="form-control" id="profession" value={state.form.profession} onChange={e => dispatch(findProfessionalsActionCreators.updateProfession(e.target.value))}>
                           {state.professions.map(group => (
                             <optgroup key={group.name} label={group.name}>
                               {group.professions.map(p => (
@@ -170,7 +170,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
 
                       <div className="form-group">
                         <label htmlFor="countryCode">Country</label>
-                        <select className="form-control" id="countryCode" value={state.form.countryCode} onChange={e => dispatch(FindProfessionals.actionCreators.updateCountry(e.target.value))}>
+                        <select className="form-control" id="countryCode" value={state.form.countryCode} onChange={e => dispatch(findProfessionalsActionCreators.updateCountry(e.target.value))}>
                           {state.countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}
                         </select>
                       </div>
@@ -178,7 +178,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                         ? (
                           <div className="form-group">
                             <label htmlFor="provinceCode">{provinceLabel}</label>
-                            <select className="form-control" id="provinceCode" value={state.form.provinceCode ?? ''} onChange={e => dispatch(FindProfessionals.actionCreators.updateProvince(e.target.value))}>
+                            <select className="form-control" id="provinceCode" value={state.form.provinceCode ?? ''} onChange={e => dispatch(findProfessionalsActionCreators.updateProvince(e.target.value))}>
                               {state.provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                             </select>
                           </div>
@@ -187,7 +187,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                       }
                       <div className="form-group">
                         <label htmlFor="area">Area</label>
-                        <input type="text" className="form-control" id="area" value={state.form.area} onChange={e => dispatch(FindProfessionals.actionCreators.updateArea(e.target.value))} />
+                        <input type="text" className="form-control" id="area" value={state.form.area} onChange={e => dispatch(findProfessionalsActionCreators.updateArea(e.target.value))} />
                       </div>
                       <button type="submit" className="btn btn-primary mt-2">Search</button>
                     </form>
@@ -207,9 +207,9 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
                       profiles={state.profiles}
                       page={state.page}
                       pageCount={state.pageCount}
-                      increment={() => dispatch(FindProfessionals.actionCreators.incrementPage())}
-                      decrement={() => dispatch(FindProfessionals.actionCreators.decrementPage())}
-                      setPage={i => dispatch(FindProfessionals.actionCreators.setPage(i))}
+                      increment={() => dispatch(findProfessionalsActionCreators.incrementPage())}
+                      decrement={() => dispatch(findProfessionalsActionCreators.decrementPage())}
+                      setPage={i => dispatch(findProfessionalsActionCreators.setPage(i))}
                       maxPages={sm ? 9 : 3}
                     />
                   )
@@ -233,10 +233,10 @@ FindProfessionalsPage.getInitialProps = async ({ reduxStore, res }: NextPageCont
         throw new HttpStatus.InternalServerError(countryResponse.statusText);
       }
       const data: Country[] = await countryResponse.json();
-      reduxStore.dispatch(FindProfessionals.actionCreators.setCountries(data));
+      reduxStore.dispatch(findProfessionalsActionCreators.setCountries(data));
     }
     if (state.findProfessionals.professions.length === 0) {
-      reduxStore.dispatch(FindProfessionals.actionCreators.setProfessions(professionGroups));
+      reduxStore.dispatch(findProfessionalsActionCreators.setProfessions(professionGroups));
     }
     return {};
   } catch (err: any) {

@@ -3,24 +3,24 @@ import reduxThunk, { ThunkMiddleware } from 'redux-thunk';
 
 import { Country } from './models/country';
 import { ProfessionGroup } from './professionGroups';
-import * as Auth from './reducers/auth';
-import * as FindProfessionals from './reducers/findProfessionals';
+import { AuthAction, authActionCreators, authReducer, AuthState } from './reducers/auth';
+import { FindProfessionalsAction, findProfessionalsActionCreators, findProfessionalsReducer, FindProfessionalsState } from './reducers/findProfessionals';
 
 export type State = {
-  auth: Auth.State;
-  findProfessionals: FindProfessionals.State;
+  auth: AuthState;
+  findProfessionals: FindProfessionalsState;
 };
 
 const rootReducer = combineReducers({
-  auth: Auth.reducer,
-  findProfessionals: FindProfessionals.reducer,
+  auth: authReducer,
+  findProfessionals: findProfessionalsReducer,
 });
 
 export const initializeStore = (initialState?: State): Store => {
   return createStore(
     rootReducer,
     initialState,
-    applyMiddleware(reduxThunk as ThunkMiddleware<State, Auth.Action | FindProfessionals.Action>),
+    applyMiddleware(reduxThunk as ThunkMiddleware<State, AuthAction | FindProfessionalsAction>),
   );
 };
 
@@ -30,11 +30,11 @@ type BoundActionsResult = {
     setProfessions: (professions: ProfessionGroup[]) => { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[] };
   };
   auth: {
-    logIn: (emailAddress: string, password: string) => (dispatch: (action: Auth.Action) => void) => void;
+    logIn: (emailAddress: string, password: string) => (dispatch: (action: AuthAction) => void) => void;
   };
 };
 
 export const initializeBoundActions = (store: Store): BoundActionsResult => ({
-  findProfessionals: bindActionCreators(FindProfessionals.actionCreators, store.dispatch),
-  auth: bindActionCreators(Auth.actionCreators, store.dispatch),
+  findProfessionals: bindActionCreators(findProfessionalsActionCreators, store.dispatch),
+  auth: bindActionCreators(authActionCreators, store.dispatch),
 });

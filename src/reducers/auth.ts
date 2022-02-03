@@ -1,20 +1,20 @@
-import fetch from 'isomorphic-unfetch';
+import { logIn } from '../lib/logIn';
 
-export type State = {
+export type AuthState = {
   id: number | null;
 };
 
-export type Action =
+export type AuthAction =
   | { type: 'LOG_IN_STARTED'; payload: string }
   | { type: 'LOG_IN_FINISHED'; payload: number }
   | { type: 'LOG_IN_FAILED'; payload: Error };
 
 const localStorageId = typeof window === 'undefined' ? null : window?.localStorage?.getItem('id');
-const initialState: State = {
+const initialState: AuthState = {
   id: localStorageId !== null ? parseInt(localStorageId, 10) : null,
 };
 
-export const reducer = ((state: State = initialState, action: Action): State => {
+export const authReducer = ((state: AuthState = initialState, action: AuthAction): AuthState => {
   switch (action.type) {
     case 'LOG_IN_FINISHED':
       return { ...state, id: action.payload };
@@ -23,10 +23,10 @@ export const reducer = ((state: State = initialState, action: Action): State => 
   }
 });
 
-export const actionCreators = {
-  logIn: (emailAddress: string, password: string) => (dispatch: (action: Action) => void): void => {
+export const authActionCreators = {
+  logIn: (emailAddress: string, password: string) => (dispatch: (action: AuthAction) => void): void => {
     dispatch({ type: 'LOG_IN_STARTED', payload: emailAddress });
-    makeLogInRequest(emailAddress, password).then(data => {
+    logIn(emailAddress, password).then(data => {
       if (typeof window !== 'undefined') {
         window.localStorage?.setItem('id', data.id);
       }
@@ -35,18 +35,4 @@ export const actionCreators = {
       dispatch({ type: 'LOG_IN_FAILED', payload: err });
     });
   },
-};
-
-const makeLogInRequest = async (emailAddress: string, password: string): Promise<any> => {
-  const url = 'https://api.qccareerschool.com/qccareerschool/login';
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ emailAddress, password }),
-    credentials: 'include',
-  });
-  if (!response.ok) {
-    throw Error('Server error');
-  }
-  return response.json();
 };

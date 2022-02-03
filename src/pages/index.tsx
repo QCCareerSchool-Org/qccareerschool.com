@@ -41,11 +41,11 @@ const HomePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
-            <div className="mb-4">
+            <div className="mb-3">
               <Image src={ThirtyFiveYearEmblem} alt="in business over 35 years, since 1984" />
             </div>
             <h2 className="text-center">Welcome to QC Career School!</h2>
-            <p>QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC&apos;s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you&apos;ll graduate with the skills and confidence you need to start a successful professional career!</p>
+            <p className="mb-0">QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC&apos;s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you&apos;ll graduate with the skills and confidence you need to start a successful professional career!</p>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ const HomePage: NextPage = () => (
         <div className="row">
           <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
-              imageComponent={<Image src={FacultyMakeup} alt="QC Makeup Academy" />}
+              imageComponent={<Image src={FacultyMakeup} layout="responsive" alt="QC Makeup Academy" className="card-img-top" />}
               title="QC Makeup Academy"
               body="Basic and advanced professional makeup artistry courses for all skill levels."
               buttonText="VISIT QC MAKEUP ACADEMY"
@@ -68,7 +68,7 @@ const HomePage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
-              imageComponent={<Image src={FacultyEvent} alt="QC Event School" />}
+              imageComponent={<Image src={FacultyEvent} layout="responsive" alt="QC Event School" className="card-img-top" />}
               title="QC Event School"
               body="Training event planning professionals to launch their own business. Courses include party planning, wedding planning, corporate event planning and more."
               buttonText="VISIT QC EVENT SCHOOL"
@@ -78,7 +78,7 @@ const HomePage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
-              imageComponent={<Image src={FacultyDesign} alt="QC Design School" />}
+              imageComponent={<Image src={FacultyDesign} layout="responsive" alt="QC Design School" className="card-img-top" />}
               title="QC Design School"
               body=" Offering courses in all areas of home design from interior decorating to professional organizing."
               buttonText="VISIT QC DESIGN SCHOOL"
@@ -88,7 +88,7 @@ const HomePage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 mb-g d-flex">
             <CourseCard
-              imageComponent={<Image src={FacultyPet} alt="QC Pet Studies" />}
+              imageComponent={<Image src={FacultyPet} layout="responsive" alt="QC Pet Studies" className="card-img-top" />}
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
               buttonText="VISIT QC PET STUDIES"
@@ -98,7 +98,7 @@ const HomePage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 mb-g mb-md-0 d-flex">
             <CourseCard
-              imageComponent={<Image src={FacultyWellness} alt="QC Wellness Studies" />}
+              imageComponent={<Image src={FacultyWellness} layout="responsive" alt="QC Wellness Studies" className="card-img-top" />}
               title="QC Wellness Studies"
               body="Offering professional certification courses in a number of wellness industries, from sleep consulting to home health aides."
               buttonText="VISIT QC WELLNESS STUDIES"
@@ -108,7 +108,7 @@ const HomePage: NextPage = () => (
           </div>
           <div className="col-12 col-md-6 mb-g mb-md-0 d-flex">
             <CourseCard
-              imageComponent={<Image src={FacultyWriting} alt="Winghill Writing School" />}
+              imageComponent={<Image src={FacultyWriting} layout="responsive" alt="Winghill Writing School" className="card-img-top" />}
               title="Winghill Writing School"
               body="The school that started it all! Winghill offers a myriad of writing courses from novel writing to family history writing and much more."
               buttonText="VISIT WINGHILL WRITING SCHOOL"

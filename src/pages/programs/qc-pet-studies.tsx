@@ -37,7 +37,7 @@ const PetPage: NextPage = () => (
         <div className="row">
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={DogGrooming} className="card-img-top" alt="dog groomer cutting dog's hair" />}
+              imageComponent={<Image src={DogGrooming} layout="responsive" className="card-img-top" alt="dog groomer cutting dog's hair" />}
               title="Dog Grooming Course"
               body="Regular grooming is a key part to maintaining a dog’s health, and most dog owners prefer to leave their pooch’s grooming up to a qualified professional.  With the dog grooming course, you’ll learn how to groom all different breeds and the various popular cuts safely and effectively. You’ll also learn how to launch your own successful dog grooming business."
               buttonText="Full Course Overview"
@@ -47,7 +47,7 @@ const PetPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FirstAidForGroomers} className="card-img-top" alt="dog groomer applying first aid practices on a dog" />}
+              imageComponent={<Image src={FirstAidForGroomers} layout="responsive" className="card-img-top" alt="dog groomer applying first aid practices on a dog" />}
               title="First Aid for Groomers"
               body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
               buttonText="Full Course Overview"

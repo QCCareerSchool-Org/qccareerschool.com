@@ -29,7 +29,7 @@ const ContactPage: NextPage = () => {
           <div className="row">
             <div className="col-12 col-md-10 col-lg-8">
               <h1>Contact</h1>
-              <p className="lead">Whether you have a question about enrolling, are a student looking for help with your account or an assignment, or are a graduate looking to expand your skillset, QC&apos;s team of friendly student advisors are always happy to help. Reach out to us any time!</p>
+              <p className="lead mb-0">Whether you have a question about enrolling, are a student looking for help with your account or an assignment, or are a graduate looking to expand your skillset, QC&apos;s team of friendly student advisors are always happy to help. Reach out to us any time!</p>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ const ContactPage: NextPage = () => {
       <section className="text-dark text-center">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-4 offset-md-2">
+            <div className="col-12 col-md-5 offset-md-1 col-xl-4 offset-xl-2">
               <IoMdPhonePortrait size={iconSize} />
               <h2 className="h3">By Phone</h2>
               <p>
@@ -56,7 +56,7 @@ const ContactPage: NextPage = () => {
                 }
               </p>
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-5 col-xl-4">
               <IoMdMail size={iconSize} />
               <h2 className="h3">By Email</h2>
               <p>You are more than welcome to email us at <a href="mailto:info@qccareerschool.com" className="text-nowrap">info@qccareerschool.com</a>. You can be sure to receive a quick and informative reply.</p>

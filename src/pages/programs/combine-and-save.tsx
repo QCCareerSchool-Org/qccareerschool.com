@@ -28,8 +28,8 @@ const CombineAndSavePage: NextPage = () => (
         <div className="row">
           <div className="col-12">
             <h1>Combine Your Training and Save</h1>
-            <p className="lead mb-5 bold">When you enroll with QC Career School, you join an international community of creative professionals who understand and value the benefits of continued education.</p>
-            <p className="lead mb-5 bold">That&apos;s why QC offers a 50% discount on additional courses you enroll in!</p>
+            <p className="lead">When you enroll with QC Career School, you join an international community of creative professionals who understand and value the benefits of continued education.</p>
+            <p className="lead mb-0">That&apos;s why QC offers a 50% discount on additional courses you enroll in!</p>
           </div>
         </div>
       </div>
@@ -39,10 +39,10 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
-            <p className="lead mb-5 bold">Many QC students choose to get more than one certification in order to diversify their skill set and enhance their business. It&apos;s very common to combine courses from the same school (example: Master Makeup Artistry + Pro Makeup Workshop, or Event &amp; Wedding Planning + Event Decor), however you can also mix &amp; match courses between different schools!</p>
+            <p className="lead mb-0 mb-md-2">Many QC students choose to get more than one certification in order to diversify their skill set and enhance their business. It&apos;s very common to combine courses from the same school (example: Master Makeup Artistry + Pro Makeup Workshop, or Event &amp; Wedding Planning + Event Decor), however you can also mix &amp; match courses between different schools!</p>
           </div>
           <div className="col-12 col-md-6">
-            <p className="lead mb-5 bold">Consider taking these complementary courses to expand your business reach &amp; clientele:</p>
+            <p className="lead">Consider taking these complementary courses to expand your business reach and clientele:</p>
             <Bar className="text-primary mb-5" />
           </div>
         </div>
@@ -154,7 +154,7 @@ const CombineAndSavePage: NextPage = () => (
     <section className="bg-dark text-light text-center">
       <div className="container">
         <h2 className="h3">Enroll in multiple courses today!</h2>
-        <p className="lead mb-5 bold">If you would like to enroll in any of the courses above or another combination of courses from different QC faculties, simply contact QC&apos;s student support center and we&apos;ll be happy to help!</p>
+        <p className="lead mb-5">If you would like to enroll in any of the courses above or another combination of courses from different QC faculties, simply contact QC&apos;s student support center and we&apos;ll be happy to help!</p>
         <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact Us</a></Link>
       </div>
     </section>

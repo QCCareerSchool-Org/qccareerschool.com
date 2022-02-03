@@ -1,6 +1,7 @@
 import { ThunkAction } from 'redux-thunk';
 
 import { needsProvince } from '../functions';
+import { fetchProvinces } from '../lib/fetchProvinces';
 import { Country } from '../models/country';
 import { Profile } from '../models/profile';
 import { Province } from '../models/province';
@@ -8,7 +9,7 @@ import { ProfessionGroup } from '../professionGroups';
 
 export const pageSize = 15;
 
-export type State = {
+export type FindProfessionalsState = {
   professions: ProfessionGroup[];
   countries: Country[];
   provinces: Province[];
@@ -26,7 +27,7 @@ export type State = {
   scrollPosition: number;
 };
 
-export type Action =
+export type FindProfessionalsAction =
   | { type: 'COUNTRIES_SET'; payload: Country[] }
   | { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[] }
   | { type: 'PROFESSION_SET'; payload: string }
@@ -42,9 +43,9 @@ export type Action =
   | { type: 'DECREMENT_PAGE' }
   | { type: 'PAGE_SCROLLED'; payload: number };
 
-type ThunkResult<T> = ThunkAction<T, { findProfessionals: State }, undefined, Action>;
+type ThunkResult<T> = ThunkAction<T, { findProfessionals: FindProfessionalsState }, undefined, FindProfessionalsAction>;
 
-const initialState: State = {
+const initialState: FindProfessionalsState = {
   professions: [],
   countries: [],
   provinces: [],
@@ -61,7 +62,7 @@ const initialState: State = {
   scrollPosition: 0,
 };
 
-export const reducer = ((state: State = initialState, action: Action): State => {
+export const findProfessionalsReducer = ((state: FindProfessionalsState = initialState, action: FindProfessionalsAction): FindProfessionalsState => {
   switch (action.type) {
     case 'COUNTRIES_SET':
       return { ...state, countries: action.payload };
@@ -131,7 +132,7 @@ export const reducer = ((state: State = initialState, action: Action): State => 
 
 const updateCountry = (countryCode: string): ThunkResult<void> => dispatch => {
   if (needsProvince(countryCode)) {
-    makeCountriesRequest(countryCode).then(provinces => {
+    fetchProvinces(countryCode).then(provinces => {
       dispatch({ type: 'COUNTRY_SET', payload: { countryCode, provinces } });
     }).catch(() => { /* empty */ });
   } else {
@@ -139,16 +140,7 @@ const updateCountry = (countryCode: string): ThunkResult<void> => dispatch => {
   }
 };
 
-const makeCountriesRequest = async (countryCode: string): Promise<Province[]> => {
-  const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${encodeURIComponent(countryCode)}`;
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw Error('Unable to retreive provinces');
-  }
-  return response.json();
-};
-
-export const actionCreators = {
+export const findProfessionalsActionCreators = {
   setCountries: (countries: Country[]): { type: 'COUNTRIES_SET'; payload: Country[] } => ({ type: 'COUNTRIES_SET', payload: countries }),
   setProfessions: (professions: ProfessionGroup[]): { type: 'PROFESSIONS_SET'; payload: ProfessionGroup[] } => ({ type: 'PROFESSIONS_SET', payload: professions }),
   updateProfession: (profession: string): { type: 'PROFESSION_SET'; payload: string } => ({ type: 'PROFESSION_SET', payload: profession }),

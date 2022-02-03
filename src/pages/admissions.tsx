@@ -30,8 +30,12 @@ const AdmissionsPage: NextPage = () => (
       <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues working at a table" priority />
       <Overlay />
       <div className="container">
-        <h1>Admissions</h1>
-        <p className="lead mb-5">Enroll in a course today and join the QC Career School community!</p>
+        <div className="row">
+          <div className="col-12">
+            <h1>Admissions</h1>
+            <p className="lead mb-0">Enroll in a course today and join the QC Career School community!</p>
+          </div>
+        </div>
       </div>
     </section>
 

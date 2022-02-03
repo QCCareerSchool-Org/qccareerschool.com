@@ -22,7 +22,7 @@ const NotFoundPage: NextPage = () => (
         <div className="row">
           <div className="col-12 col-md-10 col-lg-8">
             <h1>Not Found</h1>
-            <p className="lead">Sorry. That page doesn't exist.</p>
+            <p className="lead mb-0">Sorry. That page doesn't exist.</p>
           </div>
         </div>
       </div>

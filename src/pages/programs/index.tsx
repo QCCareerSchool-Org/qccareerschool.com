@@ -50,7 +50,7 @@ const ProgramsPage: NextPage = () => (
         <div className="row">
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FacultyMakeup} className="card-img-top" alt="makeup artist applying liptstick on a client" />}
+              imageComponent={<Image src={FacultyMakeup} layout="responsive" className="card-img-top" alt="makeup artist applying liptstick on a client" />}
               title="QC Makeup Academy"
               body="QC Makeup Academy offers a number of fundamental, advanced, and specialized courses for makeup artists. Whether you’re a total beginner or a seasoned professional, you’ll find a QC course to help develop your makeup skills and take you to the next level professionally!"
               buttonText="VISIT QC MAKEUP ACADEMY"
@@ -59,7 +59,7 @@ const ProgramsPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FacultyEvent} className="card-img-top" alt="professionally decorated wedding table" />}
+              imageComponent={<Image src={FacultyEvent} layout="responsive" className="card-img-top" alt="professionally decorated wedding table" />}
               title="QC Event School"
               body="The event planning industry is expecting a 110% growth over the next 10 years! If you’re organized, detail-oriented, and enjoy working with people, you might just have found your new career in event and wedding planning! QC provides fundamental, specialized, and advanced courses for event planning professionals of all skill levels."
               buttonText="VISIT QC EVENT SCHOOL"
@@ -68,7 +68,7 @@ const ProgramsPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FacultyDesign} className="card-img-top" alt="professionally decorated dining room" />}
+              imageComponent={<Image src={FacultyDesign} layout="responsive" className="card-img-top" alt="professionally decorated dining room" />}
               title="QC Design School"
               body="It’s hard to make a work of art if you don’t start with a healthy canvas. That’s why QC tutors recommend that eveHome design is often an overlooked industry yet a very creative and rewarding field. A trained design professional has the flexibility to work full-time or part-time. They can focus on specialized areas of the design industry, or they can broaden their services to attract a wider range of clients.ry student takes the skincare course! This course will teach makeup artists how to help clients achieve healthy, glowing skin which will make your makeup skills shine!"
               buttonText="VISIT QC DESIGN SCHOOL"
@@ -77,7 +77,7 @@ const ProgramsPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FacultyPet} className="card-img-top" alt="dog groomer cutting dog's hair" />}
+              imageComponent={<Image src={FacultyPet} layout="responsive" className="card-img-top" alt="dog groomer cutting dog's hair" />}
               title="QC Pet Studies"
               body="Working with animals is a dream for many people. But most animal fields require years of study before you can start your career. QC is working to bring animal care careers into the world of online learning! With interactive online training under an expert’s tutelage, you’ll work at your own pace while completing hands-on assignments that prepare you for your chosen field."
               buttonText="VISIT QC PET STUDIES"
@@ -86,7 +86,7 @@ const ProgramsPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FacultyWellness} className="card-img-top" alt="sleeping baby" />}
+              imageComponent={<Image src={FacultyWellness} layout="responsive" className="card-img-top" alt="sleeping baby" />}
               title="QC Wellness Studies"
               body="If you’re looking for a fulfilling career where you can help people by contributing to their overall wellbeing, QC Wellness Studies has you covered. This is QC’s newest faculty and is expanding into different areas of wellness, from Sleep Consulting to Personal Care Aide Training."
               buttonText="VISIT QC WELLNESS STUDIES"
@@ -95,7 +95,7 @@ const ProgramsPage: NextPage = () => (
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={AdditionalPrograms} className="card-img-top" alt="checking additional programs in a laptop" />}
+              imageComponent={<Image src={AdditionalPrograms} layout="responsive" className="card-img-top" alt="checking additional programs in a laptop" />}
               title="Additional Programs"
               body="Other QC Schools include the QC Style Academy, QC Travel School and Winghill Writing School. Explore these additional programs here!"
               buttonText="VISIT ADDITIONAL PROGRAMS"
