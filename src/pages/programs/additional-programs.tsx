@@ -1,14 +1,17 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
-import { Bar } from '../../components/bar';
-import { SEO } from '../../components/seo';
-import { DefaultLayout } from '../../layouts/default-layout';
+import { Bar } from '../../components/Bar';
+import { Overlay } from '../../components/Overlay';
+import { SEO } from '../../components/SEO';
+import Hero from '../../images/backgrounds/hero-additional-programs.jpg';
+import FacultyStyle from '../../images/backgrounds/hero-faculty-style.jpg';
+import FacultyTravel from '../../images/backgrounds/hero-faculty-travel.jpg';
+import FacultyWriting from '../../images/backgrounds/hero-faculty-writing.jpg';
 
 const AdditionalProgramsPage: NextPage = () => (
-  <DefaultLayout>
-
+  <>
     <SEO
       title="Additional Programs"
       description="Other QC Schools include QC Style Academy, QC Travel School, and Winghill Writing School. Explore these additional programs here!"
@@ -16,6 +19,8 @@ const AdditionalProgramsPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="a person pointing out something on a laptop screen" priority />
+      <Overlay />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 offset-md-4">
@@ -31,11 +36,7 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-style.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-style.jpg')} />
-              <img src={require('../../images/backgrounds/hero-faculty-style.jpg')} alt="style professional helping customer" className="sideImage" />
-            </picture>
+            <Image src={FacultyStyle} alt="style professional helping customer" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Style Academy</h3>
@@ -50,11 +51,7 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-writing.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-writing.jpg')} />
-              <img src={require('../../images/backgrounds/hero-faculty-writing.jpg')} alt="person writing a book" className="sideImage" />
-            </picture>
+            <Image src={FacultyWriting} alt="person writing a book" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Winghill School of Writing</h3>
@@ -69,11 +66,7 @@ const AdditionalProgramsPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <picture>
-              <source type="image/webp" srcSet={require('../../images/backgrounds/hero-faculty-travel.jpg?webp')} />
-              <source type="image/jpg" srcSet={require('../../images/backgrounds/hero-faculty-travel.jpg')} />
-              <img src={require('../../images/backgrounds/hero-faculty-travel.jpg')} alt="couple traveling through a beautiful landscape" className="sideImage" />
-            </picture>
+            <Image src={FacultyTravel} alt="couple traveling through a beautiful landscape" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Travel School</h3>
@@ -83,18 +76,7 @@ const AdditionalProgramsPage: NextPage = () => (
         </div>
       </div>
     </section>
-
-    <style>{`
-      #first-section {
-        background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(${require('../../images/backgrounds/hero-additional-programs.jpg')}) 50% 0;
-        background-size: cover;
-      }
-      .sideImage {
-        width: 100%;
-      }
-    `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default AdditionalProgramsPage;

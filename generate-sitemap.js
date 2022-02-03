@@ -1,5 +1,5 @@
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const xml = require('xml');
 
 function walk(dir, fileList) {
@@ -20,19 +20,19 @@ function walk(dir, fileList) {
 
 function getFiles() {
   const basePath = path.join(__dirname, 'src', 'pages');
-  const pages = walk(basePath)
+  const pages = walk(basePath);
   // changes local file to server file
   return pages.map(p => {
     let serverFile = p.file;
     if (serverFile.startsWith(basePath)) {
-      serverFile = serverFile.substring(basePath.length)
+      serverFile = serverFile.substring(basePath.length);
     }
     [ '.tsx', '.jsx', '.ts', '.js' ].forEach(ext => {
       if (serverFile.endsWith(ext)) {
         serverFile = serverFile.substring(0, serverFile.indexOf(ext));
       }
     });
-    serverFile = serverFile.replace(/\\/g, '/');
+    serverFile = serverFile.replace(/\\/gu, '/');
     if (serverFile === '') {
       serverFile = '/';
     }
@@ -50,7 +50,7 @@ function createSitemap(basepath, filenames) {
         { priority: 0.7 },
       ],
     })),
-  ]};
+  ] };
 }
 
 const files = getFiles();

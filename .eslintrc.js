@@ -19,6 +19,7 @@ module.exports = {
     'jest',
   ],
   extends: [
+    'next/core-web-vitals',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
@@ -66,7 +67,7 @@ module.exports = {
     'no-useless-call': 'error',
     'no-useless-concat': 'error',
     'no-useless-return': 'error',
-    'no-void': 'error',
+    'no-void': 'off',
     'no-warning-comments': 'warn',
     'prefer-promise-reject-errors': 'error',
     'prefer-regex-literals': 'error',
@@ -180,8 +181,8 @@ module.exports = {
     '@typescript-eslint/no-throw-literal': 'error',
     '@typescript-eslint/no-use-before-define': 'off', // override CRA's default
     '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],
-    '@typescript-eslint/quotes': [ 'error', 'single' ],
-    '@typescript-eslint/require-await': 'error',
+    '@typescript-eslint/quotes': [ 'error', 'single', { avoidEscape: true, allowTemplateLiterals: true } ],
+    '@typescript-eslint/require-await': 'warn',
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/semi': 'error',
     '@typescript-eslint/space-before-function-paren': [ 'error', { anonymous: 'always', named: 'never', asyncArrow: 'always' } ],
@@ -199,8 +200,10 @@ module.exports = {
     'react/jsx-pascal-case': [ 'error', { allowAllCaps: true, allowNamespace: true } ],
     'react/jsx-props-no-multi-spaces': 'error',
     'react/jsx-tag-spacing': [ 'error', { beforeClosing: 'never' } ],
-    'react/no-unescaped-entities': [ 'error', { forbid: [ '>', '"', '\'', '}', '“', '”', '‘', '’' ] } ],
+    'react/no-unescaped-entities': [ 'error', { forbid: [ '>', '"', '}', '“', '”', '‘', '’' ] } ],
     'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'error',
 
     // import rules
     'import/order': [ 'error', { alphabetize: { order: 'asc', caseInsensitive: true } } ],

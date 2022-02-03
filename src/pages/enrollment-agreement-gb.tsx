@@ -1,11 +1,9 @@
-import { NextPage } from 'next';
-import React from 'react';
+import { SEO } from '../components/SEO';
+import { MonospaceLayout } from '../layouts/MonospaceLayout';
+import { NextPageWithLayout } from './_app';
 
-import { SEO } from '../components/seo';
-import { MonospaceLayout } from '../layouts/monospace-layout';
-
-const PrivacyPolicyPage: NextPage = () => (
-  <MonospaceLayout>
+const EnrollmentAgreementGBPage: NextPageWithLayout = () => (
+  <>
     <SEO
       title="Enrollment Agreement"
       description="QC Career School enrollment agreement"
@@ -93,7 +91,9 @@ const PrivacyPolicyPage: NextPage = () => (
         </tr>
       </tbody>
     </table>
-  </MonospaceLayout>
+  </>
 );
 
-export default PrivacyPolicyPage;
+EnrollmentAgreementGBPage.getLayout = page => <MonospaceLayout>{page}</MonospaceLayout>;
+
+export default EnrollmentAgreementGBPage;

@@ -1,27 +1,52 @@
-import { Campaign } from './campaign';
-import { Course } from './course';
-import { Currency } from './currency';
-import { InstalmentPlanTypes } from './installment-plan-types';
-import { PlanTypes } from './plan-types';
+type Plan = {
+  /** the discount based on the payment plan */
+  discount: number;
+  /** the amount to be paid today */
+  deposit: number;
+  /** the size of the installments  */
+  installmentSize: number;
+  /** the number of installments */
+  installments: number;
+  /** any amount left over due to rounding */
+  remainder: number;
+  /** the final price after discounts */
+  total: number;
+};
 
-export interface Price {
+type Price = {
+  /** the base price before any discounts */
   cost: number;
-  secondaryDiscount: number;
-  discount: PlanTypes;
-  deposit: PlanTypes;
-  installmentSize: InstalmentPlanTypes;
-  installments: InstalmentPlanTypes;
-  countryCode: string | null;
-  provinceCode: string | null;
+  /** the discount on courses after the first course */
+  multiCourseDiscount: number;
+  /** additional promotional discount */
+  promoDiscount: number;
+  /** the discounted price (before payment plan discount) */
+  discountedCost: number;
+  /** the payment plans */
+  plans: { full: Plan; part: Plan };
+};
+
+type CourseResult = {
+  code: string;
+  name: string;
+  primary: boolean;
+  free: boolean;
+} & Price;
+
+type Currency = {
+  code: string;
+  symbol: string;
+  name: string;
+  exchangeRate: number;
+};
+
+export type PriceResult = {
+  countryCode: string;
+  provinceCode?: string;
   currency: Currency;
   disclaimers: string[];
   notes: string[];
-  campaign?: Campaign;
   noShipping: boolean;
   noShippingMessage?: string;
-  numCourses: number;
-  courses: { [course: string]: Course };
-  discountAll: boolean;
-  complete: boolean;
-  noShipCountry: boolean;
-}
+  courses: CourseResult[];
+} & Price;

@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import React from 'react';
 
-import { Header } from '../../src/components/header';
+import { Header } from '../../src/components/Header';
 
 expect.extend(toHaveNoViolations);
 

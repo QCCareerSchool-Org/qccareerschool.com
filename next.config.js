@@ -1,28 +1,30 @@
 const CopyPlugin = require('copy-webpack-plugin');
-const withSass = require('@zeit/next-sass');
-const withCss = require('@zeit/next-css');
-const withPurgeCss = require('next-purgecss');
-const optimizedImages = require('next-optimized-images');
 const withOffline = require('next-offline');
+const withPurgeCss = require('next-purgecss');
 
 const nextConfig = {
-  // target: 'serverless',
-  
-  // transformManifest: manifest => ['/'].concat(manifest), // add the homepage to the cache
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: [
+      'studentcenter.qccareerschool.com',
+      'aeea626a74ffdd96fbcf-77df9cf355bf5239094a1d99115ccf2c.ssl.cf1.rackcdn.com',
+    ],
+  },
 
-  // // Trying to set NODE_ENV=production when running yarn dev causes a build-time error so we
-  // // turn on the SW in dev mode so that we can actually test it
-  
+  // Trying to set NODE_ENV=production when running yarn dev causes a build-time error so we
+  // turn on the SW in dev mode so that we can actually test it
+
   webpack: (config, { isServer }) => {
     // https://github.com/zeit/next.js/tree/canary/examples/with-polyfills
-    const originalEntry = config.entry
+    const originalEntry = config.entry;
     config.entry = async () => {
       const entries = await originalEntry();
       if (entries['main.js'] && !entries['main.js'].includes('./client/polyfills.js')) {
-        entries['main.js'].unshift('./polyfills.js')
+        entries['main.js'].unshift('./polyfills.js');
       }
       return entries;
-    }
+    };
 
     // this will output the push listener file to .next/static folder
     config.plugins.push(new CopyPlugin([
@@ -37,7 +39,7 @@ const nextConfig = {
     swDest: 'static/service-worker.js',
     runtimeCaching: [
       {
-        urlPattern: /^https?.*/,
+        urlPattern: /^https?.*/u,
         handler: 'NetworkFirst',
         options: {
           cacheName: 'https-calls',
@@ -60,7 +62,7 @@ const nextConfig = {
     // 'src/layouts/**/*',
   ],
   purgeCss: {
-    whitelistPatterns: () => [ /^nav-/, /^navbar-/, /^dropdown-/ ],
+    whitelistPatterns: () => [ /^nav-/u, /^navbar-/u, /^dropdown-/u ],
     whitelist: () => [
       'nav',
       'navbar',
@@ -71,9 +73,9 @@ const nextConfig = {
       'active',
       'collapsing',
       'collapse',
-      'show'
+      'show',
     ],
-  }
+  },
 };
 
-module.exports = withSass(withCss(withPurgeCss(optimizedImages(withOffline(nextConfig)))));
+module.exports = withOffline(withPurgeCss(nextConfig));
