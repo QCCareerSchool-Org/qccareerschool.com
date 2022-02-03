@@ -19,7 +19,7 @@ const AdditionalProgramsPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="a person pointing out something on a laptop screen" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="a person pointing out something on a laptop screen" priority />
       <Overlay />
       <div className="container">
         <div className="row">

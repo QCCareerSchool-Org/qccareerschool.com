@@ -27,7 +27,7 @@ const AdmissionsPage: NextPage = () => (
     />
 
     <section id="first-section" className="text-light">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues working at a table" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues working at a table" priority />
       <Overlay />
       <div className="container">
         <h1>Admissions</h1>

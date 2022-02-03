@@ -135,7 +135,7 @@ const FindProfessionalsPage: NextPage<Props> = ({ errorCode }) => {
       <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
         <section id="first-section" className="text-light">
-          <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="workers in an office" />
+          <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="workers in an office" priority />
           <Overlay />
           <div className="container">
             <div className="row">

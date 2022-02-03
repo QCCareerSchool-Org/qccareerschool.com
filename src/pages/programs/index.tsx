@@ -23,7 +23,7 @@ const ProgramsPage: NextPage = () => (
     />
 
     <section id="first-section" className="bg-dark text-light text-shadow">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="woman looking at a baby on a changing table" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="woman looking at a baby on a changing table" priority />
       <Overlay />
       <div className="container">
         <Bar className="text-primary mb-5" />

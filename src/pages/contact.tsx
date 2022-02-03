@@ -23,7 +23,7 @@ const ContactPage: NextPage = () => {
       />
 
       <section id="first-section" className="text-light">
-        <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="three people using their phones" />
+        <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="three people using their phones" priority />
         <Overlay />
         <div className="container">
           <div className="row">

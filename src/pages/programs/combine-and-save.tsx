@@ -22,7 +22,7 @@ const CombineAndSavePage: NextPage = () => (
     />
 
     <section id="first-section" className="text-light">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues collaborating around a computer" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues collaborating around a computer" priority />
       <Overlay />
       <div className="container">
         <div className="row">

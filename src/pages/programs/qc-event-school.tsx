@@ -21,7 +21,7 @@ const EventPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="10% top" placeholder="blur" alt="table set for a wedding" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="10% top" placeholder="blur" alt="table set for a wedding" priority />
       <Overlay opacityTop={0.4} opacityBottom={0.6} />
       <div className="container">
         <div className="row">

@@ -19,7 +19,7 @@ const PetPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="right top" placeholder="blur" alt="groomer washing a dog" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="right top" placeholder="blur" alt="groomer washing a dog" priority />
       <Overlay opacityTop={0.3} opacityBottom={0.5} />
       <div className="container">
         <div className="row">

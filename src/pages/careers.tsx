@@ -18,7 +18,7 @@ const CareersPage: NextPage = () => (
     />
 
     <section id="first-section" className="bg-dark text-light">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="two people working at a laptop" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="two people working at a laptop" priority />
       <Overlay />
       <div className="container">
         <h1>Careers</h1>

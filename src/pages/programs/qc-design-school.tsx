@@ -20,7 +20,7 @@ const DesignPage: NextPage = () => (
     />
 
     <section id="first-section" className="overlay-section bg-dark text-light text-shadow text-right">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="10% top" placeholder="blur" alt="professionaly decorated room" />
+      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="10% top" placeholder="blur" alt="professionaly decorated room" priority />
       <Overlay opacityTop={0.4} opacityBottom={0.6} />
       <div className="container">
         <div className="row">
