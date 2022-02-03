@@ -2,7 +2,7 @@ import { Picture } from './picture';
 import { Portrait } from './portrait';
 import { Testimonial } from './testimonial';
 
-export interface Profile {
+export type Profile = {
   id: number;
   sex: string;
   firstName: string;
@@ -35,4 +35,4 @@ export interface Profile {
   images: Picture[];
   testimonials: Testimonial[];
   portrait: Portrait | null;
-}
+};

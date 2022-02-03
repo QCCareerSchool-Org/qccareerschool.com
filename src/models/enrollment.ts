@@ -1,4 +1,5 @@
-export interface Enrollment {
+export type Enrollment = {
+  id: number;
   school: string;
   url: string;
   noShipping: boolean;
@@ -32,15 +33,15 @@ export interface Enrollment {
   maskedPan: string;
   currencySymbol: string;
   currencyName: string;
-  courses: {
+  currencyExchangeRate: number;
+  courses: Array<{
     code: string;
     baseCost: number;
+    planDiscount: number;
     discount: number;
-    secondaryDiscount: number;
-    campaignDiscount: number;
     deposit: number;
     installment: number;
     name: string;
-  }[];
+  }>;
   courseCodes: string[];
-}
+};

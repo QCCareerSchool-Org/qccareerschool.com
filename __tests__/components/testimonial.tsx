@@ -3,7 +3,7 @@ import * as faker from 'faker';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import React from 'react';
 
-import { Testimonial } from '../../src/components/testimonial';
+import { TestimonialBox } from '../../src/components/TestimonialBox';
 
 expect.extend(toHaveNoViolations);
 
@@ -19,14 +19,14 @@ describe('<Testimonial>', () => {
   });
 
   it('shouldn\'t have any usability violations', async () => {
-    const { container } = render(<Testimonial testimonial={{ quote, name, rating }} />);
+    const { container } = render(<TestimonialBox testimonial={{ quote, name, rating }} />);
     const result = await axe(container);
     expect(result).toHaveNoViolations();
   });
 
   it('should have the correct number of stars', () => {
-    const { queryAllByTitle } = render(<Testimonial testimonial={{ quote, name, rating }} />);
-    expect(queryAllByTitle(/filled-star/i)).toHaveLength(rating);
-    expect(queryAllByTitle(/empty-star/i)).toHaveLength(5 - rating);
+    const { queryAllByTitle } = render(<TestimonialBox testimonial={{ quote, name, rating }} />);
+    expect(queryAllByTitle(/filled-star/iu)).toHaveLength(rating);
+    expect(queryAllByTitle(/empty-star/iu)).toHaveLength(5 - rating);
   });
 });

@@ -1,25 +1,25 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
+import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaPinterestSquare, FaTwitterSquare } from 'react-icons/fa';
 
 import parseBBCode from '../../../bbcode-parser';
-import { Certification } from '../../../components/certification';
-import { SEO } from '../../../components/seo';
-import { Testimonial } from '../../../components/testimonial';
+import { Certification } from '../../../components/Certification';
+import { ProfileWrapper } from '../../../components/ProfileWrapper';
+import { SEO } from '../../../components/SEO';
+import { TestimonialBox } from '../../../components/TestimonialBox';
 import { nl2br } from '../../../functions';
-import { ProfileLayout } from '../../../layouts/profile-layout';
 import { Profile } from '../../../models/profile';
+import { NextPageWithLayout } from '../../_app';
 
-interface Props {
+type Props = {
   profile?: Profile;
   errorCode?: number;
-}
+};
 
-const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
+const ProfilePage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
   const iconSize = 40;
 
   if (errorCode) {
@@ -33,7 +33,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
   const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
 
   return (
-    <ProfileLayout backgroundImage={profile.backgroundName}>
+    <ProfileWrapper backgroundImage={profile.backgroundName}>
 
       <SEO
         title={title}
@@ -76,7 +76,9 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
       <div className="row">
 
         <div className="col-12 col-md-4 text-center text-md-left mb-4 overflow-hidden">
-          <img className="img-fluid my-2" src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}&v=${profile.portrait?.modified ?? 0}`} alt={profile.firstName + ' ' + profile.lastName} />
+          <div className="my-2" style={{ display: 'relative' }}>
+            <Image src={`https://studentcenter.qccareerschool.com/view-portrait.php?id=${profile.id}&v=${profile.portrait?.modified ?? 0}`} width={profile.portrait?.width ?? 0} height={profile.portrait?.height ?? 0} alt={profile.firstName + ' ' + profile.lastName} />
+          </div>
           <br />
           {profile.city ? <>{profile.city}{profile.provinceCode ? `, ${profile.provinceCode}` : ''}<br /></> : null}
           {profile.phoneNumber ? <>{profile.phoneNumber}<br /></> : null}
@@ -125,7 +127,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
               <div className="mt-3 text-left">
                 <h4>Testimonials</h4>
                 <div>
-                  {profile.testimonials.slice(0, 3).map((t, i) => <Testimonial key={i} testimonial={t} />)}
+                  {profile.testimonials.slice(0, 3).map((t, i) => <TestimonialBox key={i} testimonial={t} />)}
                 </div>
                 {profile.testimonials.length > 3
                   ? <Link href="/profiles/[id]/testimonials" as={`/profiles/${profile.id}/testimonials`}><a>See All Testimonials</a></Link>
@@ -144,7 +146,7 @@ const ProfilePage: NextPage<Props> = ({ errorCode, profile }) => {
         .professionList { text-transform: capitalize; }
       `}</style>
 
-    </ProfileLayout>
+    </ProfileWrapper>
   );
 };
 
@@ -162,12 +164,14 @@ ProfilePage.getInitialProps = async context => {
     }
     return { profile };
   } catch (err) {
-    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+    const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
     if (context.res) {
       context.res.statusCode = errorCode;
     }
     return { errorCode };
   }
 };
+
+ProfilePage.getLayout = page => <>{page}</>;
 
 export default ProfilePage;

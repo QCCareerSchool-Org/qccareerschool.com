@@ -1,36 +1,47 @@
 import { telephoneNumber } from '@qccareerschool/helper-functions';
 import * as HttpStatus from '@qccareerschool/http-status';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-import PropTypes from 'prop-types';
-import React, { useContext } from 'react';
+import Image from 'next/image';
+import { Fragment, useEffect } from 'react';
 
-import { SEO } from '../components/seo';
-import { DefaultLayout } from '../layouts/default-layout';
+import { SEO } from '../components/SEO';
+import { useLocation } from '../hooks/useLocation';
+import AlexSignature from '../images/alex-myers.png';
+import { DefaultLayout } from '../layouts/DefaultLayout';
 import { Enrollment } from '../models/enrollment';
-import { LocationStateContext } from '../providers/location';
+import { NextPageWithLayout } from './_app';
 
 type Props = {
-  enrollment?: Enrollment;
+  data?: {
+    enrollment: Enrollment;
+    code: string;
+  };
   errorCode?: number;
 };
 
-const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
-  const location = useContext(LocationStateContext);
+const WelcomeToTheSchoolPage: NextPageWithLayout<Props> = ({ data, errorCode }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (typeof data !== 'undefined') {
+      if (!data.enrollment.emailed) {
+        sendEmail(data.enrollment.id, data.code).catch(() => { /* */ });
+      }
+    }
+  }, [ data ]);
 
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
   }
 
-  if (!enrollment) {
+  if (!data) {
     return null;
   }
 
-  const paymentDate = new Date(enrollment.paymentDate);
+  const paymentDate = new Date(data.enrollment.paymentDate);
 
   return (
-    <DefaultLayout noHero={true}>
-
+    <>
       <SEO
         title="Welcome to the School"
         description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
@@ -47,7 +58,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
               <p className="lead">Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
               <p className="text-dark"><strong>Best of luck with your studies!</strong></p>
               <p className="lead">Sincerely,</p>
-              <p className="text-dark"><img src={require('../images/alex-myers.png')} className="text-center" alt="Alex Myers" /><br /><strong>Director</strong><br />QC Career School</p>
+              <p className="text-dark"><Image src={AlexSignature} alt="Alex Myers" /><br /><strong>Director</strong><br />QC Career School</p>
             </div>
           </div>
         </div>
@@ -62,30 +73,30 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                 <tbody>
                   <tr>
                     <td><strong>Name</strong></td>
-                    <td>{enrollment.firstName} {enrollment.lastName}</td>
+                    <td>{data.enrollment.firstName} {data.enrollment.lastName}</td>
                   </tr>
                   <tr>
                     <td><strong>Address</strong></td>
                     <td>
-                      {enrollment.address1}<br />
-                      {enrollment.address2 && <>{enrollment.address2}<br /></>}
-                      {enrollment.city} {enrollment.provinceName} {enrollment.postalCode}<br />
-                      {enrollment.countryName}
+                      {data.enrollment.address1}<br />
+                      {data.enrollment.address2 && <>{data.enrollment.address2}<br /></>}
+                      {data.enrollment.city} {data.enrollment.provinceName} {data.enrollment.postalCode}<br />
+                      {data.enrollment.countryName}
                     </td>
                   </tr>
                   <tr>
                     <td><strong>Currency</strong></td>
-                    <td>{enrollment.currencyName}</td>
+                    <td>{data.enrollment.currencyName}</td>
                   </tr>
                   <tr>
                     <td><strong>Payment Plan</strong></td>
-                    <td>{enrollment.paymentPlan === 'full' ? 'Full Payment' : 'Installment Plan'}</td>
+                    <td>{data.enrollment.paymentPlan === 'full' ? 'Full Payment' : 'Installment Plan'}</td>
                   </tr>
-                  {enrollment.paymentPlan !== 'full' && (
+                  {data.enrollment.paymentPlan !== 'full' && (
                     <>
                       <tr>
                         <td><strong>Payment Day</strong></td>
-                        <td>{enrollment.paymentDay}</td>
+                        <td>{data.enrollment.paymentDay}</td>
                       </tr>
                       <tr>
                         <td><strong>Installments Start</strong></td>
@@ -93,36 +104,36 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                       </tr>
                     </>
                   )}
-                  {enrollment.courses.map((c, i) => (
-                    <React.Fragment key={i}>
+                  {data.enrollment.courses.map((c, i) => (
+                    <Fragment key={i}>
                       <tr>
                         <td colSpan={2}><h6 className="mt-4 mb-0">{c.name}</h6></td>
                       </tr>
                       <tr>
                         <td><strong>Cost</strong></td>
-                        <td>{enrollment.currencySymbol}{c.baseCost.toFixed(2)}</td>
+                        <td>{data.enrollment.currencySymbol}{c.baseCost.toFixed(2)}</td>
                       </tr>
-                      {c.discount > 0 && (
+                      {c.planDiscount > 0 && (
                         <tr>
                           <td><strong>Discount</strong></td>
-                          <td>&minus;{enrollment.currencySymbol}{c.discount.toFixed(2)}</td>
+                          <td>&minus;{data.enrollment.currencySymbol}{c.planDiscount.toFixed(2)}</td>
                         </tr>
                       )}
-                      {c.secondaryDiscount > 0 && (
+                      {c.discount > 0 && (
                         <tr>
-                          <td><strong>Multi-Course Discount</strong></td>
-                          <td>&minus;{enrollment.currencySymbol}{c.secondaryDiscount.toFixed(2)}</td>
+                          <td><strong>Special Discount</strong></td>
+                          <td>&minus;{data.enrollment.currencySymbol}{c.discount.toFixed(2)}</td>
                         </tr>
                       )}
                       <tr>
                         <td><strong>Today&apos;s Deposit</strong></td>
-                        <td>{enrollment.currencySymbol}{c.deposit.toFixed(2)}</td>
+                        <td>{data.enrollment.currencySymbol}{c.deposit.toFixed(2)}</td>
                       </tr>
                       <tr>
                         <td><strong>Monthly Installment</strong></td>
-                        <td>{enrollment.currencySymbol}{c.installment.toFixed(2)}</td>
+                        <td>{data.enrollment.currencySymbol}{c.installment.toFixed(2)}</td>
                       </tr>
-                    </React.Fragment>
+                    </Fragment>
                   ))}
                 </tbody>
               </table>
@@ -132,23 +143,23 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
                 <tbody>
                   <tr>
                     <td>Reference Code</td>
-                    <td>{enrollment.authorizationId}</td>
+                    <td>{data.enrollment.authorizationId}</td>
                   </tr>
                   <tr>
                     <td>PAN</td>
-                    <td>{enrollment.maskedPan}</td>
+                    <td>{data.enrollment.maskedPan}</td>
                   </tr>
                   <tr>
                     <td>Amount Processed</td>
-                    <td>{enrollment.deposit.toFixed(2)} {enrollment.currencyCode}</td>
+                    <td>{data.enrollment.deposit.toFixed(2)} {data.enrollment.currencyCode}</td>
                   </tr>
                   <tr>
                     <td>Time</td>
-                    <td>{enrollment.transactionTime}</td>
+                    <td>{data.enrollment.transactionTime}</td>
                   </tr>
                   <tr>
                     <td>Auth Code</td>
-                    <td>{enrollment.authCode}</td>
+                    <td>{data.enrollment.authCode}</td>
                   </tr>
                 </tbody>
               </table>
@@ -157,15 +168,11 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ enrollment, errorCode }) => {
           <p>If you would like to make changes to your account, please contact the School at your earliest convenience by phone or email.</p>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 
-WelcomeToTheSchoolPage.propTypes = {
-  enrollment: PropTypes.any,
-  errorCode: PropTypes.number,
-};
+WelcomeToTheSchoolPage.getLayout = page => <DefaultLayout noHero={true}>{page}</DefaultLayout>;
 
 const sendEmail = async (enrollmentId: number, code: string): Promise<void> => {
   const response = await fetch(`https://api.qccareerschool.com/enrollments/${enrollmentId}/email`, {
@@ -207,15 +214,9 @@ WelcomeToTheSchoolPage.getInitialProps = async ({ res, query }): Promise<Props> 
       throw new HttpStatus.NotFound();
     }
 
-    if (!enrollment.emailed) {
-      try {
-        await sendEmail(enrollmentId, code);
-      } catch (err) { /* ignore */ }
-    }
-
-    return { enrollment };
+    return { data: { enrollment, code } };
   } catch (err) {
-    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+    const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
     if (res) {
       res.statusCode = errorCode;
     }

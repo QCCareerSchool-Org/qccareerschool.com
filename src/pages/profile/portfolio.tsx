@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-import React from 'react';
 
 const OldPortfolioPage: NextPage = () => <ErrorPage statusCode={404} />;
 

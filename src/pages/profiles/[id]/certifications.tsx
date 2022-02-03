@@ -1,21 +1,20 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import fetch from 'isomorphic-unfetch';
-import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
-import React from 'react';
 
-import { Certification } from '../../../components/certification';
-import { SEO } from '../../../components/seo';
-import { ProfileLayout } from '../../../layouts/profile-layout';
+import { Certification } from '../../../components/Certification';
+import { ProfileWrapper } from '../../../components/ProfileWrapper';
+import { SEO } from '../../../components/SEO';
 import { Profile } from '../../../models/profile';
+import { NextPageWithLayout } from '../../_app';
 
-interface Props {
+type Props = {
   errorCode?: number;
   profile?: Profile;
-}
+};
 
-const CertificationsPage: NextPage<Props> = ({ errorCode, profile }) => {
+const CertificationsPage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
   if (errorCode) {
     return <ErrorPage statusCode={errorCode} />;
   }
@@ -27,7 +26,7 @@ const CertificationsPage: NextPage<Props> = ({ errorCode, profile }) => {
   const title = profile.company ? profile.company : `${profile.firstName} ${profile.lastName}`;
 
   return (
-    <ProfileLayout backgroundImage={profile.backgroundName}>
+    <ProfileWrapper backgroundImage={profile.backgroundName}>
 
       <SEO
         title={`${title} Certifications`}
@@ -48,7 +47,7 @@ const CertificationsPage: NextPage<Props> = ({ errorCode, profile }) => {
         .wrapper { display: flex; flex-wrap: wrap; justify-content: space-between; }
       `}</style>
 
-    </ProfileLayout>
+    </ProfileWrapper>
   );
 };
 
@@ -70,12 +69,14 @@ CertificationsPage.getInitialProps = async context => {
     }
     return { profile };
   } catch (err) {
-    const errorCode = typeof err.statusCode === 'undefined' ? 500 : err.statusCode;
+    const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
     if (context.res) {
       context.res.statusCode = errorCode;
     }
     return { errorCode };
   }
 };
+
+CertificationsPage.getLayout = page => <>{page}</>;
 
 export default CertificationsPage;

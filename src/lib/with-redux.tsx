@@ -1,5 +1,4 @@
 import { NextPage, NextPageContext } from 'next';
-import React from 'react';
 import { Provider } from 'react-redux';
 import { AnyAction, Store } from 'redux';
 
