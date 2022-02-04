@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ReactElement } from 'react';
 
 import BBBLogo from '../images/bbb-a+.svg';
-
+console.log(BBBLogo);
 type Props = {
   className?: string;
 };
@@ -21,7 +21,7 @@ export const Footer = ({ className }: Props): ReactElement => (
         </div>
         <div className="col-12 col-sm-6 text-center text-sm-right mb-4 mb-sm-0">
           <div id="footer-right">
-            <a target="_blank" rel="noopener noreferrer" className="text-light" href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175#sealclick"><Image src={BBBLogo} alt="Better Business Bureau A+ accreditation" /></a><br />
+            <a target="_blank" rel="noopener noreferrer" className="text-light" href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175#sealclick"><Image src={BBBLogo} layout="fixed" alt="Better Business Bureau A+ accreditation" /></a><br />
             <a target="_blank" rel="noopener noreferrer" className="text-light" href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175#sealclick">View BBB Profile</a><br />
           </div>
         </div>

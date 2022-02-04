@@ -42,7 +42,7 @@ const HomePage: NextPage = () => (
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
             <div className="mb-3">
-              <Image src={ThirtyFiveYearEmblem} alt="in business over 35 years, since 1984" />
+              <Image src={ThirtyFiveYearEmblem} layout="fixed" alt="in business over 35 years, since 1984" />
             </div>
             <h2 className="text-center">Welcome to QC Career School!</h2>
             <p className="mb-0">QC is a leader in online distance education. With eight faculties and courses available around the globe, QC offers affordable and convenient career training in a variety of professional fields.  With QC&apos;s unparalleled student support, professional tutors, and unique online learning system based on direct feedback, you&apos;ll graduate with the skills and confidence you need to start a successful professional career!</p>
