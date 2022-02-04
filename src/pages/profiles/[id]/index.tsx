@@ -1,5 +1,4 @@
 import * as HttpStatus from '@qccareerschool/http-status';
-import fetch from 'isomorphic-unfetch';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -47,7 +46,7 @@ const ProfilePage: NextPageWithLayout<Props> = ({ errorCode, profile }) => {
           {profile.company
             ? (
               <>
-                <h1>{profile.company}</h1>
+                <h1 style={{ wordWrap: 'break-word' }}>{profile.company}</h1>
                 <p className="lead mb-0">{profile.firstName} {profile.lastName}</p>
               </>
             )
