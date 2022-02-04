@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-unfetch';
-
 import { Province } from '../models/province';
 
 export const fetchProvinces = async (countryCode: string): Promise<Province[]> => {

@@ -1,5 +1,4 @@
 import * as HttpStatus from '@qccareerschool/http-status';
-import fetch from 'isomorphic-unfetch';
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
