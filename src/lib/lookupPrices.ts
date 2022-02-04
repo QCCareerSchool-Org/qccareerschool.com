@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-unfetch';
-
 import { PriceResult } from '../models/price';
 import { createQueryString } from './querystring';
 

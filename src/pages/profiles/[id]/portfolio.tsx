@@ -1,5 +1,4 @@
 import * as HttpStatus from '@qccareerschool/http-status';
-import fetch from 'isomorphic-unfetch';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
 import { useState } from 'react';
