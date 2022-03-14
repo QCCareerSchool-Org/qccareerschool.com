@@ -105,9 +105,9 @@ export const getAddress = (countryCode: string): string[] => {
       ];
     case 'US':
       return [
-        '7201 Wisconsin Avenue',
-        'Suite 440',
-        'Bethesda, MD 20814',
+        'Suite 450',
+        '1 Research Court',
+        'Rockville, MD 20850',
       ];
     default: // like CA, but with the country
       return [
