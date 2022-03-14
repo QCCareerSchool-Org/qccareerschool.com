@@ -1,7 +1,8 @@
-import { getAddress } from '@qccareerschool/helper-functions';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
+
+import { getAddress } from '../functions';
 import { useLocation } from '../hooks/useLocation';
 
 import BBBLogo from '../images/bbb-a+.svg';
