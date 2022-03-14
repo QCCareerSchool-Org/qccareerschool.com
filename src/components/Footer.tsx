@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ReactElement } from 'react';
 
 import BBBLogo from '../images/bbb-a+.svg';
-console.log(BBBLogo);
+
 type Props = {
   className?: string;
 };
