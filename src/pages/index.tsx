@@ -1,6 +1,9 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { jsonLdScriptProps } from 'react-schemaorg';
+import { EducationalOrganization } from 'schema-dts';
 
 import { Bar } from '../components/Bar';
 import { CourseCard } from '../components/CourseCard';
@@ -14,6 +17,7 @@ import FacultyMakeup from '../images/faculty-makeup.jpg';
 import FacultyPet from '../images/faculty-pet.jpg';
 import FacultyWellness from '../images/faculty-wellness.jpg';
 import FacultyWriting from '../images/faculty-writing.jpg';
+import { qcCareerSchoolEducationalOrganization } from '../qcCareerSchoolEducationalOrganization';
 
 const HomePage: NextPage = () => (
   <>
@@ -22,6 +26,10 @@ const HomePage: NextPage = () => (
       description="QC is a leader in online distance education. With QC you’ll graduate with the skills and confidence you need to start a successful professional career!"
       canonical="/"
     />
+
+    <Head>
+      <script {...jsonLdScriptProps<EducationalOrganization>(qcCareerSchoolEducationalOrganization)} />
+    </Head>
 
     <section id="first-section" className="text-light">
       <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues collaborating around a computer" priority />
@@ -145,14 +153,14 @@ const HomePage: NextPage = () => (
       </div>
     </section>
 
-    <style>{`
-      .buttonSpacer {
-        height: 31px;
-      }
-      .absoluteButton {
-        position: absolute;
-        bottom: 0px;
-      }
+    <style jsx>{`
+    .buttonSpacer {
+      height: 31px;
+    }
+    .absoluteButton {
+      position: absolute;
+      bottom: 0px;
+    }
     `}</style>
   </>
 );
