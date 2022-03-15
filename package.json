@@ -1,6 +1,6 @@
 {
   "name": "www.qccareerschool.com",
-  "version": "1.13.5",
+  "version": "1.13.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@qccareerschool/helper-functions": "^1.5.1",
     "@qccareerschool/http-status": "^2.1.0",
     "@types/big.js": "^6.1.2",
     "@types/react": "^17.0.39",
@@ -33,9 +32,11 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.2",
+    "react-schemaorg": "^2.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sass": "^1.49.6",
+    "schema-dts": "^1.1.0",
     "xbbcode-parser": "^0.1.2",
     "xml": "^1.0.1"
   },
