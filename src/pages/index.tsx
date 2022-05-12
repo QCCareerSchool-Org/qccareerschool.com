@@ -100,7 +100,7 @@ const HomePage: NextPage = () => (
               title="QC Pet Studies"
               body="Training dog grooming professionals from the comfort of home through innovative interactive tutorials and assignments."
               buttonText="VISIT QC PET STUDIES"
-              link="https://www.doggroomingcourse.com/"
+              link="https://www.qcpetstudies.com/"
               externalLink={true}
             />
           </div>
