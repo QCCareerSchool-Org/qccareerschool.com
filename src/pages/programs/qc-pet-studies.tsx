@@ -8,7 +8,7 @@ import { Overlay } from '../../components/Overlay';
 import { SEO } from '../../components/SEO';
 import Hero from '../../images/backgrounds/hero-faculty-pet.jpg';
 import DogGrooming from '../../images/course-pet-dog-grooming.jpg';
-import FirstAidForGroomers from '../../images/course-pet-first-aid-for-groomers.jpg';
+import DogTraining from '../../images/course-pet-dog-training.jpg';
 
 const PetPage: NextPage = () => (
   <>
@@ -41,24 +41,24 @@ const PetPage: NextPage = () => (
               title="Dog Grooming Course"
               body="Regular grooming is a key part to maintaining a dog’s health, and most dog owners prefer to leave their pooch’s grooming up to a qualified professional.  With the dog grooming course, you’ll learn how to groom all different breeds and the various popular cuts safely and effectively. You’ll also learn how to launch your own successful dog grooming business."
               buttonText="Full Course Overview"
-              link="https://www.doggroomingcourse.com/online-courses/dog-grooming/"
+              link="https://www.qcpetstudies.com/dog-grooming-courses/dog-grooming"
               externalLink={true}
             />
           </CardColumn>
           <CardColumn>
             <CourseCard
-              imageComponent={<Image src={FirstAidForGroomers} layout="responsive" className="card-img-top" alt="dog groomer applying first aid practices on a dog" />}
-              title="First Aid for Groomers"
-              body="Every groomer should be well-versed not only in preventing injuries, but also in dealing with injuries and medical emergencies should they happen.  This course covers the types of dog injuries and medical conditions a groomer might encounter throughout their career.  It’s yours at no cost when you enroll in the dog grooming course."
+              imageComponent={<Image src={DogTraining} layout="responsive" className="card-img-top" alt="woman gives command to her dog" />}
+              title="Dog Training Course"
+              body="Dog trainers have never been in higher demand! This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!"
               buttonText="Full Course Overview"
-              link="https://www.doggroomingcourse.com/online-courses/first-aid-for-groomers/"
+              link="https://www.qcpetstudies.com/dog-training-courses/dog-training"
               externalLink={true}
             />
           </CardColumn>
         </div>
         <h3>Additional QC Pet Studies Courses</h3>
         <ul>
-          <li><a href="https://www.doggroomingcourse.com/online-courses/breed-styling-workshop/">Breed Styling Workshop</a></li>
+          <li><a href="https://www.qcpetstudies.com/dog-grooming-courses/first-aid">First Aid for Groomers</a></li>
         </ul>
       </div>
     </section>
