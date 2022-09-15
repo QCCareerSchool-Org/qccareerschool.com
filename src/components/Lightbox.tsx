@@ -10,8 +10,6 @@ type Props = {
   onClose: () => void;
 };
 
-const imageScalingFactor = 2;
-
 export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
   const screenWidth = useScreenWidth();
 
@@ -50,7 +48,8 @@ export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
       <div className="close" onClick={onClose}><IoIosCloseCircle size={40} /></div>
       <div className="wrapper">
         <div className="imageWrapper">
-          <Image className="portfolioImage" src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}&maxwidth=${maxWidth * imageScalingFactor}&maxheight=${maxHeight * imageScalingFactor}`} width={width} height={height} layout="fixed" alt="" />
+          { /* eslint-disable-next-line @next/next/no-img-element */ }
+          <img src={`https://studentcenter.qccareerschool.com/public/view-image.php?id=${picture.id}`} width={width} height={height} alt="" />
         </div>
         <h6>{picture.heading}</h6>
         <p>{picture.description}</p>
