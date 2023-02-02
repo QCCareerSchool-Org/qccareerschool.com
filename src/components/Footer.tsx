@@ -21,7 +21,6 @@ export const Footer = ({ className }: Props): ReactElement => {
           <div className="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
             <Link href="/programs"><a className="text-light">Programs</a></Link><br />
             <Link href="/admissions"><a className="text-light">Admissions</a></Link><br />
-            <Link href="/find-professionals"><a className="text-light">Find Professionals</a></Link><br />
             <Link href="/contact"><a className="text-light">Contact Us</a></Link><br />
             <Link href="/careers"><a className="text-light">Careers</a></Link><br />
           </div>
