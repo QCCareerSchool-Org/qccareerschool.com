@@ -62,7 +62,6 @@ export const Header = ({ noHero, className }: Props): ReactElement => {
                 <Link href="/programs/combine-and-save"><a onClick={resetMenu} className="dropdown-item">Combine and Save</a></Link>
               </NavDropdown>
               <Link href="/admissions"><a onClick={resetMenu} className="nav-link">Admissions</a></Link>
-              <Link href="/find-professionals"><a onClick={resetMenu} className="nav-link">Find Professionals</a></Link>
               <Link href="/contact"><a onClick={resetMenu} className="nav-link">Contact Us</a></Link>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
