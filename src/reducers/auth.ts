@@ -9,7 +9,7 @@ export type AuthAction =
   | { type: 'LOG_IN_FINISHED'; payload: number }
   | { type: 'LOG_IN_FAILED'; payload: Error };
 
-const localStorageId = typeof window === 'undefined' ? null : window?.localStorage?.getItem('id');
+const localStorageId = typeof window === 'undefined' ? null : window?.localStorage?.getItem('id') ?? null;
 const initialState: AuthState = {
   id: localStorageId !== null ? parseInt(localStorageId, 10) : null,
 };
