@@ -63,7 +63,7 @@ const AdmissionsPage: NextPage = () => (
                   <p>If you would like to enroll in one of QC&apos;s courses, you can do so at the faculties&apos; online enrollment pages:</p>
                   <div className="row">
                     <div className="col-6 col-lg-4 mb-g d-flex">
-                      <div className="card shadow-lg rounded-lg">
+                      <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com">
                           <Image src={FacultyMakeup} alt="QC Makeup Academy" className="card-img-top" />
                         </a>
@@ -75,7 +75,7 @@ const AdmissionsPage: NextPage = () => (
                       </div>
                     </div>
                     <div className="col-6 col-lg-4 mb-g d-flex">
-                      <div className="card shadow-lg rounded-lg">
+                      <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com">
                           <Image src={FacultyEvent} alt="QC Event School" className="card-img-top" />
                         </a>
@@ -87,7 +87,7 @@ const AdmissionsPage: NextPage = () => (
                       </div>
                     </div>
                     <div className="col-6 col-lg-4 mb-g d-flex">
-                      <div className="card shadow-lg rounded-lg">
+                      <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com">
                           <Image src={FacultyDesign} alt="QC Design School" className="card-img-top" />
                         </a>
@@ -99,7 +99,7 @@ const AdmissionsPage: NextPage = () => (
                       </div>
                     </div>
                     <div className="col-6 col-lg-4 mb-g d-flex">
-                      <div className="card shadow-lg rounded-lg">
+                      <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com">
                           <Image src={FacultyPet} alt="QC Pet Studies" className="card-img-top" />
                         </a>
@@ -111,7 +111,7 @@ const AdmissionsPage: NextPage = () => (
                       </div>
                     </div>
                     <div className="col-6 col-lg-4 mb-g d-flex">
-                      <div className="card shadow-lg rounded-lg">
+                      <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com">
                           <Image src={FacultyWellness} alt="QC Wellness Studies" className="card-img-top" />
                         </a>

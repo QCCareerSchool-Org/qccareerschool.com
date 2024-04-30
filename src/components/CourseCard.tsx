@@ -12,7 +12,7 @@ type Props = {
 
 export const CourseCard = ({ imageComponent, title, body, buttonText, link, externalLink }: Props): ReactElement => {
   return (
-    <div className="card shadow-lg rounded-lg">
+    <div className="card shadow-sm rounded-sm">
       {externalLink
         ? <a href={link}>{imageComponent}</a>
         : <Link href={link}><a>{imageComponent}</a></Link>
