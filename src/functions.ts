@@ -1,5 +1,3 @@
-import { Auth } from './providers/auth';
-
 /**
  * Returns whether the country is a country with a +44 country dialing code. E.g., United Kingdom
  * @param countryCode the two-letter iso-3166-1 alpha-2 country code
@@ -194,70 +192,6 @@ export const subscribe = async (): Promise<number | undefined> => {
     return undefined;
   }
 };
-
-export async function login(emailAddress: string, password: string): Promise<Auth | number> {
-  try {
-    const response = await fetch('https://api.qccareerschool.com/qccareerschool/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ emailAddress, password }),
-      credentials: 'include',
-    });
-    if (!response.ok) {
-      return response.status;
-    }
-    const data = await response.json() as Auth;
-    if (!(typeof data.id === 'number' && typeof data.emailAddress === 'string')) {
-      return 500;
-    }
-    return data;
-  } catch (err) {
-    console.error(err);
-    return 500;
-  }
-}
-
-export async function cookieLogin(): Promise<Auth | undefined> {
-  try {
-    const response = await fetch('https://api.qccareerschool.com/qccareerschool/cookieLogin', {
-      method: 'POST',
-      credentials: 'include',
-    });
-    if (!response.ok) {
-      throw Error('Bad status code from server');
-    }
-    const data = await response.json() as Auth;
-    if (!(typeof data.id === 'number' && typeof data.emailAddress === 'string')) {
-      throw Error('Unexpected response');
-    }
-    return data;
-  } catch (err) {
-    console.error(err);
-    return undefined;
-  }
-}
-
-export async function register(emailAddress: string, password: string): Promise<Auth | number> {
-  try {
-    const response = await fetch('https://api.qccareerschool.com/qccareerschool/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ emailAddress, password }),
-      credentials: 'include',
-    });
-    if (!response.ok) {
-      return response.status;
-    }
-    const data = await response.json() as Auth;
-    if (!(typeof data.id === 'number' && typeof data.emailAddress === 'string')) {
-      return 500;
-    }
-    return data;
-  } catch (err) {
-    console.error(err);
-    return 500;
-  }
-}
 
 export function needsProvince(countryCode: string): boolean {
   return [ 'CA', 'US', 'AU' ].includes(countryCode);
