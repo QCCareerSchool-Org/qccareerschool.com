@@ -135,13 +135,13 @@ const HomePage: NextPage = () => (
             <h3 className="mb-3">Full Course<br />Catalog</h3>
             <p>View a full list and description of training programs and courses offered by QC Career School</p>
             <div className="buttonSpacer" />
-            <Link href="/programs"><a className="absoluteButton btn btn-primary btn-sm caps">View Course Catalog</a></Link>
+            <Link href="/programs" className="absoluteButton btn btn-primary btn-sm caps">View Course Catalog</Link>
           </div>
           <div className="col-12 col-md-4">
             <h3 className="mb-3">Enroll<br />Today</h3>
             <p>QC offers individual, group, and corporate admissions! Learn more about the admissions process and how you can enroll in a QC course!</p>
             <div className="buttonSpacer" />
-            <Link href="/admissions"><a className="absoluteButton btn btn-primary btn-sm caps">Admissions</a></Link>
+            <Link href="/admissions" className="absoluteButton btn btn-primary btn-sm caps">Admissions</Link>
           </div>
         </div>
       </div>

@@ -65,7 +65,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcmakeupacademy.com">
-                          <Image src={FacultyMakeup} alt="QC Makeup Academy" className="card-img-top" />
+                          <Image src={FacultyMakeup} alt="QC Makeup Academy" className="card-img-top" style={{ height: 'auto' }} />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="h6 card-title">QC Makeup Academy</h5>
@@ -77,7 +77,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qceventplanning.com">
-                          <Image src={FacultyEvent} alt="QC Event School" className="card-img-top" />
+                          <Image src={FacultyEvent} alt="QC Event School" className="card-img-top" style={{ height: 'auto' }} />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Event School</h5>
@@ -89,7 +89,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcdesignschool.com">
-                          <Image src={FacultyDesign} alt="QC Design School" className="card-img-top" />
+                          <Image src={FacultyDesign} alt="QC Design School" className="card-img-top" style={{ height: 'auto' }} />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Design School</h5>
@@ -101,7 +101,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.doggroomingcourse.com">
-                          <Image src={FacultyPet} alt="QC Pet Studies" className="card-img-top" />
+                          <Image src={FacultyPet} alt="QC Pet Studies" className="card-img-top" style={{ height: 'auto' }} />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Pet Studies</h5>
@@ -113,7 +113,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-6 col-lg-4 mb-g d-flex">
                       <div className="card shadow-sm rounded-sm">
                         <a target="_blank" rel="noopener noreferrer" href="https://enroll.qcwellnessstudies.com">
-                          <Image src={FacultyWellness} alt="QC Wellness Studies" className="card-img-top" />
+                          <Image src={FacultyWellness} alt="QC Wellness Studies" className="card-img-top" style={{ height: 'auto' }} />
                         </a>
                         <div className="card-body pb-3">
                           <h5 className="card-title h6">QC Wellness Studies</h5>
@@ -129,7 +129,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-12 col-md-6">
                       <h3>Private Group Admissions &amp; Discounts</h3>
                       <p className="mb-4">If you would like to enroll with QC along with a friend, colleague or family member, you can take advantage of QC&apos;s group admissions discount! Any group of two or more enrolling in any course (you don&apos;t all have to enroll in the same course!) will receive a 25% discount for each individual enrolling. Simply call the school to enroll; this is only available for phone enrollments. Note that this discount cannot be combined with other offers or promotions.</p>
-                      <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
+                      <Link href="/contact" className="btn btn-secondary btn-sm">Contact QC</Link>
                     </div>
                     <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
                       <Image src={AdmissionsPrivate} layout="responsive" alt="Private Group Discounts" />
@@ -141,7 +141,7 @@ const AdmissionsPage: NextPage = () => (
                     <div className="col-12 col-md-6">
                       <h3>Corporate Admissions</h3>
                       <p className="mb-4">Over the years QC has worked with corporations to adapt course content, assignments and tuition/billing practices to corporate groups with specific goals for their employees. If you are a member of a corporation looking to train your employees via a QC course, please contact us to speak with a business development representative who will be happy to prepare a proposal that will suit your needs.           </p>
-                      <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
+                      <Link href="/contact" className="btn btn-secondary btn-sm">Contact QC</Link>
                     </div>
                     <div className="col-12 col-md-6 mb-4 mb-md-0 d-none d-md-block">
                       <Image src={AdmissionsCorporate} layout="responsive" alt="Corporate Admissions" />

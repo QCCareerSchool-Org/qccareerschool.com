@@ -15,7 +15,7 @@ export const CourseCard = ({ imageComponent, title, body, buttonText, link, exte
     <div className="card shadow-sm rounded-sm">
       {externalLink
         ? <a href={link}>{imageComponent}</a>
-        : <Link href={link}><a>{imageComponent}</a></Link>
+        : <Link href={link}>{imageComponent}</Link>
       }
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
@@ -23,7 +23,7 @@ export const CourseCard = ({ imageComponent, title, body, buttonText, link, exte
         <div className="buttonSpacer" />
         {externalLink
           ? <a href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a>
-          : <Link href={link}><a className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a></Link>
+          : <Link href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</Link>
         }
       </div>
 

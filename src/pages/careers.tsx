@@ -39,7 +39,7 @@ const CareersPage: NextPage = () => (
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers for Students and Graduates</h3>
             <p>QC Career School is an international distance-learning institution, and thus providing individual employment assistance to students and graduates is not available. However, all students and graduates have access to full business training as well as career resources to help you look for and secure work.</p>
-            <p className="mb-0">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here&apos;s where you can <Link href="/find-professionals"><a>find professional profiles of QC-trained professionals.</a></Link>
+            <p className="mb-0">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here&apos;s where you can <Link href="/find-professionals">find professional profiles of QC-trained professionals.</Link>
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const CareersPage: NextPage = () => (
             </p>
             <p>We&apos;re always happy to accept tutors from around the world! QC is an International school, and most of our students are located in the United States, Canada, Australia, the United Kingdom, and New Zealand.</p>
             <div className="text-left">
-              <Link href="/contact"><a className="btn btn-secondary btn-sm">Contact QC</a></Link>
+              <Link href="/contact" className="btn btn-secondary btn-sm">Contact QC</Link>
             </div>
           </div>
         </div>

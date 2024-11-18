@@ -82,7 +82,7 @@ const MakeupPage: NextPage = () => (
             <CourseCard
               imageComponent={<Image src={GlobalBeauty} layout="responsive" className="card-img-top" alt="makeup artist applying makeup on a client" />}
               title="Global Beauty Makeup Workshop"
-              body="Makeup is a lifelong learning process. Once you’re done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world."
+              body="Makeup is a lifelong learning process. Once you're done with the master makeup artistry course, the Global Beauty Workshop will take your skills to the next level by teaching you different makeup applications and trends from all over the world."
               buttonText="Full Course Overview"
               link="https://www.qcmakeupacademy.com/online-makeup-courses/global-beauty-workshop/"
               externalLink={true}

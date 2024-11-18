@@ -40,7 +40,7 @@ const AdditionalProgramsPage: NextPage = () => (
           <div className="col-12 col-md-6 order-md-1">
             <h3>QC Style Academy</h3>
             <p className="mb-4">Partnered closely with QC Makeup Academy, QC Style Academy will introduce you to a different angle to the beauty industry with its Fashion Styling Course. Become a full-time fashion stylist and/or personal shopper, or pair those services to your thriving beauty business to offer full-service solutions to your clients. The possibilities are limitless!</p>
-            <Link href="https://www.qcmakeupacademy.com/online-makeup-courses/fashion-styling/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
+            <Link href="https://www.qcmakeupacademy.com/online-makeup-courses/fashion-styling/" className="btn btn-secondary btn-sm">Full Course Overview</Link>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@ const AdditionalProgramsPage: NextPage = () => (
           <div className="col-12 col-md-6 order-md-1">
             <h3>Winghill School of Writing</h3>
             <p className="mb-4">Let your creativity soar with a number of writing courses that will help you become a published author. Winghill&apos;s courses are extremely flexible and designed to work with you as you turn your ideas into workable manuscripts with the help of your tutor. Choose a course based on your writing genre and goals. Popular courses include the Creative Writing Course, Novel Writing Course, or Screenwriting Course, among others</p>
-            <Link href="https://www.winghill.com/"><a className="btn btn-secondary btn-sm">Full Course Overview</a></Link>
+            <Link href="https://www.winghill.com/" className="btn btn-secondary btn-sm">Full Course Overview</Link>
           </div>
         </div>
       </div>
