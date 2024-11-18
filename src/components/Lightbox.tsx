@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ReactElement } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
 import { useScreenWidth } from '../hooks/useScreenWidth';
