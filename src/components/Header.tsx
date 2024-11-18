@@ -47,22 +47,22 @@ export const Header = ({ noHero, className }: Props): ReactElement => {
       <div className="container">
         <div id="nav-wrapper">
           <Navbar.Brand>
-            <Link href="/"><a><div className="logoWrapper"><Image src={Logo} alt="QC Career School" layout="fixed" width={40.92} height={40} /></div></a></Link>
+            <Link href="/"><div className="logoWrapper"><Image src={Logo} alt="QC Career School" layout="fixed" width={40.92} height={40} /></div></Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">
             <Nav className="ml-auto mr-3">
               <NavDropdown title="Programs" id="programs-dropdown">
-                <Link href="/programs/qc-makeup-academy"><a onClick={resetMenu} className="dropdown-item">QC Makeup Academy</a></Link>
-                <Link href="/programs/qc-design-school"><a onClick={resetMenu} className="dropdown-item">QC Design School</a></Link>
-                <Link href="/programs/qc-event-school"><a onClick={resetMenu} className="dropdown-item">QC Event School</a></Link>
-                <Link href="/programs/qc-pet-studies"><a onClick={resetMenu} className="dropdown-item">QC Pet Studies</a></Link>
-                <Link href="/programs/qc-wellness-studies"><a onClick={resetMenu} className="dropdown-item">QC Wellness Studies</a></Link>
-                <Link href="/programs/additional-programs"><a onClick={resetMenu} className="dropdown-item">Additional Programs</a></Link>
-                <Link href="/programs/combine-and-save"><a onClick={resetMenu} className="dropdown-item">Combine and Save</a></Link>
+                <Link href="/programs/qc-makeup-academy" onClick={resetMenu} className="dropdown-item">QC Makeup Academy</Link>
+                <Link href="/programs/qc-design-school" onClick={resetMenu} className="dropdown-item">QC Design School</Link>
+                <Link href="/programs/qc-event-school" onClick={resetMenu} className="dropdown-item">QC Event School</Link>
+                <Link href="/programs/qc-pet-studies" onClick={resetMenu} className="dropdown-item">QC Pet Studies</Link>
+                <Link href="/programs/qc-wellness-studies" onClick={resetMenu} className="dropdown-item">QC Wellness Studies</Link>
+                <Link href="/programs/additional-programs" onClick={resetMenu} className="dropdown-item">Additional Programs</Link>
+                <Link href="/programs/combine-and-save" onClick={resetMenu} className="dropdown-item">Combine and Save</Link>
               </NavDropdown>
-              <Link href="/admissions"><a onClick={resetMenu} className="nav-link">Admissions</a></Link>
-              <Link href="/contact"><a onClick={resetMenu} className="nav-link">Contact Us</a></Link>
+              <Link href="/admissions" onClick={resetMenu} className="nav-link">Admissions</Link>
+              <Link href="/contact" onClick={resetMenu} className="nav-link">Contact Us</Link>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
               {mobile

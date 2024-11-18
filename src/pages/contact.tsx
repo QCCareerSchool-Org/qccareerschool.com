@@ -18,7 +18,7 @@ const ContactPage: NextPage = () => {
     <>
       <SEO
         title="Contact"
-        description="QC’s team of friendly student advisors are always happy to help. Reach out to us by phone or email at any time!"
+        description="QC's team of friendly student advisors are always happy to help. Reach out to us by phone or email at any time!"
         canonical="/contact"
       />
 
