@@ -8,6 +8,7 @@ import { getTelephoneNumber } from '../functions';
 import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import { DefaultLayout } from '../layouts/DefaultLayout';
+import { formatDate } from '../lib/formateDate';
 import { Enrollment } from '../models/enrollment';
 import { NextPageWithLayout } from './_app';
 
@@ -157,7 +158,7 @@ const WelcomeToTheSchoolPage: NextPageWithLayout<Props> = ({ data, errorCode }) 
                   </tr>
                   <tr>
                     <td>Time</td>
-                    <td>{data.enrollment.transactionTime}</td>
+                    <td>{data.enrollment.transactionTime !== null ? formatDate(data.enrollment.transactionTime) : ''}</td>
                   </tr>
                   <tr>
                     <td>Auth Code</td>
