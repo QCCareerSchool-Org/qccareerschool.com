@@ -31,7 +31,7 @@ const AdditionalProgramsPage: NextPage = () => (
       </div>
     </section>
 
-    <section>
+    {/* <section>
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
@@ -44,7 +44,7 @@ const AdditionalProgramsPage: NextPage = () => (
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
 
     <section className="bg-light">
       <div className="container">
