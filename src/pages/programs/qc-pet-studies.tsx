@@ -56,10 +56,10 @@ const PetPage: NextPage = () => (
             />
           </CardColumn>
         </div>
-        <h3>Additional QC Pet Studies Courses</h3>
+        {/* <h3>Additional QC Pet Studies Courses</h3>
         <ul>
           <li><a href="https://www.qcpetstudies.com/dog-grooming-courses/first-aid">First Aid for Groomers</a></li>
-        </ul>
+        </ul> */}
       </div>
     </section>
   </>

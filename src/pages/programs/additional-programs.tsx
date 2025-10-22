@@ -25,13 +25,13 @@ const AdditionalProgramsPage: NextPage = () => (
           <div className="col-12 col-md-8 offset-md-4">
             <Bar className="text-primary ml-auto" />
             <h1>Additional Programs</h1>
-            <p className="lead">Other QC Schools include QC Style Academy, QC Travel School, and Winghill Writing School. Explore these additional programs here!</p>
+            <p className="lead">Other QC Schools include Winghill Writing School. Explore these additional programs here!</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    {/* <section>
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
@@ -44,7 +44,7 @@ const AdditionalProgramsPage: NextPage = () => (
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
 
     <section className="bg-light">
       <div className="container">
