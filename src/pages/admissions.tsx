@@ -161,7 +161,7 @@ const AdmissionsPage: NextPage = () => (
         <div className="row">
           <div className="col-12 col-md-6 mb-3">
             <h3 className="h5"><span className="icon-wrapper"><IoMdTimer size={iconSize} /></span>No Deadlines or Mandatory Classes</h3>
-            <p>You&apos;ll never be on the clock to finish your assignments. You have a full two years to complete any training program, so there&apos;s no rush and plenty of time if life gets in the way!</p>
+            <p>You&apos;ll never be on the clock to finish your assignments. You have a full year to complete any training program, so there&apos;s no rush and plenty of time if life gets in the way!</p>
             <p>Typically, students who work on their assignments for a short period each week will complete their course within four to six months.</p>
           </div>
           <div className="col-12 col-md-6 mb-3">

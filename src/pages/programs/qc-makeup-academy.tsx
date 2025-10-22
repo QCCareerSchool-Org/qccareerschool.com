@@ -78,7 +78,7 @@ const MakeupPage: NextPage = () => (
               externalLink={true}
             />
           </CardColumn>
-          <CardColumn>
+          {/* <CardColumn>
             <CourseCard
               imageComponent={<Image src={GlobalBeauty} layout="responsive" className="card-img-top" alt="makeup artist applying makeup on a client" />}
               title="Global Beauty Makeup Workshop"
@@ -87,14 +87,14 @@ const MakeupPage: NextPage = () => (
               link="https://www.qcmakeupacademy.com/online-makeup-courses/global-beauty-workshop/"
               externalLink={true}
             />
-          </CardColumn>
+          </CardColumn> */}
         </div>
         <h3>Additional Courses for Makeup Artists</h3>
         <ul>
           <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/airbrush-makeup-workshop/">Airbrush Makeup Workshop</a></li>
           <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/portfolio-development/">Portfolio Development Workshop</a></li>
           <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/hair-styling-essentials/">Hair Styling Essentials</a></li>
-          <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/makeup-artistry/">Personal Makeup</a></li>
+          {/* <li><a href="https://www.qcmakeupacademy.com/online-makeup-courses/makeup-artistry/">Personal Makeup</a></li> */}
         </ul>
       </div>
     </section>
