@@ -53,7 +53,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <Image src={CombineMakeupAndWedding} alt="applying makeup on wedding bride" />
+            <Image src={CombineMakeupAndWedding} className="img-fluid" alt="applying makeup on wedding bride" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h2 className="h3">Master Makeup Artistry + Event &amp; Wedding Planning</h2>
@@ -70,7 +70,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <Image src={CombineDecoratingAndDecor} alt="interior decorated event" />
+            <Image src={CombineDecoratingAndDecor} className="img-fluid" alt="interior decorated event" />
           </div>
           <div className="col-12 col-md-6">
             <h2 className="h3">Interior Decorating + Event Decor</h2>
@@ -87,7 +87,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <Image src={CombineDestinationAndTravel} alt="destination wedding and travel" />
+            <Image src={CombineDestinationAndTravel} className="img-fluid" alt="destination wedding and travel" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h2 className="h3">Destination Wedding Planning + Travel &amp; Tourism</h2>
@@ -104,7 +104,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <Image src={CombineScreenwritingAndMakeup} alt="screenwriting and makeup" />
+            <Image src={CombineScreenwritingAndMakeup} className="img-fluid" alt="screenwriting and makeup" />
           </div>
           <div className="col-12 col-md-6">
             <h3>Screenwriting + Master Makeup Artistry</h3>
@@ -121,7 +121,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0 order-md-2">
-            <Image src={CombineDecorAndColorConsulting} alt="event decor and color consulting" />
+            <Image src={CombineDecorAndColorConsulting} className="img-fluid" alt="event decor and color consulting" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h2 className="h3">Event Decor + Color Consulting</h2>
@@ -138,7 +138,7 @@ const CombineAndSavePage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 md-md-0">
-            <Image src={CombineBusinessCommunications} alt="business communications" />
+            <Image src={CombineBusinessCommunications} className="img-fluid" alt="business communications" />
           </div>
           <div className="col-12 col-md-6">
             <h2 className="h3">Any QC Course + Business Communications</h2>
