@@ -34,13 +34,11 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <Image src={StudentWithLaptop} alt="QC Student" className="card-img-top" />
+            <Image src={StudentWithLaptop} alt="QC Student" className="img-fluid" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers for Students and Graduates</h3>
-            <p>QC Career School is an international distance-learning institution, and thus providing individual employment assistance to students and graduates is not available. However, all students and graduates have access to full business training as well as career resources to help you look for and secure work.</p>
-            <p className="mb-0">Students and graduates also have access to an online career profile builder, which allows you to build a professional online profile that is searchable by potential clients.  Here&apos;s where you can <Link href="/find-professionals">find professional profiles of QC-trained professionals.</Link>
-            </p>
+            <p className="mb-0">QC Career School is an international distance-learning institution, and thus providing individual employment assistance to students and graduates is not available. However, all students and graduates have access to full business training as well as career resources to help you look for and secure work.</p>
           </div>
         </div>
       </div>
@@ -50,7 +48,7 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0">
-            <Image src={TutorWithLaptop} alt="QC Tutor" className="card-img-top" />
+            <Image src={TutorWithLaptop} alt="QC Tutor" className="img-fluid" />
           </div>
           <div className="col-12 col-md-6">
             <h3>Become a QC Tutor</h3>
@@ -77,7 +75,7 @@ const CareersPage: NextPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0 order-md-2">
-            <Image src={OttawaLandscape} alt="Ottawa Landscape" className="card-img-top" />
+            <Image src={OttawaLandscape} alt="Ottawa Landscape" className="img-fluid" />
           </div>
           <div className="col-12 col-md-6 order-md-1">
             <h3>Careers at QC Headquarters</h3>
