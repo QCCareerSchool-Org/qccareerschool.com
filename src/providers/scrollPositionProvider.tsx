@@ -8,7 +8,7 @@ export const ScrollPositionContext = createContext<number | undefined>(0);
 const valueSelector = (w: Window) => w.pageYOffset;
 
 export const ScrollPositionProvider: FC<PropsWithChildren> = ({ children }) => {
-  const scrollPosition = useWindowListener('resize', valueSelector, 0);
+  const scrollPosition = useWindowListener('scroll', valueSelector, 0);
 
   return (
     <ScrollPositionContext.Provider value={scrollPosition}>

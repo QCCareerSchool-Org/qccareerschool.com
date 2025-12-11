@@ -1,4 +1,5 @@
 import faker from 'faker';
+
 import * as functions from '../src/functions';
 
 describe('general library functions', () => {
