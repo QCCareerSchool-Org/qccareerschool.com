@@ -6,10 +6,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import { useScreenWidth } from '../hooks/useScreenWidth';
-import { useScrollPosition } from '../hooks/useScrollPosition';
-import LogoLight from '../images/q-light.svg';
-import LogoDark from '../images/q.svg';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { useScrollPosition } from '@/hooks/useScrollPosition';
+import LogoLight from '@/images/q-light.svg';
+import LogoDark from '@/images/q.svg';
 
 interface Props {
   noHero?: boolean;
@@ -48,7 +48,7 @@ export const Header: FC<Props> = ({ noHero, className }) => {
       <div className="container">
         <div id="nav-wrapper">
           <Navbar.Brand>
-            <Link href="/"><div className="logoWrapper"><Image src={Logo} alt="QC Career School" layout="fixed" width={40.92} height={40} /></div></Link>
+            <Link href="/"><div className="logoWrapper"><Image src={Logo} alt="QC Career School" width={40.92} height={40} /></div></Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">

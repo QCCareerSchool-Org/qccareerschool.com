@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import { getAddress } from '../functions';
-import { useLocation } from '../hooks/useLocation';
-import BBBLogo from '../images/bbb-a+.svg';
+import { getAddress } from '@/functions';
+import { useLocation } from '@/hooks/useLocation';
+import BBBLogo from '@/images/bbb-a+.svg';
 
 interface Props {
   className?: string;
@@ -25,7 +25,7 @@ export const Footer: FC<Props> = ({ className }) => {
           </div>
           <div className="col-12 col-sm-6 text-center text-sm-right mb-4 mb-sm-0">
             <div id="footer-right">
-              <a target="_blank" rel="noopener noreferrer" className="text-light" href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175#sealclick"><Image src={BBBLogo} layout="fixed" alt="Better Business Bureau A+ accreditation" /></a><br />
+              <a target="_blank" rel="noopener noreferrer" className="text-light" href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175#sealclick"><Image src={BBBLogo} alt="Better Business Bureau A+ accreditation" /></a><br />
               <a target="_blank" rel="noopener noreferrer" className="text-light" href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175#sealclick">View BBB Profile</a><br />
             </div>
           </div>

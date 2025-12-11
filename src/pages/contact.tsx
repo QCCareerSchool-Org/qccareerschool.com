@@ -23,7 +23,7 @@ const ContactPage: NextPage = () => {
       />
 
       <section id="first-section" className="text-light">
-        <Image src={Hero} layout="fill" objectFit="cover" objectPosition="center top" placeholder="blur" alt="three people using their phones" priority />
+        <Image src={Hero} style={{ objectFit: 'cover', objectPosition: 'center top' }} placeholder="blur" alt="three people using their phones" priority />
         <Overlay />
         <div className="container">
           <div className="row">
@@ -41,7 +41,7 @@ const ContactPage: NextPage = () => {
             <div className="col-12 col-md-5 offset-md-1 col-xl-4 offset-xl-2">
               <IoMdPhonePortrait size={iconSize} />
               <h2 className="h3">By Phone</h2>
-              <p>
+              <div>
                 Our student support specialists are available by phone and are always happy to take some time to discuss your career path and goals.
                 <br />
                 {telephoneNumber === getTelephoneNumber()
@@ -54,7 +54,7 @@ const ContactPage: NextPage = () => {
                     </div>
                   )
                 }
-              </p>
+              </div>
             </div>
             <div className="col-12 col-md-5 col-xl-4">
               <IoMdMail size={iconSize} />

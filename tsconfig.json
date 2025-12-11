@@ -1,37 +1,44 @@
 {
   "compilerOptions": {
     "target": "es2024",
-    "module": "esnext",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es2024"
-    ],
+    "lib": [ "dom", "dom.iterable", "es2024" ],
     "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
     "noEmit": true,
-    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "public",
-    ".next"
-  ],
   "include": [
+    "files.d.ts",
     "svg-override.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    ".eslintrc.js",
+    "**/*.jsx",
+    "**/*.mts",
     "eslint.config.mjs",
-    "jest.config.mjs"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "test/jest.setup.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".next"
   ]
 }

@@ -1,8 +1,9 @@
+jest.mock('@/hooks/useLocation');
+
 import { render } from '@testing-library/react';
-import React from 'react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
-import ContactPage from '../../src/pages/contact';
+import ContactPage from '@/pages/contact';
 
 expect.extend(toHaveNoViolations);
 

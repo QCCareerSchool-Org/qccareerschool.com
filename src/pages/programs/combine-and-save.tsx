@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Bar } from '../../components/Bar';
-import { Overlay } from '../../components/Overlay';
-import { SEO } from '../../components/SEO';
-import Hero from '../../images/backgrounds/hero-home.jpg';
-import CombineBusinessCommunications from '../../images/combine-business-communications.jpg';
-import CombineDecorAndColorConsulting from '../../images/combine-decor-color.jpg';
-import CombineDestinationAndTravel from '../../images/combine-destination-travel.jpg';
-import CombineDecoratingAndDecor from '../../images/combine-interior-decorating-event-decor.jpg';
-import CombineMakeupAndWedding from '../../images/combine-makeup-wedding-planning.jpg';
-import CombineScreenwritingAndMakeup from '../../images/combine-screenwriting-makeup.jpg';
+import { Bar } from '@/components/Bar';
+import { Overlay } from '@/components/Overlay';
+import { SEO } from '@/components/SEO';
+import Hero from '@/images/backgrounds/hero-home.jpg';
+import CombineBusinessCommunications from '@/images/combine-business-communications.jpg';
+import CombineDecorAndColorConsulting from '@/images/combine-decor-color.jpg';
+import CombineDestinationAndTravel from '@/images/combine-destination-travel.jpg';
+import CombineDecoratingAndDecor from '@/images/combine-interior-decorating-event-decor.jpg';
+import CombineMakeupAndWedding from '@/images/combine-makeup-wedding-planning.jpg';
+import CombineScreenwritingAndMakeup from '@/images/combine-screenwriting-makeup.jpg';
 
 const CombineAndSavePage: NextPage = () => (
   <>
@@ -22,7 +22,7 @@ const CombineAndSavePage: NextPage = () => (
     />
 
     <section id="first-section" className="text-light">
-      <Image src={Hero} layout="fill" objectFit="cover" objectPosition="left top" placeholder="blur" alt="colleagues collaborating around a computer" priority />
+      <Image src={Hero} style={{ objectFit: 'cover', objectPosition: 'left top' }} placeholder="blur" alt="colleagues collaborating around a computer" priority />
       <Overlay />
       <div className="container">
         <div className="row">
