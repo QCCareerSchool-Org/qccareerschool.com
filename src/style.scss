@@ -76,7 +76,7 @@ $navbar-toggler-border-radius:      $border-radius;
 
 $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-btn-padding-x)
 
-@import '~bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 body {
   overflow-y: scroll;

@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,7 +6,6 @@ import { Bar } from '../../components/Bar';
 import { Overlay } from '../../components/Overlay';
 import { SEO } from '../../components/SEO';
 import Hero from '../../images/backgrounds/hero-additional-programs.jpg';
-import FacultyStyle from '../../images/backgrounds/hero-faculty-style.jpg';
 import FacultyWriting from '../../images/backgrounds/hero-faculty-writing.jpg';
 
 const AdditionalProgramsPage: NextPage = () => (

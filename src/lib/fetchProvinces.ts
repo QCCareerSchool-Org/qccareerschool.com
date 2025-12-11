@@ -1,4 +1,4 @@
-import { Province } from '../models/province';
+import type { Province } from '../models/province';
 
 export const fetchProvinces = async (countryCode: string): Promise<Province[]> => {
   const url = `https://api.qccareerschool.com/geoLocation/provinces?countryCode=${encodeURIComponent(countryCode)}`;
@@ -6,5 +6,5 @@ export const fetchProvinces = async (countryCode: string): Promise<Province[]> =
   if (!response.ok) {
     throw Error('Unable to retreive provinces');
   }
-  return response.json();
+  return response.json() as unknown as Promise<Province[]>;
 };

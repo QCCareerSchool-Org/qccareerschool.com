@@ -31,8 +31,8 @@ export const gaSale = (enrollment: Enrollment): void => {
     tax: 0,
     shipping: 0,
     items: enrollment.courses.map(c => ({
-      id: c.code, // eslint-disable-line camelcase
-      name: c.name, // eslint-disable-line camelcase
+      id: c.code,
+      name: c.name,
       price: parseFloat(Big(c.baseCost).minus(c.planDiscount).minus(c.discount).toFixed(precision)),
       quantity: 1,
     })),

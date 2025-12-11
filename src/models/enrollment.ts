@@ -1,4 +1,4 @@
-export type Enrollment = {
+export interface Enrollment {
   id: number;
   school: string;
   url: string;
@@ -28,13 +28,13 @@ export type Enrollment = {
   deposit: number;
   installment: number;
   authorizationId: string;
-  transactionTime: Date;
+  transactionTime: Date | null;
   authCode: string;
   maskedPan: string;
   currencySymbol: string;
   currencyName: string;
   currencyExchangeRate: number;
-  courses: Array<{
+  courses: {
     code: string;
     baseCost: number;
     planDiscount: number;
@@ -42,6 +42,6 @@ export type Enrollment = {
     deposit: number;
     installment: number;
     name: string;
-  }>;
+  }[];
   courseCodes: string[];
-};
+}

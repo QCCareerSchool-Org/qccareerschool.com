@@ -1,5 +1,5 @@
-export type Testimonial = {
+export interface Testimonial {
   quote: string;
   name: string;
   rating: number | null;
-};
+}

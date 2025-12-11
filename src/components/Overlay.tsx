@@ -1,11 +1,11 @@
-import { ReactElement } from 'react';
+import type { FC } from 'react';
 
-type Props = {
+interface Props {
   opacityTop?: number;
   opacityBottom?: number;
-};
+}
 
-export const Overlay = ({ opacityTop = 0.45, opacityBottom = opacityTop }: Props): ReactElement => (
+export const Overlay: FC<Props> = ({ opacityTop = 0.45, opacityBottom = opacityTop }) => (
   <>
     <div className="overlay" />
     <style jsx>{`

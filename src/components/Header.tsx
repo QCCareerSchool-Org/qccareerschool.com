@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -10,19 +11,19 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 import LogoLight from '../images/q-light.svg';
 import LogoDark from '../images/q.svg';
 
-type Props = {
+interface Props {
   noHero?: boolean;
   className?: string;
-};
+}
 
-export const Header = ({ noHero, className }: Props): ReactElement => {
+export const Header: FC<Props> = ({ noHero, className }) => {
   const screenWidth = useScreenWidth();
   const scrollPosition = useScrollPosition();
-  const [ expanded, setExpanded ] = useState(false);
+  const [ expanded, handleToggle ] = useState(false);
   const [ key, setKey ] = useState(0);
 
-  const resetMenu = (): void => {
-    setExpanded(false);
+  const handleMenuItemClick = (): void => {
+    handleToggle(false);
     // because this component persists from page to page, we need to recreate the Navbar component each time a menu item is clicked
     setTimeout(() => {
       setKey(k => (k < Number.MAX_SAFE_INTEGER ? k + 1 : 0));
@@ -42,7 +43,7 @@ export const Header = ({ noHero, className }: Props): ReactElement => {
       variant={scrollPosition > maxPosition ? undefined : 'dark'}
       expand="lg"
       className={`${scrollPosition > maxPosition ? 'shadow-sm' : ''} ${expanded && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${className}`}
-      onToggle={setExpanded}
+      onToggle={handleToggle}
     >
       <div className="container">
         <div id="nav-wrapper">
@@ -53,16 +54,16 @@ export const Header = ({ noHero, className }: Props): ReactElement => {
           <Navbar.Collapse id="main-navbar">
             <Nav className="ml-auto mr-3">
               <NavDropdown title="Programs" id="programs-dropdown">
-                <Link href="/programs/qc-makeup-academy" onClick={resetMenu} className="dropdown-item">QC Makeup Academy</Link>
-                <Link href="/programs/qc-design-school" onClick={resetMenu} className="dropdown-item">QC Design School</Link>
-                <Link href="/programs/qc-event-school" onClick={resetMenu} className="dropdown-item">QC Event School</Link>
-                <Link href="/programs/qc-pet-studies" onClick={resetMenu} className="dropdown-item">QC Pet Studies</Link>
-                <Link href="/programs/qc-wellness-studies" onClick={resetMenu} className="dropdown-item">QC Wellness Studies</Link>
-                <Link href="/programs/additional-programs" onClick={resetMenu} className="dropdown-item">Additional Programs</Link>
-                <Link href="/programs/combine-and-save" onClick={resetMenu} className="dropdown-item">Combine and Save</Link>
+                <Link href="/programs/qc-makeup-academy" onClick={handleMenuItemClick} className="dropdown-item">QC Makeup Academy</Link>
+                <Link href="/programs/qc-design-school" onClick={handleMenuItemClick} className="dropdown-item">QC Design School</Link>
+                <Link href="/programs/qc-event-school" onClick={handleMenuItemClick} className="dropdown-item">QC Event School</Link>
+                <Link href="/programs/qc-pet-studies" onClick={handleMenuItemClick} className="dropdown-item">QC Pet Studies</Link>
+                <Link href="/programs/qc-wellness-studies" onClick={handleMenuItemClick} className="dropdown-item">QC Wellness Studies</Link>
+                <Link href="/programs/additional-programs" onClick={handleMenuItemClick} className="dropdown-item">Additional Programs</Link>
+                <Link href="/programs/combine-and-save" onClick={handleMenuItemClick} className="dropdown-item">Combine and Save</Link>
               </NavDropdown>
-              <Link href="/admissions" onClick={resetMenu} className="nav-link">Admissions</Link>
-              <Link href="/contact" onClick={resetMenu} className="nav-link">Contact Us</Link>
+              <Link href="/admissions" onClick={handleMenuItemClick} className="nav-link">Admissions</Link>
+              <Link href="/contact" onClick={handleMenuItemClick} className="nav-link">Contact Us</Link>
             </Nav>
             <a href="https://studentcenter.qccareerschool.com">
               {mobile

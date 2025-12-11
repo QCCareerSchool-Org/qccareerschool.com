@@ -1,8 +1,8 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import Image from 'next/image';
 import { IoMdMail, IoMdPhonePortrait } from 'react-icons/io';
-import { Overlay } from '../components/Overlay';
 
+import { Overlay } from '../components/Overlay';
 import { SEO } from '../components/SEO';
 import { getTelephoneNumber } from '../functions';
 import { useLocation } from '../hooks/useLocation';

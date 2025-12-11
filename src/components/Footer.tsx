@@ -1,17 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement } from 'react';
+import type { FC } from 'react';
 
 import { getAddress } from '../functions';
 import { useLocation } from '../hooks/useLocation';
-
 import BBBLogo from '../images/bbb-a+.svg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
-export const Footer = ({ className }: Props): ReactElement => {
+export const Footer: FC<Props> = ({ className }) => {
   const location = useLocation();
   const address = getAddress(location?.countryCode ?? 'US');
   return (

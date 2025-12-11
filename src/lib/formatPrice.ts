@@ -1,4 +1,4 @@
-import { Big } from 'big.js';
+import type { Big } from 'big.js';
 
 export const formatPrice = (amount: number | Big): string => {
   const s = amount.toFixed(2);

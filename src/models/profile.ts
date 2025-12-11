@@ -1,8 +1,8 @@
-import { Picture } from './picture';
-import { Portrait } from './portrait';
-import { Testimonial } from './testimonial';
+import type { Picture } from './picture';
+import type { Portrait } from './portrait';
+import type { Testimonial } from './testimonial';
 
-export type Profile = {
+export interface Profile {
   id: number;
   sex: string;
   firstName: string;
@@ -35,4 +35,4 @@ export type Profile = {
   images: Picture[];
   testimonials: Testimonial[];
   portrait: Portrait | null;
-};
+}
