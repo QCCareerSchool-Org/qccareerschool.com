@@ -3,7 +3,7 @@
   "version": "1.16.13",
   "description": "",
   "main": "index.js",
-  "swc": { 
+  "swc": {
     "runtime": "automatic"
   },
   "scripts": {
@@ -20,22 +20,20 @@
   "private": true,
   "dependencies": {
     "@qccareerschool/http-status": "^2.1.1",
-    "@types/xml": "^1.0.11",
     "big.js": "^7.0.1",
     "bootstrap": "^5.3.8",
-    "next": "16.0.8",
-    "react": "19.2.1",
+    "next": "16.0.10",
+    "react": "19.2.3",
     "react-bootstrap": "^2.10.10",
-    "react-dom": "19.2.1",
+    "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
     "react-schemaorg": "^2.0.0",
-    "sass": "^1.81.0",
-    "schema-dts": "^1.1.2",
+    "sass": "^1.96.0",
+    "schema-dts": "^1.1.5",
     "xml": "^1.0.1"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
-    "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.1",
     "@faker-js/faker": "^9.9.0",
     "@stylistic/eslint-plugin": "^5.6.1",
@@ -50,15 +48,15 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@types/react-helmet": "^6.1.11",
+    "@types/xml": "^1.0.11",
     "eslint": "^9.39.1",
-    "eslint-config-next": "16.0.8",
+    "eslint-config-next": "16.0.10",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "jest": "^30.2.0",
     "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.2.0",
-    "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.49.0"
   },

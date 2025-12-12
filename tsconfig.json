@@ -23,18 +23,15 @@
     }
   },
   "include": [
-    "files.d.ts",
-    "svg-override.d.ts",
     "next-env.d.ts",
+    "svg-override.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "**/*.mts",
-    "eslint.config.mjs",
+    "**/*.mjs",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "test/jest.setup.js"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
