@@ -1,6 +1,6 @@
+import type { NextPageWithLayout } from './_app';
 import { SEO } from '../components/SEO';
 import { MonospaceLayout } from '../layouts/MonospaceLayout';
-import { NextPageWithLayout } from './_app';
 
 const EnrollmentAgreementGBPage: NextPageWithLayout = () => (
   <>

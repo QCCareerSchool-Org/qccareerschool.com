@@ -1,15 +1,15 @@
-import { ReactElement } from 'react';
+import type { FC } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
+
 import { useScreenWidth } from '../hooks/useScreenWidth';
+import type { Picture } from '../models/picture';
 
-import { Picture } from '../models/picture';
-
-type Props = {
+interface Props {
   picture?: Picture;
   onClose: () => void;
-};
+}
 
-export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
+export const LightBox: FC<Props> = ({ picture, onClose: handleCloseClick }) => {
   const screenWidth = useScreenWidth();
 
   const maxHeight = 600;
@@ -44,7 +44,7 @@ export const LightBox = ({ picture, onClose }: Props): ReactElement | null => {
 
   return (
     <div className="lightbox">
-      <div className="close" onClick={onClose}><IoIosCloseCircle size={40} /></div>
+      <div className="close" onClick={handleCloseClick}><IoIosCloseCircle size={40} /></div>
       <div className="wrapper">
         <div className="imageWrapper">
           { /* eslint-disable-next-line @next/next/no-img-element */ }

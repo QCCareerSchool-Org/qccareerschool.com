@@ -1,31 +1,18 @@
-import PropTypes from 'prop-types';
-import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext } from 'react';
 
-export const ScreenWidthContext = createContext<number>(0);
+import { useWindowListener } from '../hooks/useWindowListener';
 
-type Props = {
-  children: ReactNode;
-};
+export const ScreenWidthContext = createContext<number | undefined>(undefined);
 
-export const ScreenWidthProvider = ({ children }: Props): ReactElement => {
-  const [ screenWidth, setScreenWidth ] = useState(0);
+const valueSelector = (w: Window) => w.innerWidth;
 
-  useEffect(() => {
-    setScreenWidth(window.innerWidth);
-    const handleResize = (): void => setScreenWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+export const ScreenWidthProvider: FC<PropsWithChildren> = ({ children }) => {
+  const screenWidth = useWindowListener('resize', valueSelector, 0);
 
   return (
     <ScreenWidthContext.Provider value={screenWidth}>
       {children}
     </ScreenWidthContext.Provider>
   );
-};
-
-ScreenWidthProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };

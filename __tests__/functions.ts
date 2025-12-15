@@ -1,17 +1,24 @@
-import faker from 'faker';
+import { fakerEN as faker } from '@faker-js/faker';
+
 import * as functions from '../src/functions';
+
+describe('example', () => {
+  it('should work', () => {
+    expect(1 + 1).toBe(2);
+  });
+});
 
 describe('general library functions', () => {
 
   describe('isCallingCode44', () => {
     const func = functions.isCallingCode44;
 
-    test('should exist', () => {
+    it('should exist', () => {
       expect(func).not.toBeUndefined();
     });
 
-    test('should return a boolean', () => {
-      const countryCode = faker.address.countryCode();
+    it('should return a boolean', () => {
+      const countryCode = faker.location.countryCode();
       expect(typeof func(countryCode)).toBe('boolean');
     });
 

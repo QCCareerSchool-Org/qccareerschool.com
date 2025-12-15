@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Nav from 'react-bootstrap/Nav';
@@ -188,7 +188,7 @@ const AdmissionsPage: NextPage = () => (
       </div>
     </section>
 
-    <style>{`
+    <style jsx>{`
       .icon-wrapper { margin-right: 1rem; }
       .h6.card-title { font-weight: normal; }
       .buttonSpacer {

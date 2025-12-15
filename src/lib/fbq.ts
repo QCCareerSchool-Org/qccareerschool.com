@@ -1,10 +1,10 @@
 import type { Enrollment } from '../models/enrollment';
 
-type FBQ = {
+interface FBQ {
   (action: 'track', type: 'PageView' | 'Lead'): void;
   (action: 'track', type: 'Purchase', params: { value: number; currency: string }): void;
   (action: 'trackCustom', type: 'VirtualPageView', params: { url: string }): void;
-};
+}
 
 declare global {
   interface Window {

@@ -1,15 +1,13 @@
-import PropTypes from 'prop-types';
-import { ReactElement, ReactNode } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 
-type Props = {
+interface Props {
   noHero?: boolean;
-  children: ReactNode;
-};
+}
 
-export const DefaultLayout = ({ noHero, children }: Props): ReactElement => (
+export const DefaultLayout: FC<PropsWithChildren<Props>> = ({ noHero, children }) => (
   <>
     <div className="d-flex flex-column vh-100">
       <Header noHero={noHero} className="flex-shrink-0 fixed-top" />
@@ -20,7 +18,3 @@ export const DefaultLayout = ({ noHero, children }: Props): ReactElement => (
     </div>
   </>
 );
-
-DefaultLayout.propTypes = {
-  noHero: PropTypes.bool,
-};

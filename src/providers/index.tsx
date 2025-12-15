@@ -1,13 +1,10 @@
-import { ReactElement, ReactNode } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+
 import { LocationProvider } from './locationProvider';
 import { ScreenWidthProvider } from './screenWidthProvider';
 import { ScrollPositionProvider } from './scrollPositionProvider';
 
-type Props = {
-  children: ReactNode;
-};
-
-export const Providers = ({ children }: Props): ReactElement => (
+export const Providers: FC<PropsWithChildren> = ({ children }) => (
   <LocationProvider>
     <ScreenWidthProvider>
       <ScrollPositionProvider>

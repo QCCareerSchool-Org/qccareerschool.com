@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import Image from 'next/image';
 
 import { Bar } from '../../components/Bar';
@@ -7,7 +7,6 @@ import { CourseCard } from '../../components/CourseCard';
 import { Overlay } from '../../components/Overlay';
 import { SEO } from '../../components/SEO';
 import Hero from '../../images/backgrounds/hero-faculty-makeup.jpg';
-import GlobalBeauty from '../../images/course-makeup-global-beauty.jpg';
 import MasterMakeupArtistry from '../../images/course-makeup-master-makeup-artistry.jpg';
 import ProMakeupWorkshop from '../../images/course-makeup-pro-makeup-workshop.jpg';
 import Skincare from '../../images/course-makeup-skincare.jpg';

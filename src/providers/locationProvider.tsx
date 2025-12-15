@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
-import { Location } from '../models/location';
+import type { Location } from '../models/location';
 
 const defaultLocation: Location = { countryCode: 'US', provinceCode: 'MD' };
 
@@ -9,17 +9,13 @@ const defaultLocation: Location = { countryCode: 'US', provinceCode: 'MD' };
 export const LocationStateContext = createContext<Location | undefined>(undefined);
 export const LocationDispatchContext = createContext<((location: Location) => void) | undefined>(undefined);
 
-type Props = {
-  children: ReactNode;
-};
-
-export const LocationProvider = ({ children }: Props): ReactElement => {
+export const LocationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ location, setLocation ] = useState<Location>(defaultLocation);
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       const response = await fetch('https://api.qccareerschool.com/geoLocation/ip');
-      const data = await response.json();
+      const data = await response.json() as { countryCode: string; provinceCode: string | null };
       setLocation({ countryCode: data.countryCode, provinceCode: data.provinceCode });
     };
     fetchData().catch(() => { /* empty */ });
@@ -32,8 +28,4 @@ export const LocationProvider = ({ children }: Props): ReactElement => {
       </LocationDispatchContext.Provider>
     </LocationStateContext.Provider>
   );
-};
-
-LocationProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };

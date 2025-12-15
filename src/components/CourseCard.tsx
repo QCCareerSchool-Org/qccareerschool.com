@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import { ReactElement, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
-type Props = {
+interface Props {
   imageComponent: ReactNode;
   title: string;
   body?: string;
   buttonText: string;
   link: string;
   externalLink?: boolean;
-};
+}
 
-export const CourseCard = ({ imageComponent, title, body, buttonText, link, externalLink }: Props): ReactElement => {
+export const CourseCard: FC<Props> = ({ imageComponent, title, body, buttonText, link, externalLink }) => {
   return (
     <div className="card shadow-sm rounded-sm">
       {externalLink
@@ -19,7 +19,7 @@ export const CourseCard = ({ imageComponent, title, body, buttonText, link, exte
       }
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        {body !== null && <p className="card-text">{body}</p>}
+        {typeof body !== 'undefined' && <p className="card-text">{body}</p>}
         <div className="buttonSpacer" />
         {externalLink
           ? <a href={link} className="absoluteButton btn btn-sm btn-secondary">{buttonText}</a>

@@ -1,8 +1,10 @@
+jest.mock('@/hooks/useScreenWidth');
+jest.mock('@/hooks/useScrollPosition');
+
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
-import React from 'react';
 
-import { Header } from '../../src/components/Header';
+import { Header } from '@/components/Header';
 
 expect.extend(toHaveNoViolations);
 

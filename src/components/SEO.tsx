@@ -1,15 +1,14 @@
 import Head from 'next/head';
-import PropTypes from 'prop-types';
-import { ReactElement } from 'react';
+import type { FC } from 'react';
 
-type Props = {
+interface Props {
   title: string;
   description: string;
   canonical: string;
   noIndex?: boolean;
-};
+}
 
-export const SEO = ({ title, description, canonical, noIndex = false }: Props): ReactElement => (
+export const SEO: FC<Props> = ({ title, description, canonical, noIndex = false }) => (
   <Head>
     <title>{title === 'QC Career School' ? title : `${title} - QC Career School`}</title>
     {noIndex && <meta name="robots" content="noindex" />}
@@ -24,8 +23,3 @@ export const SEO = ({ title, description, canonical, noIndex = false }: Props): 
     <link rel="canonical" href={canonical} />
   </Head>
 );
-
-SEO.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};

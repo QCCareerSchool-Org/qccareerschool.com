@@ -3,22 +3,22 @@ import ErrorPage from 'next/error';
 import Image from 'next/image';
 import { Fragment, useEffect } from 'react';
 
+import type { NextPageWithLayout } from './_app';
 import { SEO } from '../components/SEO';
 import { getTelephoneNumber } from '../functions';
 import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { formatDate } from '../lib/formateDate';
-import { Enrollment } from '../models/enrollment';
-import { NextPageWithLayout } from './_app';
+import type { Enrollment } from '../models/enrollment';
 
-type Props = {
+interface Props {
   data?: {
     enrollment: Enrollment;
     code: string;
   };
   errorCode?: number;
-};
+}
 
 const WelcomeToTheSchoolPage: NextPageWithLayout<Props> = ({ data, errorCode }) => {
   const location = useLocation();
@@ -200,7 +200,7 @@ const getEnrollment = async (enrollmentId: number, code: string): Promise<Enroll
   if (!response.ok) {
     throw new HttpStatus.HttpResponse(response.status, response.statusText);
   }
-  return response.json();
+  return response.json() as unknown as Promise<Enrollment>;
 };
 
 WelcomeToTheSchoolPage.getInitialProps = async ({ res, query }): Promise<Props> => {

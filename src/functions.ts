@@ -116,27 +116,12 @@ export const getAddress = (countryCode: string): string[] => {
   }
 };
 
-/**
- * Creates a query string from an object
- * @param params the query string values
- */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
-export function getQueryString(params: any): string {
-  return Object.keys(params).map(k => {
-    if (Array.isArray(params[k])) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      return params[k].map((val: any) => `${encodeURIComponent(k)}[]=${encodeURIComponent(val)}`).join('&');
-    }
-    return `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`;
-  }).join('&');
-}
-
 export function nl2br(str?: string | null, xhtml?: boolean): string {
   if (typeof str === 'undefined' || str === null) {
     return '';
   }
   const breakTag = (xhtml || typeof xhtml === 'undefined') ? '<br />' : '<br>';
-  return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/gu, '$1' + breakTag + '$2');
+  return str.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/gu, '$1' + breakTag + '$2');
 }
 
 /**
@@ -144,15 +129,10 @@ export function nl2br(str?: string | null, xhtml?: boolean): string {
  * with a Promise and not the deprecated callback version
  */
 const requestPermission = async (): Promise<NotificationPermission> => {
-  return new Promise((resolve, reject) => {
-    if (!('Notification' in window)) {
-      reject(Error('Notification object is not supported'));
-    }
-    const permissionResult = window.Notification.requestPermission(resolve);
-    if (permissionResult) {
-      permissionResult.then(resolve, reject);
-    }
-  });
+  if (!('Notification' in window)) {
+    throw Error('Notification object is not supported');
+  }
+  return window.Notification.requestPermission();
 };
 
 /**
@@ -182,11 +162,11 @@ export const subscribe = async (): Promise<number | undefined> => {
     if (!response.ok) {
       throw Error('Bad status code from server');
     }
-    const responseData = await response.json();
+    const responseData = await response.json() as { success: boolean; id: number };
     if (!responseData.success) {
       throw Error('Bad response from server');
     }
-    return responseData.id as number;
+    return responseData.id;
   } catch (err) {
     console.error(err);
     return undefined;

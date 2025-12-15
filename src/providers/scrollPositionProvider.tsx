@@ -1,31 +1,18 @@
-import PropTypes from 'prop-types';
-import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext } from 'react';
 
-export const ScrollPositionContext = createContext<number>(0);
+import { useWindowListener } from '../hooks/useWindowListener';
 
-type Props = {
-  children: ReactNode;
-};
+export const ScrollPositionContext = createContext<number | undefined>(0);
 
-export const ScrollPositionProvider = ({ children }: Props): ReactElement => {
-  const [ scrollPosition, setScrollPosition ] = useState(0);
+const valueSelector = (w: Window) => w.pageYOffset;
 
-  useEffect(() => {
-    setScrollPosition(window.pageYOffset);
-    const handleScroll = (): void => setScrollPosition(window.pageYOffset);
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+export const ScrollPositionProvider: FC<PropsWithChildren> = ({ children }) => {
+  const scrollPosition = useWindowListener('scroll', valueSelector, 0);
 
   return (
     <ScrollPositionContext.Provider value={scrollPosition}>
       {children}
     </ScrollPositionContext.Provider>
   );
-};
-
-ScrollPositionProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };
