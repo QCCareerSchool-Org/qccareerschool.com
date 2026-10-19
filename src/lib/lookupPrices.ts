@@ -8,7 +8,7 @@ export const lookupPrices = async (courses: string[], countryCode: string, provi
   if (provinceCode) {
     searchParams.append('provinceCode', provinceCode);
   }
-  const url = `https://api.qccareerschool.com/prices?'${searchParams.toString()}`;
+  const url = `https://prices.qccareerschool.com?'${searchParams.toString()}`;
   const response = await fetch(url, {
     headers: { 'X-API-Version': '2' },
   });
