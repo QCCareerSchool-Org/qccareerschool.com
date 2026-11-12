@@ -1,19 +1,8 @@
 import type { Metadata, ResolvingMetadata } from 'next';
-import type { FC, ReactNode } from 'react';
+import type { NextRequest, NextResponse } from 'next/server';
 
-type EmptyRecord = Record<never, string>;
+import type { AppRoutes } from '../.next/types/routes';
 
-interface PageProps<RouteParams extends Record<string, string> = EmptyRecord> {
-  params: Promise<RouteParams>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}
+export type GenerateMetadata<R extends AppRoutes> = (props: PageProps<R>, parent: ResolvingMetadata) => Promise<Metadata>;
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-export type PageComponent<RouteParams extends Record<string, string> = EmptyRecord> = FC<PageProps<RouteParams>>;
-
-export type LayoutComponent = FC<LayoutProps>;
-
-export type GenerateMetadata<RouteParams extends Record<string, string> = EmptyRecord> = (props: PageProps<RouteParams>, parent: ResolvingMetadata) => Metadata | Promise<Metadata>;
+export type RouteHandler<T = Record<string, string>> = (request: NextRequest, context: { params: T }) => Promise<Response | NextResponse> | Response | NextResponse;
