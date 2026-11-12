@@ -22,14 +22,14 @@
     "@qccareerschool/http-status": "^2.1.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "big.js": "^7.0.1",
-    "bootstrap": "^5.3.8",
-    "next": "16.4.2",
+    "bootstrap": "^5.3.9",
+    "next": "16.4.6",
     "react": "19.3.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "19.3.1",
     "react-icons": "^5.7.0",
     "react-schemaorg": "^2.0.1",
-    "sass": "^1.105.2",
+    "sass": "^1.108.2",
     "schema-dts": "^1.1.5",
     "xml": "^1.0.1"
   },
@@ -51,7 +51,7 @@
     "@types/react-helmet": "^6.1.11",
     "@types/xml": "^1.0.11",
     "eslint": "9.39.5",
-    "eslint-config-next": "16.4.2",
+    "eslint-config-next": "16.4.6",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
@@ -60,7 +60,7 @@
     "jest-environment-jsdom": "^30.5.2",
     "jiti": "^2.7.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.72.0"
+    "typescript-eslint": "^8.72.2"
   },
   "overrides": {
     "@types/react": "19.3.0",
